@@ -5,7 +5,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     lazy var window: UIWindow? = {
         let window = UIWindow(frame: UIScreen.main.bounds)
-        window.rootViewController = UIViewController(nibName: nil, bundle: nil)
+        window.rootViewController = ShoppingBoxController()
 
         return window
     }()

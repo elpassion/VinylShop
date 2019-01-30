@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		326725B60D2A34323456CEC7 /* AppDelegateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672597C6B12FBFFD07B57B /* AppDelegateSpec.swift */; };
 		326725D5281E8E88A54608BA /* ShoppingBoxController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326724E88E5186E5360C53BB /* ShoppingBoxController.swift */; };
+		32672804EA13374BB7FCE6BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672CCEF714F7CDC441C9B7 /* AppDelegate.swift */; };
 		326728245FDC15C17E529A87 /* ShoppingBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672B3020CF2515472B6E5B /* ShoppingBoxView.swift */; };
 		32672A2F7DC2A52208CB8620 /* SnapshotDiffToolConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672F1A82D35F25BD2C1B29 /* SnapshotDiffToolConfiguration.swift */; };
-		32672D8ADBD59DF9449BC506 /* AppDelegateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326725D3888B4977F02E29C8 /* AppDelegateSpec.swift */; };
 		32672FB9984B27608A77D966 /* ShoppingBoxControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326728130821FC372F765BF6 /* ShoppingBoxControllerSpec.swift */; };
-		8CFA76D32201DC8B00E4D81D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFA76D22201DC8B00E4D81D /* AppDelegate.swift */; };
 		8CFA76D52201DC8B00E4D81D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFA76D42201DC8B00E4D81D /* ViewController.swift */; };
 		8CFA76DA2201DC8C00E4D81D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CFA76D92201DC8C00E4D81D /* Assets.xcassets */; };
 		8CFA76DD2201DC8C00E4D81D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CFA76DB2201DC8C00E4D81D /* LaunchScreen.storyboard */; };
@@ -52,12 +52,12 @@
 
 /* Begin PBXFileReference section */
 		326724E88E5186E5360C53BB /* ShoppingBoxController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxController.swift; sourceTree = "<group>"; };
-		326725D3888B4977F02E29C8 /* AppDelegateSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateSpec.swift; sourceTree = "<group>"; };
+		32672597C6B12FBFFD07B57B /* AppDelegateSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateSpec.swift; sourceTree = "<group>"; };
 		326728130821FC372F765BF6 /* ShoppingBoxControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxControllerSpec.swift; sourceTree = "<group>"; };
 		32672B3020CF2515472B6E5B /* ShoppingBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxView.swift; sourceTree = "<group>"; };
+		32672CCEF714F7CDC441C9B7 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32672F1A82D35F25BD2C1B29 /* SnapshotDiffToolConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotDiffToolConfiguration.swift; sourceTree = "<group>"; };
 		8CFA76CF2201DC8B00E4D81D /* VinylShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VinylShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8CFA76D22201DC8B00E4D81D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CFA76D42201DC8B00E4D81D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8CFA76D92201DC8C00E4D81D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8CFA76DC2201DC8C00E4D81D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,6 +98,15 @@
 				326726527BC828DA04A6CE02 /* Screens */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		326720921977EC77209C8994 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				32672CCEF714F7CDC441C9B7 /* AppDelegate.swift */,
+				32672597C6B12FBFFD07B57B /* AppDelegateSpec.swift */,
+			);
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 		326722B6885BE8529CAFAC3F /* ShoppingBox */ = {
@@ -148,12 +157,12 @@
 		8CFA76D12201DC8B00E4D81D /* VinylShop */ = {
 			isa = PBXGroup;
 			children = (
-				8CFA76D22201DC8B00E4D81D /* AppDelegate.swift */,
 				8CFA76D42201DC8B00E4D81D /* ViewController.swift */,
 				8CFA76D92201DC8C00E4D81D /* Assets.xcassets */,
 				8CFA76DB2201DC8C00E4D81D /* LaunchScreen.storyboard */,
 				8CFA76DE2201DC8C00E4D81D /* Info.plist */,
 				326720660B5E8851516BDBB4 /* UI */,
+				326720921977EC77209C8994 /* AppDelegate */,
 			);
 			path = VinylShop;
 			sourceTree = "<group>";
@@ -162,7 +171,6 @@
 			isa = PBXGroup;
 			children = (
 				8CFA76E92201DC8C00E4D81D /* Info.plist */,
-				326725D3888B4977F02E29C8 /* AppDelegateSpec.swift */,
 				32672F1A82D35F25BD2C1B29 /* SnapshotDiffToolConfiguration.swift */,
 			);
 			path = VinylShopTests;
@@ -324,9 +332,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CFA76D52201DC8B00E4D81D /* ViewController.swift in Sources */,
-				8CFA76D32201DC8B00E4D81D /* AppDelegate.swift in Sources */,
 				326725D5281E8E88A54608BA /* ShoppingBoxController.swift in Sources */,
 				326728245FDC15C17E529A87 /* ShoppingBoxView.swift in Sources */,
+				32672804EA13374BB7FCE6BA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,9 +342,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32672D8ADBD59DF9449BC506 /* AppDelegateSpec.swift in Sources */,
 				32672A2F7DC2A52208CB8620 /* SnapshotDiffToolConfiguration.swift in Sources */,
 				32672FB9984B27608A77D966 /* ShoppingBoxControllerSpec.swift in Sources */,
+				326725B60D2A34323456CEC7 /* AppDelegateSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

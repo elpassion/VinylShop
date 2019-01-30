@@ -45,8 +45,8 @@ class AppDelegateSpec: QuickSpec {
                         expect(sut.window?.isKeyWindow) == true
                     }
 
-                    it("should have a root view controller") {
-                        expect(sut.window?.rootViewController).toNot(beNil())
+                    it("should have a root view controller of ShoppingBoxController class") {
+                        expect(sut.window?.rootViewController).to(beAnInstanceOf(ShoppingBoxController.self))
                     }
                 }
             }
