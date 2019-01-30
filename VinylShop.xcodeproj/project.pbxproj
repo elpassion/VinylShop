@@ -1,0 +1,466 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8CFA76D32201DC8B00E4D81D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFA76D22201DC8B00E4D81D /* AppDelegate.swift */; };
+		8CFA76D52201DC8B00E4D81D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFA76D42201DC8B00E4D81D /* ViewController.swift */; };
+		8CFA76D82201DC8B00E4D81D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CFA76D62201DC8B00E4D81D /* Main.storyboard */; };
+		8CFA76DA2201DC8C00E4D81D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CFA76D92201DC8C00E4D81D /* Assets.xcassets */; };
+		8CFA76DD2201DC8C00E4D81D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CFA76DB2201DC8C00E4D81D /* LaunchScreen.storyboard */; };
+		8CFA76E82201DC8C00E4D81D /* VinylShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFA76E72201DC8C00E4D81D /* VinylShopTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8CFA76E42201DC8C00E4D81D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8CFA76C72201DC8B00E4D81D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8CFA76CE2201DC8B00E4D81D;
+			remoteInfo = VinylShop;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8CFA76CF2201DC8B00E4D81D /* VinylShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VinylShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CFA76D22201DC8B00E4D81D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8CFA76D42201DC8B00E4D81D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8CFA76D72201DC8B00E4D81D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8CFA76D92201DC8C00E4D81D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8CFA76DC2201DC8C00E4D81D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8CFA76DE2201DC8C00E4D81D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CFA76E32201DC8C00E4D81D /* VinylShopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VinylShopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CFA76E72201DC8C00E4D81D /* VinylShopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinylShopTests.swift; sourceTree = "<group>"; };
+		8CFA76E92201DC8C00E4D81D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8CFA76CC2201DC8B00E4D81D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CFA76E02201DC8C00E4D81D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8CFA76C62201DC8B00E4D81D = {
+			isa = PBXGroup;
+			children = (
+				8CFA76D12201DC8B00E4D81D /* VinylShop */,
+				8CFA76E62201DC8C00E4D81D /* VinylShopTests */,
+				8CFA76D02201DC8B00E4D81D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8CFA76D02201DC8B00E4D81D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8CFA76CF2201DC8B00E4D81D /* VinylShop.app */,
+				8CFA76E32201DC8C00E4D81D /* VinylShopTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8CFA76D12201DC8B00E4D81D /* VinylShop */ = {
+			isa = PBXGroup;
+			children = (
+				8CFA76D22201DC8B00E4D81D /* AppDelegate.swift */,
+				8CFA76D42201DC8B00E4D81D /* ViewController.swift */,
+				8CFA76D62201DC8B00E4D81D /* Main.storyboard */,
+				8CFA76D92201DC8C00E4D81D /* Assets.xcassets */,
+				8CFA76DB2201DC8C00E4D81D /* LaunchScreen.storyboard */,
+				8CFA76DE2201DC8C00E4D81D /* Info.plist */,
+			);
+			path = VinylShop;
+			sourceTree = "<group>";
+		};
+		8CFA76E62201DC8C00E4D81D /* VinylShopTests */ = {
+			isa = PBXGroup;
+			children = (
+				8CFA76E72201DC8C00E4D81D /* VinylShopTests.swift */,
+				8CFA76E92201DC8C00E4D81D /* Info.plist */,
+			);
+			path = VinylShopTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8CFA76CE2201DC8B00E4D81D /* VinylShop */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CFA76EC2201DC8C00E4D81D /* Build configuration list for PBXNativeTarget "VinylShop" */;
+			buildPhases = (
+				8CFA76CB2201DC8B00E4D81D /* Sources */,
+				8CFA76CC2201DC8B00E4D81D /* Frameworks */,
+				8CFA76CD2201DC8B00E4D81D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VinylShop;
+			productName = VinylShop;
+			productReference = 8CFA76CF2201DC8B00E4D81D /* VinylShop.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8CFA76E22201DC8C00E4D81D /* VinylShopTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CFA76EF2201DC8C00E4D81D /* Build configuration list for PBXNativeTarget "VinylShopTests" */;
+			buildPhases = (
+				8CFA76DF2201DC8C00E4D81D /* Sources */,
+				8CFA76E02201DC8C00E4D81D /* Frameworks */,
+				8CFA76E12201DC8C00E4D81D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8CFA76E52201DC8C00E4D81D /* PBXTargetDependency */,
+			);
+			name = VinylShopTests;
+			productName = VinylShopTests;
+			productReference = 8CFA76E32201DC8C00E4D81D /* VinylShopTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8CFA76C72201DC8B00E4D81D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "EL Passion";
+				TargetAttributes = {
+					8CFA76CE2201DC8B00E4D81D = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					8CFA76E22201DC8C00E4D81D = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 8CFA76CE2201DC8B00E4D81D;
+					};
+				};
+			};
+			buildConfigurationList = 8CFA76CA2201DC8B00E4D81D /* Build configuration list for PBXProject "VinylShop" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8CFA76C62201DC8B00E4D81D;
+			productRefGroup = 8CFA76D02201DC8B00E4D81D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8CFA76CE2201DC8B00E4D81D /* VinylShop */,
+				8CFA76E22201DC8C00E4D81D /* VinylShopTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8CFA76CD2201DC8B00E4D81D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CFA76DD2201DC8C00E4D81D /* LaunchScreen.storyboard in Resources */,
+				8CFA76DA2201DC8C00E4D81D /* Assets.xcassets in Resources */,
+				8CFA76D82201DC8B00E4D81D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CFA76E12201DC8C00E4D81D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8CFA76CB2201DC8B00E4D81D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CFA76D52201DC8B00E4D81D /* ViewController.swift in Sources */,
+				8CFA76D32201DC8B00E4D81D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CFA76DF2201DC8C00E4D81D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CFA76E82201DC8C00E4D81D /* VinylShopTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8CFA76E52201DC8C00E4D81D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8CFA76CE2201DC8B00E4D81D /* VinylShop */;
+			targetProxy = 8CFA76E42201DC8C00E4D81D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8CFA76D62201DC8B00E4D81D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8CFA76D72201DC8B00E4D81D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8CFA76DB2201DC8C00E4D81D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8CFA76DC2201DC8C00E4D81D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8CFA76EA2201DC8C00E4D81D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8CFA76EB2201DC8C00E4D81D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8CFA76ED2201DC8C00E4D81D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = VinylShop/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.elpassion.VinylShop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8CFA76EE2201DC8C00E4D81D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = VinylShop/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.elpassion.VinylShop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8CFA76F02201DC8C00E4D81D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = VinylShopTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.elpassion.VinylShopTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VinylShop.app/VinylShop";
+			};
+			name = Debug;
+		};
+		8CFA76F12201DC8C00E4D81D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = VinylShopTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.elpassion.VinylShopTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VinylShop.app/VinylShop";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8CFA76CA2201DC8B00E4D81D /* Build configuration list for PBXProject "VinylShop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CFA76EA2201DC8C00E4D81D /* Debug */,
+				8CFA76EB2201DC8C00E4D81D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8CFA76EC2201DC8C00E4D81D /* Build configuration list for PBXNativeTarget "VinylShop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CFA76ED2201DC8C00E4D81D /* Debug */,
+				8CFA76EE2201DC8C00E4D81D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8CFA76EF2201DC8C00E4D81D /* Build configuration list for PBXNativeTarget "VinylShopTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CFA76F02201DC8C00E4D81D /* Debug */,
+				8CFA76F12201DC8C00E4D81D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8CFA76C72201DC8B00E4D81D /* Project object */;
+}
