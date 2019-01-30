@@ -7,9 +7,7 @@ class ShoppingBoxView: UIView {
     let boxView: UIView = {
         let view = UIView(frame: .zero)
         view.backgroundColor = UIColor(hex: "#2FC5D8")
-        view.clipsToBounds = true
-        view.layer.cornerRadius = 15
-        view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        rounded(radius: 15, corners: .top)(view)
 
         return view
     }()

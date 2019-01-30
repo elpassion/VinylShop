@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3267255DA6CB95D2D25F1451 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267270A4EB69958133B7A24 /* Styles.swift */; };
 		326725B60D2A34323456CEC7 /* AppDelegateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672597C6B12FBFFD07B57B /* AppDelegateSpec.swift */; };
 		326725D5281E8E88A54608BA /* ShoppingBoxController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326724E88E5186E5360C53BB /* ShoppingBoxController.swift */; };
+		326727EB2D1BC47DB2CF63EF /* Composition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326724162483BD5825424EF9 /* Composition.swift */; };
+		32672801CD78691A92F6EB6B /* CompositionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672696104257987B079EC4 /* CompositionSpec.swift */; };
 		32672804EA13374BB7FCE6BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672CCEF714F7CDC441C9B7 /* AppDelegate.swift */; };
 		326728245FDC15C17E529A87 /* ShoppingBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672B3020CF2515472B6E5B /* ShoppingBoxView.swift */; };
 		32672A2F7DC2A52208CB8620 /* SnapshotDiffToolConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672F1A82D35F25BD2C1B29 /* SnapshotDiffToolConfiguration.swift */; };
+		32672A3C1C9B55A91552BD42 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672AE680239A70B031D0F0 /* RoundedCorner.swift */; };
 		32672FB9984B27608A77D966 /* ShoppingBoxControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326728130821FC372F765BF6 /* ShoppingBoxControllerSpec.swift */; };
 		8CFA76D52201DC8B00E4D81D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFA76D42201DC8B00E4D81D /* ViewController.swift */; };
 		8CFA76DA2201DC8C00E4D81D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CFA76D92201DC8C00E4D81D /* Assets.xcassets */; };
@@ -52,9 +56,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		326724162483BD5825424EF9 /* Composition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Composition.swift; sourceTree = "<group>"; };
 		326724E88E5186E5360C53BB /* ShoppingBoxController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxController.swift; sourceTree = "<group>"; };
 		32672597C6B12FBFFD07B57B /* AppDelegateSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateSpec.swift; sourceTree = "<group>"; };
+		32672696104257987B079EC4 /* CompositionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompositionSpec.swift; sourceTree = "<group>"; };
+		3267270A4EB69958133B7A24 /* Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		326728130821FC372F765BF6 /* ShoppingBoxControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxControllerSpec.swift; sourceTree = "<group>"; };
+		32672AE680239A70B031D0F0 /* RoundedCorner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		32672B3020CF2515472B6E5B /* ShoppingBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxView.swift; sourceTree = "<group>"; };
 		32672CCEF714F7CDC441C9B7 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32672F1A82D35F25BD2C1B29 /* SnapshotDiffToolConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotDiffToolConfiguration.swift; sourceTree = "<group>"; };
@@ -138,6 +146,24 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
+		326728F87C8E3A196A220865 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				3267270A4EB69958133B7A24 /* Styles.swift */,
+				32672AE680239A70B031D0F0 /* RoundedCorner.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		32672EBAACC8FE11E011AA0D /* Functions */ = {
+			isa = PBXGroup;
+			children = (
+				32672696104257987B079EC4 /* CompositionSpec.swift */,
+				326724162483BD5825424EF9 /* Composition.swift */,
+			);
+			path = Functions;
+			sourceTree = "<group>";
+		};
 		8CFA76C62201DC8B00E4D81D = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +192,8 @@
 				8CFA76DE2201DC8C00E4D81D /* Info.plist */,
 				326720660B5E8851516BDBB4 /* UI */,
 				326720921977EC77209C8994 /* AppDelegate */,
+				326728F87C8E3A196A220865 /* Styles */,
+				32672EBAACC8FE11E011AA0D /* Functions */,
 			);
 			path = VinylShop;
 			sourceTree = "<group>";
@@ -341,6 +369,9 @@
 				326725D5281E8E88A54608BA /* ShoppingBoxController.swift in Sources */,
 				326728245FDC15C17E529A87 /* ShoppingBoxView.swift in Sources */,
 				32672804EA13374BB7FCE6BA /* AppDelegate.swift in Sources */,
+				3267255DA6CB95D2D25F1451 /* Styles.swift in Sources */,
+				32672A3C1C9B55A91552BD42 /* RoundedCorner.swift in Sources */,
+				326727EB2D1BC47DB2CF63EF /* Composition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +382,7 @@
 				32672A2F7DC2A52208CB8620 /* SnapshotDiffToolConfiguration.swift in Sources */,
 				32672FB9984B27608A77D966 /* ShoppingBoxControllerSpec.swift in Sources */,
 				326725B60D2A34323456CEC7 /* AppDelegateSpec.swift in Sources */,
+				32672801CD78691A92F6EB6B /* CompositionSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
