@@ -14,12 +14,8 @@ class ShoppingBoxItemView: UIView {
         |> text("Rudimental")
         <> font(.nunito(.semiBold), size: 12.0, color: .whiteFFFFFF, alpha: 0.6)
 
-    let removeButton: UIButton = {
-        let button = UIButton(frame: .zero)
-        button.setImage(#imageLiteral(resourceName: "remove_button"), for: .normal)
-
-        return button
-    }()
+    let removeButton = UIButton(frame: .zero)
+        |> { $0.setImage(#imageLiteral(resourceName: "remove_button"), for: .normal) }
 
     let separatorView = UIView(frame: .zero)
         |> background(color: .grayD8D8D8, alpha: 0.6)
