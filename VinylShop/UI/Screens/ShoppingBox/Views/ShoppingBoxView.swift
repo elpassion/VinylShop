@@ -5,8 +5,10 @@ import UIKit
 class ShoppingBoxView: UIView {
 
     let boxView: UIView = UIView(frame: .zero)
-        |> background(color: "#2FC5D8")
+        |> background(color: .blue2FC5D8)
         <> rounded(radius: 15, corners: .top)
+
+    let itemView = ShoppingBoxItemView()
 
     init() {
         super.init(frame: .zero)
@@ -25,7 +27,7 @@ class ShoppingBoxView: UIView {
     // MARK: - Subviews
 
     private func addSubviews() {
-        addSubview(boxView)
+        [boxView, itemView].forEach(addSubview)
     }
 
     // MARK: - Layout
@@ -34,6 +36,9 @@ class ShoppingBoxView: UIView {
         boxView.heightAnchor == heightAnchor * 0.6
         boxView.horizontalAnchors == horizontalAnchors
         boxView.bottomAnchor == bottomAnchor
+
+        itemView.horizontalAnchors == boxView.horizontalAnchors + 20
+        itemView.centerAnchors == boxView.centerAnchors
     }
 
     // MARK: - Required initializer
