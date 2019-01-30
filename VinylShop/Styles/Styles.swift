@@ -11,7 +11,7 @@ func rounded(radius: CGFloat, corners: RoundedCorner = .all) -> (UIView) -> Void
 
 func background(color: Color, alpha: CGFloat = 1.0) -> (UIView) -> Void {
     return { view in
-        view.backgroundColor = UIColor(hex: color.rawValue).alpha(alpha)
+        view.backgroundColor = color.ui(alpha: alpha)
     }
 }
 
@@ -25,7 +25,7 @@ func image(_ image: UIImage, mode contentMode: UIView.ContentMode = .scaleAspect
 func font(_ font: Font, size: CGFloat, color: Color, alpha: CGFloat = 1.0) -> (UILabel) -> Void {
     return { label in
         label.font = UIFont(name: font.name, size: size)
-        label.textColor = UIColor(hex: color.rawValue).alpha(alpha)
+        label.textColor = color.ui(alpha: alpha)
     }
 }
 
@@ -38,6 +38,6 @@ func text(_ text: String) -> (UILabel) -> Void {
 func bordered(width: CGFloat, color: Color, alpha: CGFloat = 1.0) -> (UIView) -> Void {
     return { view in
         view.layer.borderWidth = width
-        view.layer.borderColor = UIColor(hex: color.rawValue).alpha(alpha).cgColor
+        view.layer.borderColor = color.cg(alpha: alpha)
     }
 }
