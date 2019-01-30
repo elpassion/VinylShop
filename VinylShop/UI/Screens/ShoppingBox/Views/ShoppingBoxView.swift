@@ -15,7 +15,7 @@ class ShoppingBoxView: UIView {
         |> text("Shopping Box")
         <> font(.nunito(.semibold), size: 26.0, color: .whiteFFFFFF)
 
-    let itemView = ShoppingBoxItemView()
+    let itemsView = ShoppingBoxItemsView()
     let topSeparatorView = ShoppingBoxSeparatorView()
     let bottomSeparatorView = ShoppingBoxSeparatorView()
 
@@ -36,7 +36,7 @@ class ShoppingBoxView: UIView {
     // MARK: - Subviews
 
     private func addSubviews() {
-        [boxView, itemView, dismissIconView, titleLabel, topSeparatorView, bottomSeparatorView].forEach(addSubview)
+        [boxView, itemsView, dismissIconView, titleLabel, topSeparatorView, bottomSeparatorView].forEach(addSubview)
     }
 
     // MARK: - Layout
@@ -57,11 +57,11 @@ class ShoppingBoxView: UIView {
         topSeparatorView.horizontalAnchors == boxView.horizontalAnchors + 20
         topSeparatorView.heightAnchor == 3
 
-        itemView.horizontalAnchors == topSeparatorView.horizontalAnchors
-        itemView.topAnchor == topSeparatorView.bottomAnchor + 30
+        itemsView.horizontalAnchors == topSeparatorView.horizontalAnchors
+        itemsView.topAnchor == topSeparatorView.bottomAnchor + 30
 
         bottomSeparatorView.horizontalAnchors == topSeparatorView.horizontalAnchors
-        bottomSeparatorView.topAnchor == itemView.bottomAnchor + 30
+        bottomSeparatorView.topAnchor == itemsView.bottomAnchor + 18
         bottomSeparatorView.heightAnchor == 3
     }
 

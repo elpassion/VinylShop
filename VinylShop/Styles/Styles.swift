@@ -41,3 +41,12 @@ func bordered(width: CGFloat, color: Color, alpha: CGFloat = 1.0) -> (UIView) ->
         view.layer.borderColor = color.cg(alpha: alpha)
     }
 }
+
+func fillVertical(spacing: CGFloat = 0.0) -> (UIStackView) -> Void {
+    return { stackView in
+        stackView.axis = .vertical
+        stackView.alignment = .fill
+        stackView.distribution = .fill
+        stackView.spacing = spacing
+    }
+}
