@@ -6,21 +6,13 @@ class ShoppingBoxItemView: UIView {
     let coverImageView = UIImageView(frame: .zero)
         |> image(#imageLiteral(resourceName: "album_cover"))
 
-    let titleLabel: UILabel = {
-        let view = UILabel(frame: .zero)
-        view.text = "We the generation"
-        view.textColor = .white
+    let titleLabel = UILabel(frame: .zero)
+        |> text("We the generation")
+        <> font(.nunito(.semiBold), size: 16.0, color: .whiteFFFFFF)
 
-        return view
-    }()
-
-    let bandLabel: UILabel = {
-        let view = UILabel(frame: .zero)
-        view.text = "Rudimental"
-        view.textColor = UIColor.white.withAlphaComponent(0.6)
-
-        return view
-    }()
+    let bandLabel = UILabel(frame: .zero)
+        |> text("Rudimental")
+        <> font(.nunito(.semiBold), size: 12.0, color: .whiteFFFFFF, alpha: 0.6)
 
     let removeButton: UIButton = {
         let button = UIButton(frame: .zero)

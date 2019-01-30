@@ -11,6 +11,10 @@ class ShoppingBoxView: UIView {
     let dismissIconView = UIImageView(frame: .zero)
         |> image(#imageLiteral(resourceName: "dismiss_box_arrow"))
 
+    let titleLabel = UILabel(frame: .zero)
+        |> text("Shopping Box")
+        <> font(.nunito(.semiBold), size: 26.0, color: .whiteFFFFFF)
+
     let itemView = ShoppingBoxItemView()
 
     init() {
@@ -30,7 +34,7 @@ class ShoppingBoxView: UIView {
     // MARK: - Subviews
 
     private func addSubviews() {
-        [boxView, itemView, dismissIconView].forEach(addSubview)
+        [boxView, itemView, dismissIconView, titleLabel].forEach(addSubview)
     }
 
     // MARK: - Layout
@@ -46,6 +50,9 @@ class ShoppingBoxView: UIView {
         dismissIconView.sizeAnchors == CGSize(width: 44, height: 11)
         dismissIconView.centerXAnchor == boxView.centerXAnchor
         dismissIconView.topAnchor == boxView.topAnchor + 20
+
+        titleLabel.centerXAnchor == dismissIconView.centerXAnchor
+        titleLabel.topAnchor == dismissIconView.bottomAnchor + 30
     }
 
     // MARK: - Required initializer

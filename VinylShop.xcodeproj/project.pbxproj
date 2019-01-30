@@ -35,6 +35,7 @@
 		8C2243CE2202125600C3470B /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C2243C02202125600C3470B /* Nunito-Regular.ttf */; };
 		8C2243CF2202125600C3470B /* Nunito-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C2243C12202125600C3470B /* Nunito-ExtraBold.ttf */; };
 		8C2243D02202125600C3470B /* Nunito-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C2243C22202125600C3470B /* Nunito-SemiBoldItalic.ttf */; };
+		8C2243D2220213A700C3470B /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2243D1220213A700C3470B /* Font.swift */; };
 		8CFA76D52201DC8B00E4D81D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFA76D42201DC8B00E4D81D /* ViewController.swift */; };
 		8CFA76DA2201DC8C00E4D81D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CFA76D92201DC8C00E4D81D /* Assets.xcassets */; };
 		8CFA76DD2201DC8C00E4D81D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CFA76DB2201DC8C00E4D81D /* LaunchScreen.storyboard */; };
@@ -102,6 +103,7 @@
 		8C2243C02202125600C3470B /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
 		8C2243C12202125600C3470B /* Nunito-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBold.ttf"; sourceTree = "<group>"; };
 		8C2243C22202125600C3470B /* Nunito-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		8C2243D1220213A700C3470B /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		8CFA76CF2201DC8B00E4D81D /* VinylShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VinylShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CFA76D42201DC8B00E4D81D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8CFA76D92201DC8C00E4D81D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				3267270A4EB69958133B7A24 /* Styles.swift */,
 				32672AE680239A70B031D0F0 /* RoundedCorner.swift */,
 				32672BED0705778B22001111 /* Color.swift */,
+				8C2243D1220213A700C3470B /* Font.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -458,6 +461,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CFA76D52201DC8B00E4D81D /* ViewController.swift in Sources */,
+				8C2243D2220213A700C3470B /* Font.swift in Sources */,
 				326725D5281E8E88A54608BA /* ShoppingBoxController.swift in Sources */,
 				326728245FDC15C17E529A87 /* ShoppingBoxView.swift in Sources */,
 				32672804EA13374BB7FCE6BA /* AppDelegate.swift in Sources */,

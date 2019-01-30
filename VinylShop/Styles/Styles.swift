@@ -21,3 +21,16 @@ func image(_ image: UIImage, mode contentMode: UIView.ContentMode = .scaleAspect
         imageView.contentMode = contentMode
     }
 }
+
+func font(_ font: Font, size: CGFloat, color: Color, alpha: CGFloat = 1.0) -> (UILabel) -> Void {
+    return { label in
+        label.font = UIFont(name: font.name, size: size)
+        label.textColor = UIColor(hex: color.rawValue).alpha(alpha)
+    }
+}
+
+func text(_ text: String) -> (UILabel) -> Void {
+    return { label in
+        label.text = text
+    }
+}
