@@ -19,8 +19,11 @@
 		32672801CD78691A92F6EB6B /* CompositionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672696104257987B079EC4 /* CompositionSpec.swift */; };
 		32672804EA13374BB7FCE6BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672CCEF714F7CDC441C9B7 /* AppDelegate.swift */; };
 		326728245FDC15C17E529A87 /* ShoppingBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672B3020CF2515472B6E5B /* ShoppingBoxView.swift */; };
+		3267285FED249CC505AC098E /* ShoppingBoxPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326723004EC4EFEAE4668383 /* ShoppingBoxPresenter.swift */; };
 		32672A2F7DC2A52208CB8620 /* SnapshotDiffToolConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672F1A82D35F25BD2C1B29 /* SnapshotDiffToolConfiguration.swift */; };
 		32672A3C1C9B55A91552BD42 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672AE680239A70B031D0F0 /* RoundedCorner.swift */; };
+		32672A61F3AFE6D12AF8135D /* UIStackView+ReplaceSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267260764FB39904E01144B /* UIStackView+ReplaceSubviews.swift */; };
+		32672E225BB372FEACCDFDB1 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672E5BECAB5E8AA3B3D713 /* Album.swift */; };
 		32672E6AF0F897929D648415 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672BED0705778B22001111 /* Color.swift */; };
 		32672F01BC5D2D648DEA8C11 /* Appliance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267214B2128E42E7806BB23 /* Appliance.swift */; };
 		32672FB9984B27608A77D966 /* ShoppingBoxControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326728130821FC372F765BF6 /* ShoppingBoxControllerSpec.swift */; };
@@ -80,12 +83,14 @@
 
 /* Begin PBXFileReference section */
 		3267214B2128E42E7806BB23 /* Appliance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appliance.swift; sourceTree = "<group>"; };
+		326723004EC4EFEAE4668383 /* ShoppingBoxPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxPresenter.swift; sourceTree = "<group>"; };
 		326723B77BCBF76B8B861426 /* ShoppingBoxSeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxSeparatorView.swift; sourceTree = "<group>"; };
 		326724162483BD5825424EF9 /* Composition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Composition.swift; sourceTree = "<group>"; };
 		32672440CEC9C3E1EE189755 /* UIBezierPath+LineInRectangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBezierPath+LineInRectangle.swift"; sourceTree = "<group>"; };
 		326724E88E5186E5360C53BB /* ShoppingBoxController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxController.swift; sourceTree = "<group>"; };
 		32672549DA59C2630442ED22 /* ShoppingBoxPriceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxPriceView.swift; sourceTree = "<group>"; };
 		32672597C6B12FBFFD07B57B /* AppDelegateSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateSpec.swift; sourceTree = "<group>"; };
+		3267260764FB39904E01144B /* UIStackView+ReplaceSubviews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+ReplaceSubviews.swift"; sourceTree = "<group>"; };
 		32672696104257987B079EC4 /* CompositionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompositionSpec.swift; sourceTree = "<group>"; };
 		3267270A4EB69958133B7A24 /* Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		32672758F5AEE9FEC5CAF5F7 /* ShoppingBoxItemsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxItemsView.swift; sourceTree = "<group>"; };
@@ -96,6 +101,7 @@
 		32672CCEF714F7CDC441C9B7 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32672E2FFFCC144250301C26 /* ShoppingBoxItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxItemView.swift; sourceTree = "<group>"; };
 		32672E479F609D652BA12E76 /* ApplianceSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplianceSpec.swift; sourceTree = "<group>"; };
+		32672E5BECAB5E8AA3B3D713 /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		32672F1A82D35F25BD2C1B29 /* SnapshotDiffToolConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotDiffToolConfiguration.swift; sourceTree = "<group>"; };
 		8C2243B52202125600C3470B /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		8C2243B62202125600C3470B /* Nunito-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
@@ -166,12 +172,22 @@
 			path = AppDelegate;
 			sourceTree = "<group>";
 		};
+		326720A320C7D1686B3B26B3 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				326723004EC4EFEAE4668383 /* ShoppingBoxPresenter.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
 		326722B6885BE8529CAFAC3F /* ShoppingBox */ = {
 			isa = PBXGroup;
 			children = (
 				326724E88E5186E5360C53BB /* ShoppingBoxController.swift */,
 				326728130821FC372F765BF6 /* ShoppingBoxControllerSpec.swift */,
 				3267260406B4AD3701859D5E /* Views */,
+				326720A320C7D1686B3B26B3 /* Presentation */,
+				32672E3276BA7CDC8B1544C5 /* Models */,
 			);
 			path = ShoppingBox;
 			sourceTree = "<group>";
@@ -180,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				32672440CEC9C3E1EE189755 /* UIBezierPath+LineInRectangle.swift */,
+				3267260764FB39904E01144B /* UIStackView+ReplaceSubviews.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -213,6 +230,14 @@
 				8C2243D1220213A700C3470B /* Font.swift */,
 			);
 			path = Styles;
+			sourceTree = "<group>";
+		};
+		32672E3276BA7CDC8B1544C5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				32672E5BECAB5E8AA3B3D713 /* Album.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		32672EBAACC8FE11E011AA0D /* Functions */ = {
@@ -495,6 +520,9 @@
 				326721A42AEE55DED4EBF6F5 /* ShoppingBoxSeparatorView.swift in Sources */,
 				3267241B08B73F2A8B73A587 /* UIBezierPath+LineInRectangle.swift in Sources */,
 				32672FFF6543A21405F89EAA /* ShoppingBoxItemsView.swift in Sources */,
+				3267285FED249CC505AC098E /* ShoppingBoxPresenter.swift in Sources */,
+				32672E225BB372FEACCDFDB1 /* Album.swift in Sources */,
+				32672A61F3AFE6D12AF8135D /* UIStackView+ReplaceSubviews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
