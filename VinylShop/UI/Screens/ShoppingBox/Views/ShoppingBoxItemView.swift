@@ -3,12 +3,8 @@ import UIKit
 
 class ShoppingBoxItemView: UIView {
 
-    let coverImageView: UIImageView = {
-        let view = UIImageView(frame: .zero)
-        view.image = #imageLiteral(resourceName: "album_cover")
-        view.contentMode = .scaleAspectFit
-        return view
-    }()
+    let coverImageView = UIImageView(frame: .zero)
+        |> image(#imageLiteral(resourceName: "album_cover"))
 
     let titleLabel: UILabel = {
         let view = UILabel(frame: .zero)

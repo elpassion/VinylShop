@@ -8,6 +8,9 @@ class ShoppingBoxView: UIView {
         |> background(color: .blue2FC5D8)
         <> rounded(radius: 15, corners: .top)
 
+    let dismissIconView = UIImageView(frame: .zero)
+        |> image(#imageLiteral(resourceName: "dismiss_box_arrow"))
+
     let itemView = ShoppingBoxItemView()
 
     init() {
@@ -27,7 +30,7 @@ class ShoppingBoxView: UIView {
     // MARK: - Subviews
 
     private func addSubviews() {
-        [boxView, itemView].forEach(addSubview)
+        [boxView, itemView, dismissIconView].forEach(addSubview)
     }
 
     // MARK: - Layout
@@ -39,6 +42,10 @@ class ShoppingBoxView: UIView {
 
         itemView.horizontalAnchors == boxView.horizontalAnchors + 20
         itemView.centerAnchors == boxView.centerAnchors
+
+        dismissIconView.sizeAnchors == CGSize(width: 44, height: 11)
+        dismissIconView.centerXAnchor == boxView.centerXAnchor
+        dismissIconView.topAnchor == boxView.topAnchor + 20
     }
 
     // MARK: - Required initializer

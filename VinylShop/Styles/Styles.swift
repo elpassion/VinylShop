@@ -14,3 +14,10 @@ func background(color: Color, alpha: CGFloat = 1.0) -> (UIView) -> Void {
         view.backgroundColor = UIColor(hex: color.rawValue).alpha(alpha)
     }
 }
+
+func image(_ image: UIImage, mode contentMode: UIView.ContentMode = .scaleAspectFit) -> (UIImageView) -> Void {
+    return { imageView in
+        imageView.image = image
+        imageView.contentMode = contentMode
+    }
+}
