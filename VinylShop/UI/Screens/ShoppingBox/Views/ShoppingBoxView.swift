@@ -16,6 +16,8 @@ class ShoppingBoxView: UIView {
         <> font(.nunito(.semibold), size: 26.0, color: .whiteFFFFFF)
 
     let itemView = ShoppingBoxItemView()
+    let topSeparatorView = ShoppingBoxSeparatorView()
+    let bottomSeparatorView = ShoppingBoxSeparatorView()
 
     init() {
         super.init(frame: .zero)
@@ -34,7 +36,7 @@ class ShoppingBoxView: UIView {
     // MARK: - Subviews
 
     private func addSubviews() {
-        [boxView, itemView, dismissIconView, titleLabel].forEach(addSubview)
+        [boxView, itemView, dismissIconView, titleLabel, topSeparatorView, bottomSeparatorView].forEach(addSubview)
     }
 
     // MARK: - Layout
@@ -44,15 +46,23 @@ class ShoppingBoxView: UIView {
         boxView.horizontalAnchors == horizontalAnchors
         boxView.bottomAnchor == bottomAnchor
 
-        itemView.horizontalAnchors == boxView.horizontalAnchors + 20
-        itemView.centerAnchors == boxView.centerAnchors
-
         dismissIconView.sizeAnchors == CGSize(width: 44, height: 11)
         dismissIconView.centerXAnchor == boxView.centerXAnchor
         dismissIconView.topAnchor == boxView.topAnchor + 20
 
         titleLabel.centerXAnchor == dismissIconView.centerXAnchor
         titleLabel.topAnchor == dismissIconView.bottomAnchor + 30
+
+        topSeparatorView.topAnchor == titleLabel.bottomAnchor + 30
+        topSeparatorView.horizontalAnchors == boxView.horizontalAnchors + 20
+        topSeparatorView.heightAnchor == 3
+
+        itemView.horizontalAnchors == topSeparatorView.horizontalAnchors
+        itemView.topAnchor == topSeparatorView.bottomAnchor + 30
+
+        bottomSeparatorView.horizontalAnchors == topSeparatorView.horizontalAnchors
+        bottomSeparatorView.topAnchor == itemView.bottomAnchor + 30
+        bottomSeparatorView.heightAnchor == 3
     }
 
     // MARK: - Required initializer
