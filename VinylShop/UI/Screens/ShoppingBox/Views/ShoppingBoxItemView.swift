@@ -8,17 +8,19 @@ class ShoppingBoxItemView: UIView {
 
     let titleLabel = UILabel(frame: .zero)
         |> text("We the generation")
-        <> font(.nunito(.semiBold), size: 16.0, color: .whiteFFFFFF)
+        <> font(.nunito(.semibold), size: 16.0, color: .whiteFFFFFF)
 
     let bandLabel = UILabel(frame: .zero)
         |> text("Rudimental")
-        <> font(.nunito(.semiBold), size: 12.0, color: .whiteFFFFFF, alpha: 0.6)
+        <> font(.nunito(.semibold), size: 12.0, color: .whiteFFFFFF, alpha: 0.6)
 
     let removeButton = UIButton(frame: .zero)
         |> { $0.setImage(#imageLiteral(resourceName: "remove_button"), for: .normal) }
 
     let separatorView = UIView(frame: .zero)
-        |> background(color: .grayD8D8D8, alpha: 0.6)
+        |> background(color: .whiteFFFFFF, alpha: 0.3)
+
+    let priceView = ShoppingBoxPriceView()
 
     init() {
         super.init(frame: .zero)
@@ -32,7 +34,7 @@ class ShoppingBoxItemView: UIView {
     private let coverCenterGuide = UILayoutGuide()
 
     private func addSubviews() {
-        [coverImageView, titleLabel, bandLabel, removeButton, separatorView].forEach(addSubview)
+        [coverImageView, titleLabel, bandLabel, removeButton, separatorView, priceView].forEach(addSubview)
         addLayoutGuide(coverCenterGuide)
     }
 
@@ -64,6 +66,9 @@ class ShoppingBoxItemView: UIView {
         separatorView.bottomAnchor == bottomAnchor
         separatorView.horizontalAnchors == horizontalAnchors
         separatorView.topAnchor == coverImageView.bottomAnchor + 12
+
+        priceView.centerYAnchor == titleLabel.centerYAnchor
+        priceView.leadingAnchor == titleLabel.trailingAnchor + 10
     }
 
     // MARK: - Required initializer

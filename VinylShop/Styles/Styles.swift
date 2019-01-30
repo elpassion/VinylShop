@@ -34,3 +34,10 @@ func text(_ text: String) -> (UILabel) -> Void {
         label.text = text
     }
 }
+
+func bordered(width: CGFloat, color: Color, alpha: CGFloat = 1.0) -> (UIView) -> Void {
+    return { view in
+        view.layer.borderWidth = width
+        view.layer.borderColor = UIColor(hex: color.rawValue).alpha(alpha).cgColor
+    }
+}

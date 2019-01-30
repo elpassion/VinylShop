@@ -13,7 +13,7 @@ class ShoppingBoxView: UIView {
 
     let titleLabel = UILabel(frame: .zero)
         |> text("Shopping Box")
-        <> font(.nunito(.semiBold), size: 26.0, color: .whiteFFFFFF)
+        <> font(.nunito(.semibold), size: 26.0, color: .whiteFFFFFF)
 
     let itemView = ShoppingBoxItemView()
 
