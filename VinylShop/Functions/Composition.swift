@@ -1,4 +1,9 @@
-infix operator <>
+precedencegroup SameTypeComposition {
+    associativity: left
+    higherThan: ForwardAppliance
+}
+
+infix operator <>: SameTypeComposition
 
 func <><A: AnyObject>(_ f: @escaping (A) -> Void, _ g: @escaping (A) -> Void) -> (A) -> Void {
     return { object in

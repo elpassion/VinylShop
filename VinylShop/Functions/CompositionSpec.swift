@@ -17,7 +17,7 @@ class CompositionSpec: QuickSpec {
                     sut = nil
                 }
 
-                describe("applied to the object") {
+                describe("applied to the sut") {
                     beforeEach {
                         let composed: (ComposedObject) -> Void = { $0.replace() } <> { $0.uppercase() }
                         composed(sut)

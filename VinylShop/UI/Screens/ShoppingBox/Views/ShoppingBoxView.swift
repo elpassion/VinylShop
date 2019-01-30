@@ -4,13 +4,9 @@ import UIKit
 
 class ShoppingBoxView: UIView {
 
-    let boxView: UIView = {
-        let view = UIView(frame: .zero)
-        view.backgroundColor = UIColor(hex: "#2FC5D8")
-        rounded(radius: 15, corners: .top)(view)
-
-        return view
-    }()
+    let boxView: UIView = UIView(frame: .zero)
+        |> rounded(radius: 15, corners: .top)
+        <> { $0.backgroundColor = UIColor(hex: "#2FC5D8") }
 
     init() {
         super.init(frame: .zero)
