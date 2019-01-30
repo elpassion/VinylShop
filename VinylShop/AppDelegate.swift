@@ -10,6 +10,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return window
     }()
 
+    // MARK: - UIApplicationDelegate
+
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window?.makeKeyAndVisible()
