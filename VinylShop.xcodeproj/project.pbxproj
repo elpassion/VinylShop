@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3267296E0E92B3427A98F06C /* ShoppingBoxController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672A71DA50C70573A71C91 /* ShoppingBoxController.swift */; };
+		3267297B92274149226E081C /* ShoppingBoxControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267238006141A1B85475512 /* ShoppingBoxControllerSpec.swift */; };
+		32672A2F7DC2A52208CB8620 /* SnapshotDiffToolConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672F1A82D35F25BD2C1B29 /* SnapshotDiffToolConfiguration.swift */; };
 		32672D8ADBD59DF9449BC506 /* AppDelegateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326725D3888B4977F02E29C8 /* AppDelegateSpec.swift */; };
 		8CFA76D32201DC8B00E4D81D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFA76D22201DC8B00E4D81D /* AppDelegate.swift */; };
 		8CFA76D52201DC8B00E4D81D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFA76D42201DC8B00E4D81D /* ViewController.swift */; };
@@ -16,6 +19,9 @@
 		8CFA76F62201E65100E4D81D /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CFA76F42201E65100E4D81D /* Quick.framework */; };
 		8CFA76FB2201E76B00E4D81D /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8CFA76F32201E65100E4D81D /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8CFA76FC2201E76B00E4D81D /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8CFA76F42201E65100E4D81D /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8CFA76FE2201EC4900E4D81D /* SnapshotTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CFA76FD2201EC4900E4D81D /* SnapshotTesting.framework */; };
+		8CFA77012201EDAF00E4D81D /* Anchorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CFA77002201EDAF00E4D81D /* Anchorage.framework */; };
+		8CFA77022201EDEC00E4D81D /* SnapshotTesting.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8CFA76FD2201EC4900E4D81D /* SnapshotTesting.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +41,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				8CFA77022201EDEC00E4D81D /* SnapshotTesting.framework in CopyFiles */,
 				8CFA76FB2201E76B00E4D81D /* Nimble.framework in CopyFiles */,
 				8CFA76FC2201E76B00E4D81D /* Quick.framework in CopyFiles */,
 			);
@@ -43,7 +50,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3267238006141A1B85475512 /* ShoppingBoxControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxControllerSpec.swift; sourceTree = "<group>"; };
 		326725D3888B4977F02E29C8 /* AppDelegateSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateSpec.swift; sourceTree = "<group>"; };
+		32672A71DA50C70573A71C91 /* ShoppingBoxController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxController.swift; sourceTree = "<group>"; };
+		32672F1A82D35F25BD2C1B29 /* SnapshotDiffToolConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotDiffToolConfiguration.swift; sourceTree = "<group>"; };
 		8CFA76CF2201DC8B00E4D81D /* VinylShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VinylShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CFA76D22201DC8B00E4D81D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CFA76D42201DC8B00E4D81D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +64,8 @@
 		8CFA76E92201DC8C00E4D81D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CFA76F32201E65100E4D81D /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		8CFA76F42201E65100E4D81D /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		8CFA76FD2201EC4900E4D81D /* SnapshotTesting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapshotTesting.framework; path = Carthage/Build/iOS/SnapshotTesting.framework; sourceTree = "<group>"; };
+		8CFA77002201EDAF00E4D81D /* Anchorage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Anchorage.framework; path = Carthage/Build/iOS/Anchorage.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CFA77012201EDAF00E4D81D /* Anchorage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +83,7 @@
 			files = (
 				8CFA76F52201E65100E4D81D /* Nimble.framework in Frameworks */,
 				8CFA76F62201E65100E4D81D /* Quick.framework in Frameworks */,
+				8CFA76FE2201EC4900E4D81D /* SnapshotTesting.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +117,7 @@
 				8CFA76D92201DC8C00E4D81D /* Assets.xcassets */,
 				8CFA76DB2201DC8C00E4D81D /* LaunchScreen.storyboard */,
 				8CFA76DE2201DC8C00E4D81D /* Info.plist */,
+				32672A71DA50C70573A71C91 /* ShoppingBoxController.swift */,
 			);
 			path = VinylShop;
 			sourceTree = "<group>";
@@ -112,6 +127,8 @@
 			children = (
 				8CFA76E92201DC8C00E4D81D /* Info.plist */,
 				326725D3888B4977F02E29C8 /* AppDelegateSpec.swift */,
+				3267238006141A1B85475512 /* ShoppingBoxControllerSpec.swift */,
+				32672F1A82D35F25BD2C1B29 /* SnapshotDiffToolConfiguration.swift */,
 			);
 			path = VinylShopTests;
 			sourceTree = "<group>";
@@ -119,6 +136,8 @@
 		8CFA76F22201E65100E4D81D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8CFA77002201EDAF00E4D81D /* Anchorage.framework */,
+				8CFA76FD2201EC4900E4D81D /* SnapshotTesting.framework */,
 				8CFA76F32201E65100E4D81D /* Nimble.framework */,
 				8CFA76F42201E65100E4D81D /* Quick.framework */,
 			);
@@ -133,6 +152,8 @@
 			buildConfigurationList = 8CFA76EC2201DC8C00E4D81D /* Build configuration list for PBXNativeTarget "VinylShop" */;
 			buildPhases = (
 				8CFA76CB2201DC8B00E4D81D /* Sources */,
+				8CFA77032201EE9F00E4D81D /* Carthage Copy Frameworks */,
+				8CFA77052201EEF700E4D81D /* Carthage Outdated Dependencies */,
 				8CFA76CC2201DC8B00E4D81D /* Frameworks */,
 				8CFA76CD2201DC8B00E4D81D /* Resources */,
 			);
@@ -221,6 +242,47 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8CFA77032201EE9F00E4D81D /* Carthage Copy Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Anchorage.framework",
+			);
+			name = "Carthage Copy Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Anchorage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		8CFA77052201EEF700E4D81D /* Carthage Outdated Dependencies */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Carthage Outdated Dependencies";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage outdated --xcode-warnings\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8CFA76CB2201DC8B00E4D81D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -228,6 +290,7 @@
 			files = (
 				8CFA76D52201DC8B00E4D81D /* ViewController.swift in Sources */,
 				8CFA76D32201DC8B00E4D81D /* AppDelegate.swift in Sources */,
+				3267296E0E92B3427A98F06C /* ShoppingBoxController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +299,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				32672D8ADBD59DF9449BC506 /* AppDelegateSpec.swift in Sources */,
+				3267297B92274149226E081C /* ShoppingBoxControllerSpec.swift in Sources */,
+				32672A2F7DC2A52208CB8620 /* SnapshotDiffToolConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +447,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = VinylShop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -399,6 +468,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = VinylShop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
