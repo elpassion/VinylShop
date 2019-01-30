@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3267296E0E92B3427A98F06C /* ShoppingBoxController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672A71DA50C70573A71C91 /* ShoppingBoxController.swift */; };
-		3267297B92274149226E081C /* ShoppingBoxControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267238006141A1B85475512 /* ShoppingBoxControllerSpec.swift */; };
+		326725D5281E8E88A54608BA /* ShoppingBoxController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326724E88E5186E5360C53BB /* ShoppingBoxController.swift */; };
+		326728245FDC15C17E529A87 /* ShoppingBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672B3020CF2515472B6E5B /* ShoppingBoxView.swift */; };
 		32672A2F7DC2A52208CB8620 /* SnapshotDiffToolConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672F1A82D35F25BD2C1B29 /* SnapshotDiffToolConfiguration.swift */; };
 		32672D8ADBD59DF9449BC506 /* AppDelegateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326725D3888B4977F02E29C8 /* AppDelegateSpec.swift */; };
+		32672FB9984B27608A77D966 /* ShoppingBoxControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326728130821FC372F765BF6 /* ShoppingBoxControllerSpec.swift */; };
 		8CFA76D32201DC8B00E4D81D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFA76D22201DC8B00E4D81D /* AppDelegate.swift */; };
 		8CFA76D52201DC8B00E4D81D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFA76D42201DC8B00E4D81D /* ViewController.swift */; };
 		8CFA76DA2201DC8C00E4D81D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CFA76D92201DC8C00E4D81D /* Assets.xcassets */; };
@@ -50,9 +51,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3267238006141A1B85475512 /* ShoppingBoxControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxControllerSpec.swift; sourceTree = "<group>"; };
+		326724E88E5186E5360C53BB /* ShoppingBoxController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxController.swift; sourceTree = "<group>"; };
 		326725D3888B4977F02E29C8 /* AppDelegateSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateSpec.swift; sourceTree = "<group>"; };
-		32672A71DA50C70573A71C91 /* ShoppingBoxController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxController.swift; sourceTree = "<group>"; };
+		326728130821FC372F765BF6 /* ShoppingBoxControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxControllerSpec.swift; sourceTree = "<group>"; };
+		32672B3020CF2515472B6E5B /* ShoppingBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxView.swift; sourceTree = "<group>"; };
 		32672F1A82D35F25BD2C1B29 /* SnapshotDiffToolConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotDiffToolConfiguration.swift; sourceTree = "<group>"; };
 		8CFA76CF2201DC8B00E4D81D /* VinylShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VinylShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CFA76D22201DC8B00E4D81D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +92,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		326720660B5E8851516BDBB4 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				326726527BC828DA04A6CE02 /* Screens */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		326722B6885BE8529CAFAC3F /* ShoppingBox */ = {
+			isa = PBXGroup;
+			children = (
+				326724E88E5186E5360C53BB /* ShoppingBoxController.swift */,
+				326728130821FC372F765BF6 /* ShoppingBoxControllerSpec.swift */,
+				3267260406B4AD3701859D5E /* Views */,
+			);
+			path = ShoppingBox;
+			sourceTree = "<group>";
+		};
+		3267260406B4AD3701859D5E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				32672B3020CF2515472B6E5B /* ShoppingBoxView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		326726527BC828DA04A6CE02 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				326722B6885BE8529CAFAC3F /* ShoppingBox */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 		8CFA76C62201DC8B00E4D81D = {
 			isa = PBXGroup;
 			children = (
@@ -117,7 +153,7 @@
 				8CFA76D92201DC8C00E4D81D /* Assets.xcassets */,
 				8CFA76DB2201DC8C00E4D81D /* LaunchScreen.storyboard */,
 				8CFA76DE2201DC8C00E4D81D /* Info.plist */,
-				32672A71DA50C70573A71C91 /* ShoppingBoxController.swift */,
+				326720660B5E8851516BDBB4 /* UI */,
 			);
 			path = VinylShop;
 			sourceTree = "<group>";
@@ -127,7 +163,6 @@
 			children = (
 				8CFA76E92201DC8C00E4D81D /* Info.plist */,
 				326725D3888B4977F02E29C8 /* AppDelegateSpec.swift */,
-				3267238006141A1B85475512 /* ShoppingBoxControllerSpec.swift */,
 				32672F1A82D35F25BD2C1B29 /* SnapshotDiffToolConfiguration.swift */,
 			);
 			path = VinylShopTests;
@@ -290,7 +325,8 @@
 			files = (
 				8CFA76D52201DC8B00E4D81D /* ViewController.swift in Sources */,
 				8CFA76D32201DC8B00E4D81D /* AppDelegate.swift in Sources */,
-				3267296E0E92B3427A98F06C /* ShoppingBoxController.swift in Sources */,
+				326725D5281E8E88A54608BA /* ShoppingBoxController.swift in Sources */,
+				326728245FDC15C17E529A87 /* ShoppingBoxView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,8 +335,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				32672D8ADBD59DF9449BC506 /* AppDelegateSpec.swift in Sources */,
-				3267297B92274149226E081C /* ShoppingBoxControllerSpec.swift in Sources */,
 				32672A2F7DC2A52208CB8620 /* SnapshotDiffToolConfiguration.swift in Sources */,
+				32672FB9984B27608A77D966 /* ShoppingBoxControllerSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
