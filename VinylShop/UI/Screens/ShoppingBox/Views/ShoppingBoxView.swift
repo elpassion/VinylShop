@@ -5,8 +5,8 @@ import UIKit
 class ShoppingBoxView: UIView {
 
     let boxView: UIView = UIView(frame: .zero)
-        |> rounded(radius: 15, corners: .top)
-        <> { $0.backgroundColor = UIColor(hex: "#2FC5D8") }
+        |> background(color: "#2FC5D8")
+        <> rounded(radius: 15, corners: .top)
 
     init() {
         super.init(frame: .zero)
