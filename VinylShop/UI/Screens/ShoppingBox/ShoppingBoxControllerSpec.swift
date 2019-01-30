@@ -19,6 +19,56 @@ class ShoppingBoxControllerSpec: QuickSpec {
                 sut = nil
             }
 
+            describe("view did load") {
+                beforeEach {
+                    _ = sut.view
+                }
+
+                describe("items view") {
+                    var items: [ShoppingBoxItemView]!
+
+                    beforeEach {
+                        items = sut.boxView.itemsView.stackView.arrangedSubviews.compactMap { $0 as? ShoppingBoxItemView }
+                    }
+
+                    afterEach {
+                        items = nil
+                    }
+
+                    it("should have 2 elements") {
+                        expect(items).to(haveCount(2))
+                    }
+
+                    describe("1st item view") {
+                        it("should have correct title") {
+                            expect(items.first?.titleLabel.text) == "We the generation"
+                        }
+
+                        it("should have correct band") {
+                            expect(items.first?.bandLabel.text) == "Rudimental"
+                        }
+
+                        it("should have visible separator") {
+                            expect(items.first?.separatorView.isHidden) == false
+                        }
+                    }
+
+                    describe("2nd item view") {
+                        it("should have correct title") {
+                            expect(items.last?.titleLabel.text) == "Appetite for Destruction"
+                        }
+
+                        it("should have correct band") {
+                            expect(items.last?.bandLabel.text) == "Guns N' Roses"
+                        }
+
+                        it("should have hidden separator") {
+                            expect(items.last?.separatorView.isHidden) == true
+                        }
+                    }
+                }
+            }
+
             context("embedded in other controller") {
                 var parent: UIViewController!
 

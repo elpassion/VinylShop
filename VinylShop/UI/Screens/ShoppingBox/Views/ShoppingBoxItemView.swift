@@ -41,7 +41,7 @@ class ShoppingBoxItemView: UIView {
     // MARK: - Layout
 
     private func setUpLayout() {
-        coverImageView.topAnchor == topAnchor
+        coverImageView.topAnchor == topAnchor + 14
         coverImageView.leadingAnchor == leadingAnchor
         coverImageView.sizeAnchors == CGSize(width: 52, height: 52)
 
@@ -65,7 +65,7 @@ class ShoppingBoxItemView: UIView {
         separatorView.heightAnchor == 1
         separatorView.bottomAnchor == bottomAnchor
         separatorView.horizontalAnchors == horizontalAnchors
-        separatorView.topAnchor == coverImageView.bottomAnchor + 12
+        separatorView.topAnchor == coverImageView.bottomAnchor + 14
 
         priceView.centerYAnchor == titleLabel.centerYAnchor
         priceView.leadingAnchor == titleLabel.trailingAnchor + 10

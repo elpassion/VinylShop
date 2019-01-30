@@ -58,10 +58,10 @@ class ShoppingBoxView: UIView {
         topSeparatorView.heightAnchor == 3
 
         itemsView.horizontalAnchors == topSeparatorView.horizontalAnchors
-        itemsView.topAnchor == topSeparatorView.bottomAnchor + 30
+        itemsView.topAnchor == topSeparatorView.bottomAnchor + 15
 
         bottomSeparatorView.horizontalAnchors == topSeparatorView.horizontalAnchors
-        bottomSeparatorView.topAnchor == itemsView.bottomAnchor + 18
+        bottomSeparatorView.topAnchor == itemsView.bottomAnchor + 15
         bottomSeparatorView.heightAnchor == 3
     }
 
