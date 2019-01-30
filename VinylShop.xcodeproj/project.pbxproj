@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32672D8ADBD59DF9449BC506 /* AppDelegateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326725D3888B4977F02E29C8 /* AppDelegateSpec.swift */; };
 		8CFA76D32201DC8B00E4D81D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFA76D22201DC8B00E4D81D /* AppDelegate.swift */; };
 		8CFA76D52201DC8B00E4D81D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFA76D42201DC8B00E4D81D /* ViewController.swift */; };
 		8CFA76D82201DC8B00E4D81D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CFA76D62201DC8B00E4D81D /* Main.storyboard */; };
 		8CFA76DA2201DC8C00E4D81D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CFA76D92201DC8C00E4D81D /* Assets.xcassets */; };
 		8CFA76DD2201DC8C00E4D81D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CFA76DB2201DC8C00E4D81D /* LaunchScreen.storyboard */; };
-		8CFA76E82201DC8C00E4D81D /* VinylShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFA76E72201DC8C00E4D81D /* VinylShopTests.swift */; };
+		8CFA76F52201E65100E4D81D /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CFA76F32201E65100E4D81D /* Nimble.framework */; };
+		8CFA76F62201E65100E4D81D /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CFA76F42201E65100E4D81D /* Quick.framework */; };
+		8CFA76FB2201E76B00E4D81D /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8CFA76F32201E65100E4D81D /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8CFA76FC2201E76B00E4D81D /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8CFA76F42201E65100E4D81D /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,7 +29,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		8CFA76FA2201E76200E4D81D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8CFA76FB2201E76B00E4D81D /* Nimble.framework in CopyFiles */,
+				8CFA76FC2201E76B00E4D81D /* Quick.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		326725D3888B4977F02E29C8 /* AppDelegateSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateSpec.swift; sourceTree = "<group>"; };
 		8CFA76CF2201DC8B00E4D81D /* VinylShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VinylShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CFA76D22201DC8B00E4D81D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CFA76D42201DC8B00E4D81D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -34,8 +53,9 @@
 		8CFA76DC2201DC8C00E4D81D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8CFA76DE2201DC8C00E4D81D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CFA76E32201DC8C00E4D81D /* VinylShopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VinylShopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8CFA76E72201DC8C00E4D81D /* VinylShopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinylShopTests.swift; sourceTree = "<group>"; };
 		8CFA76E92201DC8C00E4D81D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CFA76F32201E65100E4D81D /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		8CFA76F42201E65100E4D81D /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +70,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CFA76F52201E65100E4D81D /* Nimble.framework in Frameworks */,
+				8CFA76F62201E65100E4D81D /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +84,7 @@
 				8CFA76D12201DC8B00E4D81D /* VinylShop */,
 				8CFA76E62201DC8C00E4D81D /* VinylShopTests */,
 				8CFA76D02201DC8B00E4D81D /* Products */,
+				8CFA76F22201E65100E4D81D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,10 +113,19 @@
 		8CFA76E62201DC8C00E4D81D /* VinylShopTests */ = {
 			isa = PBXGroup;
 			children = (
-				8CFA76E72201DC8C00E4D81D /* VinylShopTests.swift */,
 				8CFA76E92201DC8C00E4D81D /* Info.plist */,
+				326725D3888B4977F02E29C8 /* AppDelegateSpec.swift */,
 			);
 			path = VinylShopTests;
+			sourceTree = "<group>";
+		};
+		8CFA76F22201E65100E4D81D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8CFA76F32201E65100E4D81D /* Nimble.framework */,
+				8CFA76F42201E65100E4D81D /* Quick.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +155,7 @@
 				8CFA76DF2201DC8C00E4D81D /* Sources */,
 				8CFA76E02201DC8C00E4D81D /* Frameworks */,
 				8CFA76E12201DC8C00E4D81D /* Resources */,
+				8CFA76FA2201E76200E4D81D /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -206,7 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CFA76E82201DC8C00E4D81D /* VinylShopTests.swift in Sources */,
+				32672D8ADBD59DF9449BC506 /* AppDelegateSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +429,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = VinylShopTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -416,6 +453,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = VinylShopTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
