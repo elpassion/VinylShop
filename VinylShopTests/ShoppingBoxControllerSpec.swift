@@ -38,8 +38,24 @@ class ShoppingBoxControllerSpec: QuickSpec {
                     parent = nil
                 }
 
-                it("should match snapshot") {
-                    assertSnapshot(matching: parent, as: .image)
+                it("should match snapshot on iPhone SE") {
+                    assertSnapshot(matching: parent, as: .image(on: .iPhoneSe))
+                }
+
+                it("should match snapshot on iPhone 8") {
+                    assertSnapshot(matching: parent, as: .image(on: .iPhone8))
+                }
+
+                it("should match snapshot on iPhone 8 Plus") {
+                    assertSnapshot(matching: parent, as: .image(on: .iPhone8Plus))
+                }
+
+                it("should match snapshot on iPhone X") {
+                    assertSnapshot(matching: parent, as: .image(on: .iPhoneX))
+                }
+
+                it("should match snapshot on iPhone Xs Max") {
+                    assertSnapshot(matching: parent, as: .image(on: .iPhoneXsMax))
                 }
             }
         }
