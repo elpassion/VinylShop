@@ -11,9 +11,12 @@ class ShoppingBarControllerSpec: QuickSpec {
 
             beforeEach {
                 sut = ShoppingBarController()
+
+                record = true
             }
 
             afterEach {
+                record = false
                 sut = nil
             }
 
