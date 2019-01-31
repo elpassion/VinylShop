@@ -61,6 +61,7 @@ class ShoppingBoxItemView: UIView {
         bandLabel.topAnchor == coverCenterGuide.bottomAnchor
         bandLabel.leadingAnchor == titleLabel.leadingAnchor
         bandLabel.bottomAnchor <= bottomAnchor
+        bandLabel.trailingAnchor <= titleLabel.trailingAnchor
 
         separatorView.heightAnchor == 1
         separatorView.bottomAnchor == bottomAnchor
@@ -69,6 +70,9 @@ class ShoppingBoxItemView: UIView {
 
         priceView.centerYAnchor == titleLabel.centerYAnchor
         priceView.leadingAnchor == titleLabel.trailingAnchor + 10
+        priceView.trailingAnchor <= removeButton.leadingAnchor - 10
+
+        titleLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
     }
 
     // MARK: - Required initializer
