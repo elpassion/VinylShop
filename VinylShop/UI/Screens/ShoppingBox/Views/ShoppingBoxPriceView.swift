@@ -7,13 +7,8 @@ class ShoppingBoxPriceView: UIView {
         |> bordered(width: 1, color: .whiteFFFFFF, alpha: 0.5)
         <> rounded(radius: 3.0)
 
-    let currencyLabel = UILabel(frame: .zero)
-        |> text("$")
-        <> font(.nunito(.bold), size: 10.0, color: .whiteFFFFFF)
-
     let priceLabel = UILabel(frame: .zero)
-        |> text("15")
-        <> font(.nunito(.bold), size: 14.0, color: .whiteFFFFFF)
+        |> text("<currency>$</currency> <price>15</price>", style: .itemPriceStyle)
 
     init() {
         super.init(frame: .zero)
@@ -25,7 +20,7 @@ class ShoppingBoxPriceView: UIView {
     // MARK: - Subviews
 
     private func addSubviews() {
-        [frameView, currencyLabel, priceLabel].forEach(addSubview)
+        [frameView, priceLabel].forEach(addSubview)
     }
 
     // MARK: - Layout
@@ -33,13 +28,9 @@ class ShoppingBoxPriceView: UIView {
     private func setUpLayout() {
         frameView.edgeAnchors == edgeAnchors
 
-        currencyLabel.leadingAnchor == frameView.leadingAnchor + 6
-        currencyLabel.centerYAnchor == frameView.centerYAnchor
-
         priceLabel.verticalAnchors == frameView.verticalAnchors + 1
-        priceLabel.leadingAnchor == currencyLabel.trailingAnchor + 3
+        priceLabel.leadingAnchor == frameView.leadingAnchor + 6
         priceLabel.trailingAnchor == frameView.trailingAnchor - 6
-        priceLabel.centerYAnchor == currencyLabel.centerYAnchor
     }
 
     // MARK: - Required initializer
