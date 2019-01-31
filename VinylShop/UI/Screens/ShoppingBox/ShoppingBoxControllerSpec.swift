@@ -82,8 +82,6 @@ class ShoppingBoxControllerSpec: QuickSpec {
                     sut.view.edgeAnchors == parent.view.edgeAnchors
 
                     sut.didMove(toParent: parent)
-
-                    record = true
                 }
 
                 afterEach {
