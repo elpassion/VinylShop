@@ -8,7 +8,7 @@ class ShoppingBoxFooterView: UIView {
         <> font(.nunito(.semibold), size: 14, color: .whiteFFFFFF)
 
     let priceLabel = UILabel(frame: .zero)
-        |> text("<currency>$</currency> <price>30</price>", style: .totalPriceStyle)
+        |> text("<currency>$</currency> <price>30</price>", style: .totalPriceBigStyle)
 
     let checkoutButton = UIButton(frame: .zero)
         |> checkoutButtonStyle()

@@ -13,7 +13,7 @@ func checkoutButtonStyle() -> (UIButton) -> Void {
 
 extension StringStyle {
 
-    static var totalPriceStyle: StringStyle {
+    static var totalPriceBigStyle: StringStyle {
         let currencyStyle = StringStyle(.font(.from(.nunito(.bold), ofSize: 20)), .baselineOffset(3))
         let priceStyle = StringStyle(.font(.from(.nunito(.bold), ofSize: 28)))
 

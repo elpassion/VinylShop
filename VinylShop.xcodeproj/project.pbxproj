@@ -35,6 +35,7 @@
 		326729975058D7976C62D978 /* CGContext+Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672F95C67E9276B2682706 /* CGContext+Globals.swift */; };
 		32672A3C1C9B55A91552BD42 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672AE680239A70B031D0F0 /* RoundedCorner.swift */; };
 		32672AA188204CAA73FA171B /* ShoppingBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326721011DF0C538E0989DE3 /* ShoppingBarView.swift */; };
+		32672D86F99CE9F22AC53CAD /* ShoppingBarStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672B47C7ACBEB50AD89823 /* ShoppingBarStyles.swift */; };
 		32672E225BB372FEACCDFDB1 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672E5BECAB5E8AA3B3D713 /* Album.swift */; };
 		32672E6AF0F897929D648415 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672BED0705778B22001111 /* Color.swift */; };
 		32672F01BC5D2D648DEA8C11 /* Appliance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267214B2128E42E7806BB23 /* Appliance.swift */; };
@@ -121,6 +122,7 @@
 		32672AD7C23E69A499813550 /* ShoppingBoxStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxStyles.swift; sourceTree = "<group>"; };
 		32672AE680239A70B031D0F0 /* RoundedCorner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		32672B3020CF2515472B6E5B /* ShoppingBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxView.swift; sourceTree = "<group>"; };
+		32672B47C7ACBEB50AD89823 /* ShoppingBarStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBarStyles.swift; sourceTree = "<group>"; };
 		32672B81873DCC9CF450CB27 /* ShoppingBoxFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxFooterView.swift; sourceTree = "<group>"; };
 		32672BCA382904451C4FEBF1 /* CGContext+DrawImageSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGContext+DrawImageSpec.swift"; sourceTree = "<group>"; };
 		32672BED0705778B22001111 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -375,6 +377,7 @@
 				3267237828F14E83A35A2770 /* ShoppingBarControllerSpec.swift */,
 				32672076101FBF6DCA4A2937 /* ShoppingBarController.swift */,
 				3267217E44E62BA41223A3B0 /* Views */,
+				32672FF0807FE0303FF6936B /* Styles */,
 			);
 			path = ShoppingBar;
 			sourceTree = "<group>";
@@ -422,6 +425,14 @@
 				3267232676CF985931F76135 /* Predicates */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		32672FF0807FE0303FF6936B /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				32672B47C7ACBEB50AD89823 /* ShoppingBarStyles.swift */,
+			);
+			path = Styles;
 			sourceTree = "<group>";
 		};
 		8C2243B2220211C800C3470B /* Assets */ = {
@@ -708,6 +719,7 @@
 				3267267ACE9FF34308BD5EF2 /* UIFont+Convenience.swift in Sources */,
 				32672532256CC5BB1289AED9 /* ShoppingBarController.swift in Sources */,
 				32672AA188204CAA73FA171B /* ShoppingBarView.swift in Sources */,
+				32672D86F99CE9F22AC53CAD /* ShoppingBarStyles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

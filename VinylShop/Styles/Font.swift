@@ -2,6 +2,7 @@ enum Font {
     enum Nunito: String {
         case semibold = "Nunito-SemiBold"
         case bold = "Nunito-Bold"
+        case extraBold = "Nunito-ExtraBold"
     }
 
     case nunito(Nunito)
