@@ -12,9 +12,11 @@ class ShoppingBoxFooterView: UIView {
         <> font(.nunito(.bold), size: 28, color: .whiteFFFFFF) // FIXME: $ should have a different font
 
     let checkoutButton = UIButton(frame: .zero)
-        |> title("Checkout", font: .nunito(.bold), size: 18, color: .blue2FC5D8)
-        <> rounded(radius: 24)
-        <> image(#imageLiteral(resourceName: "checkout_arrow"))
+        |> checkoutButtonStyle()
+        <> { $0.contentEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 25) }
+        <> { $0.titleEdgeInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0) }
+        <> { $0.imageEdgeInsets = .zero }
+        <> { $0.contentHorizontalAlignment = .center }
 
     init() {
         super.init(frame: .zero)
@@ -40,7 +42,7 @@ class ShoppingBoxFooterView: UIView {
 
         checkoutButton.trailingAnchor == trailingAnchor
         checkoutButton.verticalAnchors == verticalAnchors
-        checkoutButton.heightAnchor == 48
+        checkoutButton.sizeAnchors == CGSize(width: 180, height: 48)
     }
 
     // MARK: - Required initializer

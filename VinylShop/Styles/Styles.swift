@@ -64,3 +64,17 @@ func image(_ image: UIImage) -> (UIButton) -> Void {
         button.setImage(image, for: .normal)
     }
 }
+
+func backgroundColor(_ color: Color, alpha: CGFloat = 1.0) -> (UIButton) -> Void {
+    return { button in
+        button.setBackgroundImage(UIImage.color(color.ui(alpha: alpha)), for: .normal)
+    }
+}
+
+func flipTitleImage() -> (UIButton) -> Void {
+    return { button in
+        button.transform = CGAffineTransform(scaleX: -1, y: 1)
+        button.titleLabel?.transform = CGAffineTransform(scaleX: -1, y: 1)
+        button.imageView?.transform = CGAffineTransform(scaleX: -1, y: 1)
+    }
+}
