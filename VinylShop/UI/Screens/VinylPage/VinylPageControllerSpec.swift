@@ -39,7 +39,7 @@ class VinylPageControllerSpec: QuickSpec {
 
             context("with real bar controller") {
                 beforeEach {
-                    sut = VinylPageController(barControllerFactory: { ShoppingBarController() })
+                    sut = VinylPageController(barControllerFactory: ShoppingBarController.init)
                 }
 
                 it("should match snapshot on iPhone SE") {

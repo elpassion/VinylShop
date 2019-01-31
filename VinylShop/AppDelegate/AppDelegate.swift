@@ -5,7 +5,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     lazy var window: UIWindow? = {
         let window = UIWindow(frame: UIScreen.main.bounds)
-        window.rootViewController = ShoppingBoxController()
+        window.rootViewController = VinylPageController(barControllerFactory: ShoppingBarController.init)
 
         return window
     }()
