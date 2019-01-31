@@ -18,6 +18,7 @@
 		3267255DA6CB95D2D25F1451 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267270A4EB69958133B7A24 /* Styles.swift */; };
 		326725B60D2A34323456CEC7 /* AppDelegateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672597C6B12FBFFD07B57B /* AppDelegateSpec.swift */; };
 		326725D5281E8E88A54608BA /* ShoppingBoxController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326724E88E5186E5360C53BB /* ShoppingBoxController.swift */; };
+		32672627446C6FF3A837D48C /* UIViewControllerPredicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326728C7AD7901E1039E7164 /* UIViewControllerPredicate.swift */; };
 		3267267ACE9FF34308BD5EF2 /* UIFont+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267296229946757EEAEABDE /* UIFont+Convenience.swift */; };
 		32672681BBCAEB446548E977 /* ShoppingBoxPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672549DA59C2630442ED22 /* ShoppingBoxPriceView.swift */; };
 		326726D75CFC5FAAEF190469 /* UIStackView+ReplaceSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672FFA0D644C14D2F38740 /* UIStackView+ReplaceSubviews.swift */; };
@@ -122,6 +123,7 @@
 		326727D2522F5F3CD262A55D /* VinylPageControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VinylPageControllerSpec.swift; sourceTree = "<group>"; };
 		326727DB52EDAC1916033872 /* VinylPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VinylPageView.swift; sourceTree = "<group>"; };
 		326728130821FC372F765BF6 /* ShoppingBoxControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxControllerSpec.swift; sourceTree = "<group>"; };
+		326728C7AD7901E1039E7164 /* UIViewControllerPredicate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerPredicate.swift; sourceTree = "<group>"; };
 		3267294512FB162C8DF3AE65 /* UIViewController+ChildrenSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ChildrenSpec.swift"; sourceTree = "<group>"; };
 		3267296229946757EEAEABDE /* UIFont+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Convenience.swift"; sourceTree = "<group>"; };
 		32672AD7C23E69A499813550 /* ShoppingBoxStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxStyles.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				32672F83B16C96F68BF03EF6 /* UIImagePredicate.swift */,
+				326728C7AD7901E1039E7164 /* UIViewControllerPredicate.swift */,
 			);
 			path = Predicates;
 			sourceTree = "<group>";
@@ -757,6 +760,7 @@
 				326729327168E46CFB2F65D4 /* UIViewController+ChildrenSpec.swift in Sources */,
 				32672536137E871ECBF3C09E /* ShoppingBarControllerSpec.swift in Sources */,
 				32672B5CC1EB0A1A7BA9DC65 /* VinylPageControllerSpec.swift in Sources */,
+				32672627446C6FF3A837D48C /* UIViewControllerPredicate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

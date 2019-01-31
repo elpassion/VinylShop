@@ -2,6 +2,7 @@
 import Nimble
 import Quick
 import SnapshotTesting
+import UIKit
 
 class VinylPageControllerSpec: QuickSpec {
 
@@ -9,32 +10,57 @@ class VinylPageControllerSpec: QuickSpec {
         describe("VinylPageController") {
             var sut: VinylPageController!
 
-            beforeEach {
-                sut = VinylPageController()
-            }
-
             afterEach {
                 sut = nil
             }
 
-            it("should match snapshot on iPhone SE") {
-                assertSnapshot(matching: sut, as: .image(on: .iPhoneSe))
+            context("with a bar controller stub") {
+                var barControllerStub: UIViewController!
+
+                beforeEach {
+                    barControllerStub = UIViewController()
+                    sut = VinylPageController(barControllerFactory: { barControllerStub })
+                }
+
+                afterEach {
+                    barControllerStub = nil
+                }
+
+                describe("view did load") {
+                    beforeEach {
+                        _ = sut.view
+                    }
+
+                    it("should embed bar controller in a container view") {
+                        expect(sut).to(embed(controller: barControllerStub, in: sut.pageView.barContainerView))
+                    }
+                }
             }
 
-            it("should match snapshot on iPhone 8") {
-                assertSnapshot(matching: sut, as: .image(on: .iPhone8))
-            }
+            context("with real bar controller") {
+                beforeEach {
+                    sut = VinylPageController(barControllerFactory: { ShoppingBarController() })
+                }
 
-            it("should match snapshot on iPhone 8 Plus") {
-                assertSnapshot(matching: sut, as: .image(on: .iPhone8Plus))
-            }
+                it("should match snapshot on iPhone SE") {
+                    assertSnapshot(matching: sut, as: .image(on: .iPhoneSe))
+                }
 
-            it("should match snapshot on iPhone X") {
-                assertSnapshot(matching: sut, as: .image(on: .iPhoneX))
-            }
+                it("should match snapshot on iPhone 8") {
+                    assertSnapshot(matching: sut, as: .image(on: .iPhone8))
+                }
 
-            it("should match snapshot on iPhone Xs Max") {
-                assertSnapshot(matching: sut, as: .image(on: .iPhoneXsMax))
+                it("should match snapshot on iPhone 8 Plus") {
+                    assertSnapshot(matching: sut, as: .image(on: .iPhone8Plus))
+                }
+
+                it("should match snapshot on iPhone X") {
+                    assertSnapshot(matching: sut, as: .image(on: .iPhoneX))
+                }
+
+                it("should match snapshot on iPhone Xs Max") {
+                    assertSnapshot(matching: sut, as: .image(on: .iPhoneXsMax))
+                }
             }
         }
     }
