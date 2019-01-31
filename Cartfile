@@ -1,3 +1,4 @@
 github "Raizlabs/Anchorage" ~> 4.3
 github "hyperoslo/Hue" ~> 4.0
+github "Raizlabs/BonMot" ~> 5.3
 

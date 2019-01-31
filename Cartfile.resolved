@@ -1,5 +1,6 @@
 github "Quick/Nimble" "v7.3.3"
 github "Quick/Quick" "v1.3.4"
 github "Raizlabs/Anchorage" "4.3"
+github "Raizlabs/BonMot" "5.3"
 github "hyperoslo/Hue" "4.0.0"
 github "pointfreeco/swift-snapshot-testing" "1.1.0"

@@ -16,6 +16,7 @@
 		3267255DA6CB95D2D25F1451 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267270A4EB69958133B7A24 /* Styles.swift */; };
 		326725B60D2A34323456CEC7 /* AppDelegateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672597C6B12FBFFD07B57B /* AppDelegateSpec.swift */; };
 		326725D5281E8E88A54608BA /* ShoppingBoxController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326724E88E5186E5360C53BB /* ShoppingBoxController.swift */; };
+		3267267ACE9FF34308BD5EF2 /* UIFont+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267296229946757EEAEABDE /* UIFont+Convenience.swift */; };
 		32672681BBCAEB446548E977 /* ShoppingBoxPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672549DA59C2630442ED22 /* ShoppingBoxPriceView.swift */; };
 		326726D75CFC5FAAEF190469 /* UIStackView+ReplaceSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672FFA0D644C14D2F38740 /* UIStackView+ReplaceSubviews.swift */; };
 		3267272E7AFC942CF7674E1E /* UIBezierPath+LineInRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326726D9597284D35435DCDB /* UIBezierPath+LineInRectangle.swift */; };
@@ -53,6 +54,7 @@
 		8C2243CF2202125600C3470B /* Nunito-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C2243C12202125600C3470B /* Nunito-ExtraBold.ttf */; };
 		8C2243D02202125600C3470B /* Nunito-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C2243C22202125600C3470B /* Nunito-SemiBoldItalic.ttf */; };
 		8C2243D2220213A700C3470B /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2243D1220213A700C3470B /* Font.swift */; };
+		8CD3274222030922009711DA /* BonMot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CD3274122030922009711DA /* BonMot.framework */; };
 		8CFA76D52201DC8B00E4D81D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFA76D42201DC8B00E4D81D /* ViewController.swift */; };
 		8CFA76DA2201DC8C00E4D81D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CFA76D92201DC8C00E4D81D /* Assets.xcassets */; };
 		8CFA76DD2201DC8C00E4D81D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CFA76DB2201DC8C00E4D81D /* LaunchScreen.storyboard */; };
@@ -109,6 +111,7 @@
 		32672758F5AEE9FEC5CAF5F7 /* ShoppingBoxItemsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxItemsView.swift; sourceTree = "<group>"; };
 		326728130821FC372F765BF6 /* ShoppingBoxControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxControllerSpec.swift; sourceTree = "<group>"; };
 		3267294512FB162C8DF3AE65 /* UIViewController+ChildrenSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ChildrenSpec.swift"; sourceTree = "<group>"; };
+		3267296229946757EEAEABDE /* UIFont+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Convenience.swift"; sourceTree = "<group>"; };
 		32672AD7C23E69A499813550 /* ShoppingBoxStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxStyles.swift; sourceTree = "<group>"; };
 		32672AE680239A70B031D0F0 /* RoundedCorner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		32672B3020CF2515472B6E5B /* ShoppingBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxView.swift; sourceTree = "<group>"; };
@@ -138,6 +141,7 @@
 		8C2243C12202125600C3470B /* Nunito-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBold.ttf"; sourceTree = "<group>"; };
 		8C2243C22202125600C3470B /* Nunito-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		8C2243D1220213A700C3470B /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		8CD3274122030922009711DA /* BonMot.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BonMot.framework; path = Carthage/Build/iOS/BonMot.framework; sourceTree = "<group>"; };
 		8CFA76CF2201DC8B00E4D81D /* VinylShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VinylShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CFA76D42201DC8B00E4D81D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8CFA76D92201DC8C00E4D81D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -158,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CFA77012201EDAF00E4D81D /* Anchorage.framework in Frameworks */,
+				8CD3274222030922009711DA /* BonMot.framework in Frameworks */,
 				8CFA77082201F99A00E4D81D /* Hue.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,6 +276,7 @@
 				326723C7D2E90843B713781C /* UIImage */,
 				3267201EAC7DCE15C25904CA /* UIStackView */,
 				326725A05B7FFD9EC6057D2F /* UIViewController */,
+				32672B4F7718AF9689E3763A /* UIFont */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -322,6 +328,14 @@
 				3267270A4EB69958133B7A24 /* Styles.swift */,
 			);
 			path = Styles;
+			sourceTree = "<group>";
+		};
+		32672B4F7718AF9689E3763A /* UIFont */ = {
+			isa = PBXGroup;
+			children = (
+				3267296229946757EEAEABDE /* UIFont+Convenience.swift */,
+			);
+			path = UIFont;
 			sourceTree = "<group>";
 		};
 		32672CFAAE3B1ACA9DE1C614 /* Extensions */ = {
@@ -454,6 +468,7 @@
 		8CFA76F22201E65100E4D81D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8CD3274122030922009711DA /* BonMot.framework */,
 				8CFA77072201F99A00E4D81D /* Hue.framework */,
 				8CFA77002201EDAF00E4D81D /* Anchorage.framework */,
 				8CFA76FD2201EC4900E4D81D /* SnapshotTesting.framework */,
@@ -586,6 +601,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Anchorage.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Hue.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/BonMot.framework",
 			);
 			name = "Carthage Copy Frameworks";
 			outputFileListPaths = (
@@ -593,6 +609,7 @@
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Anchorage.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Hue.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/BonMot.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -647,6 +664,7 @@
 				3267248AF1A53F1BD2544336 /* UIImage+Color.swift in Sources */,
 				32672848E415A5994F8B13B5 /* ShoppingBoxStyles.swift in Sources */,
 				32672F749470BDAF17C3EEA4 /* UIViewController+Embed.swift in Sources */,
+				3267267ACE9FF34308BD5EF2 /* UIFont+Convenience.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

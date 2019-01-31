@@ -1,3 +1,4 @@
+import BonMot
 import Hue
 import UIKit
 
@@ -32,6 +33,12 @@ func font(_ font: Font, size: CGFloat, color: Color, alpha: CGFloat = 1.0) -> (U
 func text(_ text: String) -> (UILabel) -> Void {
     return { label in
         label.text = text
+    }
+}
+
+func text(_ text: String, style: StringStyle) -> (UILabel) -> Void {
+    return { label in
+        label.attributedText = text.styled(with: style)
     }
 }
 
