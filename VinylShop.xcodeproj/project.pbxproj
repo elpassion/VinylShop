@@ -26,6 +26,7 @@
 		326728245FDC15C17E529A87 /* ShoppingBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672B3020CF2515472B6E5B /* ShoppingBoxView.swift */; };
 		32672848E415A5994F8B13B5 /* ShoppingBoxStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672AD7C23E69A499813550 /* ShoppingBoxStyles.swift */; };
 		3267285FED249CC505AC098E /* ShoppingBoxPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326723004EC4EFEAE4668383 /* ShoppingBoxPresenter.swift */; };
+		326729327168E46CFB2F65D4 /* UIViewController+ChildrenSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267294512FB162C8DF3AE65 /* UIViewController+ChildrenSpec.swift */; };
 		3267293BC7D13AB8EA9B5C1B /* UIImagePredicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672F83B16C96F68BF03EF6 /* UIImagePredicate.swift */; };
 		32672968B43BF011B44A1CAD /* CGContext+DrawImageSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672BCA382904451C4FEBF1 /* CGContext+DrawImageSpec.swift */; };
 		326729975058D7976C62D978 /* CGContext+Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672F95C67E9276B2682706 /* CGContext+Globals.swift */; };
@@ -34,6 +35,7 @@
 		32672E6AF0F897929D648415 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672BED0705778B22001111 /* Color.swift */; };
 		32672F01BC5D2D648DEA8C11 /* Appliance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267214B2128E42E7806BB23 /* Appliance.swift */; };
 		32672F2B267BB5A747026B05 /* SnapshotDiffToolConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326721C215E4A730D48F81B8 /* SnapshotDiffToolConfiguration.swift */; };
+		32672F749470BDAF17C3EEA4 /* UIViewController+Embed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326720D6E6D09E96DDA07856 /* UIViewController+Embed.swift */; };
 		32672FB9984B27608A77D966 /* ShoppingBoxControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326728130821FC372F765BF6 /* ShoppingBoxControllerSpec.swift */; };
 		32672FFF6543A21405F89EAA /* ShoppingBoxItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672758F5AEE9FEC5CAF5F7 /* ShoppingBoxItemsView.swift */; };
 		8C2243C32202125600C3470B /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C2243B52202125600C3470B /* Nunito-Bold.ttf */; };
@@ -90,6 +92,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		326720D6E6D09E96DDA07856 /* UIViewController+Embed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Embed.swift"; sourceTree = "<group>"; };
 		3267214B2128E42E7806BB23 /* Appliance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appliance.swift; sourceTree = "<group>"; };
 		326721C215E4A730D48F81B8 /* SnapshotDiffToolConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotDiffToolConfiguration.swift; sourceTree = "<group>"; };
 		326723004EC4EFEAE4668383 /* ShoppingBoxPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxPresenter.swift; sourceTree = "<group>"; };
@@ -105,6 +108,7 @@
 		32672736279959EEE2EE7633 /* UIImage+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
 		32672758F5AEE9FEC5CAF5F7 /* ShoppingBoxItemsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxItemsView.swift; sourceTree = "<group>"; };
 		326728130821FC372F765BF6 /* ShoppingBoxControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxControllerSpec.swift; sourceTree = "<group>"; };
+		3267294512FB162C8DF3AE65 /* UIViewController+ChildrenSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ChildrenSpec.swift"; sourceTree = "<group>"; };
 		32672AD7C23E69A499813550 /* ShoppingBoxStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxStyles.swift; sourceTree = "<group>"; };
 		32672AE680239A70B031D0F0 /* RoundedCorner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		32672B3020CF2515472B6E5B /* ShoppingBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxView.swift; sourceTree = "<group>"; };
@@ -266,8 +270,18 @@
 				3267201EAC7DCE15C25904CA /* UIStackView */,
 				326720707CEA4ED2C55A3AE8 /* CGContext */,
 				326723C7D2E90843B713781C /* UIImage */,
+				326725A05B7FFD9EC6057D2F /* UIViewController */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		326725A05B7FFD9EC6057D2F /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3267294512FB162C8DF3AE65 /* UIViewController+ChildrenSpec.swift */,
+				326720D6E6D09E96DDA07856 /* UIViewController+Embed.swift */,
+			);
+			path = UIViewController;
 			sourceTree = "<group>";
 		};
 		3267260406B4AD3701859D5E /* Views */ = {
@@ -632,6 +646,7 @@
 				326729975058D7976C62D978 /* CGContext+Globals.swift in Sources */,
 				3267248AF1A53F1BD2544336 /* UIImage+Color.swift in Sources */,
 				32672848E415A5994F8B13B5 /* ShoppingBoxStyles.swift in Sources */,
+				32672F749470BDAF17C3EEA4 /* UIViewController+Embed.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -647,6 +662,7 @@
 				32672248680F89E556E0C4C5 /* CGContext+ResetGlobals.swift in Sources */,
 				32672F2B267BB5A747026B05 /* SnapshotDiffToolConfiguration.swift in Sources */,
 				3267293BC7D13AB8EA9B5C1B /* UIImagePredicate.swift in Sources */,
+				326729327168E46CFB2F65D4 /* UIViewController+ChildrenSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -76,12 +76,7 @@ class ShoppingBoxControllerSpec: QuickSpec {
                     parent = UIViewController()
                     parent.view.backgroundColor = .white
 
-                    sut.willMove(toParent: parent)
-                    parent.addChild(sut)
-                    parent.view.addSubview(sut.view)
-                    sut.view.edgeAnchors == parent.view.edgeAnchors
-
-                    sut.didMove(toParent: parent)
+                    parent.embed(childViewController: sut)
                 }
 
                 afterEach {
