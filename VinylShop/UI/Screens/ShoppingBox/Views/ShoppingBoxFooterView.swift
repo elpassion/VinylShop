@@ -13,10 +13,6 @@ class ShoppingBoxFooterView: UIView {
 
     let checkoutButton = UIButton(frame: .zero)
         |> checkoutButtonStyle()
-        <> { $0.contentEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 25) }
-        <> { $0.titleEdgeInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0) }
-        <> { $0.imageEdgeInsets = .zero }
-        <> { $0.contentHorizontalAlignment = .center }
 
     init() {
         super.init(frame: .zero)

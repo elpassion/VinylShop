@@ -6,4 +6,6 @@ func checkoutButtonStyle() -> (UIButton) -> Void {
         <> image(#imageLiteral(resourceName: "checkout_arrow"))
         <> backgroundColor(.whiteFFFFFF)
         <> flipTitleImage()
+        <> insetContent(left: 20, right: 25)
+        <> insetTitle(left: 16)
 }

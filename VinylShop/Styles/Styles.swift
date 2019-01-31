@@ -78,3 +78,21 @@ func flipTitleImage() -> (UIButton) -> Void {
         button.imageView?.transform = CGAffineTransform(scaleX: -1, y: 1)
     }
 }
+
+func insetContent(top: CGFloat = 0.0,
+                  left: CGFloat = 0.0,
+                  bottom: CGFloat = 0.0,
+                  right: CGFloat = 0.0) -> (UIButton) -> Void {
+    return { button in
+        button.contentEdgeInsets = UIEdgeInsets(top: top, left: left, bottom: bottom, right: right)
+    }
+}
+
+func insetTitle(top: CGFloat = 0.0,
+                left: CGFloat = 0.0,
+                bottom: CGFloat = 0.0,
+                right: CGFloat = 0.0) -> (UIButton) -> Void {
+    return { button in
+        button.titleEdgeInsets = UIEdgeInsets(top: top, left: left, bottom: bottom, right: right)
+    }
+}
