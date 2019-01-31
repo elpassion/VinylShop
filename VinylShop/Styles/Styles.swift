@@ -50,3 +50,17 @@ func fillVertical(spacing: CGFloat = 0.0) -> (UIStackView) -> Void {
         stackView.spacing = spacing
     }
 }
+
+func title(_ title: String, font: Font, size: CGFloat, color: Color, alpha: CGFloat = 1.0) -> (UIButton) -> Void {
+    return { button in
+        button.titleLabel?.font = UIFont(name: font.name, size: size)
+        button.setTitle(title, for: .normal)
+        button.setTitleColor(color.ui(alpha: alpha), for: .normal)
+    }
+}
+
+func image(_ image: UIImage) -> (UIButton) -> Void {
+    return { button in
+        button.setImage(image, for: .normal)
+    }
+}

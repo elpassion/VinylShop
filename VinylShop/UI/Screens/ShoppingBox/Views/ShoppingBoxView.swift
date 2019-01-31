@@ -18,6 +18,7 @@ class ShoppingBoxView: UIView {
     let itemsView = ShoppingBoxItemsView()
     let topSeparatorView = ShoppingBoxSeparatorView()
     let bottomSeparatorView = ShoppingBoxSeparatorView()
+    let footerView = ShoppingBoxFooterView()
 
     init() {
         super.init(frame: .zero)
@@ -36,13 +37,13 @@ class ShoppingBoxView: UIView {
     // MARK: - Subviews
 
     private func addSubviews() {
-        [boxView, itemsView, dismissIconView, titleLabel, topSeparatorView, bottomSeparatorView].forEach(addSubview)
+        [boxView, itemsView, dismissIconView, titleLabel, topSeparatorView, bottomSeparatorView, footerView]
+            .forEach(addSubview)
     }
 
     // MARK: - Layout
 
     private func setUpLayout() {
-        boxView.heightAnchor == heightAnchor * 0.6
         boxView.horizontalAnchors == horizontalAnchors
         boxView.bottomAnchor == bottomAnchor
 
@@ -63,6 +64,10 @@ class ShoppingBoxView: UIView {
         bottomSeparatorView.horizontalAnchors == topSeparatorView.horizontalAnchors
         bottomSeparatorView.topAnchor == itemsView.bottomAnchor + 15
         bottomSeparatorView.heightAnchor == 3
+
+        footerView.topAnchor == bottomSeparatorView.bottomAnchor + 30
+        footerView.bottomAnchor == boxView.bottomAnchor - 30
+        footerView.horizontalAnchors == topSeparatorView.horizontalAnchors
     }
 
     // MARK: - Required initializer
