@@ -3,14 +3,14 @@ import Nimble
 import Quick
 import SnapshotTesting
 
-class ShoppingBarControllerSpec: QuickSpec {
+class VinylPageControllerSpec: QuickSpec {
 
     override func spec() {
-        describe("ShoppingBarController") {
-            var sut: ShoppingBarController!
+        describe("VinylPageController") {
+            var sut: VinylPageController!
 
             beforeEach {
-                sut = ShoppingBarController()
+                sut = VinylPageController()
             }
 
             afterEach {
