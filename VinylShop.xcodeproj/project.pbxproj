@@ -195,8 +195,8 @@
 			isa = PBXGroup;
 			children = (
 				32672CD2E78E0836ACDEC574 /* CGContext+DrawImage.swift */,
-				32672F95C67E9276B2682706 /* CGContext+Globals.swift */,
 				32672BCA382904451C4FEBF1 /* CGContext+DrawImageSpec.swift */,
+				32672F95C67E9276B2682706 /* CGContext+Globals.swift */,
 			);
 			path = CGContext;
 			sourceTree = "<group>";
@@ -237,12 +237,12 @@
 		326722B6885BE8529CAFAC3F /* ShoppingBox */ = {
 			isa = PBXGroup;
 			children = (
+				32672E3276BA7CDC8B1544C5 /* Models */,
+				326720A320C7D1686B3B26B3 /* Presentation */,
+				3267220802A73CEE9A38B5EC /* Styles */,
+				3267260406B4AD3701859D5E /* Views */,
 				326724E88E5186E5360C53BB /* ShoppingBoxController.swift */,
 				326728130821FC372F765BF6 /* ShoppingBoxControllerSpec.swift */,
-				3267260406B4AD3701859D5E /* Views */,
-				326720A320C7D1686B3B26B3 /* Presentation */,
-				32672E3276BA7CDC8B1544C5 /* Models */,
-				3267220802A73CEE9A38B5EC /* Styles */,
 			);
 			path = ShoppingBox;
 			sourceTree = "<group>";
@@ -266,10 +266,10 @@
 		3267258B44B2884691070141 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				3267207C95B21E5CF77FC1C1 /* UIBezierPath */,
-				3267201EAC7DCE15C25904CA /* UIStackView */,
 				326720707CEA4ED2C55A3AE8 /* CGContext */,
+				3267207C95B21E5CF77FC1C1 /* UIBezierPath */,
 				326723C7D2E90843B713781C /* UIImage */,
+				3267201EAC7DCE15C25904CA /* UIStackView */,
 				326725A05B7FFD9EC6057D2F /* UIViewController */,
 			);
 			path = Extensions;
@@ -287,12 +287,12 @@
 		3267260406B4AD3701859D5E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				32672B3020CF2515472B6E5B /* ShoppingBoxView.swift */,
+				32672B81873DCC9CF450CB27 /* ShoppingBoxFooterView.swift */,
 				32672E2FFFCC144250301C26 /* ShoppingBoxItemView.swift */,
+				32672758F5AEE9FEC5CAF5F7 /* ShoppingBoxItemsView.swift */,
 				32672549DA59C2630442ED22 /* ShoppingBoxPriceView.swift */,
 				326723B77BCBF76B8B861426 /* ShoppingBoxSeparatorView.swift */,
-				32672758F5AEE9FEC5CAF5F7 /* ShoppingBoxItemsView.swift */,
-				32672B81873DCC9CF450CB27 /* ShoppingBoxFooterView.swift */,
+				32672B3020CF2515472B6E5B /* ShoppingBoxView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -316,10 +316,10 @@
 		326728F87C8E3A196A220865 /* Styles */ = {
 			isa = PBXGroup;
 			children = (
-				3267270A4EB69958133B7A24 /* Styles.swift */,
-				32672AE680239A70B031D0F0 /* RoundedCorner.swift */,
 				32672BED0705778B22001111 /* Color.swift */,
 				8C2243D1220213A700C3470B /* Font.swift */,
+				32672AE680239A70B031D0F0 /* RoundedCorner.swift */,
+				3267270A4EB69958133B7A24 /* Styles.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -351,10 +351,10 @@
 		32672EBAACC8FE11E011AA0D /* Functions */ = {
 			isa = PBXGroup;
 			children = (
-				32672696104257987B079EC4 /* CompositionSpec.swift */,
-				326724162483BD5825424EF9 /* Composition.swift */,
-				32672E479F609D652BA12E76 /* ApplianceSpec.swift */,
 				3267214B2128E42E7806BB23 /* Appliance.swift */,
+				32672E479F609D652BA12E76 /* ApplianceSpec.swift */,
+				326724162483BD5825424EF9 /* Composition.swift */,
+				32672696104257987B079EC4 /* CompositionSpec.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -362,8 +362,8 @@
 		32672FE9056FD204EBE9A1C7 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				32672CFAAE3B1ACA9DE1C614 /* Extensions */,
 				32672D51B1B16D89C4248069 /* Configurations */,
+				32672CFAAE3B1ACA9DE1C614 /* Extensions */,
 				3267232676CF985931F76135 /* Predicates */,
 			);
 			path = Utilities;
@@ -410,10 +410,10 @@
 		8CFA76C62201DC8B00E4D81D = {
 			isa = PBXGroup;
 			children = (
+				8CFA76F22201E65100E4D81D /* Frameworks */,
+				8CFA76D02201DC8B00E4D81D /* Products */,
 				8CFA76D12201DC8B00E4D81D /* VinylShop */,
 				8CFA76E62201DC8C00E4D81D /* VinylShopTests */,
-				8CFA76D02201DC8B00E4D81D /* Products */,
-				8CFA76F22201E65100E4D81D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -429,16 +429,16 @@
 		8CFA76D12201DC8B00E4D81D /* VinylShop */ = {
 			isa = PBXGroup;
 			children = (
-				8C2243B2220211C800C3470B /* Assets */,
-				8CFA76D42201DC8B00E4D81D /* ViewController.swift */,
-				8CFA76DB2201DC8C00E4D81D /* LaunchScreen.storyboard */,
-				8CFA76DE2201DC8C00E4D81D /* Info.plist */,
-				326720660B5E8851516BDBB4 /* UI */,
 				326720921977EC77209C8994 /* AppDelegate */,
-				326728F87C8E3A196A220865 /* Styles */,
-				32672EBAACC8FE11E011AA0D /* Functions */,
+				8C2243B2220211C800C3470B /* Assets */,
 				3267258B44B2884691070141 /* Extensions */,
+				32672EBAACC8FE11E011AA0D /* Functions */,
+				326728F87C8E3A196A220865 /* Styles */,
 				326726EBC31BB9CCB0A9677C /* Tests */,
+				326720660B5E8851516BDBB4 /* UI */,
+				8CFA76DE2201DC8C00E4D81D /* Info.plist */,
+				8CFA76DB2201DC8C00E4D81D /* LaunchScreen.storyboard */,
+				8CFA76D42201DC8B00E4D81D /* ViewController.swift */,
 			);
 			path = VinylShop;
 			sourceTree = "<group>";
