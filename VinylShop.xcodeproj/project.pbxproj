@@ -29,6 +29,7 @@
 		326728245FDC15C17E529A87 /* ShoppingBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672B3020CF2515472B6E5B /* ShoppingBoxView.swift */; };
 		32672848E415A5994F8B13B5 /* ShoppingBoxStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672AD7C23E69A499813550 /* ShoppingBoxStyles.swift */; };
 		3267285FED249CC505AC098E /* ShoppingBoxPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326723004EC4EFEAE4668383 /* ShoppingBoxPresenter.swift */; };
+		3267291DD36F756FC71B1234 /* VinylPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326727DB52EDAC1916033872 /* VinylPageView.swift */; };
 		326729327168E46CFB2F65D4 /* UIViewController+ChildrenSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267294512FB162C8DF3AE65 /* UIViewController+ChildrenSpec.swift */; };
 		3267293BC7D13AB8EA9B5C1B /* UIImagePredicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672F83B16C96F68BF03EF6 /* UIImagePredicate.swift */; };
 		32672968B43BF011B44A1CAD /* CGContext+DrawImageSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672BCA382904451C4FEBF1 /* CGContext+DrawImageSpec.swift */; };
@@ -119,6 +120,7 @@
 		32672736279959EEE2EE7633 /* UIImage+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
 		32672758F5AEE9FEC5CAF5F7 /* ShoppingBoxItemsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxItemsView.swift; sourceTree = "<group>"; };
 		326727D2522F5F3CD262A55D /* VinylPageControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VinylPageControllerSpec.swift; sourceTree = "<group>"; };
+		326727DB52EDAC1916033872 /* VinylPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VinylPageView.swift; sourceTree = "<group>"; };
 		326728130821FC372F765BF6 /* ShoppingBoxControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxControllerSpec.swift; sourceTree = "<group>"; };
 		3267294512FB162C8DF3AE65 /* UIViewController+ChildrenSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ChildrenSpec.swift"; sourceTree = "<group>"; };
 		3267296229946757EEAEABDE /* UIFont+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Convenience.swift"; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 				3267218983D941282352EE3E /* Children */,
 				326727D2522F5F3CD262A55D /* VinylPageControllerSpec.swift */,
 				32672D8F49E1E6DE7D4CC814 /* VinylPageController.swift */,
+				32672F81DC7B34389232338F /* Views */,
 			);
 			path = VinylPage;
 			sourceTree = "<group>";
@@ -421,6 +424,14 @@
 				32672696104257987B079EC4 /* CompositionSpec.swift */,
 			);
 			path = Functions;
+			sourceTree = "<group>";
+		};
+		32672F81DC7B34389232338F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				326727DB52EDAC1916033872 /* VinylPageView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		32672FE9056FD204EBE9A1C7 /* Utilities */ = {
@@ -727,6 +738,7 @@
 				32672AA188204CAA73FA171B /* ShoppingBarView.swift in Sources */,
 				32672D86F99CE9F22AC53CAD /* ShoppingBarStyles.swift in Sources */,
 				32672E02374D316A29D283EF /* VinylPageController.swift in Sources */,
+				3267291DD36F756FC71B1234 /* VinylPageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
