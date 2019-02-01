@@ -37,14 +37,14 @@ class PresentationContext_ShoppingBoxSpec: QuickSpec {
                 expect(sut.transitionStyle) == .crossDissolve
             }
 
-            it("should NOT have present animator") {
+            it("should have present animator of ShoppingBoxPresentationAnimator type") {
                 let presentAnimator = sut.transitioningDelegate.animationController?(
                     forPresented: UIViewController(),
                     presenting: UIViewController(),
                     source: UIViewController()
                 )
 
-                expect(presentAnimator).to(beNil())
+                expect(presentAnimator).to(beAnInstanceOf(ShoppingBoxPresentationAnimator.self))
             }
 
             it("should NOT have dismiss animator") {

@@ -9,7 +9,6 @@ class ShoppingBoxPresentationAnimator: NSObject, UIViewControllerAnimatedTransit
     }
 
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-
     }
 
 }
