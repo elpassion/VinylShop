@@ -44,7 +44,7 @@
 		32672E6AF0F897929D648415 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672BED0705778B22001111 /* Color.swift */; };
 		32672F01BC5D2D648DEA8C11 /* Appliance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267214B2128E42E7806BB23 /* Appliance.swift */; };
 		32672F2B267BB5A747026B05 /* SnapshotDiffToolConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326721C215E4A730D48F81B8 /* SnapshotDiffToolConfiguration.swift */; };
-		32672F749470BDAF17C3EEA4 /* UIViewController+Embed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326720D6E6D09E96DDA07856 /* UIViewController+Embed.swift */; };
+		32672F749470BDAF17C3EEA4 /* UIViewController+Children.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326720D6E6D09E96DDA07856 /* UIViewController+Children.swift */; };
 		32672FB9984B27608A77D966 /* ShoppingBoxControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326728130821FC372F765BF6 /* ShoppingBoxControllerSpec.swift */; };
 		32672FFF6543A21405F89EAA /* ShoppingBoxItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672758F5AEE9FEC5CAF5F7 /* ShoppingBoxItemsView.swift */; };
 		8C2243C32202125600C3470B /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C2243B52202125600C3470B /* Nunito-Bold.ttf */; };
@@ -103,7 +103,7 @@
 
 /* Begin PBXFileReference section */
 		32672076101FBF6DCA4A2937 /* ShoppingBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBarController.swift; sourceTree = "<group>"; };
-		326720D6E6D09E96DDA07856 /* UIViewController+Embed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Embed.swift"; sourceTree = "<group>"; };
+		326720D6E6D09E96DDA07856 /* UIViewController+Children.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Children.swift"; sourceTree = "<group>"; };
 		326721011DF0C538E0989DE3 /* ShoppingBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBarView.swift; sourceTree = "<group>"; };
 		3267214B2128E42E7806BB23 /* Appliance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appliance.swift; sourceTree = "<group>"; };
 		326721C215E4A730D48F81B8 /* SnapshotDiffToolConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotDiffToolConfiguration.swift; sourceTree = "<group>"; };
@@ -318,7 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				3267294512FB162C8DF3AE65 /* UIViewController+ChildrenSpec.swift */,
-				326720D6E6D09E96DDA07856 /* UIViewController+Embed.swift */,
+				326720D6E6D09E96DDA07856 /* UIViewController+Children.swift */,
 			);
 			path = UIViewController;
 			sourceTree = "<group>";
@@ -735,7 +735,7 @@
 				326729975058D7976C62D978 /* CGContext+Globals.swift in Sources */,
 				3267248AF1A53F1BD2544336 /* UIImage+Color.swift in Sources */,
 				32672848E415A5994F8B13B5 /* ShoppingBoxStyles.swift in Sources */,
-				32672F749470BDAF17C3EEA4 /* UIViewController+Embed.swift in Sources */,
+				32672F749470BDAF17C3EEA4 /* UIViewController+Children.swift in Sources */,
 				3267267ACE9FF34308BD5EF2 /* UIFont+Convenience.swift in Sources */,
 				32672532256CC5BB1289AED9 /* ShoppingBarController.swift in Sources */,
 				32672AA188204CAA73FA171B /* ShoppingBarView.swift in Sources */,
