@@ -23,6 +23,17 @@ class EnvironmentSpec: QuickSpec {
                 }
             }
 
+            describe("navigation controller") {
+                it("should have correct root view controller set") {
+                    expect(sut.navigationController.viewControllers).to(haveCount(1))
+                    expect(sut.navigationController.viewControllers.first).to(beAnInstanceOf(VinylPageController.self))
+                }
+
+                it("should have navigation bar hidden") {
+                    expect(sut.navigationController.navigationBar.isHidden) == true
+                }
+            }
+
             describe("presentation") {
                 var rootViewController: UIViewController?
                 var stubbedCurrentController: UIViewController!

@@ -2,7 +2,7 @@ import UIKit
 
 class VinylPageController: UIViewController {
 
-    init(barControllerFactory: @escaping () -> UIViewController) {
+    init(barControllerFactory: @escaping () -> UIViewController = ShoppingBarController.init) {
         self.barControllerFactory = barControllerFactory
 
         super.init(nibName: nil, bundle: nil)

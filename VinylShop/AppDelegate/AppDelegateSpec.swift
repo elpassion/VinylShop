@@ -45,8 +45,8 @@ class AppDelegateSpec: QuickSpec {
                         expect(sut.window?.isKeyWindow) == true
                     }
 
-                    it("should have a root view controller of VinylPageController class") {
-                        expect(sut.window?.rootViewController).to(beAnInstanceOf(VinylPageController.self))
+                    it("should have a root view controller from Environment set") {
+                        expect(sut.window?.rootViewController) === Environment.shared.navigationController
                     }
                 }
             }
