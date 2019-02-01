@@ -351,12 +351,12 @@
 			isa = PBXGroup;
 			children = (
 				326720707CEA4ED2C55A3AE8 /* CGContext */,
+				32672AA1460599CA5F74F9E4 /* Priority */,
 				3267207C95B21E5CF77FC1C1 /* UIBezierPath */,
 				32672B4F7718AF9689E3763A /* UIFont */,
 				326723C7D2E90843B713781C /* UIImage */,
 				3267201EAC7DCE15C25904CA /* UIStackView */,
 				326725A05B7FFD9EC6057D2F /* UIViewController */,
-				32672AA1460599CA5F74F9E4 /* Priority */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -406,8 +406,8 @@
 		326726D921A9EF506933D5A0 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
-				32672197DA09002F2A71F359 /* ShoppingBoxPresentationAnimatorSpec.swift */,
 				32672EA4DBE7AFBD43C23AA6 /* ShoppingBoxPresentationAnimator.swift */,
+				32672197DA09002F2A71F359 /* ShoppingBoxPresentationAnimatorSpec.swift */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -423,13 +423,13 @@
 		326727D682D021F746C94C6D /* VinylPage */ = {
 			isa = PBXGroup;
 			children = (
+				326726D921A9EF506933D5A0 /* Animations */,
 				3267218983D941282352EE3E /* Children */,
 				32672F7B77B3B93905CF225D /* Doubles */,
 				326728B929B497EFE9B015FA /* Extensions */,
 				32672F81DC7B34389232338F /* Views */,
 				32672D8F49E1E6DE7D4CC814 /* VinylPageController.swift */,
 				326727D2522F5F3CD262A55D /* VinylPageControllerSpec.swift */,
-				326726D921A9EF506933D5A0 /* Animations */,
 			);
 			path = VinylPage;
 			sourceTree = "<group>";
