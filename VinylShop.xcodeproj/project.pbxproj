@@ -46,8 +46,10 @@
 		32672A33CF7FA5C0634F7A89 /* PresentationEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267237F423588A347BC818B /* PresentationEnvironment.swift */; };
 		32672A3C1C9B55A91552BD42 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672AE680239A70B031D0F0 /* RoundedCorner.swift */; };
 		32672AA188204CAA73FA171B /* ShoppingBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326721011DF0C538E0989DE3 /* ShoppingBarView.swift */; };
+		32672B0E48BCE07AE11F27BB /* ShoppingBoxPresentationAnimatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672197DA09002F2A71F359 /* ShoppingBoxPresentationAnimatorSpec.swift */; };
 		32672B5CC1EB0A1A7BA9DC65 /* VinylPageControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326727D2522F5F3CD262A55D /* VinylPageControllerSpec.swift */; };
 		32672B664CAFE0CAE9C1D5AC /* PresentationTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326722C32EAE7300DA701560 /* PresentationTransitioningDelegate.swift */; };
+		32672C7C00F948BCC6E88E76 /* ShoppingBoxPresentationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672EA4DBE7AFBD43C23AA6 /* ShoppingBoxPresentationAnimator.swift */; };
 		32672D86F99CE9F22AC53CAD /* ShoppingBarStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672B47C7ACBEB50AD89823 /* ShoppingBarStyles.swift */; };
 		32672DD096CE5026AD81A277 /* PresentationContextID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267277C57970384AAFD46DB /* PresentationContextID.swift */; };
 		32672E02374D316A29D283EF /* VinylPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672D8F49E1E6DE7D4CC814 /* VinylPageController.swift */; };
@@ -119,6 +121,7 @@
 		326721011DF0C538E0989DE3 /* ShoppingBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBarView.swift; sourceTree = "<group>"; };
 		3267211C332AF2FBCCDB9AE6 /* ShoppingBarControllerStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBarControllerStub.swift; sourceTree = "<group>"; };
 		3267214B2128E42E7806BB23 /* Appliance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appliance.swift; sourceTree = "<group>"; };
+		32672197DA09002F2A71F359 /* ShoppingBoxPresentationAnimatorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxPresentationAnimatorSpec.swift; sourceTree = "<group>"; };
 		326721C215E4A730D48F81B8 /* SnapshotDiffToolConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotDiffToolConfiguration.swift; sourceTree = "<group>"; };
 		326722C32EAE7300DA701560 /* PresentationTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationTransitioningDelegate.swift; sourceTree = "<group>"; };
 		326723004EC4EFEAE4668383 /* ShoppingBoxPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxPresenter.swift; sourceTree = "<group>"; };
@@ -163,6 +166,7 @@
 		32672E2FFFCC144250301C26 /* ShoppingBoxItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxItemView.swift; sourceTree = "<group>"; };
 		32672E479F609D652BA12E76 /* ApplianceSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplianceSpec.swift; sourceTree = "<group>"; };
 		32672E5BECAB5E8AA3B3D713 /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		32672EA4DBE7AFBD43C23AA6 /* ShoppingBoxPresentationAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxPresentationAnimator.swift; sourceTree = "<group>"; };
 		32672F83B16C96F68BF03EF6 /* UIImagePredicate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImagePredicate.swift; sourceTree = "<group>"; };
 		32672F95C67E9276B2682706 /* CGContext+Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGContext+Globals.swift"; sourceTree = "<group>"; };
 		32672FFA0D644C14D2F38740 /* UIStackView+ReplaceSubviews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+ReplaceSubviews.swift"; sourceTree = "<group>"; };
@@ -396,6 +400,15 @@
 			path = Presentation;
 			sourceTree = "<group>";
 		};
+		326726D921A9EF506933D5A0 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				32672197DA09002F2A71F359 /* ShoppingBoxPresentationAnimatorSpec.swift */,
+				32672EA4DBE7AFBD43C23AA6 /* ShoppingBoxPresentationAnimator.swift */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
 		326726EBC31BB9CCB0A9677C /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -413,6 +426,7 @@
 				32672F81DC7B34389232338F /* Views */,
 				32672D8F49E1E6DE7D4CC814 /* VinylPageController.swift */,
 				326727D2522F5F3CD262A55D /* VinylPageControllerSpec.swift */,
+				326726D921A9EF506933D5A0 /* Animations */,
 			);
 			path = VinylPage;
 			sourceTree = "<group>";
@@ -833,6 +847,7 @@
 				32672DD096CE5026AD81A277 /* PresentationContextID.swift in Sources */,
 				326729129FDAA43E348F7C51 /* PresentationContext+ShoppingBox.swift in Sources */,
 				32672EE55BE23CD52D78FE4B /* ShoppingBarControlling.swift in Sources */,
+				32672C7C00F948BCC6E88E76 /* ShoppingBoxPresentationAnimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -857,6 +872,7 @@
 				3267219FF3D8B9B21891CCE2 /* UIControl+SimulateTap.swift in Sources */,
 				326726454DC267F6BA11447B /* ShoppingBarControllerStub.swift in Sources */,
 				326722A597A7EC2E2F3E4BCD /* EnvironmentSpy.swift in Sources */,
+				32672B0E48BCE07AE11F27BB /* ShoppingBoxPresentationAnimatorSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
