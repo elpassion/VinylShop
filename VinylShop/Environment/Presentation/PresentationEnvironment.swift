@@ -1,0 +1,29 @@
+import UIKit
+
+class PresentationEnvironment {
+
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
+    }
+
+    // MARK: - Public API
+
+    func present(context: PresentationContext) {
+        _present(context)
+    }
+
+    lazy var _present: (PresentationContext) -> Void = {
+        return { [weak self] context in
+            let controller = context.factory()
+            controller.modalPresentationStyle = context.presentationStyle
+            controller.modalTransitionStyle = context.transitionStyle
+
+            self?.navigationController.viewControllers.last?.present(controller, animated: context.animated)
+        }
+    }()
+
+    // MARK: - Private
+
+    private let navigationController: UINavigationController
+
+}
