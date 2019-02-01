@@ -12,6 +12,8 @@ class PresentationEnvironment {
         _present(context)
     }
 
+    // MARK: - Testable stubs
+
     lazy var _present: (PresentationContext) -> Void = {
         return { [weak self] context in
             let controller = context.factory()
