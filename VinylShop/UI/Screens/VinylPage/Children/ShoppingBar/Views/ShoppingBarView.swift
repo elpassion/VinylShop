@@ -3,7 +3,7 @@ import UIKit
 
 class ShoppingBarView: UIView {
 
-    let frameView = UIView(frame: .zero)
+    let frameView: UIControl = UIControl(frame: .zero)
         |> background(color: .blue2FC5D8)
         <> rounded(radius: 15, corners: .top)
 
