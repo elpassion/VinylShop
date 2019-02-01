@@ -64,6 +64,7 @@ class EnvironmentSpec: QuickSpec {
                         dismissAnimator = AnimatorStub()
 
                         context = PresentationContext(
+                            id: .shoppingBox,
                             factory: { presentedController },
                             animated: false,
                             presentationStyle: .custom,
