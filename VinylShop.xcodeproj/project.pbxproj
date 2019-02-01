@@ -357,8 +357,8 @@
 		326725A05B7FFD9EC6057D2F /* UIViewController */ = {
 			isa = PBXGroup;
 			children = (
-				3267294512FB162C8DF3AE65 /* UIViewController+ChildrenSpec.swift */,
 				326720D6E6D09E96DDA07856 /* UIViewController+Children.swift */,
+				3267294512FB162C8DF3AE65 /* UIViewController+ChildrenSpec.swift */,
 			);
 			path = UIViewController;
 			sourceTree = "<group>";
@@ -388,10 +388,10 @@
 		3267268A8FC77F597026CF57 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				3267237F423588A347BC818B /* PresentationEnvironment.swift */,
 				32672ACE5F21F36FEFCF3C2F /* PresentationContext.swift */,
-				326722C32EAE7300DA701560 /* PresentationTransitioningDelegate.swift */,
 				3267277C57970384AAFD46DB /* PresentationContextID.swift */,
+				3267237F423588A347BC818B /* PresentationEnvironment.swift */,
+				326722C32EAE7300DA701560 /* PresentationTransitioningDelegate.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -408,11 +408,11 @@
 			isa = PBXGroup;
 			children = (
 				3267218983D941282352EE3E /* Children */,
-				326727D2522F5F3CD262A55D /* VinylPageControllerSpec.swift */,
-				32672D8F49E1E6DE7D4CC814 /* VinylPageController.swift */,
-				32672F81DC7B34389232338F /* Views */,
-				326728B929B497EFE9B015FA /* Extensions */,
 				32672F7B77B3B93905CF225D /* Doubles */,
+				326728B929B497EFE9B015FA /* Extensions */,
+				32672F81DC7B34389232338F /* Views */,
+				32672D8F49E1E6DE7D4CC814 /* VinylPageController.swift */,
+				326727D2522F5F3CD262A55D /* VinylPageControllerSpec.swift */,
 			);
 			path = VinylPage;
 			sourceTree = "<group>";
@@ -420,8 +420,8 @@
 		326728B929B497EFE9B015FA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				32672B26906A18679DFBA75E /* PresentationContext+ShoppingBoxSpec.swift */,
 				3267243CFFD69838EC3BE6C6 /* PresentationContext+ShoppingBox.swift */,
+				32672B26906A18679DFBA75E /* PresentationContext+ShoppingBoxSpec.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -448,11 +448,11 @@
 		32672B84E0A58CF946D1BFBD /* ShoppingBar */ = {
 			isa = PBXGroup;
 			children = (
+				326724524427A66E2D5DF5F0 /* Aliases */,
 				32672FF0807FE0303FF6936B /* Styles */,
 				3267217E44E62BA41223A3B0 /* Views */,
 				32672076101FBF6DCA4A2937 /* ShoppingBarController.swift */,
 				3267237828F14E83A35A2770 /* ShoppingBarControllerSpec.swift */,
-				326724524427A66E2D5DF5F0 /* Aliases */,
 			);
 			path = ShoppingBar;
 			sourceTree = "<group>";
@@ -496,9 +496,9 @@
 		32672ECAC59DEEAA6883F1F1 /* Environment */ = {
 			isa = PBXGroup;
 			children = (
-				32672A255EEC85F1F69A10E1 /* EnvironmentSpec.swift */,
-				32672B3EDE2434E61EA2D4A2 /* Environment.swift */,
 				3267268A8FC77F597026CF57 /* Presentation */,
+				32672B3EDE2434E61EA2D4A2 /* Environment.swift */,
+				32672A255EEC85F1F69A10E1 /* EnvironmentSpec.swift */,
 			);
 			path = Environment;
 			sourceTree = "<group>";
@@ -523,9 +523,9 @@
 			isa = PBXGroup;
 			children = (
 				32672D51B1B16D89C4248069 /* Configurations */,
+				3267239FBDC673FCF5C7285F /* Doubles */,
 				32672CFAAE3B1ACA9DE1C614 /* Extensions */,
 				3267232676CF985931F76135 /* Predicates */,
-				3267239FBDC673FCF5C7285F /* Doubles */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -600,6 +600,7 @@
 			children = (
 				326720921977EC77209C8994 /* AppDelegate */,
 				8C2243B2220211C800C3470B /* Assets */,
+				32672ECAC59DEEAA6883F1F1 /* Environment */,
 				3267258B44B2884691070141 /* Extensions */,
 				32672EBAACC8FE11E011AA0D /* Functions */,
 				326728F87C8E3A196A220865 /* Styles */,
@@ -608,7 +609,6 @@
 				8CFA76DE2201DC8C00E4D81D /* Info.plist */,
 				8CFA76DB2201DC8C00E4D81D /* LaunchScreen.storyboard */,
 				8CFA76D42201DC8B00E4D81D /* ViewController.swift */,
-				32672ECAC59DEEAA6883F1F1 /* Environment */,
 			);
 			path = VinylShop;
 			sourceTree = "<group>";
