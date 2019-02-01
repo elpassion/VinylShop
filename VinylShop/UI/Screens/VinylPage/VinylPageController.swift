@@ -10,6 +10,8 @@ class VinylPageController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
 
+    lazy var barController: ShoppingBarControlling = barControllerFactory()
+
     var pageView: VinylPageView! {
         return view as? VinylPageView
     }
@@ -29,7 +31,6 @@ class VinylPageController: UIViewController {
 
     private let barControllerFactory: () -> ShoppingBarControlling
     private let environment: Environment
-    private lazy var barController: ShoppingBarControlling = barControllerFactory()
 
     private func embedBarController() {
         embed(childViewController: barController, inside: pageView.barContainerView)
