@@ -3,8 +3,9 @@ import UIKit
 class Environment {
     static let shared = Environment()
 
-    let navigationController: UINavigationController = {
-        let navigationController = UINavigationController(rootViewController: VinylPageController())
+    lazy var navigationController: UINavigationController = {
+        let rootController = VinylPageController(environment: self)
+        let navigationController = UINavigationController(rootViewController: rootController)
         navigationController.navigationBar.isHidden = true
 
         return navigationController

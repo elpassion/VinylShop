@@ -2,8 +2,10 @@ import UIKit
 
 class VinylPageController: UIViewController {
 
-    init(barControllerFactory: @escaping () -> UIViewController = ShoppingBarController.init) {
+    init(barControllerFactory: @escaping () -> ShoppingBarControlling = ShoppingBarController.init,
+         environment: Environment = .shared) {
         self.barControllerFactory = barControllerFactory
+        self.environment = environment
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -19,13 +21,27 @@ class VinylPageController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        embed(childViewController: barController, inside: pageView.barContainerView)
+        embedBarController()
+        setUpBarControlTap()
     }
 
     // MARK: - Private
 
-    private let barControllerFactory: () -> UIViewController
-    private lazy var barController: UIViewController = barControllerFactory()
+    private let barControllerFactory: () -> ShoppingBarControlling
+    private let environment: Environment
+    private lazy var barController: ShoppingBarControlling = barControllerFactory()
+
+    private func embedBarController() {
+        embed(childViewController: barController, inside: pageView.barContainerView)
+    }
+
+    private func setUpBarControlTap() {
+        barController.barControl.addTarget(self, action: #selector(onBarControlTap), for: .touchUpInside)
+    }
+
+    @objc private func onBarControlTap(_: UIControl) {
+        environment.presentation.present(context: .shoppingBox)
+    }
 
     // MARK: - Required initializer
 

@@ -17,6 +17,18 @@ class ShoppingBarControllerSpec: QuickSpec {
                 sut = nil
             }
 
+            describe("view did load") {
+                beforeEach {
+                    _ = sut.view
+                }
+
+                describe("bar control") {
+                    it("should return frame control") {
+                        expect(sut.barControl) === sut.barView.frameControl
+                    }
+                }
+            }
+
             it("should match snapshot on iPhone SE") {
                 assertSnapshot(matching: sut, as: .image(on: .iPhoneSe))
             }

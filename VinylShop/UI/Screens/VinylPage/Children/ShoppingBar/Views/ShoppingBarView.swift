@@ -3,7 +3,7 @@ import UIKit
 
 class ShoppingBarView: UIView {
 
-    let frameView: UIControl = UIControl(frame: .zero)
+    let frameControl: UIControl = UIControl(frame: .zero)
         |> background(color: .blue2FC5D8)
         <> rounded(radius: 15, corners: .top)
 
@@ -35,22 +35,22 @@ class ShoppingBarView: UIView {
     private let frameCenterLayoutGuide = UILayoutGuide()
 
     private func addSubviews() {
-        [frameView, titleLabel, albumCountLabel, albumCoverView, checkoutBoxView, totalLabel].forEach(addSubview)
+        [titleLabel, albumCountLabel, albumCoverView, checkoutBoxView, totalLabel].forEach(frameControl.addSubview)
+        addSubview(frameControl)
         addLayoutGuide(frameCenterLayoutGuide)
     }
 
     // MARK: - Layout
 
     private func setUpLayout() {
-        frameView.bottomAnchor == bottomAnchor
-        frameView.horizontalAnchors == horizontalAnchors
+        frameControl.edgeAnchors == edgeAnchors
 
         frameCenterLayoutGuide.heightAnchor == 0
-        frameCenterLayoutGuide.horizontalAnchors == frameView.horizontalAnchors
-        frameCenterLayoutGuide.topAnchor == frameView.topAnchor + 30
+        frameCenterLayoutGuide.horizontalAnchors == frameControl.horizontalAnchors
+        frameCenterLayoutGuide.topAnchor == frameControl.topAnchor + 30
         frameCenterLayoutGuide.bottomAnchor == safeAreaLayoutGuide.bottomAnchor - 30
 
-        checkoutBoxView.leadingAnchor == frameView.leadingAnchor + 18
+        checkoutBoxView.leadingAnchor == frameControl.leadingAnchor + 18
         checkoutBoxView.sizeAnchors == CGSize(width: 39, height: 27)
         checkoutBoxView.bottomAnchor == safeAreaLayoutGuide.bottomAnchor - 8
 
@@ -66,7 +66,7 @@ class ShoppingBarView: UIView {
         albumCountLabel.leadingAnchor == titleLabel.leadingAnchor
         albumCountLabel.trailingAnchor <= totalLabel.leadingAnchor - 10
 
-        totalLabel.trailingAnchor == frameView.trailingAnchor - 22
+        totalLabel.trailingAnchor == frameControl.trailingAnchor - 22
         totalLabel.centerYAnchor == frameCenterLayoutGuide.centerYAnchor
 
         totalLabel.setContentCompressionResistancePriority(.required, for: .horizontal)

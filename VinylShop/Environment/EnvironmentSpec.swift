@@ -120,7 +120,6 @@ class EnvironmentSpec: QuickSpec {
             }
         }
     }
-
 }
 
 class AnimatorStub: NSObject, UIViewControllerAnimatedTransitioning {
