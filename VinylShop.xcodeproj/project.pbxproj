@@ -42,6 +42,7 @@
 		32672A3C1C9B55A91552BD42 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672AE680239A70B031D0F0 /* RoundedCorner.swift */; };
 		32672AA188204CAA73FA171B /* ShoppingBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326721011DF0C538E0989DE3 /* ShoppingBarView.swift */; };
 		32672B5CC1EB0A1A7BA9DC65 /* VinylPageControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326727D2522F5F3CD262A55D /* VinylPageControllerSpec.swift */; };
+		32672B664CAFE0CAE9C1D5AC /* PresentationTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326722C32EAE7300DA701560 /* PresentationTransitioningDelegate.swift */; };
 		32672D86F99CE9F22AC53CAD /* ShoppingBarStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672B47C7ACBEB50AD89823 /* ShoppingBarStyles.swift */; };
 		32672E02374D316A29D283EF /* VinylPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672D8F49E1E6DE7D4CC814 /* VinylPageController.swift */; };
 		32672E225BB372FEACCDFDB1 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672E5BECAB5E8AA3B3D713 /* Album.swift */; };
@@ -111,6 +112,7 @@
 		326721011DF0C538E0989DE3 /* ShoppingBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBarView.swift; sourceTree = "<group>"; };
 		3267214B2128E42E7806BB23 /* Appliance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appliance.swift; sourceTree = "<group>"; };
 		326721C215E4A730D48F81B8 /* SnapshotDiffToolConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotDiffToolConfiguration.swift; sourceTree = "<group>"; };
+		326722C32EAE7300DA701560 /* PresentationTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationTransitioningDelegate.swift; sourceTree = "<group>"; };
 		326723004EC4EFEAE4668383 /* ShoppingBoxPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxPresenter.swift; sourceTree = "<group>"; };
 		3267237828F14E83A35A2770 /* ShoppingBarControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBarControllerSpec.swift; sourceTree = "<group>"; };
 		3267237F423588A347BC818B /* PresentationEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationEnvironment.swift; sourceTree = "<group>"; };
@@ -358,6 +360,7 @@
 			children = (
 				3267237F423588A347BC818B /* PresentationEnvironment.swift */,
 				32672ACE5F21F36FEFCF3C2F /* PresentationContext.swift */,
+				326722C32EAE7300DA701560 /* PresentationTransitioningDelegate.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -773,6 +776,7 @@
 				32672A10C14E38940F8DE45C /* Environment.swift in Sources */,
 				32672A33CF7FA5C0634F7A89 /* PresentationEnvironment.swift in Sources */,
 				3267245AB0AE06D227A71085 /* PresentationContext.swift in Sources */,
+				32672B664CAFE0CAE9C1D5AC /* PresentationTransitioningDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

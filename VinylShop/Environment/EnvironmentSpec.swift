@@ -43,21 +43,31 @@ class EnvironmentSpec: QuickSpec {
 
                 describe("present") {
                     var presentedController: UIViewController!
+                    var context: PresentationContext!
+                    var presentAnimator: UIViewControllerAnimatedTransitioning!
+                    var dismissAnimator: UIViewControllerAnimatedTransitioning!
 
                     beforeEach {
                         presentedController = UIViewController()
+                        presentAnimator = AnimatorStub()
+                        dismissAnimator = AnimatorStub()
 
-                        let context = PresentationContext(
+                        context = PresentationContext(
                             factory: { presentedController },
                             animated: false,
                             presentationStyle: .custom,
-                            transitionStyle: .flipHorizontal
+                            transitionStyle: .flipHorizontal,
+                            presentAnimator: presentAnimator,
+                            dismissAnimator: dismissAnimator
                         )
 
                         sut.presentation.present(context: context)
                     }
 
                     afterEach {
+                        presentAnimator = nil
+                        dismissAnimator = nil
+                        context = nil
                         presentedController = nil
                     }
 
@@ -73,10 +83,40 @@ class EnvironmentSpec: QuickSpec {
                         it("should have transition style set") {
                             expect(presentedController.modalTransitionStyle) == UIModalTransitionStyle.flipHorizontal
                         }
+
+                        describe("transition delegate") {
+                            it("should return dismiss animator") {
+                                let receivedDismissAnimator = presentedController.transitioningDelegate?.animationController?(
+                                    forDismissed: UIViewController()
+                                )
+
+                                expect(receivedDismissAnimator) === dismissAnimator
+                            }
+
+                            it("should return present animator") {
+                                let receivedPresentAnimator = presentedController.transitioningDelegate?.animationController?(
+                                    forPresented: UIViewController(),
+                                    presenting: UIViewController(),
+                                    source: UIViewController()
+                                )
+
+                                expect(receivedPresentAnimator) === presentAnimator
+                            }
+                        }
                     }
                 }
             }
         }
     }
+
+}
+
+class AnimatorStub: NSObject, UIViewControllerAnimatedTransitioning {
+
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+        return 0
+    }
+
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {}
 
 }

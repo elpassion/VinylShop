@@ -17,6 +17,7 @@ class PresentationEnvironment {
             let controller = context.factory()
             controller.modalPresentationStyle = context.presentationStyle
             controller.modalTransitionStyle = context.transitionStyle
+            controller.transitioningDelegate = context.transitioningDelegate
 
             self?.navigationController.viewControllers.last?.present(controller, animated: context.animated)
         }
