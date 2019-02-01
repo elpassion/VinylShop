@@ -43,7 +43,7 @@ class ShoppingBarView: UIView {
     // MARK: - Layout
 
     private func setUpLayout() {
-        frameControl.edgeAnchors == edgeAnchors
+        frameControl.edgeAnchors == edgeAnchors ~ .almostRequired
 
         frameCenterLayoutGuide.heightAnchor == 0
         frameCenterLayoutGuide.horizontalAnchors == frameControl.horizontalAnchors

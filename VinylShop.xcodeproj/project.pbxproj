@@ -36,6 +36,7 @@
 		326728245FDC15C17E529A87 /* ShoppingBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672B3020CF2515472B6E5B /* ShoppingBoxView.swift */; };
 		32672848E415A5994F8B13B5 /* ShoppingBoxStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672AD7C23E69A499813550 /* ShoppingBoxStyles.swift */; };
 		3267285FED249CC505AC098E /* ShoppingBoxPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326723004EC4EFEAE4668383 /* ShoppingBoxPresenter.swift */; };
+		326728DBF1B0F0FC631499E2 /* Priority+AlmostRequired.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672A21A0C64F3069960D95 /* Priority+AlmostRequired.swift */; };
 		326729129FDAA43E348F7C51 /* PresentationContext+ShoppingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267243CFFD69838EC3BE6C6 /* PresentationContext+ShoppingBox.swift */; };
 		3267291DD36F756FC71B1234 /* VinylPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326727DB52EDAC1916033872 /* VinylPageView.swift */; };
 		326729327168E46CFB2F65D4 /* UIViewController+ChildrenSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267294512FB162C8DF3AE65 /* UIViewController+ChildrenSpec.swift */; };
@@ -148,6 +149,7 @@
 		326728C7AD7901E1039E7164 /* UIViewControllerPredicate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerPredicate.swift; sourceTree = "<group>"; };
 		3267294512FB162C8DF3AE65 /* UIViewController+ChildrenSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ChildrenSpec.swift"; sourceTree = "<group>"; };
 		3267296229946757EEAEABDE /* UIFont+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Convenience.swift"; sourceTree = "<group>"; };
+		32672A21A0C64F3069960D95 /* Priority+AlmostRequired.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Priority+AlmostRequired.swift"; sourceTree = "<group>"; };
 		32672A255EEC85F1F69A10E1 /* EnvironmentSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentSpec.swift; sourceTree = "<group>"; };
 		32672ACE5F21F36FEFCF3C2F /* PresentationContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationContext.swift; sourceTree = "<group>"; };
 		32672AD7C23E69A499813550 /* ShoppingBoxStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxStyles.swift; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 				326723C7D2E90843B713781C /* UIImage */,
 				3267201EAC7DCE15C25904CA /* UIStackView */,
 				326725A05B7FFD9EC6057D2F /* UIViewController */,
+				32672AA1460599CA5F74F9E4 /* Priority */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -449,6 +452,14 @@
 				3267270A4EB69958133B7A24 /* Styles.swift */,
 			);
 			path = Styles;
+			sourceTree = "<group>";
+		};
+		32672AA1460599CA5F74F9E4 /* Priority */ = {
+			isa = PBXGroup;
+			children = (
+				32672A21A0C64F3069960D95 /* Priority+AlmostRequired.swift */,
+			);
+			path = Priority;
 			sourceTree = "<group>";
 		};
 		32672B4F7718AF9689E3763A /* UIFont */ = {
@@ -848,6 +859,7 @@
 				326729129FDAA43E348F7C51 /* PresentationContext+ShoppingBox.swift in Sources */,
 				32672EE55BE23CD52D78FE4B /* ShoppingBarControlling.swift in Sources */,
 				32672C7C00F948BCC6E88E76 /* ShoppingBoxPresentationAnimator.swift in Sources */,
+				326728DBF1B0F0FC631499E2 /* Priority+AlmostRequired.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
