@@ -23,6 +23,7 @@
 		32672681BBCAEB446548E977 /* ShoppingBoxPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672549DA59C2630442ED22 /* ShoppingBoxPriceView.swift */; };
 		326726D75CFC5FAAEF190469 /* UIStackView+ReplaceSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672FFA0D644C14D2F38740 /* UIStackView+ReplaceSubviews.swift */; };
 		3267272E7AFC942CF7674E1E /* UIBezierPath+LineInRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326726D9597284D35435DCDB /* UIBezierPath+LineInRectangle.swift */; };
+		326727AFB16116E673290695 /* EnvironmentSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672A255EEC85F1F69A10E1 /* EnvironmentSpec.swift */; };
 		326727B2B73CAB039371B057 /* ApplianceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672E479F609D652BA12E76 /* ApplianceSpec.swift */; };
 		326727EB2D1BC47DB2CF63EF /* Composition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326724162483BD5825424EF9 /* Composition.swift */; };
 		32672801CD78691A92F6EB6B /* CompositionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672696104257987B079EC4 /* CompositionSpec.swift */; };
@@ -35,6 +36,7 @@
 		3267293BC7D13AB8EA9B5C1B /* UIImagePredicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672F83B16C96F68BF03EF6 /* UIImagePredicate.swift */; };
 		32672968B43BF011B44A1CAD /* CGContext+DrawImageSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672BCA382904451C4FEBF1 /* CGContext+DrawImageSpec.swift */; };
 		326729975058D7976C62D978 /* CGContext+Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672F95C67E9276B2682706 /* CGContext+Globals.swift */; };
+		32672A10C14E38940F8DE45C /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672B3EDE2434E61EA2D4A2 /* Environment.swift */; };
 		32672A3C1C9B55A91552BD42 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672AE680239A70B031D0F0 /* RoundedCorner.swift */; };
 		32672AA188204CAA73FA171B /* ShoppingBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326721011DF0C538E0989DE3 /* ShoppingBarView.swift */; };
 		32672B5CC1EB0A1A7BA9DC65 /* VinylPageControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326727D2522F5F3CD262A55D /* VinylPageControllerSpec.swift */; };
@@ -126,9 +128,11 @@
 		326728C7AD7901E1039E7164 /* UIViewControllerPredicate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerPredicate.swift; sourceTree = "<group>"; };
 		3267294512FB162C8DF3AE65 /* UIViewController+ChildrenSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ChildrenSpec.swift"; sourceTree = "<group>"; };
 		3267296229946757EEAEABDE /* UIFont+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Convenience.swift"; sourceTree = "<group>"; };
+		32672A255EEC85F1F69A10E1 /* EnvironmentSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentSpec.swift; sourceTree = "<group>"; };
 		32672AD7C23E69A499813550 /* ShoppingBoxStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxStyles.swift; sourceTree = "<group>"; };
 		32672AE680239A70B031D0F0 /* RoundedCorner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		32672B3020CF2515472B6E5B /* ShoppingBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxView.swift; sourceTree = "<group>"; };
+		32672B3EDE2434E61EA2D4A2 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		32672B47C7ACBEB50AD89823 /* ShoppingBarStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBarStyles.swift; sourceTree = "<group>"; };
 		32672B81873DCC9CF450CB27 /* ShoppingBoxFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxFooterView.swift; sourceTree = "<group>"; };
 		32672BCA382904451C4FEBF1 /* CGContext+DrawImageSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGContext+DrawImageSpec.swift"; sourceTree = "<group>"; };
@@ -429,6 +433,15 @@
 			path = Functions;
 			sourceTree = "<group>";
 		};
+		32672ECAC59DEEAA6883F1F1 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				32672A255EEC85F1F69A10E1 /* EnvironmentSpec.swift */,
+				32672B3EDE2434E61EA2D4A2 /* Environment.swift */,
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
 		32672F81DC7B34389232338F /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -525,6 +538,7 @@
 				8CFA76DE2201DC8C00E4D81D /* Info.plist */,
 				8CFA76DB2201DC8C00E4D81D /* LaunchScreen.storyboard */,
 				8CFA76D42201DC8B00E4D81D /* ViewController.swift */,
+				32672ECAC59DEEAA6883F1F1 /* Environment */,
 			);
 			path = VinylShop;
 			sourceTree = "<group>";
@@ -742,6 +756,7 @@
 				32672D86F99CE9F22AC53CAD /* ShoppingBarStyles.swift in Sources */,
 				32672E02374D316A29D283EF /* VinylPageController.swift in Sources */,
 				3267291DD36F756FC71B1234 /* VinylPageView.swift in Sources */,
+				32672A10C14E38940F8DE45C /* Environment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -761,6 +776,7 @@
 				32672536137E871ECBF3C09E /* ShoppingBarControllerSpec.swift in Sources */,
 				32672B5CC1EB0A1A7BA9DC65 /* VinylPageControllerSpec.swift in Sources */,
 				32672627446C6FF3A837D48C /* UIViewControllerPredicate.swift in Sources */,
+				326727AFB16116E673290695 /* EnvironmentSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
