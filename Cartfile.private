@@ -1,4 +1,5 @@
 github "Quick/Quick" ~> 1.3
 github "Quick/Nimble" ~> 7.3
 github "pointfreeco/swift-snapshot-testing" ~> 1.1
+github "manGoweb/SpecTools" ~> 1.1
 

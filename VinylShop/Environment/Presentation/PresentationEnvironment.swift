@@ -12,7 +12,11 @@ class PresentationEnvironment {
         _present(context)
     }
 
-    // MARK: - Testable stubs
+    func dismiss(_ controller: UIViewController, animated: Bool) {
+        _dismiss(controller, animated)
+    }
+
+    // MARK: - Testable properties
 
     lazy var _present: (PresentationContext) -> Void = {
         return { [weak self] context in
@@ -22,6 +26,12 @@ class PresentationEnvironment {
             controller.transitioningDelegate = context.transitioningDelegate
 
             self?.navigationController.viewControllers.last?.present(controller, animated: context.animated)
+        }
+    }()
+
+    lazy var _dismiss: (UIViewController, Bool) -> Void = {
+        return { [weak self] controller, animated in
+            controller.dismiss(animated: animated)
         }
     }()
 

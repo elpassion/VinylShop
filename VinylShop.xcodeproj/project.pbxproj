@@ -77,6 +77,8 @@
 		8C2243CF2202125600C3470B /* Nunito-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C2243C12202125600C3470B /* Nunito-ExtraBold.ttf */; };
 		8C2243D02202125600C3470B /* Nunito-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C2243C22202125600C3470B /* Nunito-SemiBoldItalic.ttf */; };
 		8C2243D2220213A700C3470B /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2243D1220213A700C3470B /* Font.swift */; };
+		8C946635220487F8001F7E48 /* SpecTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C946634220487F8001F7E48 /* SpecTools.framework */; };
+		8C946636220487FD001F7E48 /* SpecTools.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8C946634220487F8001F7E48 /* SpecTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8CD3274222030922009711DA /* BonMot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CD3274122030922009711DA /* BonMot.framework */; };
 		8CFA76D52201DC8B00E4D81D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFA76D42201DC8B00E4D81D /* ViewController.swift */; };
 		8CFA76DA2201DC8C00E4D81D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CFA76D92201DC8C00E4D81D /* Assets.xcassets */; };
@@ -108,6 +110,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				8C946636220487FD001F7E48 /* SpecTools.framework in CopyFiles */,
 				8CFA77022201EDEC00E4D81D /* SnapshotTesting.framework in CopyFiles */,
 				8CFA76FB2201E76B00E4D81D /* Nimble.framework in CopyFiles */,
 				8CFA76FC2201E76B00E4D81D /* Quick.framework in CopyFiles */,
@@ -187,6 +190,7 @@
 		8C2243C12202125600C3470B /* Nunito-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBold.ttf"; sourceTree = "<group>"; };
 		8C2243C22202125600C3470B /* Nunito-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		8C2243D1220213A700C3470B /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		8C946634220487F8001F7E48 /* SpecTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpecTools.framework; path = Carthage/Build/iOS/SpecTools.framework; sourceTree = "<group>"; };
 		8CD3274122030922009711DA /* BonMot.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BonMot.framework; path = Carthage/Build/iOS/BonMot.framework; sourceTree = "<group>"; };
 		8CFA76CF2201DC8B00E4D81D /* VinylShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VinylShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CFA76D42201DC8B00E4D81D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -217,9 +221,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C946635220487F8001F7E48 /* SpecTools.framework in Frameworks */,
+				8CFA76FE2201EC4900E4D81D /* SnapshotTesting.framework in Frameworks */,
 				8CFA76F52201E65100E4D81D /* Nimble.framework in Frameworks */,
 				8CFA76F62201E65100E4D81D /* Quick.framework in Frameworks */,
-				8CFA76FE2201EC4900E4D81D /* SnapshotTesting.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -649,6 +654,7 @@
 		8CFA76F22201E65100E4D81D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8C946634220487F8001F7E48 /* SpecTools.framework */,
 				8CD3274122030922009711DA /* BonMot.framework */,
 				8CFA77072201F99A00E4D81D /* Hue.framework */,
 				8CFA77002201EDAF00E4D81D /* Anchorage.framework */,

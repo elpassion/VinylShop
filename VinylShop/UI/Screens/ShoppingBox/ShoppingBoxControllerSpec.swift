@@ -3,6 +3,7 @@ import Anchorage
 import Nimble
 import Quick
 import SnapshotTesting
+import SpecTools
 import UIKit
 
 class ShoppingBoxControllerSpec: QuickSpec {
@@ -20,8 +21,18 @@ class ShoppingBoxControllerSpec: QuickSpec {
             }
 
             describe("view did load") {
+                var environmentSpy: EnvironmentSpy!
+
                 beforeEach {
+                    environmentSpy = EnvironmentSpy()
+                    environmentSpy.install()
+
                     _ = sut.view
+                }
+
+                afterEach {
+                    environmentSpy.uninstall()
+                    environmentSpy = nil
                 }
 
                 it("should have tap gesture recognizer attached to dimmed background view") {
@@ -69,6 +80,18 @@ class ShoppingBoxControllerSpec: QuickSpec {
                         it("should have hidden separator") {
                             expect(items.last?.separatorView.isHidden) == true
                         }
+                    }
+                }
+
+                describe("background view tap") {
+                    beforeEach {
+                        sut.boxView.dimmedBackgroundView.spec.action.triggerTap()
+                    }
+
+                    it("should dismiss itself") {
+                        expect(environmentSpy.invokedDismiss).to(haveCount(1))
+                        expect(environmentSpy.invokedDismiss.first?.controller) === sut
+                        expect(environmentSpy.invokedDismiss.first?.animated) == true
                     }
                 }
             }

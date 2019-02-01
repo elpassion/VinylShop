@@ -87,6 +87,16 @@ class EnvironmentSpec: QuickSpec {
                         expect(stubbedCurrentController.presentedViewController) === presentedController
                     }
 
+                    describe("dismiss") {
+                        beforeEach {
+                            sut.presentation.dismiss(presentedController, animated: false)
+                        }
+
+                        it("should dismiss a controller") {
+                            expect(stubbedCurrentController.presentedViewController).toEventually(beNil())
+                        }
+                    }
+
                     describe("presented controller") {
                         it("should have presentation style set") {
                             expect(presentedController.modalPresentationStyle) == UIModalPresentationStyle.custom
