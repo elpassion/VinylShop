@@ -2,6 +2,7 @@ import Hue
 import UIKit
 
 enum Color: String {
+    case black000000 = "#000000"
     case blue2FC5D8 = "#2FC5D8"
     case grayD8D8D8 = "#D8D8D8"
     case whiteFFFFFF = "#FFFFFF"

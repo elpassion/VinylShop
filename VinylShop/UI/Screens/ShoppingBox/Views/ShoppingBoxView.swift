@@ -15,6 +15,9 @@ class ShoppingBoxView: UIView {
         |> text("Shopping Box")
         <> font(.nunito(.semibold), size: 26.0, color: .whiteFFFFFF)
 
+    let dimmedBackgroundView = UIView(frame: .zero)
+        |> background(color: .black000000, alpha: 0.4)
+
     let itemsView = ShoppingBoxItemsView()
     let topSeparatorView = ShoppingBoxSeparatorView()
     let bottomSeparatorView = ShoppingBoxSeparatorView()
@@ -23,27 +26,32 @@ class ShoppingBoxView: UIView {
     init() {
         super.init(frame: .zero)
 
-        setUpSelf()
         addSubviews()
         setUpLayout()
-    }
-
-    // MARK: - Configuration
-
-    private func setUpSelf() {
-        backgroundColor = UIColor.black.withAlphaComponent(0.4)
     }
 
     // MARK: - Subviews
 
     private func addSubviews() {
-        [boxView, itemsView, dismissIconView, titleLabel, topSeparatorView, bottomSeparatorView, footerView]
-            .forEach(addSubview)
+        let views: [UIView] = [
+            dimmedBackgroundView,
+            boxView,
+            itemsView,
+            dismissIconView,
+            titleLabel,
+            topSeparatorView,
+            bottomSeparatorView,
+            footerView
+        ]
+
+        views.forEach(addSubview)
     }
 
     // MARK: - Layout
 
     private func setUpLayout() {
+        dimmedBackgroundView.edgeAnchors == edgeAnchors
+
         boxView.horizontalAnchors == horizontalAnchors
         boxView.bottomAnchor == bottomAnchor
 
