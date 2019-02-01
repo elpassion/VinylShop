@@ -23,11 +23,14 @@ class ShoppingBoxView: UIView {
     let bottomSeparatorView = ShoppingBoxSeparatorView()
     let footerView = ShoppingBoxFooterView()
 
+    let tapGestureRecognizer = UITapGestureRecognizer()
+
     init() {
         super.init(frame: .zero)
 
         addSubviews()
         setUpLayout()
+        setUpGestureRecognition()
     }
 
     // MARK: - Subviews
@@ -76,6 +79,12 @@ class ShoppingBoxView: UIView {
         footerView.topAnchor == bottomSeparatorView.bottomAnchor + 30
         footerView.bottomAnchor == boxView.bottomAnchor - 30
         footerView.horizontalAnchors == topSeparatorView.horizontalAnchors
+    }
+
+    // MARK: - Gestures
+
+    private func setUpGestureRecognition() {
+        dimmedBackgroundView.addGestureRecognizer(tapGestureRecognizer)
     }
 
     // MARK: - Required initializer

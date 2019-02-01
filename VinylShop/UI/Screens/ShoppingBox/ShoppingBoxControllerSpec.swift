@@ -24,6 +24,10 @@ class ShoppingBoxControllerSpec: QuickSpec {
                     _ = sut.view
                 }
 
+                it("should have tap gesture recognizer attached to dimmed background view") {
+                    expect(sut.boxView.dimmedBackgroundView.gestureRecognizers).to(contain(sut.boxView.tapGestureRecognizer))
+                }
+
                 describe("items view") {
                     var items: [ShoppingBoxItemView]!
 
