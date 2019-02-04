@@ -48,7 +48,7 @@ class ShoppingBoxView: UIView {
         dimmedBackgroundView.edgeAnchors == edgeAnchors
 
         boxView.horizontalAnchors == horizontalAnchors
-        boxView.bottomAnchor == bottomAnchor
+        boxView.bottomAnchor == bottomAnchor + 30
 
         dismissIconView.sizeAnchors == CGSize(width: 44, height: 11)
         dismissIconView.centerXAnchor == boxView.centerXAnchor
@@ -69,7 +69,7 @@ class ShoppingBoxView: UIView {
         bottomSeparatorView.heightAnchor == 3
 
         footerView.topAnchor == bottomSeparatorView.bottomAnchor + 30
-        footerView.bottomAnchor == boxView.bottomAnchor - 30
+        footerView.bottomAnchor == boxView.bottomAnchor - 60
         footerView.horizontalAnchors == topSeparatorView.horizontalAnchors
     }
 
