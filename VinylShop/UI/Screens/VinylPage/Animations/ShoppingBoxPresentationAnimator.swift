@@ -14,7 +14,6 @@ class ShoppingBoxPresentationAnimator: NSObject, UIViewControllerAnimatedTransit
 
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         // FIXME: Spike solution
-
         let pageController = transitionContext.viewController(forKey: .from)
             .flatMap { $0 as? UINavigationController }
             .flatMap { $0.viewControllers.last as? VinylPageController }
@@ -92,7 +91,7 @@ class ShoppingBoxPresentationAnimator: NSObject, UIViewControllerAnimatedTransit
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         }
 
-        let offset = presented.boxView.boxView.frame.minY - presenting.barController.barControl.frame.minY
+        let offset = presenting.pageView.barContainerView.frame.minY - presented.boxView.boxView.frame.minY
 
         shoppingBoxAnimator = ShoppingBoxAnimator(
             view: presented.boxView.boxView,
@@ -131,7 +130,7 @@ class DimmedBackgroundAnimator: NSObject, CAAnimationDelegate {
         let animation = CABasicAnimation(keyPath: "opacity")
         animation.fromValue = 0.0
         animation.toValue = 1.0
-        animation.duration = duration * 0.5
+        animation.duration = duration
         animation.isRemovedOnCompletion = true
         animation.beginTime = beginTime
         animation.delegate = self
@@ -179,6 +178,7 @@ class ShoppingBarAnimator: NSObject, CAAnimationDelegate {
         animation.duration = duration * 0.3
         animation.isRemovedOnCompletion = true
         animation.speed = Globals.animationSpeed
+        animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
 
         view.layer.add(animation, forKey: nil)
     }
@@ -211,7 +211,7 @@ class FadeInAnimator: NSObject, CAAnimationDelegate {
 
     func animate() {
         let positionAnimation = CABasicAnimation(keyPath: "position.y")
-        positionAnimation.fromValue = view.frame.minY + 20
+        positionAnimation.fromValue = view.frame.maxY + 20
 
         let opacityAnimation = CABasicAnimation(keyPath: "opacity")
         opacityAnimation.fromValue = 0.0
