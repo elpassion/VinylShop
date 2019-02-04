@@ -36,18 +36,10 @@ class ShoppingBoxView: UIView {
     // MARK: - Subviews
 
     private func addSubviews() {
-        let views: [UIView] = [
-            dimmedBackgroundView,
-            boxView,
-            itemsView,
-            dismissIconView,
-            titleLabel,
-            topSeparatorView,
-            bottomSeparatorView,
-            footerView
-        ]
+        [itemsView, dismissIconView, titleLabel, topSeparatorView, bottomSeparatorView, footerView]
+            .forEach(boxView.addSubview)
 
-        views.forEach(addSubview)
+        [dimmedBackgroundView, boxView].forEach(addSubview)
     }
 
     // MARK: - Layout
