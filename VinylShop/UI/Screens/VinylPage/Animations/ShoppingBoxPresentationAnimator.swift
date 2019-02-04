@@ -33,24 +33,38 @@ class ShoppingBoxPresentationAnimator: NSObject, UIViewControllerAnimatedTransit
         containerView.addSubview(presented.view)
         containerView.addSubview(barSnapshot)
 
-        presented.boxView.setNeedsLayout()
-        presented.boxView.layoutIfNeeded()
+        let boxView: ShoppingBoxView = presented.boxView
+        boxView.setNeedsLayout()
+        boxView.layoutIfNeeded()
 
-        guard let dismissIconView = presented.boxView.dismissIconView.snapshotView(afterScreenUpdates: true) else {
+        let fadedInViews = [
+            boxView.dismissIconView,
+            boxView.titleLabel,
+            boxView.topSeparatorView,
+            boxView.itemsView,
+            boxView.bottomSeparatorView,
+            boxView.footerView
+        ]
+
+        let fadeInDelays = [0.125, 0.25, 0.4, 0.55, 0.71, 0.82]
+        let snapshotViews: [UIView] = fadedInViews.compactMap { view in
+            let snapshotView = view.snapshotView(afterScreenUpdates: true)
+            snapshotView?.frame = view.frame
+            return snapshotView
+        }
+
+        guard snapshotViews.count == fadedInViews.count else {
             return
         }
 
-        dismissIconView.layer.opacity = 0.0
-        dismissIconView.frame = presented.boxView.convert(
-            presented.boxView.dismissIconView.frame,
-            from: presented.boxView.boxView
-        )
-        containerView.addSubview(dismissIconView)
-
-        presented.boxView.boxView.subviews.forEach { $0.layer.opacity = 0.0 }
+        fadedInViews.forEach { $0.layer.opacity = 0.0 }
+        snapshotViews.forEach { view in
+            view.layer.opacity = 0.0
+            view.frame = boxView.convert(view.frame, from: boxView.boxView)
+            containerView.addSubview(view)
+        }
 
         let duration = transitionDuration(using: transitionContext)
-
         let beginTime = CACurrentMediaTime()
 
         backgroundAnimator = DimmedBackgroundAnimator(
@@ -64,18 +78,19 @@ class ShoppingBoxPresentationAnimator: NSObject, UIViewControllerAnimatedTransit
         shoppingBarAnimator = ShoppingBarAnimator(view: barSnapshot, beginTime: beginTime, duration: duration)
         shoppingBarAnimator?.animate()
 
-        dismissAnimator = DismissIconAnimator(
-            view: dismissIconView,
-            beginTime: beginTime,
-            duration: duration
-        )
+        fadeInAnimators = (0..<fadedInViews.count).map { index in
+            let delay = fadeInDelays[index] * duration
 
-        dismissAnimator?.animate()
+            return FadeInAnimator(view: snapshotViews[index], beginTime: beginTime + delay, duration: duration) {
+                snapshotViews[index].removeFromSuperview()
+                fadedInViews[index].layer.opacity = 1.0
+            }
+        }
+
+        fadeInAnimators.forEach { $0.animate() }
 
         let onCompleted: () -> Void = {
             presenting.barController.view.isHidden = false
-            presented.boxView.dismissIconView.layer.opacity = 1.0
-            dismissIconView.removeFromSuperview()
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         }
 
@@ -93,8 +108,9 @@ class ShoppingBoxPresentationAnimator: NSObject, UIViewControllerAnimatedTransit
 
     private var backgroundAnimator: DimmedBackgroundAnimator?
     private var shoppingBarAnimator: ShoppingBarAnimator?
-    private var dismissAnimator: DismissIconAnimator?
+    private var dismissAnimator: FadeInAnimator?
     private var shoppingBoxAnimator: ShoppingBoxAnimator?
+    private var fadeInAnimators = [FadeInAnimator]()
 
 }
 
@@ -182,12 +198,13 @@ class ShoppingBarAnimator: NSObject, CAAnimationDelegate {
 
 }
 
-class DismissIconAnimator: NSObject, CAAnimationDelegate {
+class FadeInAnimator: NSObject, CAAnimationDelegate {
 
-    init(view: UIView, beginTime: CFTimeInterval, duration: TimeInterval) {
+    init(view: UIView, beginTime: CFTimeInterval, duration: TimeInterval, completion: (() -> Void)? = nil) {
         self.view = view
         self.beginTime = beginTime
         self.duration = duration
+        self.completion = completion
     }
     
     // MARK: - Public API
@@ -203,7 +220,7 @@ class DismissIconAnimator: NSObject, CAAnimationDelegate {
         opacityAnimation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
 
         let animation = CAAnimationGroup()
-        animation.beginTime = beginTime + 0.125 * duration
+        animation.beginTime = beginTime
         animation.duration = duration * 0.375
         animation.animations = [positionAnimation, opacityAnimation]
         animation.isRemovedOnCompletion = true
@@ -218,6 +235,7 @@ class DismissIconAnimator: NSObject, CAAnimationDelegate {
     public func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         if flag {
             view.layer.opacity = 1.0
+            completion?()
         }
     }
 
@@ -226,6 +244,7 @@ class DismissIconAnimator: NSObject, CAAnimationDelegate {
     private let view: UIView
     private let beginTime: CFTimeInterval
     private let duration: TimeInterval
+    private let completion: (() -> Void)?
 
 }
 
