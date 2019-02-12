@@ -42,6 +42,11 @@ func text(_ text: String, style: StringStyle) -> (UILabel) -> Void {
     }
 }
 
+func multiline(_ label: UILabel) -> Void {
+    label.numberOfLines = 0
+    label.lineBreakMode = .byWordWrapping
+}
+
 func bordered(width: CGFloat, color: Color, alpha: CGFloat = 1.0) -> (UIView) -> Void {
     return { view in
         view.layer.borderWidth = width

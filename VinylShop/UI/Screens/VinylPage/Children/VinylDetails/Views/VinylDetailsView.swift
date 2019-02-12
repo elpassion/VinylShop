@@ -39,7 +39,6 @@ class VinylDetailsView: UIView {
 
         headerView.heightAnchor == 150
         trackListView.heightAnchor == 105
-        notesView.heightAnchor == 104
         recommendationsView.heightAnchor == 95
 
         scrollView.edgeAnchors == edgeAnchors
