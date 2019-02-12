@@ -17,7 +17,7 @@ class ShoppingBoxPresentationAnimatorSpec: QuickSpec {
             }
 
             it("should return correct transition duration") {
-                expect(sut.transitionDuration(using: nil)) == 1.0
+                expect(sut.transitionDuration(using: nil)) == 0.76
             }
         }
     }

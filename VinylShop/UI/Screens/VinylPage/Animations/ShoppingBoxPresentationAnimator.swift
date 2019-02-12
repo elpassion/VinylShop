@@ -9,7 +9,7 @@ class ShoppingBoxPresentationAnimator: NSObject, UIViewControllerAnimatedTransit
     // MARK: - UIViewControllerAnimatedTransitioning
 
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 0.8
+        return 0.76
     }
 
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
