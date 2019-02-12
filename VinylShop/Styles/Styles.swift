@@ -58,6 +58,19 @@ func fillVertical(spacing: CGFloat = 0.0) -> (UIStackView) -> Void {
     }
 }
 
+func fillHorizontal(spacing: CGFloat = 0.0) -> (UIStackView) -> Void {
+    return { stackView in
+        stackView.axis = .horizontal
+        stackView.alignment = .fill
+        stackView.distribution = .fill
+        stackView.spacing = spacing
+    }
+}
+
+func alignBottoms(_ stackView: UIStackView) -> Void {
+    stackView.alignment = .bottom
+}
+
 func title(_ title: String, font: Font, size: CGFloat, color: Color, alpha: CGFloat = 1.0) -> (UIButton) -> Void {
     return { button in
         button.titleLabel?.font = UIFont(name: font.name, size: size)

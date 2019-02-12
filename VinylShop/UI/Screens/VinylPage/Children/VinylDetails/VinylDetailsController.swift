@@ -1,3 +1,9 @@
 import UIKit
 
-class VinylDetailsController: UIViewController {}
+class VinylDetailsController: UIViewController {
+
+    override func loadView() {
+        view = VinylDetailsView()
+    }
+
+}

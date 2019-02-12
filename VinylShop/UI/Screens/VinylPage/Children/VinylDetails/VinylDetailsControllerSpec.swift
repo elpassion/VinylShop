@@ -11,9 +11,13 @@ class VinylDetailsControllerSpec: QuickSpec {
 
             beforeEach {
                 sut = VinylDetailsController()
+
+                record = true
             }
 
             afterEach {
+                record = false
+
                 sut = nil
             }
 
