@@ -14,6 +14,7 @@
 		32672248680F89E556E0C4C5 /* CGContext+ResetGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267244A4AE082E5C036BD56 /* CGContext+ResetGlobals.swift */; };
 		326722A597A7EC2E2F3E4BCD /* EnvironmentSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326724B3016476DDA8E722A3 /* EnvironmentSpy.swift */; };
 		3267233806CFA3D0C0187D33 /* PresentationContext+ShoppingBoxSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672B26906A18679DFBA75E /* PresentationContext+ShoppingBoxSpec.swift */; };
+		326723B073DF8409D93402C3 /* VinylDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267285EEF649FEE02C01373 /* VinylDetailsController.swift */; };
 		3267245AB0AE06D227A71085 /* PresentationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672ACE5F21F36FEFCF3C2F /* PresentationContext.swift */; };
 		3267248AF1A53F1BD2544336 /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672736279959EEE2EE7633 /* UIImage+Color.swift */; };
 		3267250311180D7BDCD41DAD /* ShoppingBoxItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672E2FFFCC144250301C26 /* ShoppingBoxItemView.swift */; };
@@ -37,6 +38,7 @@
 		32672848E415A5994F8B13B5 /* ShoppingBoxStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672AD7C23E69A499813550 /* ShoppingBoxStyles.swift */; };
 		3267285FED249CC505AC098E /* ShoppingBoxPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326723004EC4EFEAE4668383 /* ShoppingBoxPresenter.swift */; };
 		326728DBF1B0F0FC631499E2 /* Priority+AlmostRequired.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672A21A0C64F3069960D95 /* Priority+AlmostRequired.swift */; };
+		326728DF31B09B0BB2DB464C /* VinylDetailsControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672E4599326D6DD0E12BB9 /* VinylDetailsControllerSpec.swift */; };
 		326729129FDAA43E348F7C51 /* PresentationContext+ShoppingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267243CFFD69838EC3BE6C6 /* PresentationContext+ShoppingBox.swift */; };
 		3267291DD36F756FC71B1234 /* VinylPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326727DB52EDAC1916033872 /* VinylPageView.swift */; };
 		326729327168E46CFB2F65D4 /* UIViewController+ChildrenSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267294512FB162C8DF3AE65 /* UIViewController+ChildrenSpec.swift */; };
@@ -149,6 +151,7 @@
 		326727D2522F5F3CD262A55D /* VinylPageControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VinylPageControllerSpec.swift; sourceTree = "<group>"; };
 		326727DB52EDAC1916033872 /* VinylPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VinylPageView.swift; sourceTree = "<group>"; };
 		326728130821FC372F765BF6 /* ShoppingBoxControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxControllerSpec.swift; sourceTree = "<group>"; };
+		3267285EEF649FEE02C01373 /* VinylDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VinylDetailsController.swift; sourceTree = "<group>"; };
 		326728C7AD7901E1039E7164 /* UIViewControllerPredicate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerPredicate.swift; sourceTree = "<group>"; };
 		3267294512FB162C8DF3AE65 /* UIViewController+ChildrenSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ChildrenSpec.swift"; sourceTree = "<group>"; };
 		3267296229946757EEAEABDE /* UIFont+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Convenience.swift"; sourceTree = "<group>"; };
@@ -169,6 +172,7 @@
 		32672D621DD1E0C3CD3B511C /* UIControl+SimulateTap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIControl+SimulateTap.swift"; sourceTree = "<group>"; };
 		32672D8F49E1E6DE7D4CC814 /* VinylPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VinylPageController.swift; sourceTree = "<group>"; };
 		32672E2FFFCC144250301C26 /* ShoppingBoxItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxItemView.swift; sourceTree = "<group>"; };
+		32672E4599326D6DD0E12BB9 /* VinylDetailsControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VinylDetailsControllerSpec.swift; sourceTree = "<group>"; };
 		32672E479F609D652BA12E76 /* ApplianceSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplianceSpec.swift; sourceTree = "<group>"; };
 		32672E5BECAB5E8AA3B3D713 /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		32672EA4DBE7AFBD43C23AA6 /* ShoppingBoxPresentationAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxPresentationAnimator.swift; sourceTree = "<group>"; };
@@ -294,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				32672B84E0A58CF946D1BFBD /* ShoppingBar */,
+				32672F1A8FECFF4038593254 /* VinylDetails */,
 			);
 			path = Children;
 			sourceTree = "<group>";
@@ -531,6 +536,15 @@
 				32672A255EEC85F1F69A10E1 /* EnvironmentSpec.swift */,
 			);
 			path = Environment;
+			sourceTree = "<group>";
+		};
+		32672F1A8FECFF4038593254 /* VinylDetails */ = {
+			isa = PBXGroup;
+			children = (
+				32672E4599326D6DD0E12BB9 /* VinylDetailsControllerSpec.swift */,
+				3267285EEF649FEE02C01373 /* VinylDetailsController.swift */,
+			);
+			path = VinylDetails;
 			sourceTree = "<group>";
 		};
 		32672F7B77B3B93905CF225D /* Doubles */ = {
@@ -866,6 +880,7 @@
 				32672EE55BE23CD52D78FE4B /* ShoppingBarControlling.swift in Sources */,
 				32672C7C00F948BCC6E88E76 /* ShoppingBoxPresentationAnimator.swift in Sources */,
 				326728DBF1B0F0FC631499E2 /* Priority+AlmostRequired.swift in Sources */,
+				326723B073DF8409D93402C3 /* VinylDetailsController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -891,6 +906,7 @@
 				326726454DC267F6BA11447B /* ShoppingBarControllerStub.swift in Sources */,
 				326722A597A7EC2E2F3E4BCD /* EnvironmentSpy.swift in Sources */,
 				32672B0E48BCE07AE11F27BB /* ShoppingBoxPresentationAnimatorSpec.swift in Sources */,
+				326728DF31B09B0BB2DB464C /* VinylDetailsControllerSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
