@@ -38,7 +38,6 @@ class VinylDetailsView: UIView {
         spacerView.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
 
         headerView.heightAnchor == 150
-        trackListView.heightAnchor == 105
         recommendationsView.heightAnchor == 95
 
         scrollView.edgeAnchors == edgeAnchors

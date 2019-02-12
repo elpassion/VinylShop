@@ -24,9 +24,15 @@ class VinylDetailsFeaturesView: UIView {
     init() {
         super.init(frame: .zero)
 
-        backgroundColor = Color.grayEEF2F5.ui()
+        setUpSelf()
         addSubviews()
         setUpLayout()
+    }
+
+    // MARK: - Configuration
+
+    private func setUpSelf() {
+        backgroundColor = Color.grayEEF2F5.ui()
     }
 
     // MARK: - Subviews
@@ -48,7 +54,7 @@ class VinylDetailsFeaturesView: UIView {
 
         secondLineContainer.topAnchor == firstLineContainer.bottomAnchor + 15
         secondLineContainer.leadingAnchor == firstLineContainer.leadingAnchor
-        secondLineContainer.bottomAnchor == bottomAnchor
+        secondLineContainer.bottomAnchor == bottomAnchor - 24
     }
 
     // MARK: - Required initializer
