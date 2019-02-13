@@ -4,4 +4,10 @@ class VinylDetailsPresenter {
         cell.titleLabel.text = "Side \(side.name)"
     }
 
+    func present(track: Track, in cell: VinylDetailsTrackCell) {
+        cell.positionLabel.text = track.position
+        cell.nameLabel.text = track.name
+        cell.durationLabel.text = track.duration
+    }
+
 }

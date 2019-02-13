@@ -11,10 +11,22 @@ class VinylDetailsControllerSpec: QuickSpec {
             var sut: VinylDetailsController!
 
             beforeEach {
-                let sideOne = Side(name: "1")
-                let sideTwo = Side(name: "2")
+                let sides = [
+                    Side(name: "1", tracks: [
+                        Track(position: "1", name: "Overture", duration: "3:34"),
+                        Track(position: "2", name: "A Good Part", duration: "3:47"),
+                        Track(position: "3", name: "Weak", duration: "3:21"),
+                        Track(position: "4", name: "Sober Up", duration: "3:38")
+                    ]),
+                    Side(name: "2", tracks: [
+                        Track(position: "5", name: "Drama", duration: "4:08"),
+                        Track(position: "6", name: "Turning Out", duration: "3:54"),
+                        Track(position: "7", name: "No Grass Today", duration: "3:39"),
+                        Track(position: "8", name: "Call My Dad", duration: "4:15")
+                    ])
+                ]
 
-                sut = VinylDetailsController(sides: [sideOne, sideTwo])
+                sut = VinylDetailsController(vinyl: VinylDetails(sides: sides))
 
                 record = true
             }
@@ -45,8 +57,8 @@ class VinylDetailsControllerSpec: QuickSpec {
                     }
 
                     describe("1st section") {
-                        it("should have 1 item") {
-                            expect(trackListCollectionView.dataSource?.collectionView(trackListCollectionView, numberOfItemsInSection: 0)) == 1
+                        it("should have 5 items") {
+                            expect(trackListCollectionView.dataSource?.collectionView(trackListCollectionView, numberOfItemsInSection: 0)) == 5
                         }
 
                         describe("1st item") {
@@ -75,11 +87,46 @@ class VinylDetailsControllerSpec: QuickSpec {
                                 expect(size) == CGSize(width: 54, height: 20)
                             }
                         }
+
+                        describe("2nd item") {
+                            var cell: VinylDetailsTrackCell?
+                            var size: CGSize!
+
+                            beforeEach {
+                                cell = trackListCollectionView.cell(inSection: 0, atItem: 1)
+                                size = trackListCollectionView.size(inSection: 0, atItem: 1)
+                            }
+
+                            afterEach {
+                                cell = nil
+                                size = nil
+                            }
+
+                            it("should be dequeued") {
+                                expect(cell).toNot(beNil())
+                            }
+
+                            it("should have correct position") {
+                                expect(cell?.positionLabel.text) == "1"
+                            }
+
+                            it("should have correct name") {
+                                expect(cell?.nameLabel.text) == "Overture"
+                            }
+
+                            it("should have correct duration") {
+                                expect(cell?.durationLabel.text) == "3:34"
+                            }
+
+                            it("should have correct size") {
+                                expect(size) == CGSize(width: 222, height: 50)
+                            }
+                        }
                     }
 
                     describe("2nd section") {
-                        it("should have 1 item") {
-                            expect(trackListCollectionView.dataSource?.collectionView(trackListCollectionView, numberOfItemsInSection: 1)) == 1
+                        it("should have 5 items") {
+                            expect(trackListCollectionView.dataSource?.collectionView(trackListCollectionView, numberOfItemsInSection: 1)) == 5
                         }
 
                         describe("1st item") {
@@ -106,6 +153,41 @@ class VinylDetailsControllerSpec: QuickSpec {
 
                             it("should have correct size") {
                                 expect(size) == CGSize(width: 54, height: 20)
+                            }
+                        }
+
+                        describe("5th item") {
+                            var cell: VinylDetailsTrackCell?
+                            var size: CGSize!
+
+                            beforeEach {
+                                cell = trackListCollectionView.cell(inSection: 1, atItem: 4)
+                                size = trackListCollectionView.size(inSection: 1, atItem: 4)
+                            }
+
+                            afterEach {
+                                cell = nil
+                                size = nil
+                            }
+
+                            it("should be dequeued") {
+                                expect(cell).toNot(beNil())
+                            }
+
+                            it("should have correct position") {
+                                expect(cell?.positionLabel.text) == "8"
+                            }
+
+                            it("should have correct name") {
+                                expect(cell?.nameLabel.text) == "Call My Dad"
+                            }
+
+                            it("should have correct duration") {
+                                expect(cell?.durationLabel.text) == "4:15"
+                            }
+
+                            it("should have correct size") {
+                                expect(size) == CGSize(width: 222, height: 50)
                             }
                         }
                     }

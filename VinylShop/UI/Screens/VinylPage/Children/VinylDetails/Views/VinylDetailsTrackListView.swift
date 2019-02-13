@@ -13,6 +13,7 @@ class VinylDetailsTrackListView: UIView {
         UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
             |> background(color: .whiteFFFFFF)
             <> register(VinylDetailsSideCell.self)
+            <> register(VinylDetailsTrackCell.self)
 
     init() {
         super.init(frame: .zero)

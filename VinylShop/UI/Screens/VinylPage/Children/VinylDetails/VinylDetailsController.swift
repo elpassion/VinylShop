@@ -2,8 +2,8 @@ import UIKit
 
 class VinylDetailsController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    init(sides: [Side], presenter: VinylDetailsPresenter = VinylDetailsPresenter()) {
-        self.sides = sides
+    init(vinyl: VinylDetails, presenter: VinylDetailsPresenter = VinylDetailsPresenter()) {
+        self.vinyl = vinyl
         self.presenter = presenter
 
         super.init(nibName: nil, bundle: nil)
@@ -27,18 +27,20 @@ class VinylDetailsController: UIViewController, UICollectionViewDataSource, UICo
     // MARK: - UICollectionViewDataSource
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return sides.count
+        return vinyl.sides.count
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return vinyl.sides[section].tracks.count + 1
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: VinylDetailsSideCell = collectionView.dequeue(cellFor: indexPath)
-        presenter.present(side: sides[indexPath.section], in: cell)
-        return cell
+        if indexPath.row == 0 {
+            return collectionView.cell(for: indexPath, modeling: vinyl.side(at:), with: presenter.present(side:in:))
+        } else {
+            return collectionView.cell(for: indexPath, modeling: vinyl.track(at:), with: presenter.present(track:in:))
+        }
     }
 
     // MARK: - UICollectionViewDelegateFlowLayout
@@ -46,12 +48,16 @@ class VinylDetailsController: UIViewController, UICollectionViewDataSource, UICo
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 54, height: 20)
+        if indexPath.row == 0 {
+            return CGSize(width: 54, height: 20)
+        } else {
+            return CGSize(width: 222, height: 50)
+        }
     }
 
     // MARK: - Private
 
-    private let sides: [Side]
+    private let vinyl: VinylDetails
     private let presenter: VinylDetailsPresenter
 
     private func configureTrackList() {
@@ -62,5 +68,17 @@ class VinylDetailsController: UIViewController, UICollectionViewDataSource, UICo
     // MARK: - Required initializer
 
     required init?(coder _: NSCoder) { return nil }
+
+}
+
+extension VinylDetails {
+
+    func side(at indexPath: IndexPath) -> Side {
+        return sides[indexPath.section]
+    }
+
+    func track(at indexPath: IndexPath) -> Track {
+        return side(at: indexPath).tracks[indexPath.row - 1]
+    }
 
 }
