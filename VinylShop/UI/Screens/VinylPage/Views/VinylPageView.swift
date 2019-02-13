@@ -3,6 +3,7 @@ import UIKit
 
 class VinylPageView: UIView {
 
+    let detailsContainerView = UIView(frame: .zero)
     let barContainerView = UIView(frame: .zero)
 
     init() {
@@ -16,18 +17,20 @@ class VinylPageView: UIView {
     // MARK: - Configuration
 
     private func setUpSelf() {
-        backgroundColor = .white
+        backgroundColor = Color.whiteFFFFFF.ui()
     }
 
     // MARK: - Subviews
 
     private func addSubviews() {
-        addSubview(barContainerView)
+        [detailsContainerView, barContainerView].forEach(addSubview)
     }
 
     // MARK: - Layout
 
     private func setUpLayout() {
+        detailsContainerView.edgeAnchors == edgeAnchors
+
         barContainerView.horizontalAnchors == horizontalAnchors
         barContainerView.bottomAnchor == bottomAnchor
     }

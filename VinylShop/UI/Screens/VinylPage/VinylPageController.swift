@@ -3,14 +3,17 @@ import UIKit
 class VinylPageController: UIViewController {
 
     init(barControllerFactory: @escaping () -> ShoppingBarControlling = ShoppingBarController.init,
+         detailsControllerFactory: @escaping () -> UIViewController = { VinylDetailsController(vinyl: .shotDetails) },
          environment: Environment = .shared) {
         self.barControllerFactory = barControllerFactory
+        self.detailsControllerFactory = detailsControllerFactory
         self.environment = environment
 
         super.init(nibName: nil, bundle: nil)
     }
 
     lazy var barController: ShoppingBarControlling = barControllerFactory()
+    lazy var detailsController: UIViewController = detailsControllerFactory()
 
     var pageView: VinylPageView! {
         return view as? VinylPageView
@@ -23,6 +26,7 @@ class VinylPageController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        embedDetailsController()
         embedBarController()
         setUpBarControlTap()
     }
@@ -30,7 +34,12 @@ class VinylPageController: UIViewController {
     // MARK: - Private
 
     private let barControllerFactory: () -> ShoppingBarControlling
+    private let detailsControllerFactory: () -> UIViewController
     private let environment: Environment
+
+    private func embedDetailsController() {
+        embed(childViewController: detailsController, inside: pageView.detailsContainerView)
+    }
 
     private func embedBarController() {
         embed(childViewController: barController, inside: pageView.barContainerView)

@@ -16,19 +16,25 @@ class VinylPageControllerSpec: QuickSpec {
 
             context("with a bar controller stub") {
                 var barControllerStub: ShoppingBarControllerStub!
+                var detailsControllerStub: UIViewController!
                 var environmentSpy: EnvironmentSpy!
 
                 beforeEach {
                     barControllerStub = ShoppingBarControllerStub()
+                    detailsControllerStub = UIViewController()
                     environmentSpy = EnvironmentSpy()
                     environmentSpy.install()
 
-                    sut = VinylPageController(barControllerFactory: { barControllerStub })
+                    sut = VinylPageController(
+                        barControllerFactory: { barControllerStub },
+                        detailsControllerFactory: { detailsControllerStub }
+                    )
                 }
 
                 afterEach {
                     environmentSpy.uninstall()
                     environmentSpy = nil
+                    detailsControllerStub = nil
                     barControllerStub = nil
                 }
 
@@ -39,6 +45,10 @@ class VinylPageControllerSpec: QuickSpec {
 
                     it("should embed bar controller in a container view") {
                         expect(sut).to(embed(controller: barControllerStub, in: sut.pageView.barContainerView))
+                    }
+
+                    it("should embed details controller in a view") {
+                        expect(sut).to(embed(controller: detailsControllerStub, in: sut.pageView.detailsContainerView))
                     }
 
                     describe("shopping bar tap") {
