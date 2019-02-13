@@ -431,12 +431,12 @@
 				326720707CEA4ED2C55A3AE8 /* CGContext */,
 				32672AA1460599CA5F74F9E4 /* Priority */,
 				3267207C95B21E5CF77FC1C1 /* UIBezierPath */,
+				32672F0F37EBACE51D298ACF /* UICollectionView */,
+				3267238135D2F516967EE0A1 /* UICollectionViewCell */,
 				32672B4F7718AF9689E3763A /* UIFont */,
 				326723C7D2E90843B713781C /* UIImage */,
 				3267201EAC7DCE15C25904CA /* UIStackView */,
 				326725A05B7FFD9EC6057D2F /* UIViewController */,
-				32672F0F37EBACE51D298ACF /* UICollectionView */,
-				3267238135D2F516967EE0A1 /* UICollectionViewCell */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -537,11 +537,11 @@
 		326728AA196B39B518E5EF7E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				326726980D25F18EE246DEE7 /* VinylDetailsView.swift */,
+				32672BE9EB613F626A16DA08 /* Features */,
 				32672CCA5A7DCD31B2B9B6F7 /* VinylDetailsHeaderView.swift */,
 				32672F78F586D136CE238373 /* VinylDetailsNotesView.swift */,
 				3267204055725A25F9064FA5 /* VinylDetailsRecommendationsView.swift */,
-				32672BE9EB613F626A16DA08 /* Features */,
+				326726980D25F18EE246DEE7 /* VinylDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -577,8 +577,8 @@
 		32672AEFE5FF052BA9A29C22 /* TrackList */ = {
 			isa = PBXGroup;
 			children = (
-				326723B67195632844F331BE /* VinylTrackListController.swift */,
 				326728A4558E0DC922FF1B3B /* Views */,
+				326723B67195632844F331BE /* VinylTrackListController.swift */,
 				32672C2CC4D1C8CB299CE8EE /* VinylTrackListControllerSpec.swift */,
 			);
 			path = TrackList;
@@ -619,9 +619,9 @@
 			isa = PBXGroup;
 			children = (
 				3267244A4AE082E5C036BD56 /* CGContext+ResetGlobals.swift */,
-				32672D621DD1E0C3CD3B511C /* UIControl+SimulateTap.swift */,
 				3267235B843C33AEC3AB363A /* UICollectionView+CellAccess.swift */,
 				32672D167E7E15AFAA016FF5 /* UICollectionView+SizeAccess.swift */,
+				32672D621DD1E0C3CD3B511C /* UIControl+SimulateTap.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -682,13 +682,13 @@
 		32672F1A8FECFF4038593254 /* VinylDetails */ = {
 			isa = PBXGroup;
 			children = (
-				32672E4599326D6DD0E12BB9 /* VinylDetailsControllerSpec.swift */,
-				3267285EEF649FEE02C01373 /* VinylDetailsController.swift */,
-				326728AA196B39B518E5EF7E /* Views */,
-				3267237DB0636F7245BF1AA9 /* Styles */,
+				326721F5BD4CA01BBB712F18 /* Children */,
 				326725B9E7D9AE570FD1B289 /* Models */,
 				32672CFBB1A19DDC71F74265 /* Presentation */,
-				326721F5BD4CA01BBB712F18 /* Children */,
+				3267237DB0636F7245BF1AA9 /* Styles */,
+				326728AA196B39B518E5EF7E /* Views */,
+				3267285EEF649FEE02C01373 /* VinylDetailsController.swift */,
+				32672E4599326D6DD0E12BB9 /* VinylDetailsControllerSpec.swift */,
 			);
 			path = VinylDetails;
 			sourceTree = "<group>";
