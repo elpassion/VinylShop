@@ -347,8 +347,8 @@
 		326721567B5F3829BF5653D6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				32672B3D483A74660DE3FF9A /* RecommendedView.swift */,
 				32672B26E1D219CBA2606945 /* RecommendedCell.swift */,
+				32672B3D483A74660DE3FF9A /* RecommendedView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -373,8 +373,8 @@
 		326721F5BD4CA01BBB712F18 /* Children */ = {
 			isa = PBXGroup;
 			children = (
-				32672AEFE5FF052BA9A29C22 /* TrackList */,
 				32672EBDBC60FCB3ED12EF2D /* Recommended */,
+				32672AEFE5FF052BA9A29C22 /* TrackList */,
 			);
 			path = Children;
 			sourceTree = "<group>";
@@ -485,10 +485,10 @@
 		326725B9E7D9AE570FD1B289 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				32672799D56E7F81933CEC00 /* RecommendedVinyl.swift */,
 				326724D2C83CE7E4D4D4F4A9 /* Side.swift */,
 				32672523BF574CA106947F0C /* Track.swift */,
 				32672CDFC16B945116C75543 /* VinylDetails.swift */,
-				32672799D56E7F81933CEC00 /* RecommendedVinyl.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -579,9 +579,9 @@
 			isa = PBXGroup;
 			children = (
 				32672BE9EB613F626A16DA08 /* Features */,
+				32672AD9316D3A892B91B5B6 /* Header */,
 				32672F78F586D136CE238373 /* VinylDetailsNotesView.swift */,
 				326726980D25F18EE246DEE7 /* VinylDetailsView.swift */,
-				32672AD9316D3A892B91B5B6 /* Header */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -617,8 +617,8 @@
 		32672AD9316D3A892B91B5B6 /* Header */ = {
 			isa = PBXGroup;
 			children = (
-				32672DF781DA3CCB02A9439C /* VinylDetailsHeaderView.swift */,
 				326729E81F748B78A933FBA8 /* VinylDetailsHeaderPriceView.swift */,
+				32672DF781DA3CCB02A9439C /* VinylDetailsHeaderView.swift */,
 			);
 			path = Header;
 			sourceTree = "<group>";
@@ -713,10 +713,10 @@
 		32672EBDBC60FCB3ED12EF2D /* Recommended */ = {
 			isa = PBXGroup;
 			children = (
-				32672904DE9505707542DFAC /* RecommendedControllerSpec.swift */,
-				3267256FD679F110B6E188BC /* RecommendedController.swift */,
-				326721567B5F3829BF5653D6 /* Views */,
 				326724C3A5DCF38CC664CE48 /* Presentation */,
+				326721567B5F3829BF5653D6 /* Views */,
+				3267256FD679F110B6E188BC /* RecommendedController.swift */,
+				32672904DE9505707542DFAC /* RecommendedControllerSpec.swift */,
 			);
 			path = Recommended;
 			sourceTree = "<group>";
@@ -743,13 +743,13 @@
 			isa = PBXGroup;
 			children = (
 				326721F5BD4CA01BBB712F18 /* Children */,
+				32672646760D8AD2476B5CB3 /* Extensions */,
 				326725B9E7D9AE570FD1B289 /* Models */,
 				32672CFBB1A19DDC71F74265 /* Presentation */,
 				3267237DB0636F7245BF1AA9 /* Styles */,
 				326728AA196B39B518E5EF7E /* Views */,
 				3267285EEF649FEE02C01373 /* VinylDetailsController.swift */,
 				32672E4599326D6DD0E12BB9 /* VinylDetailsControllerSpec.swift */,
-				32672646760D8AD2476B5CB3 /* Extensions */,
 			);
 			path = VinylDetails;
 			sourceTree = "<group>";
