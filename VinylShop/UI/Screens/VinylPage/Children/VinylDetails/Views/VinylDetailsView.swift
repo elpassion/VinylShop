@@ -6,13 +6,15 @@ class VinylDetailsView: UIView {
     let scrollContentView = UIStackView(frame: .zero)
         |> fillVertical()
 
+    let scrollView = UIScrollView(frame: .zero)
+        |> disableScrollIndicators
+        <> insetContent(bottom: 80)
+        <> { $0.contentInsetAdjustmentBehavior = .never }
+
     private let headerView = VinylDetailsHeaderView()
     private let featuresView = VinylDetailsFeaturesView()
     private let notesView = VinylDetailsNotesView()
     private let spacerView = UIView(frame: .zero)
-
-    private let scrollView = UIScrollView(frame: .zero)
-        |> disableScrollIndicators
 
     init() {
         super.init(frame: .zero)

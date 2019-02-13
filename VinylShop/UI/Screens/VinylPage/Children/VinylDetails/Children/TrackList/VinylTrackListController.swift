@@ -56,16 +56,6 @@ class VinylTrackListController: UIViewController, UICollectionViewDataSource,
         }
     }
 
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        insetForSectionAt section: Int) -> UIEdgeInsets {
-        if section == 0 {
-            return .zero
-        } else {
-            return UIEdgeInsets(top: 0, left: 50, bottom: 0, right: 0)
-        }
-    }
-
     // MARK: - Private
 
     private let vinyl: VinylDetails

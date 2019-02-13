@@ -11,6 +11,8 @@ class VinylPageController: UIViewController {
 
         super.init(nibName: nil, bundle: nil)
     }
+    
+    // MARK: - Children
 
     lazy var barController: ShoppingBarControlling = barControllerFactory()
     lazy var detailsController: UIViewController = detailsControllerFactory()
@@ -18,6 +20,8 @@ class VinylPageController: UIViewController {
     var pageView: VinylPageView! {
         return view as? VinylPageView
     }
+    
+    // MARK: - Lifecycle
 
     override func loadView() {
         view = VinylPageView()
@@ -29,6 +33,12 @@ class VinylPageController: UIViewController {
         embedDetailsController()
         embedBarController()
         setUpBarControlTap()
+    }
+
+    // MARK: - Status bar
+
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
 
     // MARK: - Private

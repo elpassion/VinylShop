@@ -10,6 +10,7 @@ class VinylTrackListView: UIView {
     let collectionViewLayout = UICollectionViewFlowLayout()
         |> horizontal
         <> layoutSpacing(item: 0, line: 0)
+        <> { $0.sectionInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 50.0) }
 
     lazy var collectionView: UICollectionView =
         UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)

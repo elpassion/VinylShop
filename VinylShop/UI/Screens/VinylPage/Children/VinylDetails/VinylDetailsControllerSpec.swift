@@ -32,6 +32,12 @@ class VinylDetailsControllerSpec: QuickSpec {
                     expect(sut.children).to(containElementSatisfying({ $0 is RecommendedController }))
                     expect(sut.detailsView.scrollContentView.arrangedSubviews).to(containElementSatisfying({ $0 is RecommendedView }))
                 }
+
+                describe("scroll view") {
+                    it("should have bottom content inset") {
+                        expect(sut.detailsView.scrollView.contentInset) == UIEdgeInsets(top: 0.0, left: 0.0, bottom: 80.0, right: 0.0)
+                    }
+                }
             }
 
             it("should match snapshot on iPhone SE") {

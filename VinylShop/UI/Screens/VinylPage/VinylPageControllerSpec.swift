@@ -38,6 +38,10 @@ class VinylPageControllerSpec: QuickSpec {
                     barControllerStub = nil
                 }
 
+                it("should hide status bar") {
+                    expect(sut.prefersStatusBarHidden) == true
+                }
+
                 describe("view did load") {
                     beforeEach {
                         _ = sut.view
