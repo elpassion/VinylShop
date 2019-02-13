@@ -1,7 +1,7 @@
 import Anchorage
 import UIKit
 
-class VinylDetailsTrackListView: UIView {
+class VinylTrackListView: UIView {
 
     private let titleLabel = UILabel(frame: .zero)
         |> font(.nunito(.extraBold), size: 12, color: .black000000)
@@ -14,8 +14,8 @@ class VinylDetailsTrackListView: UIView {
     lazy var collectionView: UICollectionView =
         UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
             |> background(color: .whiteFFFFFF)
-            <> register(VinylDetailsSideCell.self)
-            <> register(VinylDetailsTrackCell.self)
+            <> register(VinylSideCell.self)
+            <> register(VinylTrackCell.self)
 
     var collectionHeightConstraint: NSLayoutConstraint?
 

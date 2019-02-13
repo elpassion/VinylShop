@@ -1,7 +1,7 @@
 import Anchorage
 import UIKit
 
-class VinylDetailsSideCell: UICollectionViewCell {
+class VinylSideCell: UICollectionViewCell {
 
     let titleLabel: UILabel = UILabel(frame: .zero)
         |> background(color: .grayB9CAD3)

@@ -1,7 +1,7 @@
 import Anchorage
 import UIKit
 
-class VinylDetailsTrackCell: UICollectionViewCell {
+class VinylTrackCell: UICollectionViewCell {
 
     let positionLabel: UILabel = UILabel(frame: .zero)
         |> font(.nunito(.semibold), size: 12, color: .black000000, alpha: 0.5)

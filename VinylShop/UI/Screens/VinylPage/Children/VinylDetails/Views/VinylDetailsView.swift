@@ -3,7 +3,8 @@ import UIKit
 
 class VinylDetailsView: UIView {
 
-    let trackListView = VinylDetailsTrackListView()
+    let scrollContentView = UIStackView(frame: .zero)
+        |> fillVertical()
 
     private let headerView = VinylDetailsHeaderView()
     private let featuresView = VinylDetailsFeaturesView()
@@ -12,8 +13,6 @@ class VinylDetailsView: UIView {
     private let spacerView = UIView(frame: .zero)
 
     private let scrollView = UIScrollView(frame: .zero)
-    private let scrollContent = UIStackView(frame: .zero)
-        |> fillVertical()
 
     init() {
         super.init(frame: .zero)
@@ -25,10 +24,10 @@ class VinylDetailsView: UIView {
     // MARK: - Subviews
 
     private func addSubviews() {
-        [headerView, featuresView, trackListView, notesView, recommendationsView, spacerView]
-            .forEach(scrollContent.addArrangedSubview)
+        [headerView, featuresView, notesView, recommendationsView, spacerView]
+            .forEach(scrollContentView.addArrangedSubview)
 
-        scrollView.addSubview(scrollContent)
+        scrollView.addSubview(scrollContentView)
         addSubview(scrollView)
     }
 
@@ -43,9 +42,9 @@ class VinylDetailsView: UIView {
 
         scrollView.edgeAnchors == edgeAnchors
 
-        scrollContent.edgeAnchors == scrollView.edgeAnchors
-        scrollContent.widthAnchor == scrollView.widthAnchor
-        scrollContent.heightAnchor >= heightAnchor
+        scrollContentView.edgeAnchors == scrollView.edgeAnchors
+        scrollContentView.widthAnchor == scrollView.widthAnchor
+        scrollContentView.heightAnchor >= heightAnchor
     }
 
     // MARK: - Required initializer
