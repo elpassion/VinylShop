@@ -3,6 +3,10 @@ import UIKit
 
 class VinylDetailsHeaderView: UIView {
 
+    let backButton = UIButton(frame: .zero)
+        |> image(#imageLiteral(resourceName: "back_arrow"))
+        <> insetContent(top: 10, left: 10, bottom: 10, right: 10)
+
     private let coverImageView = UIImageView(frame: .zero)
         |> headerCoverStyle
 
@@ -47,7 +51,7 @@ class VinylDetailsHeaderView: UIView {
     // MARK: - Subviews
 
     private func addSubviews() {
-        [vinylView, coverImageView, titleLabel, bandLabel, priceView].forEach(addSubview)
+        [vinylView, coverImageView, titleLabel, bandLabel, priceView, backButton].forEach(addSubview)
     }
 
     // MARK: - Layout
@@ -76,6 +80,10 @@ class VinylDetailsHeaderView: UIView {
         vinylView.leadingAnchor == coverImageView.leadingAnchor + 35
         vinylView.topAnchor == coverImageView.topAnchor + 4
         vinylView.sizeAnchors == CGSize(width: 166, height: 146)
+
+        backButton.sizeAnchors == CGSize(width: 40, height: 36)
+        backButton.leadingAnchor == leadingAnchor + 13
+        backButton.topAnchor == topAnchor + 58
     }
 
     // MARK: - Required initializer
