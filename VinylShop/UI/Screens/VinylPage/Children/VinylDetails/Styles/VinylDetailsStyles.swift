@@ -31,3 +31,7 @@ var headerLayerStyle: (CAGradientLayer) -> Void =
     gradient(colors: .purple6B1A3B, .green4BC9AF)
         <> startPoint(x: 0.2316, y: 0.8571)
         <> endPoint(x: 0.8602, y: -0.43925)
+
+var headerCoverStyle: (UIImageView) -> Void =
+    image(#imageLiteral(resourceName: "album_cover"))
+        <> shadow(color: .black000000, alpha: 0.5, y: 2, blur: 4)

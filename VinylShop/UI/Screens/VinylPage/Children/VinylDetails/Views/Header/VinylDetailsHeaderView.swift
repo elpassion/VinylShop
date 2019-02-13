@@ -4,7 +4,10 @@ import UIKit
 class VinylDetailsHeaderView: UIView {
 
     private let coverImageView = UIImageView(frame: .zero)
-        |> image(#imageLiteral(resourceName: "album_cover"))
+        |> headerCoverStyle
+
+    private let vinylView = UIImageView(frame: .zero)
+        |> image(#imageLiteral(resourceName: "vinyl_record"))
 
     private let titleLabel = UILabel(frame: .zero)
         |> text("We the Generation")
@@ -44,7 +47,7 @@ class VinylDetailsHeaderView: UIView {
     // MARK: - Subviews
 
     private func addSubviews() {
-        [coverImageView, titleLabel, bandLabel, priceView].forEach(addSubview)
+        [vinylView, coverImageView, titleLabel, bandLabel, priceView].forEach(addSubview)
     }
 
     // MARK: - Layout
@@ -69,6 +72,10 @@ class VinylDetailsHeaderView: UIView {
         priceView.leadingAnchor == titleLabel.trailingAnchor + 12
         priceView.centerYAnchor == titleLabel.centerYAnchor
         priceView.sizeAnchors == CGSize(width: 46, height: 25)
+
+        vinylView.leadingAnchor == coverImageView.leadingAnchor + 35
+        vinylView.topAnchor == coverImageView.topAnchor + 4
+        vinylView.sizeAnchors == CGSize(width: 166, height: 146)
     }
 
     // MARK: - Required initializer
