@@ -11,6 +11,20 @@ extension StringStyle {
         )
     }
 
+    static var vinylPriceStyle: StringStyle {
+        let currencyStyle = StringStyle(.font(.from(.nunito(.bold), ofSize: 14)), .baselineOffset(1))
+        let priceStyle = StringStyle(.font(.from(.nunito(.bold), ofSize: 18)))
+
+        return StringStyle(
+            .color(Color.whiteFFFFFF.ui()),
+            .font(.from(.nunito(.bold), ofSize: 10)),
+            .xmlRules([
+                .style("currency", currencyStyle),
+                .style("price", priceStyle)
+            ])
+        )
+    }
+
 }
 
 var headerLayerStyle: (CAGradientLayer) -> Void =

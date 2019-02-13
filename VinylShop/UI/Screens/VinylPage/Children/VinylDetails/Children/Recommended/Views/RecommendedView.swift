@@ -18,6 +18,7 @@ class RecommendedView: UIView {
         UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
             |> background(color: .whiteFFFFFF)
             <> register(RecommendedCell.self)
+            <> disableScrollIndicators
 
     init() {
         super.init(frame: .zero)
@@ -54,7 +55,7 @@ class RecommendedView: UIView {
         collectionView.topAnchor == titleLabel.bottomAnchor + 22
         collectionView.leadingAnchor == titleLabel.leadingAnchor
         collectionView.trailingAnchor == trailingAnchor
-        collectionView.bottomAnchor == bottomAnchor
+        collectionView.bottomAnchor == bottomAnchor - 30
         collectionView.heightAnchor == 180
     }
 

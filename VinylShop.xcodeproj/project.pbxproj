@@ -10,7 +10,6 @@
 		32672025E6E96E0CFF29CDC1 /* VinylDetailsNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672F78F586D136CE238373 /* VinylDetailsNotesView.swift */; };
 		3267209665B67BFC9F92228C /* CGContext+DrawImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672CD2E78E0836ACDEC574 /* CGContext+DrawImage.swift */; };
 		326720D78C53B7FBEC6EB6DE /* VinylDetailsStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672BB02CD81A2CDFA23314 /* VinylDetailsStyles.swift */; };
-		326720F47D7734406D3027AA /* VinylDetailsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672CCA5A7DCD31B2B9B6F7 /* VinylDetailsHeaderView.swift */; };
 		326721462EE4DE7D11763D5E /* ShoppingBoxFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672B81873DCC9CF450CB27 /* ShoppingBoxFooterView.swift */; };
 		3267219FF3D8B9B21891CCE2 /* UIControl+SimulateTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672D621DD1E0C3CD3B511C /* UIControl+SimulateTap.swift */; };
 		326721A42AEE55DED4EBF6F5 /* ShoppingBoxSeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326723B77BCBF76B8B861426 /* ShoppingBoxSeparatorView.swift */; };
@@ -20,6 +19,7 @@
 		3267233806CFA3D0C0187D33 /* PresentationContext+ShoppingBoxSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672B26906A18679DFBA75E /* PresentationContext+ShoppingBoxSpec.swift */; };
 		3267239F20FF9145332B933F /* VinylDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326726980D25F18EE246DEE7 /* VinylDetailsView.swift */; };
 		326723B073DF8409D93402C3 /* VinylDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267285EEF649FEE02C01373 /* VinylDetailsController.swift */; };
+		3267241C3F28C566831C0834 /* VinylDetailsHeaderPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326729E81F748B78A933FBA8 /* VinylDetailsHeaderPriceView.swift */; };
 		3267245AB0AE06D227A71085 /* PresentationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672ACE5F21F36FEFCF3C2F /* PresentationContext.swift */; };
 		3267248AF1A53F1BD2544336 /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672736279959EEE2EE7633 /* UIImage+Color.swift */; };
 		326724B3420D31B70B8D3EA1 /* RecommendedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672595C6415CAC3DA2F1A6 /* RecommendedPresenter.swift */; };
@@ -56,6 +56,7 @@
 		3267285FED249CC505AC098E /* ShoppingBoxPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326723004EC4EFEAE4668383 /* ShoppingBoxPresenter.swift */; };
 		326728DBF1B0F0FC631499E2 /* Priority+AlmostRequired.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672A21A0C64F3069960D95 /* Priority+AlmostRequired.swift */; };
 		326728DF31B09B0BB2DB464C /* VinylDetailsControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672E4599326D6DD0E12BB9 /* VinylDetailsControllerSpec.swift */; };
+		326728E63D770E8C825C44AD /* VinylDetailsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672DF781DA3CCB02A9439C /* VinylDetailsHeaderView.swift */; };
 		326729129FDAA43E348F7C51 /* PresentationContext+ShoppingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267243CFFD69838EC3BE6C6 /* PresentationContext+ShoppingBox.swift */; };
 		3267291DD36F756FC71B1234 /* VinylPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326727DB52EDAC1916033872 /* VinylPageView.swift */; };
 		326729327168E46CFB2F65D4 /* UIViewController+ChildrenSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267294512FB162C8DF3AE65 /* UIViewController+ChildrenSpec.swift */; };
@@ -199,6 +200,7 @@
 		32672904DE9505707542DFAC /* RecommendedControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendedControllerSpec.swift; sourceTree = "<group>"; };
 		3267294512FB162C8DF3AE65 /* UIViewController+ChildrenSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ChildrenSpec.swift"; sourceTree = "<group>"; };
 		3267296229946757EEAEABDE /* UIFont+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Convenience.swift"; sourceTree = "<group>"; };
+		326729E81F748B78A933FBA8 /* VinylDetailsHeaderPriceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VinylDetailsHeaderPriceView.swift; sourceTree = "<group>"; };
 		32672A21A0C64F3069960D95 /* Priority+AlmostRequired.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Priority+AlmostRequired.swift"; sourceTree = "<group>"; };
 		32672A255EEC85F1F69A10E1 /* EnvironmentSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentSpec.swift; sourceTree = "<group>"; };
 		32672ACE5F21F36FEFCF3C2F /* PresentationContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationContext.swift; sourceTree = "<group>"; };
@@ -218,7 +220,6 @@
 		32672C72B45E877758FC5F64 /* VinylDetailsGenreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VinylDetailsGenreView.swift; sourceTree = "<group>"; };
 		32672C7619A76B92869DC1D2 /* UICollectionViewCell+ReuseID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+ReuseID.swift"; sourceTree = "<group>"; };
 		32672C934E2806ADCA3444AA /* VinylSideCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VinylSideCell.swift; sourceTree = "<group>"; };
-		32672CCA5A7DCD31B2B9B6F7 /* VinylDetailsHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VinylDetailsHeaderView.swift; sourceTree = "<group>"; };
 		32672CCEF714F7CDC441C9B7 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32672CD2E78E0836ACDEC574 /* CGContext+DrawImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGContext+DrawImage.swift"; sourceTree = "<group>"; };
 		32672CDFC16B945116C75543 /* VinylDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VinylDetails.swift; sourceTree = "<group>"; };
@@ -226,6 +227,7 @@
 		32672D1A5D8151485A85BBA1 /* VinylDetailsLargeFeatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VinylDetailsLargeFeatureView.swift; sourceTree = "<group>"; };
 		32672D621DD1E0C3CD3B511C /* UIControl+SimulateTap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIControl+SimulateTap.swift"; sourceTree = "<group>"; };
 		32672D8F49E1E6DE7D4CC814 /* VinylPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VinylPageController.swift; sourceTree = "<group>"; };
+		32672DF781DA3CCB02A9439C /* VinylDetailsHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VinylDetailsHeaderView.swift; sourceTree = "<group>"; };
 		32672E2FFFCC144250301C26 /* ShoppingBoxItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxItemView.swift; sourceTree = "<group>"; };
 		32672E4599326D6DD0E12BB9 /* VinylDetailsControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VinylDetailsControllerSpec.swift; sourceTree = "<group>"; };
 		32672E479F609D652BA12E76 /* ApplianceSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplianceSpec.swift; sourceTree = "<group>"; };
@@ -577,9 +579,9 @@
 			isa = PBXGroup;
 			children = (
 				32672BE9EB613F626A16DA08 /* Features */,
-				32672CCA5A7DCD31B2B9B6F7 /* VinylDetailsHeaderView.swift */,
 				32672F78F586D136CE238373 /* VinylDetailsNotesView.swift */,
 				326726980D25F18EE246DEE7 /* VinylDetailsView.swift */,
+				32672AD9316D3A892B91B5B6 /* Header */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -610,6 +612,15 @@
 				32672A21A0C64F3069960D95 /* Priority+AlmostRequired.swift */,
 			);
 			path = Priority;
+			sourceTree = "<group>";
+		};
+		32672AD9316D3A892B91B5B6 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				32672DF781DA3CCB02A9439C /* VinylDetailsHeaderView.swift */,
+				326729E81F748B78A933FBA8 /* VinylDetailsHeaderPriceView.swift */,
+			);
+			path = Header;
 			sourceTree = "<group>";
 		};
 		32672AEFE5FF052BA9A29C22 /* TrackList */ = {
@@ -1078,7 +1089,6 @@
 				326728DBF1B0F0FC631499E2 /* Priority+AlmostRequired.swift in Sources */,
 				326723B073DF8409D93402C3 /* VinylDetailsController.swift in Sources */,
 				3267239F20FF9145332B933F /* VinylDetailsView.swift in Sources */,
-				326720F47D7734406D3027AA /* VinylDetailsHeaderView.swift in Sources */,
 				32672025E6E96E0CFF29CDC1 /* VinylDetailsNotesView.swift in Sources */,
 				326726089C5CC935CC13C4D4 /* VinylDetailsFeaturesView.swift in Sources */,
 				326725762C34E9A02FABB632 /* VinylDetailsGenreView.swift in Sources */,
@@ -1100,6 +1110,8 @@
 				32672A883529D057C478B0C1 /* RecommendedVinyl.swift in Sources */,
 				326725E96A2A19300916CAB9 /* RecommendedCell.swift in Sources */,
 				326724B3420D31B70B8D3EA1 /* RecommendedPresenter.swift in Sources */,
+				326728E63D770E8C825C44AD /* VinylDetailsHeaderView.swift in Sources */,
+				3267241C3F28C566831C0834 /* VinylDetailsHeaderPriceView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

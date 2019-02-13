@@ -162,3 +162,8 @@ func endPoint(x: CGFloat, y: CGFloat) -> (CAGradientLayer) -> Void {
         gradientLayer.endPoint = CGPoint(x: x, y: y)
     }
 }
+
+func disableScrollIndicators(_ scrollView: UIScrollView) -> Void {
+    scrollView.showsHorizontalScrollIndicator = false
+    scrollView.showsVerticalScrollIndicator = false
+}

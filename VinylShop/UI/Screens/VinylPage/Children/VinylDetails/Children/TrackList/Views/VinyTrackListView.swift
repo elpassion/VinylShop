@@ -16,6 +16,7 @@ class VinylTrackListView: UIView {
             |> background(color: .whiteFFFFFF)
             <> register(VinylSideCell.self)
             <> register(VinylTrackCell.self)
+            <> disableScrollIndicators
 
     var collectionHeightConstraint: NSLayoutConstraint?
 

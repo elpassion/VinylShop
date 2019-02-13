@@ -12,6 +12,7 @@ class VinylDetailsView: UIView {
     private let spacerView = UIView(frame: .zero)
 
     private let scrollView = UIScrollView(frame: .zero)
+        |> disableScrollIndicators
 
     init() {
         super.init(frame: .zero)
@@ -35,8 +36,6 @@ class VinylDetailsView: UIView {
     private func setUpLayout() {
         spacerView.setContentHuggingPriority(.defaultLow, for: .vertical)
         spacerView.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
-
-        headerView.heightAnchor == 290
 
         scrollView.edgeAnchors == edgeAnchors
 
