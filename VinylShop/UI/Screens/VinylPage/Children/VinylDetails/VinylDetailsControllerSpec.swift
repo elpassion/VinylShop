@@ -12,12 +12,9 @@ class VinylDetailsControllerSpec: QuickSpec {
 
             beforeEach {
                 sut = VinylDetailsController(vinyl: .shotDetails)
-
-                record = true
             }
 
             afterEach {
-                record = false
                 sut = nil
             }
 
