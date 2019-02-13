@@ -3,9 +3,11 @@ import UIKit
 class VinylDetailsController: UIViewController {
 
     init(vinyl: VinylDetails,
-         trackListFactory: @escaping (VinylDetails) -> UIViewController = { VinylTrackListController(vinyl: $0) }) {
+         trackListFactory: @escaping (VinylDetails) -> UIViewController = { VinylTrackListController(vinyl: $0) },
+         recommendedFactory: @escaping () -> UIViewController = RecommendedController.init) {
         self.vinyl = vinyl
         self.trackListFactory = trackListFactory
+        self.recommendedFactory = recommendedFactory
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -23,17 +25,26 @@ class VinylDetailsController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         embedTrackListController()
+        embedRecommendedController()
     }
 
     // MARK: - Private
 
     private let vinyl: VinylDetails
     private let trackListFactory: (VinylDetails) -> UIViewController
+    private let recommendedFactory: () -> UIViewController
     private lazy var trackListController: UIViewController = trackListFactory(vinyl)
+    private lazy var recommendedController: UIViewController = recommendedFactory()
 
     private func embedTrackListController() {
         embed(childViewController: trackListController) { view in
             detailsView.scrollContentView.insertArrangedSubview(view, at: 2)
+        }
+    }
+
+    private func embedRecommendedController() {
+        embed(childViewController: recommendedController) { view in
+            detailsView.scrollContentView.insertArrangedSubview(view, at: 4)
         }
     }
 

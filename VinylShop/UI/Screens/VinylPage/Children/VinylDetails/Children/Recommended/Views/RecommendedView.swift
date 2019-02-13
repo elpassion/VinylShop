@@ -1,12 +1,13 @@
 import Anchorage
 import UIKit
 
-class VinylDetailsRecommendationsView: UIView {
+class RecommendedView: UIView {
+
+    let collectionViewLayout = UICollectionViewFlowLayout()
+    lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
 
     init() {
         super.init(frame: .zero)
-
-        backgroundColor = .brown
 
         addSubviews()
         setUpLayout()
