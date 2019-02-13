@@ -4,7 +4,7 @@ class VinylDetailsController: UIViewController {
 
     init(vinyl: VinylDetails,
          trackListFactory: @escaping (VinylDetails) -> UIViewController = { VinylTrackListController(vinyl: $0) },
-         recommendedFactory: @escaping () -> UIViewController = RecommendedController.init) {
+         recommendedFactory: @escaping (VinylDetails) -> UIViewController = RecommendedController.init) {
         self.vinyl = vinyl
         self.trackListFactory = trackListFactory
         self.recommendedFactory = recommendedFactory
@@ -32,9 +32,9 @@ class VinylDetailsController: UIViewController {
 
     private let vinyl: VinylDetails
     private let trackListFactory: (VinylDetails) -> UIViewController
-    private let recommendedFactory: () -> UIViewController
+    private let recommendedFactory: (VinylDetails) -> UIViewController
     private lazy var trackListController: UIViewController = trackListFactory(vinyl)
-    private lazy var recommendedController: UIViewController = recommendedFactory()
+    private lazy var recommendedController: UIViewController = recommendedFactory(vinyl)
 
     private func embedTrackListController() {
         embed(childViewController: trackListController) { view in

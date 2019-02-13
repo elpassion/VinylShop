@@ -10,7 +10,7 @@ class RecommendedControllerSpec: QuickSpec {
             var sut: RecommendedController!
 
             beforeEach {
-                sut = RecommendedController()
+                sut = RecommendedController(vinyl: .testDetails)
             }
 
             afterEach {

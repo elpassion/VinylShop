@@ -2,6 +2,10 @@ import UIKit
 
 class RecommendedController: UIViewController, UICollectionViewDataSource {
 
+    init(vinyl: VinylDetails) {
+        super.init(nibName: nil, bundle: nil)
+    }
+
     var recommendedView: RecommendedView! {
         return view as? RecommendedView
     }
@@ -36,5 +40,9 @@ class RecommendedController: UIViewController, UICollectionViewDataSource {
     private func setUpCollectionView() {
         recommendedView.collectionView.dataSource = self
     }
+
+    // MARK: - Required initializer
+
+    required init?(coder _: NSCoder) { return nil }
 
 }
