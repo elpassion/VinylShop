@@ -11,7 +11,7 @@ class VinylDetailsControllerSpec: QuickSpec {
             var sut: VinylDetailsController!
 
             beforeEach {
-                sut = VinylDetailsController(vinyl: .testDetails)
+                sut = VinylDetailsController(vinyl: .shotDetails)
 
                 record = true
             }

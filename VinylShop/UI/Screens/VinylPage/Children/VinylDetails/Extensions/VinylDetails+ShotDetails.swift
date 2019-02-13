@@ -1,8 +1,6 @@
-@testable import VinylShop
-
 extension VinylDetails {
 
-    static var testDetails: VinylDetails {
+    static var shotDetails: VinylDetails {
         let sides = [
             Side(name: "1", tracks: [
                 Track(position: "1", name: "Overture", duration: "3:34"),
