@@ -2,8 +2,10 @@ import UIKit
 
 class VinylDetailsController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    init(sides: [Side]) {
+    init(sides: [Side], presenter: VinylDetailsPresenter = VinylDetailsPresenter()) {
         self.sides = sides
+        self.presenter = presenter
+
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -35,7 +37,7 @@ class VinylDetailsController: UIViewController, UICollectionViewDataSource, UICo
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: VinylDetailsSideCell = collectionView.dequeue(cellFor: indexPath)
-        cell.titleLabel.text = "Side \(sides[indexPath.section].name)"
+        presenter.present(side: sides[indexPath.section], in: cell)
         return cell
     }
 
@@ -50,6 +52,7 @@ class VinylDetailsController: UIViewController, UICollectionViewDataSource, UICo
     // MARK: - Private
 
     private let sides: [Side]
+    private let presenter: VinylDetailsPresenter
 
     private func configureTrackList() {
         detailsView.trackListView.collectionView.dataSource = self

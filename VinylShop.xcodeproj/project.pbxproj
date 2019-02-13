@@ -39,6 +39,7 @@
 		3267272E7AFC942CF7674E1E /* UIBezierPath+LineInRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326726D9597284D35435DCDB /* UIBezierPath+LineInRectangle.swift */; };
 		326727AFB16116E673290695 /* EnvironmentSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672A255EEC85F1F69A10E1 /* EnvironmentSpec.swift */; };
 		326727B2B73CAB039371B057 /* ApplianceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672E479F609D652BA12E76 /* ApplianceSpec.swift */; };
+		326727BC9A72CC7192FB5694 /* VinylDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267210225178CF490DA25EB /* VinylDetailsPresenter.swift */; };
 		326727EB2D1BC47DB2CF63EF /* Composition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326724162483BD5825424EF9 /* Composition.swift */; };
 		32672801CD78691A92F6EB6B /* CompositionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672696104257987B079EC4 /* CompositionSpec.swift */; };
 		32672804EA13374BB7FCE6BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672CCEF714F7CDC441C9B7 /* AppDelegate.swift */; };
@@ -142,6 +143,7 @@
 		32672076101FBF6DCA4A2937 /* ShoppingBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBarController.swift; sourceTree = "<group>"; };
 		326720D6E6D09E96DDA07856 /* UIViewController+Children.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Children.swift"; sourceTree = "<group>"; };
 		326721011DF0C538E0989DE3 /* ShoppingBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBarView.swift; sourceTree = "<group>"; };
+		3267210225178CF490DA25EB /* VinylDetailsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VinylDetailsPresenter.swift; sourceTree = "<group>"; };
 		3267211C332AF2FBCCDB9AE6 /* ShoppingBarControllerStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBarControllerStub.swift; sourceTree = "<group>"; };
 		3267214B2128E42E7806BB23 /* Appliance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appliance.swift; sourceTree = "<group>"; };
 		32672197DA09002F2A71F359 /* ShoppingBoxPresentationAnimatorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxPresentationAnimatorSpec.swift; sourceTree = "<group>"; };
@@ -594,6 +596,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		32672CFBB1A19DDC71F74265 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				3267210225178CF490DA25EB /* VinylDetailsPresenter.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
 		32672D51B1B16D89C4248069 /* Configurations */ = {
 			isa = PBXGroup;
 			children = (
@@ -647,6 +657,7 @@
 				326728AA196B39B518E5EF7E /* Views */,
 				3267237DB0636F7245BF1AA9 /* Styles */,
 				326725B9E7D9AE570FD1B289 /* Models */,
+				32672CFBB1A19DDC71F74265 /* Presentation */,
 			);
 			path = VinylDetails;
 			sourceTree = "<group>";
@@ -999,6 +1010,7 @@
 				326729AAFE2C6387CF1685DB /* VinylDetailsSideCell.swift in Sources */,
 				32672D0ED6B44330858C4E0A /* UICollectionView+Dequeue.swift in Sources */,
 				32672AA19B66F6A5256A2301 /* UICollectionViewCell+ReuseID.swift in Sources */,
+				326727BC9A72CC7192FB5694 /* VinylDetailsPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
