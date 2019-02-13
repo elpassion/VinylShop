@@ -6,15 +6,30 @@ class VinylDetailsHeaderView: UIView {
     init() {
         super.init(frame: .zero)
 
-        backgroundColor = .blue
+        setUpSelf()
         addSubviews()
         setUpLayout()
+    }
+
+    // MARK: - Gradient
+
+    override class var layerClass: AnyClass {
+        return CAGradientLayer.self
+    }
+
+    private var gradientLayer: CAGradientLayer! {
+        return layer as? CAGradientLayer
+    }
+
+    // MARK: - Configuration
+
+    private func setUpSelf() {
+        headerLayerStyle(gradientLayer)
     }
 
     // MARK: - Subviews
 
     private func addSubviews() {
-
     }
 
     // MARK: - Layout

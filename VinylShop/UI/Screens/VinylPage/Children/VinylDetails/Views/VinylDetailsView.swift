@@ -36,7 +36,7 @@ class VinylDetailsView: UIView {
         spacerView.setContentHuggingPriority(.defaultLow, for: .vertical)
         spacerView.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
 
-        headerView.heightAnchor == 150
+        headerView.heightAnchor == 290
 
         scrollView.edgeAnchors == edgeAnchors
 
