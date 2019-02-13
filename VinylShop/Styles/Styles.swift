@@ -131,3 +131,14 @@ func register<Cell: UICollectionViewCell>(_ cell: Cell.Type) -> (UICollectionVie
         collectionView.register(Cell.self, forCellWithReuseIdentifier: String(describing: Cell.self))
     }
 }
+
+func horizontal(_ flowLayout: UICollectionViewFlowLayout) -> Void {
+    flowLayout.scrollDirection = .horizontal
+}
+
+func layoutSpacing(item itemSpacing: CGFloat, line lineSpacing: CGFloat) -> (UICollectionViewFlowLayout) -> Void {
+    return { flowLayout in
+        flowLayout.minimumInteritemSpacing = itemSpacing
+        flowLayout.minimumLineSpacing = lineSpacing
+    }
+}

@@ -4,22 +4,16 @@ import UIKit
 class VinylDetailsTrackCell: UICollectionViewCell {
 
     let positionLabel: UILabel = UILabel(frame: .zero)
-        |> background(color: .grayB9CAD3)
-        <> rounded(radius: 10)
-        <> font(.nunito(.semibold), size: 12, color: .whiteFFFFFF)
-        <> alignCenter
+        |> font(.nunito(.semibold), size: 12, color: .black000000, alpha: 0.5)
 
     let nameLabel: UILabel = UILabel(frame: .zero)
-        |> background(color: .grayB9CAD3)
-        <> rounded(radius: 10)
-        <> font(.nunito(.semibold), size: 12, color: .whiteFFFFFF)
-        <> alignCenter
+        |> font(.nunito(.semibold), size: 16, color: .black000000)
 
     let durationLabel: UILabel = UILabel(frame: .zero)
-        |> background(color: .grayB9CAD3)
-        <> rounded(radius: 10)
-        <> font(.nunito(.semibold), size: 12, color: .whiteFFFFFF)
-        <> alignCenter
+        |> font(.nunito(.semibold), size: 12, color: .black000000, alpha: 0.5)
+
+    private let separatorView = UIView(frame: .zero)
+        |> background(color: .black000000, alpha: 0.1)
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,11 +25,29 @@ class VinylDetailsTrackCell: UICollectionViewCell {
     // MARK: - Subviews
 
     private func addSubviews() {
+        [positionLabel, nameLabel, durationLabel, separatorView].forEach(contentView.addSubview)
     }
 
     // MARK: - Layout
 
     private func setUpLayout() {
+        [positionLabel, durationLabel].forEach { label in
+            label.setContentHuggingPriority(.required, for: .horizontal)
+        }
+
+        positionLabel.leadingAnchor == contentView.leadingAnchor + 4
+        positionLabel.centerYAnchor == nameLabel.centerYAnchor
+
+        nameLabel.leadingAnchor == positionLabel.trailingAnchor + 11
+        nameLabel.centerYAnchor == contentView.centerYAnchor
+
+        durationLabel.leadingAnchor == nameLabel.trailingAnchor + 17
+        durationLabel.trailingAnchor == contentView.trailingAnchor
+        durationLabel.centerYAnchor == nameLabel.centerYAnchor
+
+        separatorView.bottomAnchor == contentView.bottomAnchor
+        separatorView.heightAnchor == 1
+        separatorView.horizontalAnchors == contentView.horizontalAnchors
     }
 
     // MARK: - Required initializer

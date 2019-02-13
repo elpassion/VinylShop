@@ -8,12 +8,16 @@ class VinylDetailsTrackListView: UIView {
         <> text("TRACKLIST")
 
     let collectionViewLayout = UICollectionViewFlowLayout()
+        |> horizontal
+        <> layoutSpacing(item: 0, line: 0)
 
     lazy var collectionView: UICollectionView =
         UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
             |> background(color: .whiteFFFFFF)
             <> register(VinylDetailsSideCell.self)
             <> register(VinylDetailsTrackCell.self)
+
+    var collectionHeightConstraint: NSLayoutConstraint?
 
     init() {
         super.init(frame: .zero)
@@ -45,7 +49,7 @@ class VinylDetailsTrackListView: UIView {
         collectionView.leadingAnchor == titleLabel.leadingAnchor
         collectionView.trailingAnchor == trailingAnchor
         collectionView.bottomAnchor == bottomAnchor
-        collectionView.heightAnchor == 270
+        collectionHeightConstraint = (collectionView.heightAnchor == 0)
     }
 
     // MARK: - Required initializer

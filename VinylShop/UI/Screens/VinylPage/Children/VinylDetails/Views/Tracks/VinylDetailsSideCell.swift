@@ -25,8 +25,9 @@ class VinylDetailsSideCell: UICollectionViewCell {
     // MARK: - Layout
 
     private func setUpLayout() {
-        titleLabel.edgeAnchors == edgeAnchors
-        titleLabel.heightAnchor == 20
+        titleLabel.topAnchor == topAnchor
+        titleLabel.leadingAnchor == leadingAnchor
+        titleLabel.sizeAnchors == CGSize(width: 50, height: 20)
     }
 
     // MARK: - Required initializer

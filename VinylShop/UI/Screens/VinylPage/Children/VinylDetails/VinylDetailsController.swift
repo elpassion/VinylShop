@@ -49,9 +49,19 @@ class VinylDetailsController: UIViewController, UICollectionViewDataSource, UICo
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.row == 0 {
-            return CGSize(width: 54, height: 20)
+            return CGSize(width: 222, height: 28)
         } else {
             return CGSize(width: 222, height: 50)
+        }
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        if section == 0 {
+            return .zero
+        } else {
+            return UIEdgeInsets(top: 0, left: 50, bottom: 0, right: 0)
         }
     }
 
@@ -63,6 +73,23 @@ class VinylDetailsController: UIViewController, UICollectionViewDataSource, UICo
     private func configureTrackList() {
         detailsView.trackListView.collectionView.dataSource = self
         detailsView.trackListView.collectionView.delegate = self
+        detailsView.trackListView.collectionHeightConstraint?.constant = collectionHeight
+    }
+
+    private var collectionHeight: CGFloat {
+        let sectionIndex = vinyl.longestSideIndex
+        let tracks = vinyl.sides[sectionIndex].tracks.count
+
+        return (0...tracks)
+            .map { height(forItem: $0, inSection: sectionIndex) }
+            .reduce(0, +)
+    }
+
+    private func height(forItem item: Int, inSection section: Int) -> CGFloat {
+        let view = detailsView.trackListView.collectionView
+        let indexPath = IndexPath(item: item, section: section)
+        let size = collectionView(view, layout: view.collectionViewLayout, sizeForItemAt: indexPath)
+        return size.height
     }
 
     // MARK: - Required initializer
@@ -71,7 +98,7 @@ class VinylDetailsController: UIViewController, UICollectionViewDataSource, UICo
 
 }
 
-extension VinylDetails {
+private extension VinylDetails {
 
     func side(at indexPath: IndexPath) -> Side {
         return sides[indexPath.section]
@@ -79,6 +106,18 @@ extension VinylDetails {
 
     func track(at indexPath: IndexPath) -> Track {
         return side(at: indexPath).tracks[indexPath.row - 1]
+    }
+
+    var longestSideIndex: Int {
+        let index = sides
+            .enumerated()
+            .max { $0.element.tracks.count > $1.element.tracks.count }
+
+        guard let longestSideIndex = index?.offset else {
+            fatalError("Sides should never be empty")
+        }
+
+        return longestSideIndex
     }
 
 }

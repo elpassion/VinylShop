@@ -1,4 +1,5 @@
 import BonMot
+import UIKit
 
 extension StringStyle {
 

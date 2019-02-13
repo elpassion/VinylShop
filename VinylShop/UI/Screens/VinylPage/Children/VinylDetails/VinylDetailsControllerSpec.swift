@@ -43,22 +43,39 @@ class VinylDetailsControllerSpec: QuickSpec {
 
                 describe("track list") {
                     var trackListCollectionView: UICollectionView!
+                    var flowLayoutDelegate: UICollectionViewDelegateFlowLayout?
 
                     beforeEach {
                         trackListCollectionView = sut.detailsView.trackListView.collectionView
+                        flowLayoutDelegate = trackListCollectionView.delegate as? UICollectionViewDelegateFlowLayout
                     }
 
                     afterEach {
                         trackListCollectionView = nil
+                        flowLayoutDelegate = nil
                     }
 
                     it("should have 2 sections") {
                         expect(trackListCollectionView.dataSource?.numberOfSections?(in: trackListCollectionView)) == 2
                     }
 
+                    it("should have delegate set") {
+                        expect(flowLayoutDelegate).toNot(beNil())
+                    }
+
                     describe("1st section") {
                         it("should have 5 items") {
                             expect(trackListCollectionView.dataSource?.collectionView(trackListCollectionView, numberOfItemsInSection: 0)) == 5
+                        }
+
+                        it("should have correct insets") {
+                            let insets = flowLayoutDelegate?.collectionView?(
+                                trackListCollectionView,
+                                layout: trackListCollectionView.collectionViewLayout,
+                                insetForSectionAt: 0
+                            )
+
+                            expect(insets) == UIEdgeInsets.zero
                         }
 
                         describe("1st item") {
@@ -84,7 +101,7 @@ class VinylDetailsControllerSpec: QuickSpec {
                             }
 
                             it("should have correct size") {
-                                expect(size) == CGSize(width: 54, height: 20)
+                                expect(size) == CGSize(width: 222, height: 28)
                             }
                         }
 
@@ -129,6 +146,16 @@ class VinylDetailsControllerSpec: QuickSpec {
                             expect(trackListCollectionView.dataSource?.collectionView(trackListCollectionView, numberOfItemsInSection: 1)) == 5
                         }
 
+                        it("should have correct insets") {
+                            let insets = flowLayoutDelegate?.collectionView?(
+                                trackListCollectionView,
+                                layout: trackListCollectionView.collectionViewLayout,
+                                insetForSectionAt: 1
+                            )
+
+                            expect(insets) == UIEdgeInsets(top: 0, left: 50, bottom: 0, right: 0)
+                        }
+
                         describe("1st item") {
                             var cell: VinylDetailsSideCell?
                             var size: CGSize!
@@ -152,7 +179,7 @@ class VinylDetailsControllerSpec: QuickSpec {
                             }
 
                             it("should have correct size") {
-                                expect(size) == CGSize(width: 54, height: 20)
+                                expect(size) == CGSize(width: 222, height: 28)
                             }
                         }
 
