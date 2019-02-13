@@ -47,6 +47,10 @@ func multiline(_ label: UILabel) -> Void {
     label.lineBreakMode = .byWordWrapping
 }
 
+func alignCenter(_ label: UILabel) -> Void {
+    label.textAlignment = .center
+}
+
 func bordered(width: CGFloat, color: Color, alpha: CGFloat = 1.0) -> (UIView) -> Void {
     return { view in
         view.layer.borderWidth = width
@@ -119,5 +123,11 @@ func insetTitle(top: CGFloat = 0.0,
                 right: CGFloat = 0.0) -> (UIButton) -> Void {
     return { button in
         button.titleEdgeInsets = UIEdgeInsets(top: top, left: left, bottom: bottom, right: right)
+    }
+}
+
+func register<Cell: UICollectionViewCell>(_ cell: Cell.Type) -> (UICollectionView) -> Void {
+    return { collectionView in
+        collectionView.register(Cell.self, forCellWithReuseIdentifier: String(describing: Cell.self))
     }
 }

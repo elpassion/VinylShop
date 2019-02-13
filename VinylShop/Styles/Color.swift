@@ -4,6 +4,7 @@ import UIKit
 enum Color: String {
     case black000000 = "#000000"
     case blue2FC5D8 = "#2FC5D8"
+    case grayB9CAD3 = "#B9CAD3"
     case grayD8D8D8 = "#D8D8D8"
     case grayEEF2F5 = "#EEF2F5"
     case whiteFFFFFF = "#FFFFFF"

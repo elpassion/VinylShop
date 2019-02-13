@@ -7,8 +7,12 @@ class VinylDetailsTrackListView: UIView {
         |> font(.nunito(.extraBold), size: 12, color: .black000000)
         <> text("TRACKLIST")
 
-    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-        |> background(color: .whiteFFFFFF)
+    let collectionViewLayout = UICollectionViewFlowLayout()
+
+    lazy var collectionView: UICollectionView =
+        UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
+            |> background(color: .whiteFFFFFF)
+            <> register(VinylDetailsSideCell.self)
 
     init() {
         super.init(frame: .zero)

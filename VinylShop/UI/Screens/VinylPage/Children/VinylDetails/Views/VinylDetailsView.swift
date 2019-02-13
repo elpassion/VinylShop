@@ -3,16 +3,17 @@ import UIKit
 
 class VinylDetailsView: UIView {
 
-    let scrollView = UIScrollView(frame: .zero)
-    let scrollContent = UIStackView(frame: .zero)
-        |> fillVertical()
+    let trackListView = VinylDetailsTrackListView()
 
     private let headerView = VinylDetailsHeaderView()
     private let featuresView = VinylDetailsFeaturesView()
-    private let trackListView = VinylDetailsTrackListView()
     private let notesView = VinylDetailsNotesView()
     private let recommendationsView = VinylDetailsRecommendationsView()
     private let spacerView = UIView(frame: .zero)
+
+    private let scrollView = UIScrollView(frame: .zero)
+    private let scrollContent = UIStackView(frame: .zero)
+        |> fillVertical()
 
     init() {
         super.init(frame: .zero)
