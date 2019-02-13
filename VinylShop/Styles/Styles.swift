@@ -42,9 +42,11 @@ func text(_ text: String, style: StringStyle) -> (UILabel) -> Void {
     }
 }
 
-func multiline(_ label: UILabel) -> Void {
-    label.numberOfLines = 0
-    label.lineBreakMode = .byWordWrapping
+func multiline(lines numberOfLines: Int = 0) -> (UILabel) -> Void {
+    return { label in
+        label.numberOfLines = numberOfLines
+        label.lineBreakMode = .byWordWrapping
+    }
 }
 
 func alignCenter(_ label: UILabel) -> Void {

@@ -18,7 +18,21 @@ extension VinylDetails {
             ])
         ]
 
-        return VinylDetails(sides: sides)
+        let recommended = [
+            RecommendedVinyl(
+                title: "Master of Puppets",
+                band: "Metallica",
+                image: #imageLiteral(resourceName: "cover_metallica")
+            ),
+            RecommendedVinyl(title: "Papaoutai", band: "Stromae", image: #imageLiteral(resourceName: "cover_stromae")),
+            RecommendedVinyl(
+                title: "Ghost In The Machine",
+                band: "The Police",
+                image: #imageLiteral(resourceName: "cover_the_police")
+            )
+        ]
+
+        return VinylDetails(sides: sides, recommended: recommended)
     }
 
 }

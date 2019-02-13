@@ -7,10 +7,10 @@ class VinylDetailsNotesView: UIView {
         |> font(.nunito(.extraBold), size: 12, color: .black000000)
         <> text("NOTES")
 
-    private let notesLabel = UILabel(frame: .zero)
+    private let notesLabel: UILabel = UILabel(frame: .zero)
         |> font(.nunito(.semibold), size: 14, color: .black000000)
         <> text(.notes, style: .notesStyle)
-        <> multiline
+        <> multiline()
 
     init() {
         super.init(frame: .zero)

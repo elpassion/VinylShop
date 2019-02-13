@@ -22,6 +22,7 @@
 		326723B073DF8409D93402C3 /* VinylDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267285EEF649FEE02C01373 /* VinylDetailsController.swift */; };
 		3267245AB0AE06D227A71085 /* PresentationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672ACE5F21F36FEFCF3C2F /* PresentationContext.swift */; };
 		3267248AF1A53F1BD2544336 /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672736279959EEE2EE7633 /* UIImage+Color.swift */; };
+		326724B3420D31B70B8D3EA1 /* RecommendedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672595C6415CAC3DA2F1A6 /* RecommendedPresenter.swift */; };
 		3267250311180D7BDCD41DAD /* ShoppingBoxItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672E2FFFCC144250301C26 /* ShoppingBoxItemView.swift */; };
 		32672532256CC5BB1289AED9 /* ShoppingBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672076101FBF6DCA4A2937 /* ShoppingBarController.swift */; };
 		32672536137E871ECBF3C09E /* ShoppingBarControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267237828F14E83A35A2770 /* ShoppingBarControllerSpec.swift */; };
@@ -31,6 +32,7 @@
 		32672591A3FE5EED24460E20 /* VinylTrackListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326723B67195632844F331BE /* VinylTrackListController.swift */; };
 		326725B60D2A34323456CEC7 /* AppDelegateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672597C6B12FBFFD07B57B /* AppDelegateSpec.swift */; };
 		326725D5281E8E88A54608BA /* ShoppingBoxController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326724E88E5186E5360C53BB /* ShoppingBoxController.swift */; };
+		326725E96A2A19300916CAB9 /* RecommendedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672B26E1D219CBA2606945 /* RecommendedCell.swift */; };
 		326726089C5CC935CC13C4D4 /* VinylDetailsFeaturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672536268FF96987A9C6A1 /* VinylDetailsFeaturesView.swift */; };
 		32672627446C6FF3A837D48C /* UIViewControllerPredicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326728C7AD7901E1039E7164 /* UIViewControllerPredicate.swift */; };
 		326726454DC267F6BA11447B /* ShoppingBarControllerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267211C332AF2FBCCDB9AE6 /* ShoppingBarControllerStub.swift */; };
@@ -64,6 +66,7 @@
 		32672A10C14E38940F8DE45C /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672B3EDE2434E61EA2D4A2 /* Environment.swift */; };
 		32672A33CF7FA5C0634F7A89 /* PresentationEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267237F423588A347BC818B /* PresentationEnvironment.swift */; };
 		32672A3C1C9B55A91552BD42 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672AE680239A70B031D0F0 /* RoundedCorner.swift */; };
+		32672A883529D057C478B0C1 /* RecommendedVinyl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672799D56E7F81933CEC00 /* RecommendedVinyl.swift */; };
 		32672AA188204CAA73FA171B /* ShoppingBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326721011DF0C538E0989DE3 /* ShoppingBarView.swift */; };
 		32672AA19B66F6A5256A2301 /* UICollectionViewCell+ReuseID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672C7619A76B92869DC1D2 /* UICollectionViewCell+ReuseID.swift */; };
 		32672B0E48BCE07AE11F27BB /* ShoppingBoxPresentationAnimatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672197DA09002F2A71F359 /* ShoppingBoxPresentationAnimatorSpec.swift */; };
@@ -177,6 +180,7 @@
 		32672536268FF96987A9C6A1 /* VinylDetailsFeaturesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VinylDetailsFeaturesView.swift; sourceTree = "<group>"; };
 		32672549DA59C2630442ED22 /* ShoppingBoxPriceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxPriceView.swift; sourceTree = "<group>"; };
 		3267256FD679F110B6E188BC /* RecommendedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendedController.swift; sourceTree = "<group>"; };
+		32672595C6415CAC3DA2F1A6 /* RecommendedPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendedPresenter.swift; sourceTree = "<group>"; };
 		32672597C6B12FBFFD07B57B /* AppDelegateSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateSpec.swift; sourceTree = "<group>"; };
 		326725DAB35E0A0DB8141CD4 /* VinyTrackListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VinyTrackListView.swift; sourceTree = "<group>"; };
 		32672696104257987B079EC4 /* CompositionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompositionSpec.swift; sourceTree = "<group>"; };
@@ -186,6 +190,7 @@
 		32672736279959EEE2EE7633 /* UIImage+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
 		32672758F5AEE9FEC5CAF5F7 /* ShoppingBoxItemsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxItemsView.swift; sourceTree = "<group>"; };
 		3267277C57970384AAFD46DB /* PresentationContextID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationContextID.swift; sourceTree = "<group>"; };
+		32672799D56E7F81933CEC00 /* RecommendedVinyl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendedVinyl.swift; sourceTree = "<group>"; };
 		326727D2522F5F3CD262A55D /* VinylPageControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VinylPageControllerSpec.swift; sourceTree = "<group>"; };
 		326727DB52EDAC1916033872 /* VinylPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VinylPageView.swift; sourceTree = "<group>"; };
 		326728130821FC372F765BF6 /* ShoppingBoxControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxControllerSpec.swift; sourceTree = "<group>"; };
@@ -200,6 +205,7 @@
 		32672AD7C23E69A499813550 /* ShoppingBoxStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxStyles.swift; sourceTree = "<group>"; };
 		32672AE680239A70B031D0F0 /* RoundedCorner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		32672B26906A18679DFBA75E /* PresentationContext+ShoppingBoxSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PresentationContext+ShoppingBoxSpec.swift"; sourceTree = "<group>"; };
+		32672B26E1D219CBA2606945 /* RecommendedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendedCell.swift; sourceTree = "<group>"; };
 		32672B3020CF2515472B6E5B /* ShoppingBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxView.swift; sourceTree = "<group>"; };
 		32672B3D483A74660DE3FF9A /* RecommendedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendedView.swift; sourceTree = "<group>"; };
 		32672B3EDE2434E61EA2D4A2 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
@@ -340,6 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				32672B3D483A74660DE3FF9A /* RecommendedView.swift */,
+				32672B26E1D219CBA2606945 /* RecommendedCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -448,6 +455,14 @@
 			path = Aliases;
 			sourceTree = "<group>";
 		};
+		326724C3A5DCF38CC664CE48 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				32672595C6415CAC3DA2F1A6 /* RecommendedPresenter.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
 		3267258B44B2884691070141 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -479,6 +494,7 @@
 				326724D2C83CE7E4D4D4F4A9 /* Side.swift */,
 				32672523BF574CA106947F0C /* Track.swift */,
 				32672CDFC16B945116C75543 /* VinylDetails.swift */,
+				32672799D56E7F81933CEC00 /* RecommendedVinyl.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -689,6 +705,7 @@
 				32672904DE9505707542DFAC /* RecommendedControllerSpec.swift */,
 				3267256FD679F110B6E188BC /* RecommendedController.swift */,
 				326721567B5F3829BF5653D6 /* Views */,
+				326724C3A5DCF38CC664CE48 /* Presentation */,
 			);
 			path = Recommended;
 			sourceTree = "<group>";
@@ -1080,6 +1097,9 @@
 				32672BC5A988D7DA8C8F1FDD /* VinylTrackCell.swift in Sources */,
 				326726905577983B661264EB /* RecommendedController.swift in Sources */,
 				3267274287531A8164978CC7 /* RecommendedView.swift in Sources */,
+				32672A883529D057C478B0C1 /* RecommendedVinyl.swift in Sources */,
+				326725E96A2A19300916CAB9 /* RecommendedCell.swift in Sources */,
+				326724B3420D31B70B8D3EA1 /* RecommendedPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

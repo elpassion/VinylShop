@@ -56,6 +56,10 @@ class VinylDetailsControllerSpec: QuickSpec {
             it("should match snapshot on iPhone Xs Max") {
                 assertSnapshot(matching: sut, as: .image(on: .iPhoneXsMax))
             }
+
+            it("should match full height snapshot on iPhone X") {
+                assertSnapshot(matching: sut, as: .image(on: .iPhoneX, size: CGSize(width: 375, height: 1190)))
+            }
         }
     }
 

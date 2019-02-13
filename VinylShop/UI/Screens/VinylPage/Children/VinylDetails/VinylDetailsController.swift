@@ -4,7 +4,7 @@ class VinylDetailsController: UIViewController {
 
     init(vinyl: VinylDetails,
          trackListFactory: @escaping (VinylDetails) -> UIViewController = { VinylTrackListController(vinyl: $0) },
-         recommendedFactory: @escaping (VinylDetails) -> UIViewController = RecommendedController.init) {
+         recommendedFactory: @escaping (VinylDetails) -> UIViewController = { RecommendedController(vinyl: $0) }) {
         self.vinyl = vinyl
         self.trackListFactory = trackListFactory
         self.recommendedFactory = recommendedFactory

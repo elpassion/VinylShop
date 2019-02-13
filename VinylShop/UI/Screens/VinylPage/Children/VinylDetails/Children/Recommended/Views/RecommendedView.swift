@@ -3,26 +3,59 @@ import UIKit
 
 class RecommendedView: UIView {
 
-    let collectionViewLayout = UICollectionViewFlowLayout()
-    lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
+    private let titleLabel = UILabel(frame: .zero)
+        |> font(.nunito(.extraBold), size: 12, color: .black000000)
+        <> text("RECOMMENDED FOR YOU")
+
+    private let allButton = UIButton(frame: .zero)
+        |> title("ALL", font: .nunito(.extraBold), size: 12, color: .blue2FC5D8)
+
+    let collectionViewLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        |> horizontal
+        <> layoutSpacing(item: 0, line: 14)
+
+    lazy var collectionView: UICollectionView =
+        UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
+            |> background(color: .whiteFFFFFF)
+            <> register(RecommendedCell.self)
 
     init() {
         super.init(frame: .zero)
 
+        setUpSelf()
         addSubviews()
         setUpLayout()
+    }
+
+    // MARK: - Configuration
+
+    private func setUpSelf() {
+        backgroundColor = Color.whiteFFFFFF.ui()
     }
 
     // MARK: - Subviews
 
     private func addSubviews() {
-
+        [titleLabel, allButton, collectionView].forEach(addSubview)
     }
 
     // MARK: - Layout
 
     private func setUpLayout() {
+        titleLabel.setContentHuggingPriority(.defaultLow, for: .horizontal)
 
+        titleLabel.topAnchor == topAnchor + 30
+        titleLabel.leadingAnchor == leadingAnchor + 65
+
+        allButton.leadingAnchor == titleLabel.trailingAnchor + 16
+        allButton.centerYAnchor == titleLabel.centerYAnchor
+        allButton.trailingAnchor == trailingAnchor - 23
+
+        collectionView.topAnchor == titleLabel.bottomAnchor + 22
+        collectionView.leadingAnchor == titleLabel.leadingAnchor
+        collectionView.trailingAnchor == trailingAnchor
+        collectionView.bottomAnchor == bottomAnchor
+        collectionView.heightAnchor == 180
     }
 
     // MARK: - Required initializer
