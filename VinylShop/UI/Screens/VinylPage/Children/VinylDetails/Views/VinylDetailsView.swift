@@ -12,6 +12,7 @@ class VinylDetailsView: UIView {
         <> { $0.contentInsetAdjustmentBehavior = .never }
 
     private let headerView = VinylDetailsHeaderView()
+    private let headerPlaceholderView = UIView(frame: .zero)
     private let featuresView = VinylDetailsFeaturesView()
     private let notesView = VinylDetailsNotesView()
     private let spacerView = UIView(frame: .zero)
@@ -26,11 +27,11 @@ class VinylDetailsView: UIView {
     // MARK: - Subviews
 
     private func addSubviews() {
-        [headerView, featuresView, notesView, spacerView]
+        [headerPlaceholderView, featuresView, notesView, spacerView]
             .forEach(scrollContentView.addArrangedSubview)
 
         scrollView.addSubview(scrollContentView)
-        addSubview(scrollView)
+        [scrollView, headerView].forEach(addSubview)
     }
 
     // MARK: - Layout
@@ -40,6 +41,11 @@ class VinylDetailsView: UIView {
         spacerView.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
 
         scrollView.edgeAnchors == edgeAnchors
+
+        headerView.topAnchor == topAnchor
+        headerView.horizontalAnchors == horizontalAnchors
+
+        headerPlaceholderView.heightAnchor == headerView.heightAnchor
 
         scrollContentView.edgeAnchors == scrollView.edgeAnchors
         scrollContentView.widthAnchor == scrollView.widthAnchor
