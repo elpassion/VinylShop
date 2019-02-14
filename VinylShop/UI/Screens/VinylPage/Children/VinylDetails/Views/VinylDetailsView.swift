@@ -11,11 +11,15 @@ class VinylDetailsView: UIView {
         <> insetContent(bottom: 80)
         <> { $0.contentInsetAdjustmentBehavior = .never }
 
-    private let headerView = VinylDetailsHeaderView()
-    private let headerPlaceholderView = UIView(frame: .zero)
+    let headerPlaceholderView = VinylDetailsHeaderView()
+    let headerView = VinylDetailsHeaderView()
+        |> { $0.alpha = 0.0 }
+
     private let featuresView = VinylDetailsFeaturesView()
     private let notesView = VinylDetailsNotesView()
     private let spacerView = UIView(frame: .zero)
+
+    var headerHeightConstraint: NSLayoutConstraint?
 
     init() {
         super.init(frame: .zero)
@@ -44,8 +48,7 @@ class VinylDetailsView: UIView {
 
         headerView.topAnchor == topAnchor
         headerView.horizontalAnchors == horizontalAnchors
-
-        headerPlaceholderView.heightAnchor == headerView.heightAnchor
+        headerHeightConstraint = headerView.heightAnchor == 0
 
         scrollContentView.edgeAnchors == scrollView.edgeAnchors
         scrollContentView.widthAnchor == scrollView.widthAnchor

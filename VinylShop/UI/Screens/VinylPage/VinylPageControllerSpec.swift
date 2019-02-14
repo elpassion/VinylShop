@@ -14,7 +14,7 @@ class VinylPageControllerSpec: QuickSpec {
                 sut = nil
             }
 
-            context("with a bar controller stub") {
+            context("with children controllers' stubs") {
                 var barControllerStub: ShoppingBarControllerStub!
                 var detailsControllerStub: UIViewController!
                 var environmentSpy: EnvironmentSpy!
@@ -68,9 +68,9 @@ class VinylPageControllerSpec: QuickSpec {
                 }
             }
 
-            context("with real bar controller") {
+            context("with real child controllers") {
                 beforeEach {
-                    sut = VinylPageController(barControllerFactory: ShoppingBarController.init)
+                    sut = VinylPageController()
                 }
 
                 it("should match snapshot on iPhone SE") {

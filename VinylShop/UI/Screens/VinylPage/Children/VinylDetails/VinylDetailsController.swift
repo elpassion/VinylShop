@@ -1,6 +1,6 @@
 import UIKit
 
-class VinylDetailsController: UIViewController {
+class VinylDetailsController: UIViewController, UIScrollViewDelegate {
 
     init(vinyl: VinylDetails,
          trackListFactory: @escaping (VinylDetails) -> UIViewController = { VinylTrackListController(vinyl: $0) },
@@ -24,8 +24,20 @@ class VinylDetailsController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         embedTrackListController()
         embedRecommendedController()
+        setUpScrollViewDelegate()
+    }
+
+    // MARK: - UIScrollViewDelegate
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        detailsView.headerView.alpha = 1.0
+        detailsView.headerPlaceholderView.alpha = 0.0
+        let maxY = detailsView.headerPlaceholderView.frame.maxY - scrollView.contentOffset.y
+        let headerHeight = min(max(maxY, 116), detailsView.headerPlaceholderView.frame.height)
+        update(headerHeight: headerHeight)
     }
 
     // MARK: - Private
@@ -46,6 +58,14 @@ class VinylDetailsController: UIViewController {
         embed(childViewController: recommendedController) { view in
             detailsView.scrollContentView.insertArrangedSubview(view, at: 4)
         }
+    }
+
+    private func setUpScrollViewDelegate() {
+        detailsView.scrollView.delegate = self
+    }
+
+    private func update(headerHeight: CGFloat) {
+        detailsView.headerHeightConstraint?.constant = headerHeight
     }
 
     // MARK: - Required initializer

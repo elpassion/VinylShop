@@ -59,6 +59,7 @@ class VinylDetailsHeaderView: UIView {
     private func setUpLayout() {
         [titleLabel, bandLabel].forEach { view in
             view.setContentHuggingPriority(.required, for: .vertical)
+            view.setContentCompressionResistancePriority(.required, for: .vertical)
         }
 
         coverImageView.topAnchor == topAnchor + 55
