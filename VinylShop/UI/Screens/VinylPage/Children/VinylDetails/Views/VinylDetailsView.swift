@@ -2,6 +2,8 @@ import Anchorage
 import UIKit
 
 class VinylDetailsView: UIView {
+    
+    // MARK: - Subviews
 
     let scrollContentView = UIStackView(frame: .zero)
         |> fillVertical()
@@ -18,8 +20,10 @@ class VinylDetailsView: UIView {
     private let featuresView = VinylDetailsFeaturesView()
     private let notesView = VinylDetailsNotesView()
     private let spacerView = UIView(frame: .zero)
+    
+    // MARK: - Constraints
 
-    private var headerHeightConstraint: NSLayoutConstraint?
+    var headerHeightConstraint: NSLayoutConstraint?
 
     init() {
         super.init(frame: .zero)

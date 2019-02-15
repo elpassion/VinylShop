@@ -11,6 +11,8 @@ private extension CGFloat {
 }
 
 class VinylDetailsHeaderView: UIView {
+    
+    // MARK: - Subviews
 
     let backButton = UIButton(frame: .zero)
         |> image(#imageLiteral(resourceName: "back_arrow"))
@@ -29,12 +31,14 @@ class VinylDetailsHeaderView: UIView {
     private let buyButton = UIButton(frame: .zero)
         |> image(#imageLiteral(resourceName: "buy_button"))
 
+    // MARK: - Constraints
+
     private let maxCoverSize = CGSize(width: 140, height: 140)
     private let minCoverSize = CGSize(width: 63, height: 63)
     private let maxVinylCenterOffset: CGFloat = 45
 
-    private var coverSizeConstraint: ConstraintPair?
-    private var vinylCenterOffsetConstraint: NSLayoutConstraint?
+    var coverSizeConstraint: ConstraintPair?
+    var vinylCenterOffsetConstraint: NSLayoutConstraint?
 
     init() {
         super.init(frame: .zero)
