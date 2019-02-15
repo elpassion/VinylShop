@@ -31,10 +31,10 @@ class VinylDetailsHeaderView: UIView {
 
     private let maxCoverSize = CGSize(width: 140, height: 140)
     private let minCoverSize = CGSize(width: 63, height: 63)
-    private let vinylOffset: CGFloat = 35
+    private let maxVinylCenterOffset: CGFloat = 45
 
     private var coverSizeConstraint: ConstraintPair?
-    private var vinylOffsetConstraint: NSLayoutConstraint?
+    private var vinylCenterOffsetConstraint: NSLayoutConstraint?
 
     init() {
         super.init(frame: .zero)
@@ -55,9 +55,10 @@ class VinylDetailsHeaderView: UIView {
     }
 
     func apply(headerHeight: VinylDetailsHeaderHeight) {
-        coverSizeConstraint?.first.constant = headerHeight.scrollProgress.size(between: minCoverSize, and: maxCoverSize).width
+        let width = headerHeight.scrollProgress.size(between: minCoverSize, and: maxCoverSize).width
+        coverSizeConstraint?.first.constant = width
         coverSizeConstraint?.second.constant = headerHeight.scrollProgress.size(between: minCoverSize, and: maxCoverSize).height
-        vinylOffsetConstraint?.constant = vinylOffset * headerHeight.scale
+        vinylCenterOffsetConstraint?.constant = width * (maxVinylCenterOffset / maxCoverSize.width)
 
         largeTitleView.alpha = scaledPercent(from: 0.9, to: 1.0, progress: headerHeight.scrollProgress)
         smallTitleView.alpha = 1 - scaledPercent(from: 0.0, to: 0.1, progress: headerHeight.scrollProgress)
@@ -101,8 +102,8 @@ class VinylDetailsHeaderView: UIView {
         largeTitleView.leadingAnchor == coverImageView.leadingAnchor
         largeTitleView.trailingAnchor <= trailingAnchor - 27
 
-        vinylOffsetConstraint = (vinylView.leadingAnchor == coverImageView.leadingAnchor + vinylOffset)
-        vinylView.centerYAnchor == coverImageView.centerYAnchor
+        vinylCenterOffsetConstraint = (vinylView.centerXAnchor == coverImageView.centerXAnchor + maxVinylCenterOffset)
+        vinylView.centerYAnchor == coverImageView.centerYAnchor + 3
         vinylView.heightAnchor == coverImageView.heightAnchor * (146.0 / 140.0)
         vinylView.widthAnchor == coverImageView.widthAnchor * (166.0 / 140.0)
 
