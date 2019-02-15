@@ -24,8 +24,8 @@ class VinylDetailsHeaderView: UIView {
     private let vinylView = UIImageView(frame: .zero)
         |> image(#imageLiteral(resourceName: "vinyl_record"))
 
-    private let largeTitleView = VinylDetailsHeaderLargeTitleView()
-    private let smallTitleView = VinylDetailsHeaderSmallTitleView()
+    let largeTitleView = VinylDetailsHeaderLargeTitleView()
+    let smallTitleView = VinylDetailsHeaderSmallTitleView()
         |> { $0.alpha = 0.0 }
 
     private let buyButton = UIButton(frame: .zero)

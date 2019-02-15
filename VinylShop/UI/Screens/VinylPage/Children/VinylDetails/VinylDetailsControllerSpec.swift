@@ -78,6 +78,23 @@ class VinylDetailsControllerSpec: QuickSpec {
                             it("should show header view") {
                                 expect(sut.detailsView.headerView.alpha) == 1.0
                             }
+
+                            it("should hide large title view") {
+                                expect(sut.detailsView.headerView.largeTitleView.alpha) == 0.0
+                            }
+
+                            it("should fully show small title view") {
+                                expect(sut.detailsView.headerView.smallTitleView.alpha) == 1.0
+                            }
+
+                            it("should update cover image size to collapsed size") {
+                                expect(sut.detailsView.headerView.coverSizeConstraint?.first.constant) == 63.0 ± 0.1
+                                expect(sut.detailsView.headerView.coverSizeConstraint?.second.constant) == 63.0 ± 0.1
+                            }
+
+                            it("should update vinyl offset to collapsed offset") {
+                                expect(sut.detailsView.headerView.vinylCenterOffsetConstraint?.constant) == 20.2 ± 0.1
+                            }
                         }
 
                         context("to header in collapsing state") {
@@ -99,6 +116,23 @@ class VinylDetailsControllerSpec: QuickSpec {
 
                             it("should update height constraint to original height") {
                                 expect(sut.detailsView.headerHeightConstraint?.constant) == 250
+                            }
+
+                            it("should fully show large title view") {
+                                expect(sut.detailsView.headerView.largeTitleView.alpha) == 1.0
+                            }
+
+                            it("should hide small title view") {
+                                expect(sut.detailsView.headerView.smallTitleView.alpha) == 0.0
+                            }
+
+                            it("should update cover image size to extended size") {
+                                expect(sut.detailsView.headerView.coverSizeConstraint?.first.constant) == 140.0 ± 0.1
+                                expect(sut.detailsView.headerView.coverSizeConstraint?.second.constant) == 140.0 ± 0.1
+                            }
+
+                            it("should update vinyl offset to extended offset") {
+                                expect(sut.detailsView.headerView.vinylCenterOffsetConstraint?.constant) == 45.0 ± 0.1
                             }
                         }
                     }
