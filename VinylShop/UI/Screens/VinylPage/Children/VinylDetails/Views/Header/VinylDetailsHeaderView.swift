@@ -24,7 +24,7 @@ class VinylDetailsHeaderView: UIView {
 
     private let largeTitleView = VinylDetailsHeaderLargeTitleView()
     private let smallTitleView = VinylDetailsHeaderSmallTitleView()
-        |> { $0.isHidden = true }
+        |> { $0.alpha = 0.0 }
 
     private let buyButton = UIButton(frame: .zero)
         |> image(#imageLiteral(resourceName: "buy_button"))
@@ -58,12 +58,10 @@ class VinylDetailsHeaderView: UIView {
         let width = headerHeight.scrollProgress.size(between: minCoverSize, and: maxCoverSize).width
         coverSizeConstraint?.first.constant = width
         coverSizeConstraint?.second.constant = headerHeight.scrollProgress.size(between: minCoverSize, and: maxCoverSize).height
-        vinylCenterOffsetConstraint?.constant = width * (maxVinylCenterOffset / maxCoverSize.width)
+        vinylCenterOffsetConstraint?.constant = width * (45.0 / maxCoverSize.width)
 
         largeTitleView.alpha = scaledPercent(from: 0.9, to: 1.0, progress: headerHeight.scrollProgress)
         smallTitleView.alpha = 1 - scaledPercent(from: 0.0, to: 0.1, progress: headerHeight.scrollProgress)
-        largeTitleView.isHidden = largeTitleView.alpha == 0.0
-        smallTitleView.isHidden = smallTitleView.alpha == 0.0
     }
 
     // MARK: - Gradient
