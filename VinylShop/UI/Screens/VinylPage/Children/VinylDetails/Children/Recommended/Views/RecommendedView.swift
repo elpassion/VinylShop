@@ -45,6 +45,7 @@ class RecommendedView: UIView {
 
     private func setUpLayout() {
         titleLabel.setContentHuggingPriority(.defaultLow, for: .horizontal)
+        allButton.setContentHuggingPriority(.defaultHigh, for: .horizontal)
 
         titleLabel.topAnchor == topAnchor + 30
         titleLabel.leadingAnchor == leadingAnchor + 65

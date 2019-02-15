@@ -63,7 +63,7 @@ class VinylDetailsControllerSpec: QuickSpec {
 
                         context("to collapsed header") {
                             beforeEach {
-                                scrollView.contentOffset = CGPoint(x: 0, y: 200)
+                                scrollView.setContentOffset(CGPoint(x: 0, y: 200), animated: false)
                                 scrollView.delegate?.scrollViewDidScroll?(scrollView)
                             }
 
@@ -82,7 +82,7 @@ class VinylDetailsControllerSpec: QuickSpec {
 
                         context("to header in collapsing state") {
                             beforeEach {
-                                scrollView.contentOffset = CGPoint(x: 0, y: 100)
+                                scrollView.setContentOffset(CGPoint(x: 0, y: 100), animated: false)
                                 scrollView.delegate?.scrollViewDidScroll?(scrollView)
                             }
 
@@ -93,7 +93,7 @@ class VinylDetailsControllerSpec: QuickSpec {
 
                         context("to header in extended state") {
                             beforeEach {
-                                scrollView.contentOffset = CGPoint(x: 0, y: -25)
+                                scrollView.setContentOffset(CGPoint(x: 0, y: -25), animated: false)
                                 scrollView.delegate?.scrollViewDidScroll?(scrollView)
                             }
 

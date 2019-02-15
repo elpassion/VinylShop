@@ -1,6 +1,15 @@
 import Anchorage
 import UIKit
 
+private extension CGFloat {
+
+    func size(between minSize: CGSize, and maxSize: CGSize) -> CGSize {
+        let width = minSize.width + (maxSize.width - minSize.width) * self
+        let height = minSize.height + (maxSize.height - minSize.height) * self
+        return CGSize(width: width, height: height)
+    }
+}
+
 class VinylDetailsHeaderView: UIView {
 
     let backButton = UIButton(frame: .zero)
@@ -13,16 +22,19 @@ class VinylDetailsHeaderView: UIView {
     private let vinylView = UIImageView(frame: .zero)
         |> image(#imageLiteral(resourceName: "vinyl_record"))
 
-    private let titleLabel = UILabel(frame: .zero)
-        |> text("We the Generation")
-        <> font(.nunito(.semibold), size: 25, color: .whiteFFFFFF)
-        <> multiline()
+    private let largeTitleView = VinylDetailsHeaderLargeTitleView()
+    private let smallTitleView = VinylDetailsHeaderSmallTitleView()
+        |> { $0.isHidden = true }
 
-    private let bandLabel = UILabel(frame: .zero)
-        |> text("Rudimental")
-        <> font(.nunito(.semibold), size: 14, color: .whiteFFFFFF, alpha: 0.6)
+    private let buyButton = UIButton(frame: .zero)
+        |> image(#imageLiteral(resourceName: "buy_button"))
 
-    private let priceView = VinylDetailsHeaderPriceView()
+    private let maxCoverSize = CGSize(width: 140, height: 140)
+    private let minCoverSize = CGSize(width: 63, height: 63)
+    private let vinylOffset: CGFloat = 35
+
+    private var coverSizeConstraint: ConstraintPair?
+    private var vinylOffsetConstraint: NSLayoutConstraint?
 
     init() {
         super.init(frame: .zero)
@@ -30,6 +42,27 @@ class VinylDetailsHeaderView: UIView {
         setUpSelf()
         addSubviews()
         setUpLayout()
+    }
+
+    // MARK: - Public API
+
+    private func scaledPercent(from fromValue: CGFloat, to toValue: CGFloat, progress: CGFloat) -> CGFloat {
+        guard fromValue != toValue else { fatalError() }
+
+        let range = toValue - fromValue
+        let scaledProgress = (progress - fromValue) / range
+        return min(max(scaledProgress, 0.0), 1.0)
+    }
+
+    func apply(headerHeight: VinylDetailsHeaderHeight) {
+        coverSizeConstraint?.first.constant = headerHeight.scrollProgress.size(between: minCoverSize, and: maxCoverSize).width
+        coverSizeConstraint?.second.constant = headerHeight.scrollProgress.size(between: minCoverSize, and: maxCoverSize).height
+        vinylOffsetConstraint?.constant = vinylOffset * headerHeight.scale
+
+        largeTitleView.alpha = scaledPercent(from: 0.9, to: 1.0, progress: headerHeight.scrollProgress)
+        smallTitleView.alpha = 1 - scaledPercent(from: 0.0, to: 0.1, progress: headerHeight.scrollProgress)
+        largeTitleView.isHidden = largeTitleView.alpha == 0.0
+        smallTitleView.isHidden = smallTitleView.alpha == 0.0
     }
 
     // MARK: - Gradient
@@ -51,40 +84,39 @@ class VinylDetailsHeaderView: UIView {
     // MARK: - Subviews
 
     private func addSubviews() {
-        [vinylView, coverImageView, titleLabel, bandLabel, priceView, backButton].forEach(addSubview)
+        [vinylView, coverImageView, largeTitleView, smallTitleView, backButton, buyButton].forEach(addSubview)
     }
 
     // MARK: - Layout
 
     private func setUpLayout() {
-        [titleLabel, bandLabel].forEach { view in
-            view.setContentHuggingPriority(.required, for: .vertical)
-            view.setContentCompressionResistancePriority(.required, for: .vertical)
-        }
+        smallTitleView.setContentHuggingPriority(.defaultLow, for: .horizontal)
 
-        coverImageView.topAnchor == topAnchor + 55
+        coverImageView.topAnchor == safeAreaLayoutGuide.topAnchor + 35
         coverImageView.leadingAnchor == leadingAnchor + 65
-        coverImageView.sizeAnchors == CGSize(width: 140, height: 140)
+        coverSizeConstraint = (coverImageView.sizeAnchors == maxCoverSize)
 
-        titleLabel.topAnchor == coverImageView.bottomAnchor + 14
-        titleLabel.leadingAnchor == coverImageView.leadingAnchor
+        largeTitleView.topAnchor == coverImageView.bottomAnchor + 14 ~ .almostRequired
+        largeTitleView.bottomAnchor == bottomAnchor - 27 ~ .almostRequired
+        largeTitleView.leadingAnchor == coverImageView.leadingAnchor
+        largeTitleView.trailingAnchor <= trailingAnchor - 27
 
-        bandLabel.topAnchor == titleLabel.bottomAnchor
-        bandLabel.leadingAnchor == titleLabel.leadingAnchor
-        bandLabel.bottomAnchor == bottomAnchor - 27
-
-        priceView.trailingAnchor <= trailingAnchor - 27
-        priceView.leadingAnchor == titleLabel.trailingAnchor + 12
-        priceView.centerYAnchor == titleLabel.centerYAnchor
-        priceView.sizeAnchors == CGSize(width: 46, height: 25)
-
-        vinylView.leadingAnchor == coverImageView.leadingAnchor + 35
-        vinylView.topAnchor == coverImageView.topAnchor + 4
-        vinylView.sizeAnchors == CGSize(width: 166, height: 146)
+        vinylOffsetConstraint = (vinylView.leadingAnchor == coverImageView.leadingAnchor + vinylOffset)
+        vinylView.centerYAnchor == coverImageView.centerYAnchor
+        vinylView.heightAnchor == coverImageView.heightAnchor * (146.0 / 140.0)
+        vinylView.widthAnchor == coverImageView.widthAnchor * (166.0 / 140.0)
 
         backButton.sizeAnchors == CGSize(width: 40, height: 36)
         backButton.leadingAnchor == leadingAnchor + 13
-        backButton.topAnchor == topAnchor + 58
+        backButton.topAnchor == safeAreaLayoutGuide.topAnchor + 38
+
+        smallTitleView.topAnchor == safeAreaLayoutGuide.topAnchor + 29
+        smallTitleView.leadingAnchor == backButton.trailingAnchor + 105
+        smallTitleView.trailingAnchor == trailingAnchor - 20
+        smallTitleView.bottomAnchor == bottomAnchor - 10
+
+        buyButton.trailingAnchor == trailingAnchor - 6
+        buyButton.bottomAnchor == bottomAnchor + 48
     }
 
     // MARK: - Required initializer

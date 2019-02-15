@@ -19,7 +19,7 @@ class VinylDetailsView: UIView {
     private let notesView = VinylDetailsNotesView()
     private let spacerView = UIView(frame: .zero)
 
-    var headerHeightConstraint: NSLayoutConstraint?
+    private var headerHeightConstraint: NSLayoutConstraint?
 
     init() {
         super.init(frame: .zero)
@@ -28,11 +28,24 @@ class VinylDetailsView: UIView {
         setUpLayout()
     }
 
+    // MARK: - Public API
+
+    func apply(headerHeight: VinylDetailsHeaderHeight) {
+        headerHeightConstraint?.constant = headerPlaceholderView.frame.size.height * headerHeight.scale
+        headerView.apply(headerHeight: headerHeight)
+    }
+
+    func showAttachedHeaderView() {
+        headerView.alpha = 1.0
+        headerPlaceholderView.alpha = 0.0
+    }
+
     // MARK: - Subviews
 
     private func addSubviews() {
         [headerPlaceholderView, featuresView, notesView, spacerView]
-            .forEach(scrollContentView.addArrangedSubview)
+            .reversed()
+            .forEach { scrollContentView.insertArrangedSubview($0, at: 0) }
 
         scrollView.addSubview(scrollContentView)
         [scrollView, headerView].forEach(addSubview)
@@ -48,7 +61,7 @@ class VinylDetailsView: UIView {
 
         headerView.topAnchor == topAnchor
         headerView.horizontalAnchors == horizontalAnchors
-        headerHeightConstraint = headerView.heightAnchor == 0
+        headerHeightConstraint = headerView.heightAnchor == 200
 
         scrollContentView.edgeAnchors == scrollView.edgeAnchors
         scrollContentView.widthAnchor == scrollView.widthAnchor

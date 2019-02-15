@@ -39,6 +39,7 @@ class VinylDetailsSmallFeatureView: UIView {
 
         subtitleLabel.topAnchor == valueLabel.bottomAnchor + 3
         subtitleLabel.bottomAnchor == bottomAnchor
+        subtitleLabel.horizontalAnchors == horizontalAnchors
     }
 
     // MARK: - Required initializer

@@ -38,7 +38,7 @@ class RecommendedCell: UICollectionViewCell {
         coverImageView.heightAnchor == coverImageView.widthAnchor
 
         titleLabel.horizontalAnchors == contentView.horizontalAnchors
-        titleLabel.topAnchor == coverImageView.bottomAnchor + 14
+        titleLabel.topAnchor == coverImageView.bottomAnchor + 8
 
         bandLabel.horizontalAnchors == titleLabel.horizontalAnchors
         bandLabel.topAnchor >= titleLabel.bottomAnchor + 4

@@ -82,6 +82,14 @@ func alignBottoms(_ stackView: UIStackView) -> Void {
     stackView.alignment = .bottom
 }
 
+func alignLeadings(_ stackView: UIStackView) -> Void {
+    stackView.alignment = .leading
+}
+
+func alignCenters(_ stackView: UIStackView) -> Void {
+    stackView.alignment = .center
+}
+
 func title(_ title: String, font: Font, size: CGFloat, color: Color, alpha: CGFloat = 1.0) -> (UIButton) -> Void {
     return { button in
         button.titleLabel?.font = UIFont(name: font.name, size: size)

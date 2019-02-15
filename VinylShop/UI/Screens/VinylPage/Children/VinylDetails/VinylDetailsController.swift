@@ -33,11 +33,11 @@ class VinylDetailsController: UIViewController, UIScrollViewDelegate {
     // MARK: - UIScrollViewDelegate
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        detailsView.headerView.alpha = 1.0
-        detailsView.headerPlaceholderView.alpha = 0.0
-        let maxY = detailsView.headerPlaceholderView.frame.maxY - scrollView.contentOffset.y
-        let headerHeight = min(max(maxY, 116), detailsView.headerPlaceholderView.frame.height)
-        update(headerHeight: headerHeight)
+        detailsView.showAttachedHeaderView()
+
+        if let headerHeight = headerHeight {
+            detailsView.apply(headerHeight: headerHeight)
+        }
     }
 
     // MARK: - Private
@@ -47,6 +47,10 @@ class VinylDetailsController: UIViewController, UIScrollViewDelegate {
     private let recommendedFactory: (VinylDetails) -> UIViewController
     private lazy var trackListController: UIViewController = trackListFactory(vinyl)
     private lazy var recommendedController: UIViewController = recommendedFactory(vinyl)
+
+    private var collapsedHeaderHeight: CGFloat {
+        return 116 + detailsView.safeAreaInsets.top
+    }
 
     private func embedTrackListController() {
         embed(childViewController: trackListController) { view in
@@ -64,8 +68,12 @@ class VinylDetailsController: UIViewController, UIScrollViewDelegate {
         detailsView.scrollView.delegate = self
     }
 
-    private func update(headerHeight: CGFloat) {
-        detailsView.headerHeightConstraint?.constant = headerHeight
+    private var headerHeight: VinylDetailsHeaderHeight? {
+        let original = detailsView.headerPlaceholderView.frame.height
+        let yOffset = detailsView.headerPlaceholderView.frame.maxY - detailsView.scrollView.contentOffset.y
+        let current = min(max(yOffset, collapsedHeaderHeight), original)
+
+        return VinylDetailsHeaderHeight(original: original, current: current, minimal: collapsedHeaderHeight)
     }
 
     // MARK: - Required initializer
