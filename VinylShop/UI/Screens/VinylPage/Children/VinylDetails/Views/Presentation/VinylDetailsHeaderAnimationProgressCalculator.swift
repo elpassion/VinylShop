@@ -12,7 +12,7 @@ class VinylDetailsHeaderAnimationProgressCalculator {
         let coverImageSize = self.coverImageSize(progress: progress)
 
         return VinylDetailsHeaderAnimationProgress(
-            headerHeight: scale * position.height,
+            headerHeight: position.height * (scale - 1),
             coverImageSize: coverImageSize,
             vinylCenterOffset: coverImageSize.width * vinylCenterOffsetScale,
             largeTitleAlpha: scaled(progress: progress, inRangeFrom: 0.9, to: 1.0),

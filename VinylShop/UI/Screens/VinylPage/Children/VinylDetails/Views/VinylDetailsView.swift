@@ -14,8 +14,9 @@ class VinylDetailsView: UIView {
         <> { $0.contentInsetAdjustmentBehavior = .never }
 
     let headerPlaceholderView = VinylDetailsHeaderView()
-    let headerView = VinylDetailsHeaderView()
         |> { $0.alpha = 0.0 }
+
+    let headerView = VinylDetailsHeaderView()
 
     private let featuresView = VinylDetailsFeaturesView()
     private let notesView = VinylDetailsNotesView()
@@ -53,7 +54,7 @@ class VinylDetailsView: UIView {
 
         headerView.topAnchor == topAnchor
         headerView.horizontalAnchors == horizontalAnchors
-        headerHeightConstraint = headerView.heightAnchor == 200
+        headerHeightConstraint = (headerView.heightAnchor == headerPlaceholderView.heightAnchor)
 
         scrollContentView.edgeAnchors == scrollView.edgeAnchors
         scrollContentView.widthAnchor == scrollView.widthAnchor

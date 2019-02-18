@@ -12,16 +12,25 @@ class BuyAnimator {
             return
         }
 
+        let isInitialState = barView.isHidden
+
+        if isInitialState {
+            setUpInitialState(barView: barView, boxView: boxView, boxBackView: boxBackView)
+        }
+
+        barView.isHidden = false
+
         UIView.animateKeyframes(withDuration: 1.1, delay: 0.0, animations: {
             UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.001) {
                 barView.albumCoverView.alpha = 0.0
-                barView.frameControl.alpha = 1.0
             }
 
             UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.3 / 1.1) {
-                [barView.titleLabel, barView.albumCoverView, barView.albumCountLabel, barView.totalLabel]
-                    .forEach { $0.alpha = 0.0 }
+                if isInitialState {
+                    self.moveUpBarView(barView, boxView: boxView, boxBackView: boxBackView)
+                }
 
+                self.hideBarViewDetails(barView)
                 self.scaleUpBoxView(boxView, centerX: barView.frameControl.center.x)
                 self.scaleUpBackBoxView(
                     boxBackView,
@@ -87,6 +96,32 @@ class BuyAnimator {
         view.addSubview(snapshotView)
 
         return snapshotView
+    }
+
+    private func setUpInitialState(barView: ShoppingBarView, boxView: UIView, boxBackView: UIView) {
+        hideBarViewDetails(barView)
+        barView.frame = barView.frame.offsetBy(dx: 0, dy: barView.frame.size.height)
+
+        boxView.center = CGPoint(
+            x: barView.frameControl.center.x - boxView.frame.size.width * 0.5,
+            y: boxView.center.y + barView.frame.size.height
+        )
+
+        boxBackView.center = CGPoint(
+            x: barView.frameControl.center.x - boxBackView.frame.size.width * 0.5,
+            y: boxBackView.center.y + barView.frame.size.height
+        )
+    }
+
+    private func hideBarViewDetails(_ barView: ShoppingBarView) {
+        [barView.titleLabel, barView.albumCoverView, barView.albumCountLabel, barView.totalLabel]
+            .forEach { $0.alpha = 0.0 }
+    }
+
+    private func moveUpBarView(_ barView: UIView, boxView: UIView, boxBackView: UIView) {
+        [barView, boxView, boxBackView].forEach { view in
+            view.center.y -= barView.frame.height
+        }
     }
 
     private func scaleUpBoxView(_ boxView: UIView, centerX: CGFloat) {

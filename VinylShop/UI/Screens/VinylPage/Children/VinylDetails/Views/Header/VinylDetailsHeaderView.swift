@@ -44,11 +44,9 @@ class VinylDetailsHeaderView: UIView {
     // MARK: - Hit test
 
     override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
-        if buyButton.frame.contains(point) {
-            return true
-        } else {
-            return super.point(inside: point, with: event)
-        }
+        return [backButton, buyButton]
+            .map { $0.frame.contains(point) }
+            .contains { $0 }
     }
 
     // MARK: - Gradient

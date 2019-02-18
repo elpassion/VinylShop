@@ -33,14 +33,6 @@ class VinylDetailsControllerSpec: QuickSpec {
                     expect(sut.detailsView.scrollContentView.arrangedSubviews).to(containElementSatisfying({ $0 is RecommendedView }))
                 }
 
-                it("should show header placeholder view") {
-                    expect(sut.detailsView.headerPlaceholderView.alpha) == 1.0
-                }
-
-                it("should hide header view") {
-                    expect(sut.detailsView.headerView.alpha) == 0.0
-                }
-
                 describe("scroll view") {
                     var scrollView: UIScrollView!
 
@@ -68,7 +60,7 @@ class VinylDetailsControllerSpec: QuickSpec {
                             }
 
                             it("should update height constraint to minimum value") {
-                                expect(sut.detailsView.headerHeightConstraint?.constant) == 116
+                                expect(sut.detailsView.headerHeightConstraint?.constant) == -134
                             }
 
                             it("should hide header placeholder view") {
@@ -104,7 +96,7 @@ class VinylDetailsControllerSpec: QuickSpec {
                             }
 
                             it("should update height constraint to original height minus offset") {
-                                expect(sut.detailsView.headerHeightConstraint?.constant) == 150
+                                expect(sut.detailsView.headerHeightConstraint?.constant) == -100
                             }
                         }
 
@@ -115,7 +107,7 @@ class VinylDetailsControllerSpec: QuickSpec {
                             }
 
                             it("should update height constraint to original height") {
-                                expect(sut.detailsView.headerHeightConstraint?.constant) == 250
+                                expect(sut.detailsView.headerHeightConstraint?.constant) == 0
                             }
 
                             it("should fully show large title view") {
