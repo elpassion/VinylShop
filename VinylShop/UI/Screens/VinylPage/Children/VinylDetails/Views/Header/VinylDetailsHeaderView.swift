@@ -22,10 +22,10 @@ class VinylDetailsHeaderView: UIView {
         |> image(#imageLiteral(resourceName: "back_arrow"))
         <> insetContent(top: 10, left: 10, bottom: 10, right: 10)
 
-    private let coverImageView = UIImageView(frame: .zero)
+    let coverImageView = UIImageView(frame: .zero)
         |> headerCoverStyle
 
-    private let vinylView = UIImageView(frame: .zero)
+    let vinylView = UIImageView(frame: .zero)
         |> image(#imageLiteral(resourceName: "vinyl_record"))
 
     // MARK: - Constraints
@@ -70,7 +70,7 @@ class VinylDetailsHeaderView: UIView {
     // MARK: - Subviews
 
     private func addSubviews() {
-        [vinylView, coverImageView, largeTitleView, smallTitleView, backButton, buyButton].forEach(addSubview)
+        [largeTitleView, smallTitleView, backButton, buyButton, vinylView, coverImageView].forEach(addSubview)
     }
 
     // MARK: - Layout
