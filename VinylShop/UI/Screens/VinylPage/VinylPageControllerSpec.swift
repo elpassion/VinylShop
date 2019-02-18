@@ -55,6 +55,10 @@ class VinylPageControllerSpec: QuickSpec {
                         expect(sut).to(embed(controller: detailsControllerStub, in: sut.pageView.detailsContainerView))
                     }
 
+                    it("should hide bar controller view") {
+                        expect(barControllerStub.view.isHidden) == true
+                    }
+
                     describe("shopping bar tap") {
                         beforeEach {
                             barControllerStub.barControl.simulateTap()

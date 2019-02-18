@@ -56,6 +56,7 @@ class VinylPageController: UIViewController {
     }
 
     private func embedBarController() {
+        barController.view.isHidden = true
         embed(childViewController: barController, inside: pageView.barContainerView)
     }
 
