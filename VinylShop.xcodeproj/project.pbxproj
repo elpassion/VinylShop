@@ -594,10 +594,10 @@
 			children = (
 				32672BE9EB613F626A16DA08 /* Features */,
 				32672AD9316D3A892B91B5B6 /* Header */,
-				32672F78F586D136CE238373 /* VinylDetailsNotesView.swift */,
-				326726980D25F18EE246DEE7 /* VinylDetailsView.swift */,
 				32672AE595B43BAF8690C7DC /* Model */,
 				32672D4D9345A589AFC434C2 /* Presentation */,
+				32672F78F586D136CE238373 /* VinylDetailsNotesView.swift */,
+				326726980D25F18EE246DEE7 /* VinylDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -633,10 +633,10 @@
 		32672AD9316D3A892B91B5B6 /* Header */ = {
 			isa = PBXGroup;
 			children = (
-				326729E81F748B78A933FBA8 /* VinylDetailsHeaderPriceView.swift */,
-				32672DF781DA3CCB02A9439C /* VinylDetailsHeaderView.swift */,
 				32672D3C5F07D9C8019043D6 /* VinylDetailsHeaderLargeTitleView.swift */,
+				326729E81F748B78A933FBA8 /* VinylDetailsHeaderPriceView.swift */,
 				32672656895B5F3FD031CC29 /* VinylDetailsHeaderSmallTitleView.swift */,
+				32672DF781DA3CCB02A9439C /* VinylDetailsHeaderView.swift */,
 				32672873E27EF142D19087BF /* VinylDetailsHeaderViewSpec.swift */,
 			);
 			path = Header;
@@ -645,8 +645,8 @@
 		32672AE595B43BAF8690C7DC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				32672DA08A96F4BDFA656010 /* VinylDetailsScrollPosition.swift */,
 				32672F62E1FB2EB9EB6BE006 /* VinylDetailsHeaderAnimationProgress.swift */,
+				32672DA08A96F4BDFA656010 /* VinylDetailsScrollPosition.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
