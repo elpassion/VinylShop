@@ -34,7 +34,7 @@ class BuyAnimator {
                 self.hideVinylView(detailsView.headerView.vinylView, coverView: detailsView.headerView.coverImageView)
             }
 
-            UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.3 / 1.1) {
+            UIView.addKeyframe(withRelativeStartTime: 0.05 / 1.1, relativeDuration: 0.3 / 1.1) {
                 self.centerCoverView(coverView, headerView: detailsView.headerView)
             }
 
