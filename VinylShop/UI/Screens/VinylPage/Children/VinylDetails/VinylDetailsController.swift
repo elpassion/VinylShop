@@ -37,9 +37,9 @@ class VinylDetailsController: UIViewController, UIScrollViewDelegate {
     // MARK: - UIScrollViewDelegate
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        guard let headerHeight = self.headerHeight else { return }
+        guard scrollPosition.height > 0.0 else { return }
 
-        let animationProgress = calculator.progress(for: headerHeight, in: detailsView)
+        let animationProgress = calculator.progress(for: scrollPosition, in: detailsView)
         presenter.present(animation: animationProgress, in: detailsView)
     }
 
@@ -52,10 +52,6 @@ class VinylDetailsController: UIViewController, UIScrollViewDelegate {
     private let presenter: VinylDetailsHeaderAnimationPresenter
     private lazy var trackListController: UIViewController = trackListFactory(vinyl)
     private lazy var recommendedController: UIViewController = recommendedFactory(vinyl)
-
-    private var collapsedHeaderHeight: CGFloat {
-        return 116 + detailsView.safeAreaInsets.top
-    }
 
     private func embedTrackListController() {
         embed(childViewController: trackListController) { view in
@@ -73,12 +69,13 @@ class VinylDetailsController: UIViewController, UIScrollViewDelegate {
         detailsView.scrollView.delegate = self
     }
 
-    private var headerHeight: VinylDetailsHeaderHeight? {
-        let original = detailsView.headerPlaceholderView.frame.height
-        let yOffset = detailsView.headerPlaceholderView.frame.maxY - detailsView.scrollView.contentOffset.y
-        let current = min(max(yOffset, collapsedHeaderHeight), original)
-
-        return VinylDetailsHeaderHeight(original: original, current: current, minimal: collapsedHeaderHeight)
+    private var scrollPosition: VinylDetailsScrollPosition {
+        return VinylDetailsScrollPosition(
+            height: detailsView.headerPlaceholderView.frame.height,
+            yBottom: detailsView.headerPlaceholderView.frame.maxY,
+            yContentOffset: detailsView.scrollView.contentOffset.y,
+            topSafeInset: detailsView.safeAreaInsets.top
+        )
     }
 
     // MARK: - Required initializer

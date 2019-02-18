@@ -11,6 +11,13 @@ class VinylDetailsHeaderView: UIView {
     
     // MARK: - Subviews
 
+    let largeTitleView = VinylDetailsHeaderLargeTitleView()
+    let smallTitleView = VinylDetailsHeaderSmallTitleView()
+        |> { $0.alpha = 0.0 }
+
+    let buyButton = UIButton(frame: .zero)
+        |> image(#imageLiteral(resourceName: "buy_button"))
+
     let backButton = UIButton(frame: .zero)
         |> image(#imageLiteral(resourceName: "back_arrow"))
         <> insetContent(top: 10, left: 10, bottom: 10, right: 10)
@@ -21,13 +28,6 @@ class VinylDetailsHeaderView: UIView {
     private let vinylView = UIImageView(frame: .zero)
         |> image(#imageLiteral(resourceName: "vinyl_record"))
 
-    let largeTitleView = VinylDetailsHeaderLargeTitleView()
-    let smallTitleView = VinylDetailsHeaderSmallTitleView()
-        |> { $0.alpha = 0.0 }
-
-    let buyButton = UIButton(frame: .zero)
-        |> image(#imageLiteral(resourceName: "buy_button"))
-    
     // MARK: - Constraints
 
     var coverSizeConstraint: ConstraintPair?
