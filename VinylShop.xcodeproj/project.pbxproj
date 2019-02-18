@@ -553,9 +553,9 @@
 		326726D921A9EF506933D5A0 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				32672FBA0E6E6D0118E72CEB /* BuyAnimator.swift */,
 				32672EA4DBE7AFBD43C23AA6 /* ShoppingBoxPresentationAnimator.swift */,
 				32672197DA09002F2A71F359 /* ShoppingBoxPresentationAnimatorSpec.swift */,
-				32672FBA0E6E6D0118E72CEB /* BuyAnimator.swift */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
