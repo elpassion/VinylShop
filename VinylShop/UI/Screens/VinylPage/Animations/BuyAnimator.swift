@@ -12,47 +12,54 @@ class BuyAnimator {
             return
         }
 
-        UIView.animateKeyframes(withDuration: 1.0, delay: 0.0, animations: {
-            UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.01) {
+        UIView.animateKeyframes(withDuration: 1.1, delay: 0.0, animations: {
+            UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.001) {
                 barView.albumCoverView.alpha = 0.0
                 barView.frameControl.alpha = 1.0
             }
 
-            UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.1) {
+            UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.3 / 1.1) {
                 [barView.titleLabel, barView.albumCoverView, barView.albumCountLabel, barView.totalLabel]
                     .forEach { $0.alpha = 0.0 }
 
                 self.scaleUpBoxView(boxView, centerX: barView.frameControl.center.x)
-                self.scaleUpBackBoxView(boxBackView, centerX: barView.frameControl.center.x, bottomY: boxView.frame.maxY)
+                self.scaleUpBackBoxView(
+                    boxBackView,
+                    centerX: barView.frameControl.center.x,
+                    bottomY: boxView.frame.maxY
+                )
             }
 
-            UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.1) {
+            UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.1 / 1.1) {
                 self.hideVinylView(detailsView.headerView.vinylView, coverView: detailsView.headerView.coverImageView)
             }
 
-            UIView.addKeyframe(withRelativeStartTime: 0.1, relativeDuration: 0.2) {
+            UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.3 / 1.1) {
                 self.centerCoverView(coverView, headerView: detailsView.headerView)
             }
 
-            UIView.addKeyframe(withRelativeStartTime: 0.3, relativeDuration: 0.4) {
+            UIView.addKeyframe(withRelativeStartTime: 0.3 / 1.1, relativeDuration: 0.35 / 1.1) {
                 self.dropCoverView(coverView, view: view, barView: barView, boxView: boxView)
             }
 
-            UIView.addKeyframe(withRelativeStartTime: 0.7, relativeDuration: 0.2) {
+            UIView.addKeyframe(withRelativeStartTime: 0.65 / 1.1, relativeDuration: 0.3 / 1.1) {
                 self.placeInShoppingBar(subview: boxView, originalView: barView.checkoutBoxView, view: view)
                 self.placeInShoppingBar(subview: boxBackView, originalView: barView.checkoutBoxBackView, view: view)
                 self.placeInShoppingBar(subview: coverView, originalView: barView.albumCoverView, view: view)
             }
 
-            UIView.addKeyframe(withRelativeStartTime: 0.9, relativeDuration: 0.001) {
+            UIView.addKeyframe(withRelativeStartTime: 0.8 / 1.1, relativeDuration: 0.001) {
                 detailsView.headerView.vinylView.transform = .identity
+            }
+
+            UIView.addKeyframe(withRelativeStartTime: 0.95 / 1.1, relativeDuration: 0.001) {
                 barView.albumCoverView.alpha = 1.0
                 coverView.alpha = 0.0
                 barView.checkoutBoxBackView.alpha = 1.0
                 boxBackView.alpha = 0.0
             }
 
-            UIView.addKeyframe(withRelativeStartTime: 0.9, relativeDuration: 0.1) {
+            UIView.addKeyframe(withRelativeStartTime: 0.8 / 1.1, relativeDuration: 0.3 / 1.1) {
                 detailsView.headerView.coverImageView.alpha = 1.0
                 detailsView.headerView.vinylView.alpha = 1.0
 
