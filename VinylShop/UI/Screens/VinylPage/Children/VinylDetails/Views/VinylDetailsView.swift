@@ -32,18 +32,6 @@ class VinylDetailsView: UIView {
         setUpLayout()
     }
 
-    // MARK: - Public API
-
-    func apply(headerHeight: VinylDetailsHeaderHeight) {
-        headerHeightConstraint?.constant = headerPlaceholderView.frame.size.height * headerHeight.scale
-        headerView.apply(headerHeight: headerHeight)
-    }
-
-    func showAttachedHeaderView() {
-        headerView.alpha = 1.0
-        headerPlaceholderView.alpha = 0.0
-    }
-
     // MARK: - Subviews
 
     private func addSubviews() {

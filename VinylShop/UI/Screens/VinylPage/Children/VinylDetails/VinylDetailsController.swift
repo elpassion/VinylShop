@@ -4,10 +4,14 @@ class VinylDetailsController: UIViewController, UIScrollViewDelegate {
 
     init(vinyl: VinylDetails,
          trackListFactory: @escaping (VinylDetails) -> UIViewController = { VinylTrackListController(vinyl: $0) },
-         recommendedFactory: @escaping (VinylDetails) -> UIViewController = { RecommendedController(vinyl: $0) }) {
+         recommendedFactory: @escaping (VinylDetails) -> UIViewController = { RecommendedController(vinyl: $0) },
+         calculator: VinylDetailsHeaderAnimationProgressCalculator = VinylDetailsHeaderAnimationProgressCalculator(),
+         presenter: VinylDetailsHeaderAnimationPresenter = VinylDetailsHeaderAnimationPresenter()) {
         self.vinyl = vinyl
         self.trackListFactory = trackListFactory
         self.recommendedFactory = recommendedFactory
+        self.calculator = calculator
+        self.presenter = presenter
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -33,11 +37,10 @@ class VinylDetailsController: UIViewController, UIScrollViewDelegate {
     // MARK: - UIScrollViewDelegate
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        detailsView.showAttachedHeaderView()
+        guard let headerHeight = self.headerHeight else { return }
 
-        if let headerHeight = headerHeight {
-            detailsView.apply(headerHeight: headerHeight)
-        }
+        let animationProgress = calculator.progress(for: headerHeight, in: detailsView)
+        presenter.present(animation: animationProgress, in: detailsView)
     }
 
     // MARK: - Private
@@ -45,6 +48,8 @@ class VinylDetailsController: UIViewController, UIScrollViewDelegate {
     private let vinyl: VinylDetails
     private let trackListFactory: (VinylDetails) -> UIViewController
     private let recommendedFactory: (VinylDetails) -> UIViewController
+    private let calculator: VinylDetailsHeaderAnimationProgressCalculator
+    private let presenter: VinylDetailsHeaderAnimationPresenter
     private lazy var trackListController: UIViewController = trackListFactory(vinyl)
     private lazy var recommendedController: UIViewController = recommendedFactory(vinyl)
 
