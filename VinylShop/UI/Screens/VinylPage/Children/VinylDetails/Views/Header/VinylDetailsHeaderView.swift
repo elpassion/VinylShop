@@ -16,7 +16,7 @@ class VinylDetailsHeaderView: UIView {
         |> { $0.alpha = 0.0 }
 
     let buyButton = UIButton(frame: .zero)
-        |> image(#imageLiteral(resourceName: "buy_button"))
+        |> image(#imageLiteral(resourceName: "buy_button"), states: [.normal, .disabled])
 
     let backButton = UIButton(frame: .zero)
         |> image(#imageLiteral(resourceName: "back_arrow"))

@@ -93,6 +93,7 @@
 		32672E02374D316A29D283EF /* VinylPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672D8F49E1E6DE7D4CC814 /* VinylPageController.swift */; };
 		32672E225BB372FEACCDFDB1 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672E5BECAB5E8AA3B3D713 /* Album.swift */; };
 		32672E6AF0F897929D648415 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672BED0705778B22001111 /* Color.swift */; };
+		32672E7488A92E64C389074F /* BuyAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672FBA0E6E6D0118E72CEB /* BuyAnimator.swift */; };
 		32672EB5DCEEDB6EA2A60657 /* VinylDetailsLargeFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672D1A5D8151485A85BBA1 /* VinylDetailsLargeFeatureView.swift */; };
 		32672EE55BE23CD52D78FE4B /* ShoppingBarControlling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267243FF1906019A2989912 /* ShoppingBarControlling.swift */; };
 		32672F01BC5D2D648DEA8C11 /* Appliance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267214B2128E42E7806BB23 /* Appliance.swift */; };
@@ -250,6 +251,7 @@
 		32672F78F586D136CE238373 /* VinylDetailsNotesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VinylDetailsNotesView.swift; sourceTree = "<group>"; };
 		32672F83B16C96F68BF03EF6 /* UIImagePredicate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImagePredicate.swift; sourceTree = "<group>"; };
 		32672F95C67E9276B2682706 /* CGContext+Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGContext+Globals.swift"; sourceTree = "<group>"; };
+		32672FBA0E6E6D0118E72CEB /* BuyAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyAnimator.swift; sourceTree = "<group>"; };
 		32672FFA0D644C14D2F38740 /* UIStackView+ReplaceSubviews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+ReplaceSubviews.swift"; sourceTree = "<group>"; };
 		8C2243B52202125600C3470B /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		8C2243B62202125600C3470B /* Nunito-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
@@ -553,6 +555,7 @@
 			children = (
 				32672EA4DBE7AFBD43C23AA6 /* ShoppingBoxPresentationAnimator.swift */,
 				32672197DA09002F2A71F359 /* ShoppingBoxPresentationAnimatorSpec.swift */,
+				32672FBA0E6E6D0118E72CEB /* BuyAnimator.swift */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -1156,6 +1159,7 @@
 				32672D4393562F68D94FC42A /* VinylDetailsHeaderAnimationPresenter.swift in Sources */,
 				32672CE0FE93646CA822BA44 /* VinylDetailsHeaderAnimationProgressCalculator.swift in Sources */,
 				32672BE0F3569C59F7FF7CBE /* VinylDetailsHeaderAnimationProgress.swift in Sources */,
+				32672E7488A92E64C389074F /* BuyAnimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

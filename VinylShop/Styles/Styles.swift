@@ -98,9 +98,11 @@ func title(_ title: String, font: Font, size: CGFloat, color: Color, alpha: CGFl
     }
 }
 
-func image(_ image: UIImage) -> (UIButton) -> Void {
+func image(_ image: UIImage, states: [UIControl.State] = [.normal]) -> (UIButton) -> Void {
     return { button in
-        button.setImage(image, for: .normal)
+        states.forEach { state in
+            button.setImage(image, for: state)
+        }
     }
 }
 
