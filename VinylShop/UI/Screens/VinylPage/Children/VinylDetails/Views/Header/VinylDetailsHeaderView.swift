@@ -28,7 +28,7 @@ class VinylDetailsHeaderView: UIView {
     let smallTitleView = VinylDetailsHeaderSmallTitleView()
         |> { $0.alpha = 0.0 }
 
-    private let buyButton = UIButton(frame: .zero)
+    let buyButton = UIButton(frame: .zero)
         |> image(#imageLiteral(resourceName: "buy_button"))
 
     // MARK: - Constraints
@@ -66,6 +66,16 @@ class VinylDetailsHeaderView: UIView {
 
         largeTitleView.alpha = scaledPercent(from: 0.9, to: 1.0, progress: headerHeight.scrollProgress)
         smallTitleView.alpha = 1 - scaledPercent(from: 0.0, to: 0.1, progress: headerHeight.scrollProgress)
+    }
+    
+    // MARK: - Hit test
+
+    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        if buyButton.frame.contains(point) {
+            return true
+        } else {
+            return super.point(inside: point, with: event)
+        }
     }
 
     // MARK: - Gradient
