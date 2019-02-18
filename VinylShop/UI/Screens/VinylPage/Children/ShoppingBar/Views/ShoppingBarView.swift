@@ -17,6 +17,9 @@ class ShoppingBarView: UIView {
     let checkoutBoxView = UIImageView(frame: .zero)
         |> image(#imageLiteral(resourceName: "checkout_box"))
 
+    let checkoutBoxBackView = UIImageView(frame: .zero)
+        |> image(#imageLiteral(resourceName: "checkout_box_back"))
+
     let albumCoverView = UIImageView(frame: .zero)
         |> image(#imageLiteral(resourceName: "album_cover"))
 
@@ -35,7 +38,8 @@ class ShoppingBarView: UIView {
     private let frameCenterLayoutGuide = UILayoutGuide()
 
     private func addSubviews() {
-        [titleLabel, albumCountLabel, albumCoverView, checkoutBoxView, totalLabel].forEach(frameControl.addSubview)
+        [titleLabel, albumCountLabel, checkoutBoxBackView, albumCoverView, checkoutBoxView, totalLabel]
+            .forEach(frameControl.addSubview)
         addSubview(frameControl)
         addLayoutGuide(frameCenterLayoutGuide)
     }
@@ -53,6 +57,10 @@ class ShoppingBarView: UIView {
         checkoutBoxView.leadingAnchor == frameControl.leadingAnchor + 18
         checkoutBoxView.sizeAnchors == CGSize(width: 39, height: 27)
         checkoutBoxView.bottomAnchor == safeAreaLayoutGuide.bottomAnchor - 8
+
+        checkoutBoxBackView.bottomAnchor == checkoutBoxView.bottomAnchor
+        checkoutBoxBackView.sizeAnchors == CGSize(width: 38, height: 36)
+        checkoutBoxBackView.centerXAnchor == checkoutBoxView.centerXAnchor
 
         albumCoverView.sizeAnchors == CGSize(width: 34, height: 34)
         albumCoverView.centerXAnchor == checkoutBoxView.centerXAnchor

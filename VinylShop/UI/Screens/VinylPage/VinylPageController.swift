@@ -74,34 +74,53 @@ class VinylPageController: UIViewController {
 
     @objc private func onBuyTap(_ button: UIButton) {
         guard let boxView = self.barView.checkoutBoxView.snapshotView(afterScreenUpdates: true),
+              let boxBackView = self.barView.checkoutBoxBackView.snapshotView(afterScreenUpdates: true),
               let coverView = self.detailsView.headerView.coverImageView.snapshotView(afterScreenUpdates: true) else {
             return
         }
 
+        detailsView.headerView.buyButton.isEnabled = false
+
         boxView.frame = self.view.convert(self.barView.checkoutBoxView.frame, from: self.barView.frameControl)
+        boxBackView.frame = self.view.convert(self.barView.checkoutBoxBackView.frame, from: self.barView.frameControl)
         coverView.frame = self.view.convert(self.detailsView.headerView.coverImageView.frame, from: self.detailsView.headerView)
-        [coverView, boxView].forEach(view.addSubview)
+        [boxBackView, coverView, boxView].forEach(view.addSubview)
 
         self.barView.checkoutBoxView.alpha = 0.0
         self.detailsView.headerView.coverImageView.alpha = 0.0
+        self.barView.checkoutBoxBackView.alpha = 0.0
 
         let xCover = self.detailsView.headerView.center.x - self.detailsView.headerView.coverImageView.center.x
 
         UIView.animateKeyframes(withDuration: 1.0, delay: 0.0, animations: {
+            UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.01) {
+                self.barView.albumCoverView.alpha = 0.0
+            }
+
             UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.1) {
                 let viewsToHide: [UIView] = [
                     self.barView.titleLabel,
                     self.barView.albumCoverView,
                     self.barView.albumCountLabel,
-                    self.barView.totalLabel
+                    self.barView.totalLabel,
                 ]
 
                 viewsToHide.forEach { $0.alpha = 0.0 }
 
-                let x = self.barView.frameControl.center.x - self.barView.checkoutBoxView.center.x
+                let width = boxView.frame.width * 3.0
+                let height = boxView.frame.height * 3.0
 
-                let transformation = translated(x: x) <> scaled(3.0)
-                transformation(boxView)
+                boxView.frame = CGRect(
+                    x: self.barView.frameControl.center.x - width * 0.5,
+                    y: boxView.center.y - height * 0.5,
+                    width: width,
+                    height: height
+                )
+
+                let backWidth = boxBackView.frame.width * 3.0
+                let backHeight = boxBackView.frame.height * 3.0
+
+                boxBackView.frame = CGRect(x: self.barView.frameControl.center.x - backWidth * 0.5, y: boxView.frame.maxY - backHeight, width: backWidth, height: backHeight)
             }
 
             UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.1) {
@@ -129,14 +148,17 @@ class VinylPageController: UIViewController {
             }
 
             UIView.addKeyframe(withRelativeStartTime: 0.7, relativeDuration: 0.2) {
-                boxView.transform = .identity
+                boxView.frame = self.view.convert(self.barView.checkoutBoxView.frame, from: self.barView.frameControl)
                 coverView.frame = self.view.convert(self.barView.albumCoverView.frame, from: self.barView.frameControl)
+                boxBackView.frame = self.view.convert(self.barView.checkoutBoxBackView.frame, from: self.barView.frameControl)
             }
 
             UIView.addKeyframe(withRelativeStartTime: 0.9, relativeDuration: 0.001) {
                 self.detailsView.headerView.vinylView.transform = .identity
                 coverView.alpha = 0.0
                 self.barView.albumCoverView.alpha = 1.0
+                self.barView.checkoutBoxBackView.alpha = 1.0
+                boxBackView.alpha = 0.0
             }
 
             UIView.addKeyframe(withRelativeStartTime: 0.9, relativeDuration: 0.1) {
@@ -148,8 +170,9 @@ class VinylPageController: UIViewController {
             }
         }, completion: { finished in
             if finished {
-                [boxView, coverView].forEach { $0.removeFromSuperview() }
                 self.barView.checkoutBoxView.alpha = 1.0
+                [boxView, coverView, boxBackView].forEach { $0.removeFromSuperview() }
+                self.detailsView.headerView.buyButton.isEnabled = true
             }
         })
     }
