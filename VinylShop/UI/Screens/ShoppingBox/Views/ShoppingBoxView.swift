@@ -24,6 +24,8 @@ class ShoppingBoxView: UIView {
     let footerView = ShoppingBoxFooterView()
 
     let tapGestureRecognizer = UITapGestureRecognizer()
+    let swipeGestureRecognizer = UISwipeGestureRecognizer()
+        |> { $0.direction = .down }
 
     init() {
         super.init(frame: .zero)
@@ -77,6 +79,7 @@ class ShoppingBoxView: UIView {
 
     private func setUpGestureRecognition() {
         dimmedBackgroundView.addGestureRecognizer(tapGestureRecognizer)
+        boxView.addGestureRecognizer(swipeGestureRecognizer)
     }
 
     // MARK: - Required initializer

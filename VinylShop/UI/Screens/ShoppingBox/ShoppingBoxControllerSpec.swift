@@ -35,10 +35,6 @@ class ShoppingBoxControllerSpec: QuickSpec {
                     environmentSpy = nil
                 }
 
-                it("should have tap gesture recognizer attached to dimmed background view") {
-                    expect(sut.boxView.dimmedBackgroundView.gestureRecognizers).to(contain(sut.boxView.tapGestureRecognizer))
-                }
-
                 describe("items view") {
                     var items: [ShoppingBoxItemView]!
 
@@ -86,6 +82,18 @@ class ShoppingBoxControllerSpec: QuickSpec {
                 describe("background view tap") {
                     beforeEach {
                         sut.boxView.dimmedBackgroundView.spec.action.triggerTap()
+                    }
+
+                    it("should dismiss itself") {
+                        expect(environmentSpy.invokedDismiss).to(haveCount(1))
+                        expect(environmentSpy.invokedDismiss.first?.controller) === sut
+                        expect(environmentSpy.invokedDismiss.first?.animated) == true
+                    }
+                }
+
+                describe("swipe down") {
+                    beforeEach {
+                        sut.boxView.boxView.spec.action.triggerSwipe(direction: .down)
                     }
 
                     it("should dismiss itself") {

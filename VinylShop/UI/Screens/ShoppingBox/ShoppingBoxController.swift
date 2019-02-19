@@ -38,10 +38,11 @@ class ShoppingBoxController: UIViewController {
     }
 
     private func setUpDismissOnBackgroundTap() {
-        boxView.tapGestureRecognizer.addTarget(self, action: #selector(onBackgroundTap))
+        boxView.tapGestureRecognizer.addTarget(self, action: #selector(onDismissTriggered))
+        boxView.swipeGestureRecognizer.addTarget(self, action: #selector(onDismissTriggered))
     }
 
-    @objc private func onBackgroundTap() {
+    @objc private func onDismissTriggered() {
         environment.presentation.dismiss(self, animated: true)
     }
 
