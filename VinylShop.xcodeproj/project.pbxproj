@@ -558,9 +558,9 @@
 		326726527BC828DA04A6CE02 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				32672810593845F387B10AB7 /* Main */,
 				326722B6885BE8529CAFAC3F /* ShoppingBox */,
 				326727D682D021F746C94C6D /* VinylPage */,
-				32672810593845F387B10AB7 /* Main */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -613,11 +613,11 @@
 		32672810593845F387B10AB7 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				32672FD46CE6296472190C12 /* MainTabBarControllerSpec.swift */,
-				326722EE2EE0EA9CC5E03683 /* MainTabBarController.swift */,
-				3267296F85F7CB3527815C0F /* Model */,
 				32672329614455F7C82EE17B /* Logic */,
+				3267296F85F7CB3527815C0F /* Model */,
 				32672F885E9D2859FC8E8B32 /* Styles */,
+				326722EE2EE0EA9CC5E03683 /* MainTabBarController.swift */,
+				32672FD46CE6296472190C12 /* MainTabBarControllerSpec.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
