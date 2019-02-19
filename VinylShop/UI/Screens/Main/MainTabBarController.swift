@@ -1,3 +1,4 @@
+import BonMot
 import UIKit
 
 class MainTabBarController: UITabBarController {
@@ -14,12 +15,9 @@ class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        viewControllers = tabs.map { $0.tabViewController }
-        tabBar.isTranslucent = false
-
-        if let selectedIndex = tabs.initialSelectedIndex {
-            self.selectedIndex = selectedIndex
-        }
+        setUpTabs()
+        selectInitialTab()
+        setUpTabBarAppearance()
     }
 
     // MARK: - Private
@@ -27,6 +25,22 @@ class MainTabBarController: UITabBarController {
     private let environment: Environment
     private let tabsFactory: (Environment) -> [Tab]
     private lazy var tabs: [Tab] = tabsFactory(environment)
+
+    private func setUpTabs() {
+        viewControllers = tabs.map { $0.tabViewController }
+    }
+
+    private func selectInitialTab() {
+        if let selectedIndex = tabs.initialSelectedIndex {
+            self.selectedIndex = selectedIndex
+        }
+    }
+
+    private func setUpTabBarAppearance() {
+        tabBar.isTranslucent = false
+        tabBar.unselectedItemTintColor = Color.black000000.ui(alpha: 0.5)
+        tabBar.tintColor = Color.blue269DAC.ui()
+    }
 
     // MARK: - Required initializer
 
@@ -50,6 +64,7 @@ private extension Tab {
     var tabViewController: UIViewController {
         let tabViewController = controller
         tabViewController.tabBarItem = UITabBarItem(title: title, image: image, selectedImage: selectedImage)
+        tabViewController.tabBarItem.setTitleTextAttributes(StringStyle.tabTitleStyle.attributes, for: .normal)
         tabViewController.tabBarItem.isEnabled = isEnabled
 
         return tabViewController

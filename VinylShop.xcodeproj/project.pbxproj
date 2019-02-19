@@ -51,6 +51,7 @@
 		326727AFB16116E673290695 /* EnvironmentSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672A255EEC85F1F69A10E1 /* EnvironmentSpec.swift */; };
 		326727B2B73CAB039371B057 /* ApplianceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672E479F609D652BA12E76 /* ApplianceSpec.swift */; };
 		326727BC9A72CC7192FB5694 /* VinylDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267210225178CF490DA25EB /* VinylDetailsPresenter.swift */; };
+		326727D8B7DEFD440B132C5E /* MainTabBarStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326724C16ECAA9B47972D5A6 /* MainTabBarStyles.swift */; };
 		326727EB2D1BC47DB2CF63EF /* Composition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326724162483BD5825424EF9 /* Composition.swift */; };
 		326727F4DAB48F3F0A30ADFC /* MainTabsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672F2E49EC191E3AE0EDC9 /* MainTabsFactory.swift */; };
 		32672801CD78691A92F6EB6B /* CompositionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672696104257987B079EC4 /* CompositionSpec.swift */; };
@@ -193,6 +194,7 @@
 		3267244A4AE082E5C036BD56 /* CGContext+ResetGlobals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGContext+ResetGlobals.swift"; sourceTree = "<group>"; };
 		3267247AA481797B29942D9A /* VinylTrackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VinylTrackCell.swift; sourceTree = "<group>"; };
 		326724B3016476DDA8E722A3 /* EnvironmentSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentSpy.swift; sourceTree = "<group>"; };
+		326724C16ECAA9B47972D5A6 /* MainTabBarStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarStyles.swift; sourceTree = "<group>"; };
 		326724D2C83CE7E4D4D4F4A9 /* Side.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Side.swift; sourceTree = "<group>"; };
 		326724E88E5186E5360C53BB /* ShoppingBoxController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxController.swift; sourceTree = "<group>"; };
 		32672523BF574CA106947F0C /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
@@ -615,6 +617,7 @@
 				326722EE2EE0EA9CC5E03683 /* MainTabBarController.swift */,
 				3267296F85F7CB3527815C0F /* Model */,
 				32672329614455F7C82EE17B /* Logic */,
+				32672F885E9D2859FC8E8B32 /* Styles */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -853,6 +856,14 @@
 				326727DB52EDAC1916033872 /* VinylPageView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		32672F885E9D2859FC8E8B32 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				326724C16ECAA9B47972D5A6 /* MainTabBarStyles.swift */,
+			);
+			path = Styles;
 			sourceTree = "<group>";
 		};
 		32672FE9056FD204EBE9A1C7 /* Utilities */ = {
@@ -1209,6 +1220,7 @@
 				326727A6EDE690DFAB154979 /* MainTabBarController.swift in Sources */,
 				32672BC8958F337598F33C10 /* Tab.swift in Sources */,
 				326727F4DAB48F3F0A30ADFC /* MainTabsFactory.swift in Sources */,
+				326727D8B7DEFD440B132C5E /* MainTabBarStyles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
