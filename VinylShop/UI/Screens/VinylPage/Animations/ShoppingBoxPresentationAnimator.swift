@@ -63,238 +63,84 @@ class ShoppingBoxPresentationAnimator: NSObject, UIViewControllerAnimatedTransit
             containerView.addSubview(view)
         }
 
-        let duration = transitionDuration(using: transitionContext)
-        let beginTime = CACurrentMediaTime()
-
-        backgroundAnimator = DimmedBackgroundAnimator(
-            view: presented.boxView.dimmedBackgroundView,
-            beginTime: beginTime,
-            duration: duration
-        )
-
-        backgroundAnimator?.animate()
-
-        shoppingBarAnimator = ShoppingBarAnimator(view: barSnapshot, beginTime: beginTime, duration: duration)
-        shoppingBarAnimator?.animate()
-
-        fadeInAnimators = (0..<fadedInViews.count).map { index in
-            let delayedBeginTime = beginTime + fadeInDelays[index] * duration
-            return FadeInAnimator(view: snapshotViews[index], beginTime: delayedBeginTime, duration: duration)
-        }
-
-        fadeInAnimators.forEach { $0.animate() }
-
-        let onCompleted: () -> Void = {
-            presenting.barController.view.isHidden = false
-            snapshotViews.forEach { $0.removeFromSuperview() }
-            fadedInViews.forEach { $0.layer.opacity = 1.0 }
-            transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
-        }
-
         let offset = presenting.pageView.barContainerView.frame.minY - presented.boxView.boxView.frame.minY
 
-        shoppingBoxAnimator = ShoppingBoxAnimator(
-            view: presented.boxView.boxView,
-            beginTime: beginTime,
-            duration: duration,
-            offset: offset,
-            onCompleted: onCompleted
-        )
+        backgroundAnimator = makeBackgroundAnimator(view: presented.boxView.dimmedBackgroundView)
+        shoppingBarAnimator = makeShoppingBarAnimator(view: barSnapshot)
+        shoppingBoxAnimator = makeShoppingBoxAnimator(view: presented.boxView.boxView, offset: offset)
 
-        shoppingBoxAnimator?.animate()
-    }
+        fadeInAnimators = (0..<fadedInViews.count).map { index in
+            makeFadeInAnimator(view: snapshotViews[index], delay: fadeInDelays[index])
+        }
 
-    // MARK: - Private
+        allAnimators.forEach { $0.startAnimation() }
 
-    private var backgroundAnimator: DimmedBackgroundAnimator?
-    private var shoppingBarAnimator: ShoppingBarAnimator?
-    private var dismissAnimator: FadeInAnimator?
-    private var shoppingBoxAnimator: ShoppingBoxAnimator?
-    private var fadeInAnimators = [FadeInAnimator]()
-
-}
-
-class DimmedBackgroundAnimator: NSObject, CAAnimationDelegate {
-
-    init(view: UIView, beginTime: CFTimeInterval, duration: TimeInterval) {
-        self.view = view
-        self.beginTime = beginTime
-        self.duration = duration
-    }
-
-    // MARK: - Public API
-
-    func animate() {
-        view.layer.opacity = 0.0
-
-        let animation = CABasicAnimation(keyPath: "opacity")
-        animation.fromValue = 0.0
-        animation.toValue = 1.0
-        animation.duration = duration
-        animation.isRemovedOnCompletion = true
-        animation.beginTime = beginTime
-        animation.delegate = self
-
-        view.layer.add(animation, forKey: nil)
-    }
-
-    // MARK: - CAAnimationDelegate
-
-    public func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-        if flag {
-            view.layer.opacity = 1.0
+        backgroundAnimator?.addCompletion { _ in
+            presenting.barController.view.isHidden = false
+            fadedInViews.forEach { $0.layer.opacity = 1.0 }
+            snapshotViews.forEach { $0.removeFromSuperview() }
+            barSnapshot.removeFromSuperview()
+            transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         }
     }
 
     // MARK: - Private
 
-    private let view: UIView
-    private let beginTime: CFTimeInterval
-    private let duration: TimeInterval
-}
+    private var backgroundAnimator: UIViewPropertyAnimator?
+    private var shoppingBarAnimator: UIViewPropertyAnimator?
+    private var shoppingBoxAnimator: UIViewPropertyAnimator?
+    private var fadeInAnimators = [UIViewPropertyAnimator]()
 
-class ShoppingBarAnimator: NSObject, CAAnimationDelegate {
-
-    init(view: UIView, beginTime: CFTimeInterval, duration: TimeInterval) {
-        self.view = view
-        self.beginTime = beginTime
-        self.duration = duration
+    private var allAnimators: [UIViewPropertyAnimator] {
+        return fadeInAnimators + [backgroundAnimator, shoppingBarAnimator, shoppingBoxAnimator].compactMap { $0 }
     }
 
-    // MARK: - Public API
+    private func makeBackgroundAnimator(view: UIView) -> UIViewPropertyAnimator {
+        view.alpha = 0.0
 
-    func animate() {
-        let positionAnimation = CABasicAnimation(keyPath: "position.y")
-        positionAnimation.byValue = 50
-
-        let opacityAnimation = CABasicAnimation(keyPath: "opacity")
-        opacityAnimation.fromValue = 1.0
-        opacityAnimation.toValue = 0.0
-
-        let animation = CAAnimationGroup()
-        animation.animations = [positionAnimation, opacityAnimation]
-        animation.beginTime = beginTime
-        animation.delegate = self
-        animation.duration = duration * 0.3
-        animation.isRemovedOnCompletion = true
-        animation.speed = Globals.animationSpeed
-        animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-
-        view.layer.add(animation, forKey: nil)
-    }
-
-    // MARK: - CAAnimationDelegate
-
-    public func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-        if flag {
-            view.removeFromSuperview()
+        return UIViewPropertyAnimator(duration: duration, curve: .easeInOut) {
+            view.alpha = 1.0
         }
     }
 
-    // MARK: - Private
+    private func makeShoppingBarAnimator(view: UIView) -> UIViewPropertyAnimator {
+        view.alpha = 1.0
 
-    private let view: UIView
-    private let beginTime: CFTimeInterval
-    private let duration: TimeInterval
-
-}
-
-class FadeInAnimator: NSObject, CAAnimationDelegate {
-
-    init(view: UIView, beginTime: CFTimeInterval, duration: TimeInterval) {
-        self.view = view
-        self.beginTime = beginTime
-        self.duration = duration
-    }
-    
-    // MARK: - Public API
-
-    func animate() {
-        let positionAnimation = CABasicAnimation(keyPath: "position.y")
-        positionAnimation.fromValue = view.frame.maxY + 20
-
-        let opacityAnimation = CABasicAnimation(keyPath: "opacity")
-        opacityAnimation.fromValue = 0.0
-        opacityAnimation.toValue = 1.0
-
-        let animation = CAAnimationGroup()
-        animation.beginTime = beginTime
-        animation.duration = duration * 0.3
-        animation.animations = [positionAnimation, opacityAnimation]
-        animation.isRemovedOnCompletion = true
-        animation.speed = Globals.animationSpeed
-        animation.delegate = self
-        animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-
-        view.layer.add(animation, forKey: nil)
-    }
-
-    // MARK: - CAAnimationDelegate
-
-    public func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-        if flag {
-            view.layer.opacity = 1.0
+        return UIViewPropertyAnimator(duration: duration * 0.3, curve: .easeInOut) {
+            view.center.y += 50
+            view.alpha = 0.0
         }
     }
 
-    // MARK: - Private
+    private func makeFadeInAnimator(view: UIView, delay: Double) -> UIViewPropertyAnimator {
+        view.alpha = 0.0
+        view.center.y += 20
 
-    private let view: UIView
-    private let beginTime: CFTimeInterval
-    private let duration: TimeInterval
-
-}
-
-class ShoppingBoxAnimator: NSObject, CAAnimationDelegate {
-
-    init(view: UIView,
-         beginTime: CFTimeInterval,
-         duration: TimeInterval,
-         offset: CGFloat,
-         onCompleted: @escaping () -> Void) {
-        self.view = view
-        self.beginTime = beginTime
-        self.duration = duration
-        self.offset = offset
-        self.onCompleted = onCompleted
-    }
-
-    // MARK: - Public API
-
-    func animate() {
-        view.layer.position.y += offset
-
-        let animation = CASpringAnimation(keyPath: "position.y")
-        animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-        animation.byValue = -offset
-        animation.duration = duration
-        animation.isRemovedOnCompletion = true
-        animation.stiffness = 200.0
-        animation.mass = 1
-        animation.initialVelocity = 0
-        animation.damping = 18
-        animation.beginTime = beginTime
-        animation.delegate = self
-        animation.speed = Globals.animationSpeed
-
-        view.layer.add(animation, forKey: nil)
-    }
-
-    // MARK: - CAAnimationDelegate
-
-    public func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-        if flag {
-            view.layer.position.y -= offset
-            onCompleted()
+        return UIViewPropertyAnimator(duration: duration, curve: .easeInOut) { [unowned self] in
+            let startTime = delay / self.duration
+            UIView.animateKeyframes(withDuration: self.duration, delay: 0.0, animations: {
+                UIView.addKeyframe(withRelativeStartTime: startTime, relativeDuration: 0.3) {
+                    view.center.y -= 20
+                    view.alpha = 1.0
+                }
+            })
         }
     }
 
-    // MARK: - Private
+    private func makeShoppingBoxAnimator(view: UIView, offset: CGFloat) -> UIViewPropertyAnimator {
+        let timingParameters = UISpringTimingParameters(mass: 1, stiffness: 200, damping: 18, initialVelocity: .zero)
+        view.center.y += offset
 
-    private let view: UIView
-    private let beginTime: CFTimeInterval
-    private let duration: TimeInterval
-    private let offset: CGFloat
-    private let onCompleted: () -> Void
+        let animator = UIViewPropertyAnimator(duration: duration, timingParameters: timingParameters)
+        animator.addAnimations {
+            view.center.y -= offset
+        }
+
+        return animator
+    }
+
+    private var duration: Double {
+        return transitionDuration(using: nil)
+    }
 
 }
