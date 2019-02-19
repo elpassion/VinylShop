@@ -26,17 +26,21 @@ class PresentationEnvironment {
             controller.transitioningDelegate = context.transitioningDelegate
 
             self?.navigationController.viewControllers.last?.present(controller, animated: context.animated)
+            self?.activeContexts[controller] = context
         }
     }()
 
     lazy var _dismiss: (UIViewController, Bool) -> Void = {
         return { [weak self] controller, animated in
-            controller.dismiss(animated: animated)
+            controller.dismiss(animated: animated) {
+                self?.activeContexts[controller] = nil
+            }
         }
     }()
 
     // MARK: - Private
 
     private let navigationController: UINavigationController
+    private var activeContexts: [UIViewController: PresentationContext] = [:]
 
 }

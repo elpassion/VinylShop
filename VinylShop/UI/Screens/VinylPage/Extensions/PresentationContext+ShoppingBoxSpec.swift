@@ -47,10 +47,10 @@ class PresentationContext_ShoppingBoxSpec: QuickSpec {
                 expect(presentAnimator).to(beAnInstanceOf(ShoppingBoxPresentationAnimator.self))
             }
 
-            it("should NOT have dismiss animator") {
+            it("should have dismiss animator of ShoppingBoxDismissAnimator type") {
                 let dismissAnimator = sut.transitioningDelegate.animationController?(forDismissed: UIViewController())
 
-                expect(dismissAnimator).to(beNil())
+                expect(dismissAnimator).to(beAnInstanceOf(ShoppingBoxDismissAnimator.self))
             }
         }
     }

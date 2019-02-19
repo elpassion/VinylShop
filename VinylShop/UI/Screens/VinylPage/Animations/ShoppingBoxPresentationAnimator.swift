@@ -14,21 +14,21 @@ class ShoppingBoxPresentationAnimator: NSObject, UIViewControllerAnimatedTransit
             .flatMap { $0 as? UINavigationController }
             .flatMap { $0.viewControllers.last as? VinylPageController }
 
-        guard let presenting = pageController,
-              let presented = transitionContext.viewController(forKey: .to) as? ShoppingBoxController,
-              let barSnapshot = presenting.barController.view.snapshotView(afterScreenUpdates: true) else {
+        guard let current = pageController,
+              let presenting = transitionContext.viewController(forKey: .to) as? ShoppingBoxController,
+              let barSnapshot = current.barController.view.snapshotView(afterScreenUpdates: true) else {
             return
         }
 
-        presenting.barController.view.isHidden = true
-        barSnapshot.frame = presenting.pageView.barContainerView.frame
+        current.barController.view.isHidden = true
+        barSnapshot.frame = current.pageView.barContainerView.frame
 
         let containerView = transitionContext.containerView
-        presented.view.frame = containerView.bounds
-        containerView.addSubview(presented.view)
+        presenting.view.frame = containerView.bounds
+        containerView.addSubview(presenting.view)
         containerView.addSubview(barSnapshot)
 
-        let boxView: ShoppingBoxView = presented.boxView
+        let boxView: ShoppingBoxView = presenting.boxView
         boxView.setNeedsLayout()
         boxView.layoutIfNeeded()
 
@@ -59,11 +59,11 @@ class ShoppingBoxPresentationAnimator: NSObject, UIViewControllerAnimatedTransit
             containerView.addSubview(view)
         }
 
-        let offset = presenting.pageView.barContainerView.frame.minY - presented.boxView.boxView.frame.minY
+        let offset = current.pageView.barContainerView.frame.minY - presenting.boxView.boxView.frame.minY
 
-        backgroundAnimator = makeBackgroundAnimator(view: presented.boxView.dimmedBackgroundView)
+        backgroundAnimator = makeBackgroundAnimator(view: presenting.boxView.dimmedBackgroundView)
         shoppingBarAnimator = makeShoppingBarAnimator(view: barSnapshot)
-        shoppingBoxAnimator = makeShoppingBoxAnimator(view: presented.boxView.boxView, offset: offset)
+        shoppingBoxAnimator = makeShoppingBoxAnimator(view: presenting.boxView.boxView, offset: offset)
 
         fadeInAnimators = (0..<fadedInViews.count).map { index in
             makeFadeInAnimator(view: snapshotViews[index], delay: fadeInDelays[index])
@@ -72,7 +72,7 @@ class ShoppingBoxPresentationAnimator: NSObject, UIViewControllerAnimatedTransit
         allAnimators.forEach { $0.startAnimation() }
 
         backgroundAnimator?.addCompletion { _ in
-            presenting.barController.view.isHidden = false
+            current.barController.view.isHidden = false
             fadedInViews.forEach { $0.layer.opacity = 1.0 }
             snapshotViews.forEach { $0.removeFromSuperview() }
             barSnapshot.removeFromSuperview()

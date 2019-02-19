@@ -10,7 +10,7 @@ extension PresentationContext {
             presentationStyle: .custom,
             transitionStyle: .crossDissolve,
             presentAnimator: ShoppingBoxPresentationAnimator(),
-            dismissAnimator: nil
+            dismissAnimator: ShoppingBoxDismissAnimator()
         )
     }
 

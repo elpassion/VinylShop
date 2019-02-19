@@ -54,7 +54,7 @@ class EnvironmentSpec: QuickSpec {
 
                 describe("present") {
                     var presentedController: UIViewController!
-                    var context: PresentationContext!
+                    var presentationContext: PresentationContext!
                     var presentAnimator: UIViewControllerAnimatedTransitioning!
                     var dismissAnimator: UIViewControllerAnimatedTransitioning!
 
@@ -63,7 +63,7 @@ class EnvironmentSpec: QuickSpec {
                         presentAnimator = AnimatorStub()
                         dismissAnimator = AnimatorStub()
 
-                        context = PresentationContext(
+                        presentationContext = PresentationContext(
                             id: .shoppingBox,
                             factory: { presentedController },
                             animated: false,
@@ -73,13 +73,13 @@ class EnvironmentSpec: QuickSpec {
                             dismissAnimator: dismissAnimator
                         )
 
-                        sut.presentation.present(context: context)
+                        sut.presentation.present(context: presentationContext)
                     }
 
                     afterEach {
                         presentAnimator = nil
                         dismissAnimator = nil
-                        context = nil
+                        presentationContext = nil
                         presentedController = nil
                     }
 
@@ -123,6 +123,28 @@ class EnvironmentSpec: QuickSpec {
                                 )
 
                                 expect(receivedPresentAnimator) === presentAnimator
+                            }
+
+                            context("when context is being deallocated") {
+                                beforeEach {
+                                    dismissAnimator = nil
+                                    presentAnimator = nil
+                                    presentationContext = nil
+                                }
+
+                                it("should still have transitioning delegate") {
+                                    expect(presentedController.transitioningDelegate).toNot(beNil())
+                                }
+
+                                context("when presented controller is dismissed") {
+                                    beforeEach {
+                                        sut.presentation.dismiss(presentedController, animated: false)
+                                    }
+
+                                    it("should no longer have transitioning delegate") {
+                                        expect(presentedController.transitioningDelegate).toEventually(beNil())
+                                    }
+                                }
                             }
                         }
                     }
