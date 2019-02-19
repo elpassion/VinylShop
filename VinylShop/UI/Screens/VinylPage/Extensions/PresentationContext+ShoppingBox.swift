@@ -7,7 +7,7 @@ extension PresentationContext {
             id: .shoppingBox,
             factory: { ShoppingBoxController() },
             animated: true,
-            presentationStyle: .custom,
+            presentationStyle: .overCurrentContext,
             transitionStyle: .crossDissolve,
             presentAnimator: ShoppingBoxPresentationAnimator(),
             dismissAnimator: ShoppingBoxDismissAnimator()

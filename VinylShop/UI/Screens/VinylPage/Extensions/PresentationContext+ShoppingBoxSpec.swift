@@ -29,8 +29,8 @@ class PresentationContext_ShoppingBoxSpec: QuickSpec {
                 expect(sut.animated) == true
             }
 
-            it("should have custom presentation style") {
-                expect(sut.presentationStyle) == .custom
+            it("should have over current context presentation style") {
+                expect(sut.presentationStyle) == .overCurrentContext
             }
 
             it("should have cross dissolve transition style") {

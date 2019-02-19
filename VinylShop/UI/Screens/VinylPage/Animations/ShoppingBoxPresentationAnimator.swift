@@ -24,7 +24,7 @@ class ShoppingBoxPresentationAnimator: NSObject, UIViewControllerAnimatedTransit
         barSnapshot.frame = current.pageView.barContainerView.frame
 
         let containerView = transitionContext.containerView
-        presenting.view.frame = containerView.bounds
+        presenting.view.frame = current.view.bounds
         containerView.addSubview(presenting.view)
         containerView.addSubview(barSnapshot)
 

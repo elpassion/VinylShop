@@ -45,8 +45,8 @@ class AppDelegateSpec: QuickSpec {
                         expect(sut.window?.isKeyWindow) == true
                     }
 
-                    it("should have a root view controller from Environment set") {
-                        expect(sut.window?.rootViewController) === Environment.shared.navigationController
+                    it("should have a MainTabBarController set as a root view controller") {
+                        expect(sut.window?.rootViewController).to(beAnInstanceOf(MainTabBarController.self))
                     }
                 }
             }
