@@ -47,9 +47,6 @@ class VinylDetailsView: UIView {
     // MARK: - Layout
 
     private func setUpLayout() {
-        spacerView.setContentHuggingPriority(.defaultLow, for: .vertical)
-        spacerView.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
-
         scrollView.edgeAnchors == edgeAnchors
 
         headerView.topAnchor == topAnchor
@@ -59,6 +56,8 @@ class VinylDetailsView: UIView {
         scrollContentView.edgeAnchors == scrollView.edgeAnchors
         scrollContentView.widthAnchor == scrollView.widthAnchor
         scrollContentView.heightAnchor >= heightAnchor
+        
+        spacerView.heightAnchor == 0 ~ .low
     }
 
     // MARK: - Required initializer
