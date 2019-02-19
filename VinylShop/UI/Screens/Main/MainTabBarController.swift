@@ -39,7 +39,7 @@ class MainTabBarController: UITabBarController {
     private func setUpTabBarAppearance() {
         tabBar.isTranslucent = false
         tabBar.unselectedItemTintColor = Color.black000000.ui(alpha: 0.5)
-        tabBar.tintColor = Color.blue269DAC.ui()
+        tabBar.tintColor = Color.blue2FC5D8.ui()
     }
 
     // MARK: - Required initializer
