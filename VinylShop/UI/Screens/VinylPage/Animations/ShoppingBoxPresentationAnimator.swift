@@ -1,9 +1,5 @@
 import UIKit
 
-struct Globals {
-    static let animationSpeed: Float = 1.0
-}
-
 class ShoppingBoxPresentationAnimator: NSObject, UIViewControllerAnimatedTransitioning {
 
     // MARK: - UIViewControllerAnimatedTransitioning
