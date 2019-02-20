@@ -44,8 +44,8 @@ class VinylDetails_ShotDetailsSpec: QuickSpec {
                 ]
             }
 
-            it("should have 4 genres") {
-                expect(sut.genres.map { $0.name }) == ["Rock", "Metal", "Disco", "Country"]
+            it("should have 3 genres") {
+                expect(sut.genres.map { $0.name }) == ["Rock", "Metal", "Disco"]
             }
         }
     }

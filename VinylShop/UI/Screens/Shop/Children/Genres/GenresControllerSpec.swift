@@ -41,8 +41,8 @@ class GenresControllerSpec: QuickSpec {
                     }
 
                     describe("1st section") {
-                        it("should have 4 items") {
-                            expect(collectionView.dataSource?.collectionView(collectionView, numberOfItemsInSection: 0)) == 4
+                        it("should have 3 items") {
+                            expect(collectionView.dataSource?.collectionView(collectionView, numberOfItemsInSection: 0)) == 3
                         }
 
                         describe("1st cell") {

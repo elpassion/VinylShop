@@ -18,12 +18,7 @@ extension VinylDetails {
 
         let recommended: [Vinyl] = [.metallica, .stromae, .thePolice]
         let new: [Vinyl] = [.rudimental, .halestorm, .marillion, .harrisCalvin, .gunsNRoses, .portishead, .gorillaz]
-        let genres: [Genre] = [
-            Genre(name: "Rock"),
-            Genre(name: "Metal"),
-            Genre(name: "Disco"),
-            Genre(name: "Country")
-        ]
+        let genres: [Genre] = ["Rock", "Metal", "Disco"].map(Genre.init)
 
         return VinylDetails(sides: sides, recommended: recommended, new: new, genres: genres)
     }
