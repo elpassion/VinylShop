@@ -43,6 +43,10 @@ class VinylDetails_ShotDetailsSpec: QuickSpec {
                     "Demon Days"
                 ]
             }
+
+            it("should have 4 genres") {
+                expect(sut.genres.map { $0.name }) == ["Rock", "Metal", "Disco", "Country"]
+            }
         }
     }
 
