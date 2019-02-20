@@ -3,6 +3,7 @@ import UIKit
 
 enum Color: String {
     case black000000 = "#000000"
+    case blue269DAC = "#269DAC"
     case blue2FC5D8 = "#2FC5D8"
     case green4BC9AF = "#4BC9AF"
     case grayB9CAD3 = "#B9CAD3"
