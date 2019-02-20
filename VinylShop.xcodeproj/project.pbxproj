@@ -506,10 +506,10 @@
 			isa = PBXGroup;
 			children = (
 				32672F7D2B70F8985E250243 /* Children */,
+				3267290B18449853326E5FA0 /* Doubles */,
 				326727A488C7375A8257FD0D /* Views */,
 				32672C81BDBD2B79D3F4269A /* ShopController.swift */,
 				326720A94A1D03C17D4B8B04 /* ShopControllerSpec.swift */,
-				3267290B18449853326E5FA0 /* Doubles */,
 			);
 			path = Shop;
 			sourceTree = "<group>";
@@ -672,12 +672,12 @@
 		326726D921A9EF506933D5A0 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				3267215F54193B2A2A11FF89 /* BuyAnimating.swift */,
 				32672FBA0E6E6D0118E72CEB /* BuyAnimator.swift */,
 				3267206F2A3C6759C499BC5A /* ShoppingBoxDismissAnimator.swift */,
 				32672D38859DCF509D1DF550 /* ShoppingBoxDismissAnimatorSpec.swift */,
 				32672EA4DBE7AFBD43C23AA6 /* ShoppingBoxPresentationAnimator.swift */,
 				32672197DA09002F2A71F359 /* ShoppingBoxPresentationAnimatorSpec.swift */,
-				3267215F54193B2A2A11FF89 /* BuyAnimating.swift */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -693,8 +693,8 @@
 		326727A488C7375A8257FD0D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				32672D2E6FE64B61504C639B /* ShopView.swift */,
 				32672B723BD0E41979F4696A /* ShopTitleView.swift */,
+				32672D2E6FE64B61504C639B /* ShopView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -804,9 +804,9 @@
 		32672975AC00CB397B6C5BEB /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				32672611948D0FFBEF89DBD5 /* Factories */,
 				3267260E14112B1327FF67EA /* NavigationEnvironment.swift */,
 				32672EA564C9B3482F9505F1 /* Route.swift */,
-				32672611948D0FFBEF89DBD5 /* Factories */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -951,13 +951,13 @@
 		32672EBDBC60FCB3ED12EF2D /* VinylCollection */ = {
 			isa = PBXGroup;
 			children = (
+				326728CD5F3CDC192AB1BF47 /* Aliases */,
 				32672E2D881333E532053354 /* Factories */,
 				3267227AE7838B1E120BBA66 /* Model */,
 				326724C3A5DCF38CC664CE48 /* Presentation */,
 				326721567B5F3829BF5653D6 /* Views */,
 				3267256FD679F110B6E188BC /* VinylCollectionController.swift */,
 				32672904DE9505707542DFAC /* VinylCollectionControllerSpec.swift */,
-				326728CD5F3CDC192AB1BF47 /* Aliases */,
 			);
 			path = VinylCollection;
 			sourceTree = "<group>";
@@ -965,11 +965,11 @@
 		32672ECAC59DEEAA6883F1F1 /* Environment */ = {
 			isa = PBXGroup;
 			children = (
+				32672EF6F3A2AD29CA181E14 /* Doubles */,
+				32672975AC00CB397B6C5BEB /* Navigation */,
 				3267268A8FC77F597026CF57 /* Presentation */,
 				32672B3EDE2434E61EA2D4A2 /* Environment.swift */,
 				32672A255EEC85F1F69A10E1 /* EnvironmentSpec.swift */,
-				32672975AC00CB397B6C5BEB /* Navigation */,
-				32672EF6F3A2AD29CA181E14 /* Doubles */,
 			);
 			path = Environment;
 			sourceTree = "<group>";
@@ -1001,6 +1001,7 @@
 		32672F1A8FECFF4038593254 /* VinylDetails */ = {
 			isa = PBXGroup;
 			children = (
+				32672196DA9F1A1E50859471 /* Aliases */,
 				326721F5BD4CA01BBB712F18 /* Children */,
 				32672646760D8AD2476B5CB3 /* Extensions */,
 				326725B9E7D9AE570FD1B289 /* Models */,
@@ -1009,7 +1010,6 @@
 				326728AA196B39B518E5EF7E /* Views */,
 				3267285EEF649FEE02C01373 /* VinylDetailsController.swift */,
 				32672E4599326D6DD0E12BB9 /* VinylDetailsControllerSpec.swift */,
-				32672196DA9F1A1E50859471 /* Aliases */,
 			);
 			path = VinylDetails;
 			sourceTree = "<group>";
@@ -1028,9 +1028,9 @@
 		32672F7B77B3B93905CF225D /* Doubles */ = {
 			isa = PBXGroup;
 			children = (
+				32672E176130547D85AC4BF2 /* BuyAnimatorSpy.swift */,
 				3267211C332AF2FBCCDB9AE6 /* ShoppingBarControllerStub.swift */,
 				32672F426A80E74185E4FD5D /* VinylDetailsControllerStub.swift */,
-				32672E176130547D85AC4BF2 /* BuyAnimatorSpy.swift */,
 			);
 			path = Doubles;
 			sourceTree = "<group>";
