@@ -437,8 +437,8 @@
 		326721F5BD4CA01BBB712F18 /* Children */ = {
 			isa = PBXGroup;
 			children = (
-				32672EBDBC60FCB3ED12EF2D /* VinylCollection */,
 				32672AEFE5FF052BA9A29C22 /* TrackList */,
+				32672EBDBC60FCB3ED12EF2D /* VinylCollection */,
 			);
 			path = Children;
 			sourceTree = "<group>";
@@ -475,10 +475,10 @@
 		326722D18C8F9AE75D8F177E /* Shop */ = {
 			isa = PBXGroup;
 			children = (
-				326720A94A1D03C17D4B8B04 /* ShopControllerSpec.swift */,
-				32672C81BDBD2B79D3F4269A /* ShopController.swift */,
-				326727A488C7375A8257FD0D /* Views */,
 				32672F7D2B70F8985E250243 /* Children */,
+				326727A488C7375A8257FD0D /* Views */,
+				32672C81BDBD2B79D3F4269A /* ShopController.swift */,
+				326720A94A1D03C17D4B8B04 /* ShopControllerSpec.swift */,
 			);
 			path = Shop;
 			sourceTree = "<group>";
@@ -576,11 +576,11 @@
 		326725B9E7D9AE570FD1B289 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				32672799D56E7F81933CEC00 /* Vinyl.swift */,
+				32672F40EF44B252C966A0D5 /* Genre.swift */,
 				326724D2C83CE7E4D4D4F4A9 /* Side.swift */,
 				32672523BF574CA106947F0C /* Track.swift */,
+				32672799D56E7F81933CEC00 /* Vinyl.swift */,
 				32672CDFC16B945116C75543 /* VinylDetails.swift */,
-				32672F40EF44B252C966A0D5 /* Genre.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -612,9 +612,9 @@
 			isa = PBXGroup;
 			children = (
 				32672810593845F387B10AB7 /* Main */,
+				326722D18C8F9AE75D8F177E /* Shop */,
 				326722B6885BE8529CAFAC3F /* ShoppingBox */,
 				326727D682D021F746C94C6D /* VinylPage */,
-				326722D18C8F9AE75D8F177E /* Shop */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -719,8 +719,8 @@
 		326728ECC7CCCC980945D1A8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3267210BB2FDF96929BBEC20 /* GenresView.swift */,
 				32672D395C44721A2834B4B9 /* GenreCell.swift */,
+				3267210BB2FDF96929BBEC20 /* GenresView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -853,11 +853,11 @@
 		32672E2D881333E532053354 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
-				32672DF0729BD00A4D5C6B1A /* RecommendedControllerFactory.swift */,
-				32672BA448CB563C6A1A1FE1 /* VinylCollectionControllerFactory.swift */,
 				32672FB9BFB5A7AC1ABB442B /* NewAlbumsControllerFactory.swift */,
 				326724011C7CFECE151535B6 /* NewAlbumsControllerFactorySpec.swift */,
+				32672DF0729BD00A4D5C6B1A /* RecommendedControllerFactory.swift */,
 				32672C6F2E763A1130C08F64 /* RecommendedControllerFactorySpec.swift */,
+				32672BA448CB563C6A1A1FE1 /* VinylCollectionControllerFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -884,12 +884,12 @@
 		32672EBDBC60FCB3ED12EF2D /* VinylCollection */ = {
 			isa = PBXGroup;
 			children = (
+				32672E2D881333E532053354 /* Factories */,
+				3267227AE7838B1E120BBA66 /* Model */,
 				326724C3A5DCF38CC664CE48 /* Presentation */,
 				326721567B5F3829BF5653D6 /* Views */,
 				3267256FD679F110B6E188BC /* VinylCollectionController.swift */,
 				32672904DE9505707542DFAC /* VinylCollectionControllerSpec.swift */,
-				3267227AE7838B1E120BBA66 /* Model */,
-				32672E2D881333E532053354 /* Factories */,
 			);
 			path = VinylCollection;
 			sourceTree = "<group>";
@@ -938,10 +938,10 @@
 		32672F7735A7DA83AE2A2765 /* Genres */ = {
 			isa = PBXGroup;
 			children = (
-				326724EEEF03020F37DBD5C7 /* GenresControllerSpec.swift */,
-				32672DF1FA3F7C54F078D6F4 /* GenresController.swift */,
-				326728ECC7CCCC980945D1A8 /* Views */,
 				32672EFC477227274F0A5A37 /* Presentation */,
+				326728ECC7CCCC980945D1A8 /* Views */,
+				32672DF1FA3F7C54F078D6F4 /* GenresController.swift */,
+				326724EEEF03020F37DBD5C7 /* GenresControllerSpec.swift */,
 			);
 			path = Genres;
 			sourceTree = "<group>";
