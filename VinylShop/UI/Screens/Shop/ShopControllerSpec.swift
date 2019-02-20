@@ -10,12 +10,10 @@ class ShopControllerSpec: QuickSpec {
             var sut: ShopController!
 
             beforeEach {
-                record = true
                 sut = ShopController(vinyl: .shotDetails)
             }
 
             afterEach {
-                record = false
                 sut = nil
             }
 

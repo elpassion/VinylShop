@@ -5,5 +5,5 @@ func newAlbumsControllerFactory() -> (VinylDetails) -> UIViewController {
 }
 
 func newAlbumsViewModelFactory(_ details: VinylDetails) -> VinylCollectionViewModel {
-    return VinylCollectionViewModel(title: "New albums", vinyls: details.recommended)
+    return VinylCollectionViewModel(title: "New albums", vinyls: details.new)
 }
