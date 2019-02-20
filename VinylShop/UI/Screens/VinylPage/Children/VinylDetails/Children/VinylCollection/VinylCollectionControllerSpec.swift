@@ -3,14 +3,15 @@ import Nimble
 import Quick
 import UIKit
 
-class RecommendedControllerSpec: QuickSpec {
+class VinylCollectionControllerSpec: QuickSpec {
 
     override func spec() {
-        describe("RecommendedController") {
-            var sut: RecommendedController!
+        describe("VinylCollectionController") {
+            var sut: VinylCollectionController!
 
             beforeEach {
-                sut = RecommendedController(vinyl: .shotDetails)
+                let viewModel = recommendedViewModelFactory(.shotDetails)
+                sut = VinylCollectionController(viewModel: viewModel)
             }
 
             afterEach {
@@ -20,6 +21,10 @@ class RecommendedControllerSpec: QuickSpec {
             describe("view did load") {
                 beforeEach {
                     _ = sut.view
+                }
+
+                it("should have title set") {
+                    expect(sut.recommendedView.titleLabel.text) == "RECOMMENDED FOR YOU"
                 }
 
                 describe("collection view") {
@@ -47,7 +52,7 @@ class RecommendedControllerSpec: QuickSpec {
                         }
 
                         describe("1st cell") {
-                            var cell: RecommendedCell?
+                            var cell: VinylCollectionCell?
                             var size: CGSize!
 
                             beforeEach {

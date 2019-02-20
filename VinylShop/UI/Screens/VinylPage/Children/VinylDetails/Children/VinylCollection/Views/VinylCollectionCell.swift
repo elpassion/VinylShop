@@ -1,7 +1,7 @@
 import Anchorage
 import UIKit
 
-class RecommendedCell: UICollectionViewCell {
+class VinylCollectionCell: UICollectionViewCell {
 
     let titleLabel: UILabel = UILabel(frame: .zero)
         |> font(.nunito(.semibold), size: 14, color: .black000000)

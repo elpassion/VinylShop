@@ -28,9 +28,9 @@ class VinylDetailsControllerSpec: QuickSpec {
                     expect(sut.detailsView.scrollContentView.arrangedSubviews).to(containElementSatisfying({ $0 is VinylTrackListView }))
                 }
 
-                it("should embed recommended controller") {
-                    expect(sut.children).to(containElementSatisfying({ $0 is RecommendedController }))
-                    expect(sut.detailsView.scrollContentView.arrangedSubviews).to(containElementSatisfying({ $0 is RecommendedView }))
+                it("should embed vinyl collection controller") {
+                    expect(sut.children).to(containElementSatisfying({ $0 is VinylCollectionController }))
+                    expect(sut.detailsView.scrollContentView.arrangedSubviews).to(containElementSatisfying({ $0 is VinylCollectionView }))
                 }
 
                 describe("scroll view") {

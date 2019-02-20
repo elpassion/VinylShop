@@ -1,11 +1,12 @@
 import Anchorage
 import UIKit
 
-class RecommendedView: UIView {
+class VinylCollectionView: UIView {
+    
+    // MARK: - Subviews
 
-    private let titleLabel = UILabel(frame: .zero)
+    let titleLabel = UILabel(frame: .zero)
         |> font(.nunito(.extraBold), size: 12, color: .black000000)
-        <> text("RECOMMENDED FOR YOU")
 
     private let allButton = UIButton(frame: .zero)
         |> title("ALL", font: .nunito(.extraBold), size: 12, color: .blue2FC5D8)
@@ -18,7 +19,7 @@ class RecommendedView: UIView {
     lazy var collectionView: UICollectionView =
         UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
             |> background(color: .whiteFFFFFF)
-            <> register(RecommendedCell.self)
+            <> register(VinylCollectionCell.self)
             <> disableScrollIndicators
 
     init() {

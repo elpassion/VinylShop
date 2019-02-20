@@ -4,7 +4,7 @@ class VinylDetailsController: UIViewController, UIScrollViewDelegate {
 
     init(vinyl: VinylDetails,
          trackListFactory: @escaping (VinylDetails) -> UIViewController = { VinylTrackListController(vinyl: $0) },
-         recommendedFactory: @escaping (VinylDetails) -> UIViewController = { RecommendedController(vinyl: $0) },
+         recommendedFactory: @escaping (VinylDetails) -> UIViewController = recommendedControllerFactory(),
          calculator: VinylDetailsHeaderAnimationProgressCalculator = VinylDetailsHeaderAnimationProgressCalculator(),
          presenter: VinylDetailsHeaderAnimationPresenter = VinylDetailsHeaderAnimationPresenter()) {
         self.vinyl = vinyl

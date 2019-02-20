@@ -1,26 +1,27 @@
 import UIKit
 
-class RecommendedController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class VinylCollectionController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    init(vinyl: VinylDetails, presenter: RecommendedPresenter = RecommendedPresenter()) {
-        self.vinyl = vinyl
+    init(viewModel: VinylCollectionViewModel, presenter: VinylPresenter = VinylPresenter()) {
+        self.viewModel = viewModel
         self.presenter = presenter
 
         super.init(nibName: nil, bundle: nil)
     }
 
-    var recommendedView: RecommendedView! {
-        return view as? RecommendedView
+    var recommendedView: VinylCollectionView! {
+        return view as? VinylCollectionView
     }
     
     // MARK: - Lifecycle
 
     override func loadView() {
-        view = RecommendedView()
+        view = VinylCollectionView()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpTitle()
         setUpCollectionView()
     }
 
@@ -31,15 +32,15 @@ class RecommendedController: UIViewController, UICollectionViewDataSource, UICol
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return vinyl.recommended.count
+        return viewModel.vinyls.count
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         return collectionView.cell(
             for: indexPath,
-            modeling: vinyl.recommended(at:),
-            with: presenter.present(recommended:in:)
+            modeling: viewModel.vinyl(at:),
+            with: presenter.present(vinyl:in:)
         )
     }
 
@@ -53,8 +54,12 @@ class RecommendedController: UIViewController, UICollectionViewDataSource, UICol
 
     // MARK: - Private
 
-    private let vinyl: VinylDetails
-    private let presenter: RecommendedPresenter
+    private let viewModel: VinylCollectionViewModel
+    private let presenter: VinylPresenter
+
+    private func setUpTitle() {
+        recommendedView.titleLabel.text = viewModel.title.uppercased()
+    }
 
     private func setUpCollectionView() {
         recommendedView.collectionView.dataSource = self
@@ -67,10 +72,10 @@ class RecommendedController: UIViewController, UICollectionViewDataSource, UICol
 
 }
 
-private extension VinylDetails {
+private extension VinylCollectionViewModel {
 
-    func recommended(at indexPath: IndexPath) -> RecommendedVinyl {
-        return recommended[indexPath.row]
+    func vinyl(at indexPath: IndexPath) -> Vinyl {
+        return vinyls[indexPath.row]
     }
 
 }

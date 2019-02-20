@@ -17,13 +17,9 @@ extension VinylDetails {
         ]
 
         let recommended = [
-            RecommendedVinyl(
-                title: "Master of Puppets",
-                band: "Metallica",
-                image: #imageLiteral(resourceName: "cover_metallica")
-            ),
-            RecommendedVinyl(title: "Papaoutai", band: "Stromae", image: #imageLiteral(resourceName: "cover_stromae")),
-            RecommendedVinyl(
+            Vinyl(title: "Master of Puppets", band: "Metallica", image: #imageLiteral(resourceName: "cover_metallica")),
+            Vinyl(title: "Papaoutai", band: "Stromae", image: #imageLiteral(resourceName: "cover_stromae")),
+            Vinyl(
                 title: "Ghost In The Machine",
                 band: "The Police",
                 image: #imageLiteral(resourceName: "cover_the_police")
