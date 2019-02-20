@@ -38,8 +38,8 @@ class MainTabBarController: UITabBarController {
 
     private func setUpTabBarAppearance() {
         tabBar.isTranslucent = false
-        tabBar.unselectedItemTintColor = Color.black000000.ui(alpha: 0.5)
         tabBar.tintColor = Color.blue2FC5D8.ui()
+        tabBar.unselectedItemTintColor = Color.black000000.ui(alpha: 0.5)
     }
 
     // MARK: - Required initializer
@@ -71,11 +71,11 @@ private extension Tab {
     }
 
     private var image: UIImage? {
-        return UIImage(named: "tab_\(imageFile)")
+        return UIImage(named: "tab_\(imageFile)")?.withRenderingMode(.alwaysOriginal)
     }
 
     private var selectedImage: UIImage? {
-        return UIImage(named: "tab_\(imageFile)_selected")
+        return UIImage(named: "tab_\(imageFile)_selected")?.withRenderingMode(.alwaysOriginal)
     }
 
     private var imageFile: String {
