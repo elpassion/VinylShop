@@ -9,6 +9,8 @@ class ShopView: UIView {
     let scrollView = UIScrollView(frame: .zero)
         |> disableScrollIndicators
         <> { $0.contentInsetAdjustmentBehavior = .never }
+    
+    private let titleView = ShopTitleView()
 
     init() {
         super.init(frame: .zero)
@@ -27,6 +29,7 @@ class ShopView: UIView {
     // MARK: - Subviews
 
     private func addSubviews() {
+        scrollContentView.addArrangedSubview(titleView)
         scrollView.addSubview(scrollContentView)
         addSubview(scrollView)
     }
