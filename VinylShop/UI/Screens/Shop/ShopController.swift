@@ -4,9 +4,11 @@ class ShopController: UIViewController {
 
     init(vinyl: VinylDetails,
          newFactory: @escaping (VinylDetails) -> UIViewController = newAlbumsControllerFactory(),
+         genresFactory: @escaping (VinylDetails) -> UIViewController = { GenresController(vinyl: $0) },
          recommendedFactory: @escaping (VinylDetails) -> UIViewController = recommendedControllerFactory()) {
         self.vinyl = vinyl
         self.newFactory = newFactory
+        self.genresFactory = genresFactory
         self.recommendedFactory = recommendedFactory
         super.init(nibName: nil, bundle: nil)
     }
@@ -24,27 +26,24 @@ class ShopController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        embedNewController()
-        embedRecommendedController()
+        embedChildControllers()
     }
 
     // MARK: - Private
 
     private let vinyl: VinylDetails
     private let newFactory: (VinylDetails) -> UIViewController
+    private let genresFactory: (VinylDetails) -> UIViewController
     private let recommendedFactory: (VinylDetails) -> UIViewController
     private lazy var newController: UIViewController = newFactory(vinyl)
+    private lazy var genresController: UIViewController = genresFactory(vinyl)
     private lazy var recommendedController: UIViewController = recommendedFactory(vinyl)
 
-    private func embedNewController() {
-        embed(childViewController: newController) { view in
-            shopView.scrollContentView.addArrangedSubview(view)
-        }
-    }
-
-    private func embedRecommendedController() {
-        embed(childViewController: recommendedController) { view in
-            shopView.scrollContentView.addArrangedSubview(view)
+    private func embedChildControllers() {
+        [newController, genresController, recommendedController].forEach { controller in
+            embed(childViewController: controller) { view in
+                shopView.scrollContentView.addArrangedSubview(view)
+            }
         }
     }
 

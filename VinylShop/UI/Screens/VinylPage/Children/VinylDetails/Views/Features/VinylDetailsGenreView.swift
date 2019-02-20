@@ -38,6 +38,7 @@ class VinylDetailsGenreView: UIView {
 
         iconView.topAnchor == topAnchor
         iconView.leadingAnchor == leadingAnchor
+        iconView.sizeAnchors == CGSize(width: 22, height: 22)
 
         subtitleLabel.topAnchor == iconView.bottomAnchor + 12
         subtitleLabel.leadingAnchor == iconView.leadingAnchor

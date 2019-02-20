@@ -34,7 +34,7 @@ class ShopView: UIView {
     // MARK: - Layout
 
     private func setUpLayout() {
-        scrollView.edgeAnchors == edgeAnchors
+        scrollView.edgeAnchors == safeAreaLayoutGuide.edgeAnchors
         
         scrollContentView.edgeAnchors == scrollView.edgeAnchors
         scrollContentView.widthAnchor == scrollView.widthAnchor

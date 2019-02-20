@@ -67,6 +67,10 @@ class GenresControllerSpec: QuickSpec {
                                 expect(cell?.nameLabel.text) == "Rock"
                             }
 
+                            it("should have correct image") {
+                                expect(cell?.imageView.image).to(beImage(#imageLiteral(resourceName: "genre_rock")))
+                            }
+
                             it("should have correct size") {
                                 expect(size) == CGSize(width: 80, height: 110)
                             }
