@@ -4,7 +4,7 @@ import UIKit
 class VinylDetailsGenreView: UIView {
 
     let iconView = UIImageView(frame: .zero)
-        |> image(#imageLiteral(resourceName: "genre_rock"))
+        |> image(#imageLiteral(resourceName: "genre_rock_small"))
 
     let titleLabel = UILabel(frame: .zero)
         |> font(.nunito(.semibold), size: 13, color: .black000000)
