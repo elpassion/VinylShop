@@ -1,6 +1,6 @@
 import UIKit
 
-func recommendedControllerFactory() -> (VinylDetails) -> UIViewController {
+func recommendedControllerFactory() -> (VinylDetails) -> VinylCollectionControlling {
     return vinylCollectionControllerFactory(viewModelFactory: recommendedViewModelFactory)
 }
 

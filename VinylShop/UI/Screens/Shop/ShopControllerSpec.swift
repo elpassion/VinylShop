@@ -15,14 +15,17 @@ class ShopControllerSpec: QuickSpec {
             }
 
             context("with fake child controllers") {
-                var newAlbumsControllerStub: UIViewController!
+                var newAlbumsControllerStub: VinylCollectionControllerStub!
                 var genresControllerStub: UIViewController!
-                var recommendedControllerStub: UIViewController!
+                var recommendedControllerStub: VinylCollectionControllerStub!
+                var environmentSpy: EnvironmentSpy!
 
                 beforeEach {
-                    newAlbumsControllerStub = UIViewController()
+                    newAlbumsControllerStub = VinylCollectionControllerStub()
                     genresControllerStub = UIViewController()
-                    recommendedControllerStub = UIViewController()
+                    recommendedControllerStub = VinylCollectionControllerStub()
+                    environmentSpy = EnvironmentSpy()
+                    environmentSpy.install()
 
                     sut = ShopController(
                         vinyl: .shotDetails,
@@ -33,9 +36,11 @@ class ShopControllerSpec: QuickSpec {
                 }
 
                 afterEach {
+                    environmentSpy.uninstall()
                     newAlbumsControllerStub = nil
                     genresControllerStub = nil
                     recommendedControllerStub = nil
+                    environmentSpy = nil
                 }
 
                 describe("view did load") {
@@ -53,6 +58,17 @@ class ShopControllerSpec: QuickSpec {
 
                     it("should embed recommended controller") {
                         expect(sut).to(embed(controller: recommendedControllerStub, in: sut.shopView.scrollContentView))
+                    }
+
+                    describe("new album selection") {
+                        beforeEach {
+                            newAlbumsControllerStub.vinylSelectedAction?(Vinyl(title: "", band: "", image: nil))
+                        }
+
+                        it("should navigate to vinyl page") {
+                            expect(environmentSpy.invokedGoToRoute).to(haveCount(1))
+                            expect(environmentSpy.invokedGoToRoute.first) == .vinylPage
+                        }
                     }
                 }
             }

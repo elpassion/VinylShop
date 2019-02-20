@@ -84,6 +84,25 @@ class VinylCollectionControllerSpec: QuickSpec {
                             it("should have correct size") {
                                 expect(size) == CGSize(width: 114, height: 180)
                             }
+
+                            describe("tap") {
+                                var invokedVinylSelectedAction: Vinyl?
+
+                                beforeEach {
+                                    sut.vinylSelectedAction = { invokedVinylSelectedAction = $0 }
+                                    collectionView.delegate?.collectionView?(collectionView, didSelectItemAt: IndexPath(item: 0, section: 0))
+                                }
+
+                                afterEach {
+                                    invokedVinylSelectedAction = nil
+                                }
+
+                                it("should invoke vinyl selected action") {
+                                    expect(invokedVinylSelectedAction).toNot(beNil())
+                                    expect(invokedVinylSelectedAction?.title) == "Master of Puppets"
+                                    expect(invokedVinylSelectedAction?.band) == "Metallica"
+                                }
+                            }
                         }
                     }
                 }

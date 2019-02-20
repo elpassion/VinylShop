@@ -1,6 +1,8 @@
 import UIKit
 
-class BuyAnimator {
+class BuyAnimator: BuyAnimating {
+    
+    // MARK: - BuyAnimating
 
     func animateBuy(view: UIView,
                     detailsView: VinylDetailsView,

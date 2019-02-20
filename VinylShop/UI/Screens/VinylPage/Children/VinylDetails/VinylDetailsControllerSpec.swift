@@ -146,6 +146,23 @@ class VinylDetailsControllerSpec: QuickSpec {
                         expect(goBackActionInvoked) == true
                     }
                 }
+                
+                describe("buy button tap") {
+                    var buyActionInvoked: Bool?
+                    
+                    beforeEach {
+                        sut.buyAction = { buyActionInvoked = true }
+                        sut.detailsView.headerView.buyButton.simulateTap()
+                    }
+                    
+                    afterEach {
+                        buyActionInvoked = nil
+                    }
+                    
+                    it("should invoke buy action") {
+                        expect(buyActionInvoked) == true
+                    }
+                }
             }
 
             it("should match snapshot on iPhone SE") {

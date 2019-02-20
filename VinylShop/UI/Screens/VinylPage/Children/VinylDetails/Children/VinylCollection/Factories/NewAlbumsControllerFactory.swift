@@ -1,6 +1,6 @@
 import UIKit
 
-func newAlbumsControllerFactory() -> (VinylDetails) -> UIViewController {
+func newAlbumsControllerFactory() -> (VinylDetails) -> VinylCollectionControlling {
     return vinylCollectionControllerFactory(viewModelFactory: newAlbumsViewModelFactory)
 }
 

@@ -16,13 +16,14 @@ class VinylDetailsController: UIViewController, UIScrollViewDelegate, VinylDetai
         super.init(nibName: nil, bundle: nil)
     }
 
+    // MARK: - VinylDetailsControllerProtocol
+
     var detailsView: VinylDetailsView! {
         return view as? VinylDetailsView
     }
-    
-    // MARK: - VinylDetailsControllerProtocol
 
     var goBackAction: (() -> Void)?
+    var buyAction: (() -> Void)?
     
     // MARK: - Lifecycle
 
@@ -36,16 +37,16 @@ class VinylDetailsController: UIViewController, UIScrollViewDelegate, VinylDetai
         embedTrackListController()
         embedRecommendedController()
         setUpScrollViewDelegate()
-        setUpBackAction()
+        setUpActions()
     }
 
     // MARK: - UIScrollViewDelegate
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        guard scrollPosition.height > 0.0 else { return }
-
-        let animationProgress = calculator.progress(for: scrollPosition, in: detailsView)
-        presenter.present(animation: animationProgress, in: detailsView)
+        if scrollPosition.height > 0.0 {
+            let animationProgress = calculator.progress(for: scrollPosition, in: detailsView)
+            presenter.present(animation: animationProgress, in: detailsView)
+        }
     }
 
     // MARK: - Private
@@ -74,8 +75,9 @@ class VinylDetailsController: UIViewController, UIScrollViewDelegate, VinylDetai
         detailsView.scrollView.delegate = self
     }
 
-    private func setUpBackAction() {
+    private func setUpActions() {
         detailsView.headerView.backButton.addTarget(self, action: #selector(onBackButtonTapped), for: .touchUpInside)
+        detailsView.headerView.buyButton.addTarget(self, action: #selector(onBuyTapped), for: .touchUpInside)
     }
 
     private var scrollPosition: VinylDetailsScrollPosition {
@@ -89,6 +91,10 @@ class VinylDetailsController: UIViewController, UIScrollViewDelegate, VinylDetai
 
     @objc private func onBackButtonTapped(_: UIButton) {
         goBackAction?()
+    }
+
+    @objc private func onBuyTapped(_: UIButton) {
+        buyAction?()
     }
 
     // MARK: - Required initializer

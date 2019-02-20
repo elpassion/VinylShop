@@ -1,7 +1,7 @@
 import UIKit
 
 protocol ShoppingBarControllerProtocol {
-    var barControl: UIControl { get }
+    var barView: ShoppingBarView! { get }
 }
 
 typealias ShoppingBarControlling = UIViewController & ShoppingBarControllerProtocol

@@ -17,23 +17,27 @@ class VinylPageControllerSpec: QuickSpec {
             context("with children controllers' stubs") {
                 var barControllerStub: ShoppingBarControllerStub!
                 var detailsControllerStub: VinylDetailsControllerStub!
+                var buyAnimatorSpy: BuyAnimatorSpy!
                 var environmentSpy: EnvironmentSpy!
 
                 beforeEach {
                     barControllerStub = ShoppingBarControllerStub()
                     detailsControllerStub = VinylDetailsControllerStub()
+                    buyAnimatorSpy = BuyAnimatorSpy()
                     environmentSpy = EnvironmentSpy()
                     environmentSpy.install()
 
                     sut = VinylPageController(
                         barControllerFactory: { barControllerStub },
-                        detailsControllerFactory: { detailsControllerStub }
+                        detailsControllerFactory: { detailsControllerStub },
+                        buyAnimator: buyAnimatorSpy
                     )
                 }
 
                 afterEach {
                     environmentSpy.uninstall()
                     environmentSpy = nil
+                    buyAnimatorSpy = nil
                     detailsControllerStub = nil
                     barControllerStub = nil
                 }
@@ -61,7 +65,7 @@ class VinylPageControllerSpec: QuickSpec {
 
                     describe("shopping bar tap") {
                         beforeEach {
-                            barControllerStub.barControl.simulateTap()
+                            barControllerStub.barView.frameControl.simulateTap()
                         }
 
                         it("should present shopping box controller") {
@@ -77,6 +81,46 @@ class VinylPageControllerSpec: QuickSpec {
 
                         it("should invoke go back on navigation environment") {
                             expect(environmentSpy.invokedGoBackCount) == 1
+                        }
+                    }
+
+                    describe("buy action") {
+                        beforeEach {
+                            detailsControllerStub.buyAction?()
+                        }
+
+                        it("should invoke buy animator") {
+                            expect(buyAnimatorSpy.invokedAnimateBuy).toNot(beNil())
+                            expect(buyAnimatorSpy.invokedAnimateBuy?.view) === sut.view
+                            expect(buyAnimatorSpy.invokedAnimateBuy?.detailsView) === detailsControllerStub.detailsView
+                            expect(buyAnimatorSpy.invokedAnimateBuy?.barView) === barControllerStub.barView
+                            expect(buyAnimatorSpy.invokedAnimateBuy?.count) == 1
+                        }
+
+                        describe("another buy action") {
+                            beforeEach {
+                                detailsControllerStub.buyAction?()
+                            }
+
+                            it("should NOT invoke buy animator again") {
+                                expect(buyAnimatorSpy.invokedAnimateBuy?.count) == 1
+                            }
+                        }
+
+                        context("when buy action is completed") {
+                            beforeEach {
+                                buyAnimatorSpy.invokedAnimateBuy?.completion()
+                            }
+
+                            describe("another buy action") {
+                                beforeEach {
+                                    detailsControllerStub.buyAction?()
+                                }
+
+                                it("should invoke buy animator again") {
+                                    expect(buyAnimatorSpy.invokedAnimateBuy?.count) == 2
+                                }
+                            }
                         }
                     }
                 }

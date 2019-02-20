@@ -1,6 +1,7 @@
 import UIKit
 
-class VinylCollectionController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class VinylCollectionController: UIViewController, UICollectionViewDataSource,
+        UICollectionViewDelegateFlowLayout, VinylCollectionControllerProtocol {
 
     init(viewModel: VinylCollectionViewModel, presenter: VinylPresenter = VinylPresenter()) {
         self.viewModel = viewModel
@@ -12,6 +13,10 @@ class VinylCollectionController: UIViewController, UICollectionViewDataSource, U
     var recommendedView: VinylCollectionView! {
         return view as? VinylCollectionView
     }
+    
+    // MARK: - VinylCollectionControllerProtocol
+
+    var vinylSelectedAction: ((Vinyl) -> Void)?
     
     // MARK: - Lifecycle
 
@@ -50,6 +55,11 @@ class VinylCollectionController: UIViewController, UICollectionViewDataSource, U
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 114, height: 180)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vinyl = viewModel.vinyl(at: indexPath)
+        vinylSelectedAction?(vinyl)
     }
 
     // MARK: - Private

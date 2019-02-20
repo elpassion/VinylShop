@@ -5,6 +5,8 @@ class VinylDetailsControllerStub: UIViewController, VinylDetailsControllerProtoc
 
     // MARK: - VinylDetailsControllerProtocol
 
+    let detailsView: VinylDetailsView! = VinylDetailsView()
     var goBackAction: (() -> Void)?
+    var buyAction: (() -> Void)?
 
 }

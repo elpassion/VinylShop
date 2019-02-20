@@ -3,13 +3,15 @@ import UIKit
 class ShopController: UIViewController {
 
     init(vinyl: VinylDetails,
-         newFactory: @escaping (VinylDetails) -> UIViewController = newAlbumsControllerFactory(),
+         newFactory: @escaping (VinylDetails) -> VinylCollectionControlling = newAlbumsControllerFactory(),
          genresFactory: @escaping (VinylDetails) -> UIViewController = { GenresController(vinyl: $0) },
-         recommendedFactory: @escaping (VinylDetails) -> UIViewController = recommendedControllerFactory()) {
+         recommendedFactory: @escaping (VinylDetails) -> VinylCollectionControlling = recommendedControllerFactory(),
+         environment: Environment = .shared) {
         self.vinyl = vinyl
         self.newFactory = newFactory
         self.genresFactory = genresFactory
         self.recommendedFactory = recommendedFactory
+        self.environment = environment
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -27,23 +29,31 @@ class ShopController: UIViewController {
         super.viewDidLoad()
 
         embedChildControllers()
+        setUpNewVinylSelectedAction()
     }
 
     // MARK: - Private
 
     private let vinyl: VinylDetails
-    private let newFactory: (VinylDetails) -> UIViewController
+    private let newFactory: (VinylDetails) -> VinylCollectionControlling
     private let genresFactory: (VinylDetails) -> UIViewController
-    private let recommendedFactory: (VinylDetails) -> UIViewController
-    private lazy var newController: UIViewController = newFactory(vinyl)
+    private let recommendedFactory: (VinylDetails) -> VinylCollectionControlling
+    private let environment: Environment
+    private lazy var newController: VinylCollectionControlling = newFactory(vinyl)
     private lazy var genresController: UIViewController = genresFactory(vinyl)
-    private lazy var recommendedController: UIViewController = recommendedFactory(vinyl)
+    private lazy var recommendedController: VinylCollectionControlling = recommendedFactory(vinyl)
 
     private func embedChildControllers() {
         [newController, genresController, recommendedController].forEach { controller in
             embed(childViewController: controller) { view in
                 shopView.scrollContentView.addArrangedSubview(view)
             }
+        }
+    }
+
+    private func setUpNewVinylSelectedAction() {
+        newController.vinylSelectedAction = { [weak self] _ in
+            self?.environment.navigation.go(to: .vinylPage)
         }
     }
 

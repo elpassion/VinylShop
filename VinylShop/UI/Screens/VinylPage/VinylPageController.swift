@@ -5,7 +5,7 @@ class VinylPageController: UIViewController {
     init(barControllerFactory: @escaping () -> ShoppingBarControlling = ShoppingBarController.init,
          detailsControllerFactory: @escaping () -> VinylDetailsControlling = detailsFactory,
          environment: Environment = .shared,
-         buyAnimator: BuyAnimator = BuyAnimator()) {
+         buyAnimator: BuyAnimating = BuyAnimator()) {
         self.barControllerFactory = barControllerFactory
         self.detailsControllerFactory = detailsControllerFactory
         self.environment = environment
@@ -35,8 +35,7 @@ class VinylPageController: UIViewController {
         embedDetailsController()
         embedBarController()
         setUpBarControlTap()
-        setUpGoBackAction()
-        (detailsController.view as? VinylDetailsView)?.headerView.buyButton.addTarget(self, action: #selector(onBuyTap), for: .touchUpInside)
+        setUpActions()
     }
 
     // MARK: - Status bar
@@ -50,7 +49,8 @@ class VinylPageController: UIViewController {
     private let barControllerFactory: () -> ShoppingBarControlling
     private let detailsControllerFactory: () -> VinylDetailsControlling
     private let environment: Environment
-    private let buyAnimator: BuyAnimator
+    private let buyAnimator: BuyAnimating
+    private var isAnimating: Bool = false
 
     private func embedDetailsController() {
         embed(childViewController: detailsController, inside: pageView.detailsContainerView)
@@ -62,27 +62,28 @@ class VinylPageController: UIViewController {
     }
 
     private func setUpBarControlTap() {
-        barController.barControl.addTarget(self, action: #selector(onBarControlTap), for: .touchUpInside)
+        barController.barView.frameControl.addTarget(self, action: #selector(onBarControlTap), for: .touchUpInside)
     }
 
-    private func setUpGoBackAction() {
+    private func setUpActions() {
         detailsController.goBackAction = { [weak self] in self?.environment.navigation.goBack() }
+        detailsController.buyAction = { [weak self] in self?.onBuyTap() }
     }
 
     @objc private func onBarControlTap(_: UIControl) {
         environment.presentation.present(context: .shoppingBox)
     }
 
-    @objc private func onBuyTap(_ button: UIButton) {
-        guard let detailsView = detailsController.view as? VinylDetailsView,
-              let barView = barController.view as? ShoppingBarView else {
-            return
-        }
+    private func onBuyTap() {
+        if !isAnimating {
+            isAnimating = true
 
-        detailsView.headerView.buyButton.isEnabled = false
-
-        buyAnimator.animateBuy(view: view, detailsView: detailsView, barView: barView) {
-            detailsView.headerView.buyButton.isEnabled = true
+            buyAnimator.animateBuy(
+                view: view,
+                detailsView: detailsController.detailsView,
+                barView: barController.barView,
+                completion: { [weak self] in self?.isAnimating = false }
+            )
         }
     }
 
