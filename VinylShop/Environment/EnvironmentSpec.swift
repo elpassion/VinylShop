@@ -124,27 +124,69 @@ class EnvironmentSpec: QuickSpec {
 
                                 expect(receivedPresentAnimator) === presentAnimator
                             }
+                        }
+                    }
+                }
 
-                            context("when context is being deallocated") {
-                                beforeEach {
-                                    dismissAnimator = nil
-                                    presentAnimator = nil
-                                    presentationContext = nil
-                                }
+                describe("present with deallocated context") {
+                    var presentedController: PresentedControllerStub!
+                    var presentAnimator: AnimatorStub!
+                    var dismissAnimator: AnimatorStub!
 
-                                it("should still have transitioning delegate") {
-                                    expect(presentedController.transitioningDelegate).toNot(beNil())
-                                }
+                    beforeEach {
+                        presentedController = PresentedControllerStub()
+                        presentAnimator = AnimatorStub()
+                        dismissAnimator = AnimatorStub()
 
-                                context("when presented controller is dismissed") {
-                                    beforeEach {
-                                        sut.presentation.dismiss(presentedController, animated: false)
-                                    }
+                        let presentationContext = PresentationContext(
+                            id: .shoppingBox,
+                            factory: { presentedController },
+                            animated: false,
+                            presentationStyle: .custom,
+                            transitionStyle: .flipHorizontal,
+                            presentAnimator: presentAnimator,
+                            dismissAnimator: dismissAnimator
+                        )
 
-                                    it("should no longer have transitioning delegate") {
-                                        expect(presentedController.transitioningDelegate).toEventually(beNil())
-                                    }
-                                }
+                        sut.presentation.present(context: presentationContext)
+                    }
+
+                    afterEach {
+                        presentedController = nil
+                        presentAnimator = nil
+                        dismissAnimator = nil
+                    }
+
+                    describe("presented controller") {
+                        it("should have transitioning delegate set") {
+                            expect(presentedController.transitioningDelegate).toNot(beNil())
+                        }
+
+                        it("should have present animator set") {
+                            let animator = presentedController.transitioningDelegate?.animationController?(
+                                forPresented: UIViewController(),
+                                presenting: UIViewController(),
+                                source: UIViewController()
+                            )
+
+                            expect(animator) === presentAnimator
+                        }
+
+                        it("should have dismiss animator set") {
+                            let animator = presentedController.transitioningDelegate?.animationController?(
+                                forDismissed: UIViewController()
+                            )
+
+                            expect(animator) === dismissAnimator
+                        }
+
+                        describe("dismiss") {
+                            beforeEach {
+                                sut.presentation.dismiss(presentedController, animated: false)
+                            }
+
+                            it("should NOT have transitioning delegate any more") {
+                                expect(presentedController.transitioningDelegate).toEventually(beNil())
                             }
                         }
                     }
@@ -152,6 +194,7 @@ class EnvironmentSpec: QuickSpec {
             }
         }
     }
+
 }
 
 class AnimatorStub: NSObject, UIViewControllerAnimatedTransitioning {
@@ -161,5 +204,13 @@ class AnimatorStub: NSObject, UIViewControllerAnimatedTransitioning {
     }
 
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {}
+
+}
+
+class PresentedControllerStub: UIViewController {
+
+    override func dismiss(animated flag: Bool, completion: (() -> Void)?) {
+        completion?()
+    }
 
 }
