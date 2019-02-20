@@ -1,6 +1,6 @@
 import UIKit
 
-class VinylDetailsController: UIViewController, UIScrollViewDelegate {
+class VinylDetailsController: UIViewController, UIScrollViewDelegate, VinylDetailsControllerProtocol {
 
     init(vinyl: VinylDetails,
          trackListFactory: @escaping (VinylDetails) -> UIViewController = { VinylTrackListController(vinyl: $0) },
@@ -20,6 +20,10 @@ class VinylDetailsController: UIViewController, UIScrollViewDelegate {
         return view as? VinylDetailsView
     }
     
+    // MARK: - VinylDetailsControllerProtocol
+
+    var goBackAction: (() -> Void)?
+    
     // MARK: - Lifecycle
 
     override func loadView() {
@@ -32,6 +36,7 @@ class VinylDetailsController: UIViewController, UIScrollViewDelegate {
         embedTrackListController()
         embedRecommendedController()
         setUpScrollViewDelegate()
+        setUpBackAction()
     }
 
     // MARK: - UIScrollViewDelegate
@@ -69,6 +74,10 @@ class VinylDetailsController: UIViewController, UIScrollViewDelegate {
         detailsView.scrollView.delegate = self
     }
 
+    private func setUpBackAction() {
+        detailsView.headerView.backButton.addTarget(self, action: #selector(onBackButtonTapped), for: .touchUpInside)
+    }
+
     private var scrollPosition: VinylDetailsScrollPosition {
         return VinylDetailsScrollPosition(
             height: detailsView.headerPlaceholderView.frame.height,
@@ -76,6 +85,10 @@ class VinylDetailsController: UIViewController, UIScrollViewDelegate {
             yContentOffset: detailsView.scrollView.contentOffset.y,
             topSafeInset: detailsView.safeAreaInsets.top
         )
+    }
+
+    @objc private func onBackButtonTapped(_: UIButton) {
+        goBackAction?()
     }
 
     // MARK: - Required initializer

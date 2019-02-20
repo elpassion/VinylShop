@@ -1,0 +1,3 @@
+enum Route {
+    case vinylPage
+}

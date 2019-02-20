@@ -129,6 +129,23 @@ class VinylDetailsControllerSpec: QuickSpec {
                         }
                     }
                 }
+                
+                describe("back button tap") {
+                    var goBackActionInvoked: Bool?
+                    
+                    beforeEach {
+                        sut.goBackAction = { goBackActionInvoked = true }
+                        sut.detailsView.headerView.backButton.simulateTap()
+                    }
+                    
+                    afterEach {
+                        goBackActionInvoked = nil
+                    }
+                    
+                    it("should invoke go back action") {
+                        expect(goBackActionInvoked) == true
+                    }
+                }
             }
 
             it("should match snapshot on iPhone SE") {

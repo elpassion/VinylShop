@@ -3,7 +3,7 @@ import UIKit
 class VinylPageController: UIViewController {
 
     init(barControllerFactory: @escaping () -> ShoppingBarControlling = ShoppingBarController.init,
-         detailsControllerFactory: @escaping () -> UIViewController = { VinylDetailsController(vinyl: .shotDetails) },
+         detailsControllerFactory: @escaping () -> VinylDetailsControlling = detailsFactory,
          environment: Environment = .shared,
          buyAnimator: BuyAnimator = BuyAnimator()) {
         self.barControllerFactory = barControllerFactory
@@ -17,7 +17,7 @@ class VinylPageController: UIViewController {
     // MARK: - Children
 
     lazy var barController: ShoppingBarControlling = barControllerFactory()
-    lazy var detailsController: UIViewController = detailsControllerFactory()
+    lazy var detailsController: VinylDetailsControlling = detailsControllerFactory()
 
     var pageView: VinylPageView! {
         return view as? VinylPageView
@@ -35,6 +35,7 @@ class VinylPageController: UIViewController {
         embedDetailsController()
         embedBarController()
         setUpBarControlTap()
+        setUpGoBackAction()
         (detailsController.view as? VinylDetailsView)?.headerView.buyButton.addTarget(self, action: #selector(onBuyTap), for: .touchUpInside)
     }
 
@@ -47,7 +48,7 @@ class VinylPageController: UIViewController {
     // MARK: - Private
 
     private let barControllerFactory: () -> ShoppingBarControlling
-    private let detailsControllerFactory: () -> UIViewController
+    private let detailsControllerFactory: () -> VinylDetailsControlling
     private let environment: Environment
     private let buyAnimator: BuyAnimator
 
@@ -62,6 +63,10 @@ class VinylPageController: UIViewController {
 
     private func setUpBarControlTap() {
         barController.barControl.addTarget(self, action: #selector(onBarControlTap), for: .touchUpInside)
+    }
+
+    private func setUpGoBackAction() {
+        detailsController.goBackAction = { [weak self] in self?.environment.navigation.goBack() }
     }
 
     @objc private func onBarControlTap(_: UIControl) {
@@ -85,4 +90,8 @@ class VinylPageController: UIViewController {
 
     required init?(coder _: NSCoder) { return nil }
 
+}
+
+private func detailsFactory() -> VinylDetailsControlling {
+    return VinylDetailsController(vinyl: .shotDetails)
 }

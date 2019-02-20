@@ -1,6 +1,7 @@
 import UIKit
 
 class Environment {
+
     static let shared = Environment()
 
     lazy var navigationController: UINavigationController = {
@@ -12,4 +13,6 @@ class Environment {
     }()
 
     lazy var presentation = PresentationEnvironment(navigationController: navigationController)
+    lazy var navigation = NavigationEnvironment(navigationController: navigationController)
+
 }

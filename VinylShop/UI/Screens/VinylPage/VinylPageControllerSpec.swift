@@ -16,12 +16,12 @@ class VinylPageControllerSpec: QuickSpec {
 
             context("with children controllers' stubs") {
                 var barControllerStub: ShoppingBarControllerStub!
-                var detailsControllerStub: UIViewController!
+                var detailsControllerStub: VinylDetailsControllerStub!
                 var environmentSpy: EnvironmentSpy!
 
                 beforeEach {
                     barControllerStub = ShoppingBarControllerStub()
-                    detailsControllerStub = UIViewController()
+                    detailsControllerStub = VinylDetailsControllerStub()
                     environmentSpy = EnvironmentSpy()
                     environmentSpy.install()
 
@@ -67,6 +67,16 @@ class VinylPageControllerSpec: QuickSpec {
                         it("should present shopping box controller") {
                             expect(environmentSpy.invokedPresent).to(haveCount(1))
                             expect(environmentSpy.invokedPresent.first?.id) == .shoppingBox
+                        }
+                    }
+
+                    describe("go back action") {
+                        beforeEach {
+                            detailsControllerStub.goBackAction?()
+                        }
+
+                        it("should invoke go back on navigation environment") {
+                            expect(environmentSpy.invokedGoBackCount) == 1
                         }
                     }
                 }

@@ -192,6 +192,102 @@ class EnvironmentSpec: QuickSpec {
                     }
                 }
             }
+
+            describe("navigation") {
+                var fakeController: UIViewController!
+                var navigationControllerSpy: NavigationControllerSpy!
+
+                beforeEach {
+                    fakeController = UIViewController()
+                    navigationControllerSpy = NavigationControllerSpy()
+                    navigationControllerSpy.viewControllers = [fakeController]
+
+                    sut.navigationController = navigationControllerSpy
+                }
+
+                afterEach {
+                    navigationControllerSpy = nil
+                    fakeController = nil
+                }
+
+                describe("go to route") {
+                    beforeEach {
+                        sut.navigation.go(to: .vinylPage)
+                    }
+
+                    it("should update controller stack once") {
+                        expect(navigationControllerSpy.invokedSetViewControllers).to(haveCount(1))
+                    }
+
+                    describe("1st controller stack update") {
+                        var controllers: [UIViewController]!
+                        var animated: Bool!
+
+                        beforeEach {
+                            controllers = navigationControllerSpy.invokedSetViewControllers[0].viewControllers
+                            animated = navigationControllerSpy.invokedSetViewControllers[0].animated
+                        }
+
+                        afterEach {
+                            controllers = nil
+                            animated = nil
+                        }
+
+                        it("should set correct controllers") {
+                            expect(controllers).to(haveCount(2))
+                            expect(controllers.first) === fakeController
+                            expect(controllers.last).to(beAnInstanceOf(VinylPageController.self))
+                        }
+
+                        it("should be animated") {
+                            expect(animated) == true
+                        }
+                    }
+                }
+
+                describe("go back") {
+                    var otherFakeController: UIViewController!
+
+                    beforeEach {
+                        otherFakeController = UIViewController()
+                        navigationControllerSpy.viewControllers = [fakeController, otherFakeController]
+
+                        sut.navigation.goBack()
+                    }
+
+                    afterEach {
+                        otherFakeController = nil
+                    }
+
+                    it("should update controller stack once") {
+                        expect(navigationControllerSpy.invokedSetViewControllers).to(haveCount(1))
+                    }
+
+                    describe("1st controller stack update") {
+                        var controllers: [UIViewController]!
+                        var animated: Bool!
+
+                        beforeEach {
+                            controllers = navigationControllerSpy.invokedSetViewControllers[0].viewControllers
+                            animated = navigationControllerSpy.invokedSetViewControllers[0].animated
+                        }
+
+                        afterEach {
+                            controllers = nil
+                            animated = nil
+                        }
+
+                        it("should set correct controllers") {
+                            expect(controllers).to(haveCount(1))
+                            expect(controllers.first) === fakeController
+                        }
+
+                        it("should be animated") {
+                            expect(animated) == true
+                        }
+                    }
+                }
+            }
         }
     }
 
