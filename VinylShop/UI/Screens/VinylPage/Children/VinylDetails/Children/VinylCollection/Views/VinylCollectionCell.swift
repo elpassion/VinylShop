@@ -41,8 +41,8 @@ class VinylCollectionCell: UICollectionViewCell {
         titleLabel.topAnchor == coverImageView.bottomAnchor + 8
 
         bandLabel.horizontalAnchors == titleLabel.horizontalAnchors
-        bandLabel.topAnchor >= titleLabel.bottomAnchor + 4
-        bandLabel.bottomAnchor == contentView.bottomAnchor
+        bandLabel.topAnchor == titleLabel.bottomAnchor + 4
+        bandLabel.bottomAnchor <= contentView.bottomAnchor
     }
 
     // MARK: - Required initializer
