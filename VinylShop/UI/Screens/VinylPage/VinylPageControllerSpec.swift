@@ -42,10 +42,6 @@ class VinylPageControllerSpec: QuickSpec {
                     barControllerStub = nil
                 }
 
-                it("should hide status bar") {
-                    expect(sut.prefersStatusBarHidden) == true
-                }
-
                 describe("view did load") {
                     beforeEach {
                         _ = sut.view
@@ -122,6 +118,17 @@ class VinylPageControllerSpec: QuickSpec {
                                 }
                             }
                         }
+                    }
+                }
+
+                describe("view will appear") {
+                    beforeEach {
+                        Environment.shared.navigationController.navigationBar.barStyle = .default
+                        sut.viewWillAppear(false)
+                    }
+
+                    it("should set navigation bar style to black") {
+                        expect(Environment.shared.navigationController.navigationBar.barStyle) == .black
                     }
                 }
             }

@@ -38,6 +38,11 @@ class ShopController: UIViewController {
         setUpActions()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        environment.update(barStyle: .default)
+    }
+
     // MARK: - Private
 
     private let vinyl: VinylDetails

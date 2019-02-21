@@ -82,6 +82,17 @@ class ShopControllerSpec: QuickSpec {
                         }
                     }
                 }
+
+                describe("view will appear") {
+                    beforeEach {
+                        Environment.shared.navigationController.navigationBar.barStyle = .black
+                        sut.viewWillAppear(false)
+                    }
+
+                    it("should set navigation bar style to default") {
+                        expect(Environment.shared.navigationController.navigationBar.barStyle) == .default
+                    }
+                }
             }
 
             context("with real child controllers") {

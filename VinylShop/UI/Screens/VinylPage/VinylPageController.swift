@@ -38,10 +38,9 @@ class VinylPageController: UIViewController {
         setUpActions()
     }
 
-    // MARK: - Status bar
-
-    override var prefersStatusBarHidden: Bool {
-        return true
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        environment.update(barStyle: .black)
     }
 
     // MARK: - Private

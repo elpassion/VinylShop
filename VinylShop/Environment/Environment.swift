@@ -15,4 +15,8 @@ class Environment {
     lazy var presentation = PresentationEnvironment(navigationController: navigationController)
     lazy var navigation = NavigationEnvironment(navigationController: navigationController)
 
+    func update(barStyle: UIBarStyle) {
+        navigationController.navigationBar.barStyle = barStyle
+    }
+
 }
