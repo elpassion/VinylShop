@@ -18,6 +18,7 @@ class VinylTrackListView: UIView {
             <> register(VinylSideCell.self)
             <> register(VinylTrackCell.self)
             <> disableScrollIndicators
+            <> { $0.contentInset = UIEdgeInsets(top: 0.0, left: 65.0, bottom: 0.0, right: 0.0) }
 
     var collectionHeightConstraint: NSLayoutConstraint?
 
@@ -48,7 +49,7 @@ class VinylTrackListView: UIView {
         titleLabel.leadingAnchor == leadingAnchor + 65
 
         collectionView.topAnchor == titleLabel.bottomAnchor + 23
-        collectionView.leadingAnchor == titleLabel.leadingAnchor
+        collectionView.leadingAnchor == leadingAnchor
         collectionView.trailingAnchor == trailingAnchor
         collectionView.bottomAnchor == bottomAnchor
         collectionHeightConstraint = (collectionView.heightAnchor == 0)

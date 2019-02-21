@@ -14,7 +14,7 @@ class VinylCollectionView: UIView {
     let collectionViewLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         |> horizontal
         <> layoutSpacing(item: 0, line: 14)
-        <> { $0.sectionInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 50.0) }
+        <> { $0.sectionInset = UIEdgeInsets(top: 0.0, left: 65.0, bottom: 0.0, right: 50.0) }
 
     lazy var collectionView: UICollectionView =
         UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
@@ -56,7 +56,7 @@ class VinylCollectionView: UIView {
         allButton.trailingAnchor == trailingAnchor - 23
 
         collectionView.topAnchor == titleLabel.bottomAnchor + 22
-        collectionView.leadingAnchor == titleLabel.leadingAnchor
+        collectionView.leadingAnchor == leadingAnchor
         collectionView.trailingAnchor == trailingAnchor
         collectionView.bottomAnchor == bottomAnchor - 30
         collectionView.heightAnchor == 180
