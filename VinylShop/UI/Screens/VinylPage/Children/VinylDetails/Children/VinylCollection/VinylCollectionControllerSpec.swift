@@ -24,14 +24,14 @@ class VinylCollectionControllerSpec: QuickSpec {
                 }
 
                 it("should have title set") {
-                    expect(sut.recommendedView.titleLabel.text) == "RECOMMENDED FOR YOU"
+                    expect(sut.vinylsView.titleLabel.text) == "RECOMMENDED FOR YOU"
                 }
 
                 describe("collection view") {
                     var collectionView: UICollectionView!
 
                     beforeEach {
-                        collectionView = sut.recommendedView.collectionView
+                        collectionView = sut.vinylsView.collectionView
                     }
 
                     afterEach {
@@ -39,7 +39,7 @@ class VinylCollectionControllerSpec: QuickSpec {
                     }
 
                     it("should have layout set") {
-                        expect(collectionView.collectionViewLayout) === sut.recommendedView.collectionViewLayout
+                        expect(collectionView.collectionViewLayout) === sut.vinylsView.collectionViewLayout
                     }
 
                     it("should have 1 section") {

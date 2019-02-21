@@ -20,7 +20,7 @@ class VinylPagePushAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         guard let shopController = transitionContext.viewController(forKey: .from) as? ShopController,
               let pageController = transitionContext.viewController(forKey: .to) as? VinylPageController,
               let newController = shopController.newController as? VinylCollectionController,
-              let cell = newController.recommendedView.collectionView.collectionCell,
+              let cell = newController.vinylsView.collectionView.collectionCell,
               let cellCoverSnapshot = cell.coverImageView.snapshotView(afterScreenUpdates: true) else {
             return
         }

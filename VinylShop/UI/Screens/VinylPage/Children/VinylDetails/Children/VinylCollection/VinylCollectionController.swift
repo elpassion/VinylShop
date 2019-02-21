@@ -10,7 +10,7 @@ class VinylCollectionController: UIViewController, UICollectionViewDataSource,
         super.init(nibName: nil, bundle: nil)
     }
 
-    var recommendedView: VinylCollectionView! {
+    var vinylsView: VinylCollectionView! {
         return view as? VinylCollectionView
     }
     
@@ -68,12 +68,12 @@ class VinylCollectionController: UIViewController, UICollectionViewDataSource,
     private let presenter: VinylPresenter
 
     private func setUpTitle() {
-        recommendedView.titleLabel.text = viewModel.title.uppercased()
+        vinylsView.titleLabel.text = viewModel.title.uppercased()
     }
 
     private func setUpCollectionView() {
-        recommendedView.collectionView.dataSource = self
-        recommendedView.collectionView.delegate = self
+        vinylsView.collectionView.dataSource = self
+        vinylsView.collectionView.delegate = self
     }
 
     // MARK: - Required initializer
