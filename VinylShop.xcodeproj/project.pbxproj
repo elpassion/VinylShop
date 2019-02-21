@@ -656,9 +656,9 @@
 		32672611948D0FFBEF89DBD5 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
-				32672413C8E8DC03758D4A4F /* GoToAnimationControllerFactory.swift */,
 				326728FC702A7C4EC72AF885 /* ControllerFactory.swift */,
 				326721347B8A9850F12319C6 /* GoBackAnimationControllerFactory.swift */,
+				32672413C8E8DC03758D4A4F /* GoToAnimationControllerFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -886,10 +886,10 @@
 		32672B767B4C0076BDB34054 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
-				32672B359F95427D2BA4A0C0 /* VinylPagePushAnimator.swift */,
-				326728D6BBFD313B2E959413 /* VinylPagePushAnimatorSpec.swift */,
 				326721548FB5FB37EB24E6CE /* VinylPagePopAnimator.swift */,
 				326724252B9F2EE9DFF895A7 /* VinylPagePopAnimatorSpec.swift */,
+				32672B359F95427D2BA4A0C0 /* VinylPagePushAnimator.swift */,
+				326728D6BBFD313B2E959413 /* VinylPagePushAnimatorSpec.swift */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
