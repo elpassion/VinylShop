@@ -32,6 +32,10 @@ class VinylDetails_ShotDetailsSpec: QuickSpec {
                 expect(sut.recommended.map { $0.title }) == ["Master of Puppets", "Papaoutai", "Ghost In The Machine"]
             }
 
+            it("should have recommended albums with correct IDs") {
+                expect(sut.recommended.map { $0.id }) == [1, 2, 3]
+            }
+
             it("should have 7 new albums") {
                 expect(sut.new.map { $0.title }) == [
                     "We the Generation",
@@ -42,6 +46,10 @@ class VinylDetails_ShotDetailsSpec: QuickSpec {
                     "Dummy",
                     "Demon Days"
                 ]
+            }
+
+            it("should have new albums with correct IDs") {
+                expect(sut.new.map { $0.id }) == [4, 5, 6, 7, 8, 9, 10]
             }
 
             it("should have 3 genres") {

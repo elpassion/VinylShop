@@ -1,7 +1,8 @@
 import UIKit
 
-struct Vinyl {
+struct Vinyl: Decodable {
+    let id: Int
     let title: String
     let band: String
-    let image: UIImage?
+    let image: String
 }

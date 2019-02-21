@@ -62,7 +62,7 @@ class ShopControllerSpec: QuickSpec {
 
                     describe("new album selection") {
                         beforeEach {
-                            newAlbumsControllerStub.vinylSelectedAction?(Vinyl(title: "", band: "", image: nil))
+                            newAlbumsControllerStub.vinylSelectedAction?(Vinyl(id: 0, title: "", band: "", image: ""))
                         }
 
                         it("should navigate to vinyl page") {

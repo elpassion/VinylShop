@@ -1,3 +1,3 @@
-struct Genre {
+struct Genre: Decodable {
     let name: String
 }

@@ -132,6 +132,7 @@
 		32672E7488A92E64C389074F /* BuyAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672FBA0E6E6D0118E72CEB /* BuyAnimator.swift */; };
 		32672EA9327821C57E10BAB9 /* GenresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267210BB2FDF96929BBEC20 /* GenresView.swift */; };
 		32672EB5DCEEDB6EA2A60657 /* VinylDetailsLargeFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672D1A5D8151485A85BBA1 /* VinylDetailsLargeFeatureView.swift */; };
+		32672ED0B79307FDA5B3FA24 /* vinyl_details.json in Resources */ = {isa = PBXBuildFile; fileRef = 3267256B52296CB3C62514BB /* vinyl_details.json */; };
 		32672EE55BE23CD52D78FE4B /* ShoppingBarControlling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267243FF1906019A2989912 /* ShoppingBarControlling.swift */; };
 		32672F01BC5D2D648DEA8C11 /* Appliance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267214B2128E42E7806BB23 /* Appliance.swift */; };
 		32672F2B267BB5A747026B05 /* SnapshotDiffToolConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326721C215E4A730D48F81B8 /* SnapshotDiffToolConfiguration.swift */; };
@@ -239,6 +240,7 @@
 		326725360B0FE13EF58DE71D /* GenrePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenrePresenter.swift; sourceTree = "<group>"; };
 		32672536268FF96987A9C6A1 /* VinylDetailsFeaturesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VinylDetailsFeaturesView.swift; sourceTree = "<group>"; };
 		32672549DA59C2630442ED22 /* ShoppingBoxPriceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxPriceView.swift; sourceTree = "<group>"; };
+		3267256B52296CB3C62514BB /* vinyl_details.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vinyl_details.json; sourceTree = "<group>"; };
 		3267256FD679F110B6E188BC /* VinylCollectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VinylCollectionController.swift; sourceTree = "<group>"; };
 		32672595C6415CAC3DA2F1A6 /* VinylPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VinylPresenter.swift; sourceTree = "<group>"; };
 		32672597C6B12FBFFD07B57B /* AppDelegateSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateSpec.swift; sourceTree = "<group>"; };
@@ -600,6 +602,14 @@
 				326725A05B7FFD9EC6057D2F /* UIViewController */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		32672593187F2DFFBF29E2D6 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				3267256B52296CB3C62514BB /* vinyl_details.json */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		326725A05B7FFD9EC6057D2F /* UIViewController */ = {
@@ -1027,6 +1037,7 @@
 				326728AA196B39B518E5EF7E /* Views */,
 				3267285EEF649FEE02C01373 /* VinylDetailsController.swift */,
 				32672E4599326D6DD0E12BB9 /* VinylDetailsControllerSpec.swift */,
+				32672593187F2DFFBF29E2D6 /* Data */,
 			);
 			path = VinylDetails;
 			sourceTree = "<group>";
@@ -1292,6 +1303,7 @@
 				8C2243CF2202125600C3470B /* Nunito-ExtraBold.ttf in Resources */,
 				8C2243CA2202125600C3470B /* Nunito-BlackItalic.ttf in Resources */,
 				8C2243CD2202125600C3470B /* Nunito-BoldItalic.ttf in Resources */,
+				32672ED0B79307FDA5B3FA24 /* vinyl_details.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
