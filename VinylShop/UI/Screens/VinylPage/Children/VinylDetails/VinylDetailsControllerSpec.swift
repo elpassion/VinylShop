@@ -87,6 +87,14 @@ class VinylDetailsControllerSpec: QuickSpec {
                             it("should update vinyl offset to collapsed offset") {
                                 expect(sut.detailsView.headerView.vinylCenterOffsetConstraint?.constant) == 20.2 ± 0.1
                             }
+
+                            it("should deactivate large title bottom constraint") {
+                                expect(sut.detailsView.headerView.largeBottomAnchorConstraint?.isActive) == false
+                            }
+
+                            it("should activate small title bottom constraint") {
+                                expect(sut.detailsView.headerView.smallBottomAnchorConstraint?.isActive) == true
+                            }
                         }
 
                         context("to header in collapsing state") {
@@ -97,6 +105,14 @@ class VinylDetailsControllerSpec: QuickSpec {
 
                             it("should update height constraint to original height minus offset") {
                                 expect(sut.detailsView.headerHeightConstraint?.constant) == -100
+                            }
+
+                            it("should deactivate large title bottom constraint") {
+                                expect(sut.detailsView.headerView.largeBottomAnchorConstraint?.isActive) == false
+                            }
+
+                            it("should activate small title bottom constraint") {
+                                expect(sut.detailsView.headerView.smallBottomAnchorConstraint?.isActive) == true
                             }
                         }
 
@@ -125,6 +141,14 @@ class VinylDetailsControllerSpec: QuickSpec {
 
                             it("should update vinyl offset to extended offset") {
                                 expect(sut.detailsView.headerView.vinylCenterOffsetConstraint?.constant) == 45.0 ± 0.1
+                            }
+                            
+                            it("should activate large title bottom constraint") {
+                                expect(sut.detailsView.headerView.largeBottomAnchorConstraint?.isActive) == true
+                            }
+                            
+                            it("should deactivate small title bottom constraint") {
+                                expect(sut.detailsView.headerView.smallBottomAnchorConstraint?.isActive) == false
                             }
                         }
                     }

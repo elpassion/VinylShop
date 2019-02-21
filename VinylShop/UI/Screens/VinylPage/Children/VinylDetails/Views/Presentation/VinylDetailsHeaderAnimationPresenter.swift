@@ -19,6 +19,16 @@ class VinylDetailsHeaderAnimationPresenter {
         view.vinylCenterOffsetConstraint?.constant = animation.vinylCenterOffset
         view.largeTitleView.alpha = animation.largeTitleAlpha
         view.smallTitleView.alpha = animation.smallTitleAlpha
+        view.smallBottomAnchorConstraint?.isActive = !animation.largeTitleVisible
+        view.largeBottomAnchorConstraint?.isActive = animation.largeTitleVisible
+    }
+
+}
+
+private extension VinylDetailsHeaderAnimationProgress {
+
+    var largeTitleVisible: Bool {
+        return largeTitleAlpha > 0.0
     }
 
 }

@@ -32,6 +32,8 @@ class VinylDetailsHeaderView: UIView {
 
     var coverSizeConstraint: ConstraintPair?
     var vinylCenterOffsetConstraint: NSLayoutConstraint?
+    var largeBottomAnchorConstraint: NSLayoutConstraint?
+    var smallBottomAnchorConstraint: NSLayoutConstraint?
 
     init() {
         super.init(frame: .zero)
@@ -80,8 +82,8 @@ class VinylDetailsHeaderView: UIView {
         coverImageView.leadingAnchor == leadingAnchor + 65
         coverSizeConstraint = (coverImageView.sizeAnchors == VinylDetailsHeaderView.maxCoverSize)
 
-        largeTitleView.topAnchor == coverImageView.bottomAnchor + 14 ~ .almostRequired
-        largeTitleView.bottomAnchor == bottomAnchor - 27 ~ .almostRequired
+        largeTitleView.topAnchor == coverImageView.bottomAnchor + 14
+        largeBottomAnchorConstraint = (largeTitleView.bottomAnchor == bottomAnchor - 27)
         largeTitleView.leadingAnchor == coverImageView.leadingAnchor
         largeTitleView.trailingAnchor <= trailingAnchor - 27
 
@@ -100,7 +102,8 @@ class VinylDetailsHeaderView: UIView {
         smallTitleView.topAnchor == safeAreaLayoutGuide.topAnchor + 29
         smallTitleView.leadingAnchor == backButton.trailingAnchor + 105
         smallTitleView.trailingAnchor == trailingAnchor - 20
-        smallTitleView.bottomAnchor == bottomAnchor - 10
+        smallBottomAnchorConstraint = (smallTitleView.bottomAnchor == bottomAnchor - 10)
+        smallBottomAnchorConstraint?.isActive = false
 
         buyButton.trailingAnchor == trailingAnchor - 6
         buyButton.bottomAnchor == bottomAnchor + 48

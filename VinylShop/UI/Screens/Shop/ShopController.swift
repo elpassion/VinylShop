@@ -19,6 +19,12 @@ class ShopController: UIViewController {
         return view as? ShopView
     }
 
+    // MARK: - Child controllers
+
+    lazy var newController: VinylCollectionControlling = newFactory(vinyl)
+    lazy var genresController: UIViewController = genresFactory(vinyl)
+    lazy var recommendedController: VinylCollectionControlling = recommendedFactory(vinyl)
+
     // MARK: - Lifecycle
 
     override func loadView() {
@@ -39,9 +45,6 @@ class ShopController: UIViewController {
     private let genresFactory: (VinylDetails) -> UIViewController
     private let recommendedFactory: (VinylDetails) -> VinylCollectionControlling
     private let environment: Environment
-    private lazy var newController: VinylCollectionControlling = newFactory(vinyl)
-    private lazy var genresController: UIViewController = genresFactory(vinyl)
-    private lazy var recommendedController: VinylCollectionControlling = recommendedFactory(vinyl)
 
     private func embedChildControllers() {
         [newController, genresController, recommendedController].forEach { controller in

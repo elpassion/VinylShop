@@ -243,6 +243,54 @@ class EnvironmentSpec: QuickSpec {
                             expect(animated) == true
                         }
                     }
+
+                    describe("navigation controller delegate") {
+                        describe("animation controller") {
+                            var animationController: UIViewControllerAnimatedTransitioning?
+
+                            beforeEach {
+                                animationController = navigationControllerSpy.delegate?.navigationController?(
+                                    navigationControllerSpy,
+                                    animationControllerFor: .push,
+                                    from: UIViewController(),
+                                    to: UIViewController()
+                                )
+                            }
+
+                            afterEach {
+                                animationController = nil
+                            }
+
+                            it("should NOT be nil") {
+                                expect(animationController).toNot(beNil())
+                            }
+
+                            it("should be VinylPagePushAnimator") {
+                                expect(animationController).to(beAnInstanceOf(VinylPagePushAnimator.self))
+                            }
+
+                            describe("go back") {
+                                beforeEach {
+                                    sut.navigation.goBack()
+                                }
+
+                                describe("animation controller") {
+                                    beforeEach {
+                                        animationController = navigationControllerSpy.delegate?.navigationController?(
+                                            navigationControllerSpy,
+                                            animationControllerFor: .push,
+                                            from: UIViewController(),
+                                            to: UIViewController()
+                                        )
+                                    }
+
+                                    it("should be nil") {
+                                        expect(animationController).to(beNil())
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
 
                 describe("go back") {
