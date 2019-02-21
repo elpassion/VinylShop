@@ -55,8 +55,8 @@ class ShopController: UIViewController {
     }
 
     private func setUpNewVinylSelectedAction() {
-        newController.vinylSelectedAction = { [weak self] _ in
-            self?.environment.navigation.go(to: .vinylPage)
+        newController.vinylSelectedAction = { [weak self] vinyl in
+            self?.environment.navigation.go(to: .vinylPage(id: vinyl.id))
         }
     }
 

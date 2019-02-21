@@ -9,11 +9,15 @@ class VinylPagePushAnimatorSpec: QuickSpec {
             var sut: VinylPagePushAnimator!
 
             beforeEach {
-                sut = VinylPagePushAnimator()
+                sut = VinylPagePushAnimator(vinylID: 93)
             }
 
             afterEach {
                 sut = nil
+            }
+
+            it("should have correct vinyl ID") {
+                expect(sut.vinylID) == 93
             }
 
             describe("transition duration") {

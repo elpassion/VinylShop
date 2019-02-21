@@ -212,7 +212,7 @@ class EnvironmentSpec: QuickSpec {
 
                 describe("go to route") {
                     beforeEach {
-                        sut.navigation.go(to: .vinylPage)
+                        sut.navigation.go(to: .vinylPage(id: 19))
                     }
 
                     it("should update controller stack once") {
@@ -265,8 +265,11 @@ class EnvironmentSpec: QuickSpec {
                                 expect(animationController).toNot(beNil())
                             }
 
-                            it("should be VinylPagePushAnimator") {
-                                expect(animationController).to(beAnInstanceOf(VinylPagePushAnimator.self))
+                            it("should be VinylPagePushAnimator with correct ID") {
+                                let vinylPushAnimator = animationController as? VinylPagePushAnimator
+
+                                expect(vinylPushAnimator).toNot(beNil())
+                                expect(vinylPushAnimator?.vinylID) == 19
                             }
 
                             describe("go back") {

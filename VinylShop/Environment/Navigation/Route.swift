@@ -1,3 +1,3 @@
-enum Route {
-    case vinylPage
+enum Route: Equatable {
+    case vinylPage(id: Int)
 }

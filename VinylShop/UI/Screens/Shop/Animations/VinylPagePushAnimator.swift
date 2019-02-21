@@ -10,6 +10,12 @@ extension UICollectionView {
 
 class VinylPagePushAnimator: NSObject, UIViewControllerAnimatedTransitioning {
 
+    let vinylID: Int
+
+    init(vinylID: Int) {
+        self.vinylID = vinylID
+    }
+
     // MARK: - UIViewControllerAnimatedTransitioning
 
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
@@ -20,7 +26,7 @@ class VinylPagePushAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         guard let shopController = transitionContext.viewController(forKey: .from) as? ShopController,
               let pageController = transitionContext.viewController(forKey: .to) as? VinylPageController,
               let newController = shopController.newController as? VinylCollectionController,
-              let cell = newController.vinylsView.collectionView.collectionCell,
+              let cell = newController.visibleCell(forVinylID: vinylID),
               let cellCoverSnapshot = cell.coverImageView.snapshotView(afterScreenUpdates: true) else {
             return
         }

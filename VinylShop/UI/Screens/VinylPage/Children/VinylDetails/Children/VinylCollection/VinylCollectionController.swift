@@ -17,6 +17,15 @@ class VinylCollectionController: UIViewController, UICollectionViewDataSource,
     // MARK: - VinylCollectionControllerProtocol
 
     var vinylSelectedAction: ((Vinyl) -> Void)?
+
+    func visibleCell(forVinylID vinylID: Int) -> VinylCollectionCell? {
+        let collectionView = vinylsView.collectionView
+        let visibleCells = collectionView.visibleCells.compactMap { $0 as? VinylCollectionCell }
+
+        return visibleCells.first { cell in
+            collectionView.indexPath(for: cell).flatMap { viewModel.vinyl(at: $0).id == vinylID } ?? false
+        }
+    }
     
     // MARK: - Lifecycle
 

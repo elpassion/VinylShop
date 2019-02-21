@@ -1,6 +1,7 @@
 @testable import VinylShop
 import Nimble
 import Quick
+import SpecTools
 import UIKit
 
 class VinylCollectionControllerSpec: QuickSpec {
@@ -104,6 +105,28 @@ class VinylCollectionControllerSpec: QuickSpec {
                                 }
                             }
                         }
+                    }
+                }
+
+                describe("cell for vinyl ID") {
+                    var cell: VinylCollectionCell?
+
+                    beforeEach {
+                        sut.spec.prepare.set(viewSize: .iPhone5)
+                        cell = sut.visibleCell(forVinylID: 2)
+                    }
+
+                    afterEach {
+                        cell = nil
+                    }
+
+                    it("should return a cell") {
+                        expect(cell).toNot(beNil())
+                    }
+
+                    it("should return cell for Stromae - Papaoutai") {
+                        expect(cell?.titleLabel.text) == "Papaoutai"
+                        expect(cell?.bandLabel.text) == "Stromae"
                     }
                 }
             }

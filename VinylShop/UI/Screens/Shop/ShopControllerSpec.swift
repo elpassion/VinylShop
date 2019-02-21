@@ -62,12 +62,12 @@ class ShopControllerSpec: QuickSpec {
 
                     describe("new album selection") {
                         beforeEach {
-                            newAlbumsControllerStub.vinylSelectedAction?(Vinyl(id: 0, title: "", band: "", image: ""))
+                            newAlbumsControllerStub.vinylSelectedAction?(Vinyl(id: 26, title: "", band: "", image: ""))
                         }
 
                         it("should navigate to vinyl page") {
                             expect(environmentSpy.invokedGoToRoute).to(haveCount(1))
-                            expect(environmentSpy.invokedGoToRoute.first) == .vinylPage
+                            expect(environmentSpy.invokedGoToRoute.first) == .vinylPage(id: 26)
                         }
                     }
                 }

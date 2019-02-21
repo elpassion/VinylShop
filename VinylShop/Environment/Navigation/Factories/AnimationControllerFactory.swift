@@ -2,7 +2,7 @@ import UIKit
 
 func makeAnimationController(for route: Route) -> UIViewControllerAnimatedTransitioning? {
     switch route {
-    case .vinylPage:
-        return VinylPagePushAnimator()
+    case let .vinylPage(vinylID):
+        return VinylPagePushAnimator(vinylID: vinylID)
     }
 }
