@@ -513,12 +513,12 @@
 		326722D18C8F9AE75D8F177E /* Shop */ = {
 			isa = PBXGroup;
 			children = (
+				32672B767B4C0076BDB34054 /* Animations */,
 				32672F7D2B70F8985E250243 /* Children */,
 				3267290B18449853326E5FA0 /* Doubles */,
 				326727A488C7375A8257FD0D /* Views */,
 				32672C81BDBD2B79D3F4269A /* ShopController.swift */,
 				326720A94A1D03C17D4B8B04 /* ShopControllerSpec.swift */,
-				32672B767B4C0076BDB34054 /* Animations */,
 			);
 			path = Shop;
 			sourceTree = "<group>";
@@ -650,8 +650,8 @@
 		32672611948D0FFBEF89DBD5 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
-				326728FC702A7C4EC72AF885 /* ControllerFactory.swift */,
 				32672413C8E8DC03758D4A4F /* AnimationControllerFactory.swift */,
+				326728FC702A7C4EC72AF885 /* ControllerFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -1030,6 +1030,7 @@
 			children = (
 				32672196DA9F1A1E50859471 /* Aliases */,
 				326721F5BD4CA01BBB712F18 /* Children */,
+				32672593187F2DFFBF29E2D6 /* Data */,
 				32672646760D8AD2476B5CB3 /* Extensions */,
 				326725B9E7D9AE570FD1B289 /* Models */,
 				32672CFBB1A19DDC71F74265 /* Presentation */,
@@ -1037,7 +1038,6 @@
 				326728AA196B39B518E5EF7E /* Views */,
 				3267285EEF649FEE02C01373 /* VinylDetailsController.swift */,
 				32672E4599326D6DD0E12BB9 /* VinylDetailsControllerSpec.swift */,
-				32672593187F2DFFBF29E2D6 /* Data */,
 			);
 			path = VinylDetails;
 			sourceTree = "<group>";
