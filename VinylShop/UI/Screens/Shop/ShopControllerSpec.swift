@@ -70,6 +70,17 @@ class ShopControllerSpec: QuickSpec {
                             expect(environmentSpy.invokedGoToRoute.first) == .vinylPage(id: 26)
                         }
                     }
+
+                    describe("recommended album selection") {
+                        beforeEach {
+                            recommendedControllerStub.vinylSelectedAction?(Vinyl(id: 3, title: "", band: "", image: ""))
+                        }
+
+                        it("should navigate to vinyl page") {
+                            expect(environmentSpy.invokedGoToRoute).to(haveCount(1))
+                            expect(environmentSpy.invokedGoToRoute.first) == .vinylPage(id: 3)
+                        }
+                    }
                 }
             }
 

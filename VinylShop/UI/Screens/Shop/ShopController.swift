@@ -35,7 +35,7 @@ class ShopController: UIViewController {
         super.viewDidLoad()
 
         embedChildControllers()
-        setUpNewVinylSelectedAction()
+        setUpActions()
     }
 
     // MARK: - Private
@@ -54,10 +54,13 @@ class ShopController: UIViewController {
         }
     }
 
-    private func setUpNewVinylSelectedAction() {
-        newController.vinylSelectedAction = { [weak self] vinyl in
+    private func setUpActions() {
+        let vinylSelectedAction: (Vinyl) -> Void = { [weak self] vinyl in
             self?.environment.navigation.go(to: .vinylPage(id: vinyl.id))
         }
+
+        newController.vinylSelectedAction = vinylSelectedAction
+        recommendedController.vinylSelectedAction = vinylSelectedAction
     }
 
     // MARK: - Required initializer

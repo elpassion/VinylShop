@@ -1,13 +1,6 @@
 import Anchorage
 import UIKit
 
-extension UICollectionView {
-
-    var collectionCell: VinylCollectionCell? {
-        return visibleCells.compactMap { $0 as? VinylCollectionCell }.first { $0.titleLabel.text == "We the Generation" }
-    }
-}
-
 class VinylPagePushAnimator: NSObject, UIViewControllerAnimatedTransitioning {
 
     let vinylID: Int
@@ -26,7 +19,13 @@ class VinylPagePushAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         guard let shopController = transitionContext.viewController(forKey: .from) as? ShopController,
               let pageController = transitionContext.viewController(forKey: .to) as? VinylPageController,
               let newController = shopController.newController as? VinylCollectionController,
-              let cell = newController.visibleCell(forVinylID: vinylID),
+              let recommendedController = shopController.recommendedController as? VinylCollectionController else {
+            return
+        }
+
+        let vinylCell = [newController, recommendedController].compactMap { $0.visibleCell(forVinylID: vinylID) }.first
+
+        guard let cell = vinylCell,
               let cellCoverSnapshot = cell.coverImageView.snapshotView(afterScreenUpdates: true) else {
             return
         }
