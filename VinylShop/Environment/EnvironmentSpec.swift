@@ -287,8 +287,15 @@ class EnvironmentSpec: QuickSpec {
                                         )
                                     }
 
-                                    it("should be nil") {
-                                        expect(animationController).to(beNil())
+                                    it("should NOT be nil") {
+                                        expect(animationController).toNot(beNil())
+                                    }
+
+                                    it("should be VinylPagePopAnimator with correct ID") {
+                                        let vinylPopAnimator = animationController as? VinylPagePopAnimator
+
+                                        expect(vinylPopAnimator).toNot(beNil())
+                                        expect(vinylPopAnimator?.vinylID) == 19
                                     }
                                 }
                             }

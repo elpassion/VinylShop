@@ -22,17 +22,20 @@ class NavigationEnvironment: NSObject, UINavigationControllerDelegate {
 
     lazy var _goToRoute: (Route) -> Void = {
         return { [weak self] route in
+            self?.navigationStack.append(route)
+            self?.currentAnimationController = makeGoToAnimationController(for: route)
+
             let controller = makeController(for: route)
             let currentStack = self?.navigationController.viewControllers ?? []
-            self?.currentAnimationController = makeAnimationController(for: route)
-
             self?.navigationController.setViewControllers(currentStack + [controller], animated: true)
         }
     }()
 
     lazy var _goBack: () -> Void = {
         return { [weak self] in
-            self?.currentAnimationController = nil
+            let route = self?.navigationStack.popLast()
+            self?.currentAnimationController = route.flatMap { makeGoBackAnimationController(for: $0) }
+
             let currentStack = self?.navigationController.viewControllers ?? []
             self?.navigationController.setViewControllers(Array(currentStack.dropLast()), animated: true)
         }
@@ -52,6 +55,7 @@ class NavigationEnvironment: NSObject, UINavigationControllerDelegate {
     // MARK: - Private
 
     private let navigationController: UINavigationController
+    private var navigationStack: [Route] = []
     private var currentAnimationController: UIViewControllerAnimatedTransitioning?
 
 }
