@@ -1259,6 +1259,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8CFA76EC2201DC8C00E4D81D /* Build configuration list for PBXNativeTarget "VinylShop" */;
 			buildPhases = (
+				8C7C3CBE222032590019F094 /* SwiftLint */,
 				8CFA76CB2201DC8B00E4D81D /* Sources */,
 				8CFA77032201EE9F00E4D81D /* Carthage Copy Frameworks */,
 				8CFA77052201EEF700E4D81D /* Carthage Outdated Dependencies */,
@@ -1366,6 +1367,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		8C7C3CBE222032590019F094 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    cd VinylShop\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, run 'brew bundle' command\"\nfi\n";
+		};
 		8CFA77032201EE9F00E4D81D /* Carthage Copy Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
