@@ -3,7 +3,7 @@ import UIKit
 
 class VinylDetailsSmallFeatureView: UIView {
 
-    let valueLabel = UILabel(frame: .zero)
+    let valueLabel: UILabel = UILabel(frame: .zero)
         |> font(.nunito(.semibold), size: 13, color: .black000000)
 
     let subtitleLabel: UILabel = UILabel(frame: .zero)

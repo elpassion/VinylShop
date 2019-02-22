@@ -6,7 +6,7 @@ func newAlbumsControllerFactory() -> (ShopDetails) -> VinylCollectionControlling
 
 func newAlbumsViewModelFactory(_ details: ShopDetails) -> VinylCollectionViewModel {
     let ids = Set(details.newIDs)
-    let vinyls = details.vinyls.filter { ids.contains($0.id )}
+    let vinyls = details.vinyls.filter { ids.contains($0.id) }
 
     return VinylCollectionViewModel(title: "New albums", vinyls: vinyls)
 }

@@ -3,11 +3,11 @@ import UIKit
 
 class VinylDetailsHeaderPriceView: UIView {
 
-    private let frameView = UIView(frame: .zero)
+    private let frameView: UIView = UIView(frame: .zero)
         |> bordered(width: 1, color: .whiteFFFFFF, alpha: 0.5)
         <> rounded(radius: 3.0)
 
-    private let priceLabel = UILabel(frame: .zero)
+    private let priceLabel: UILabel = UILabel(frame: .zero)
         |> text("<currency>$</currency> <price>15</price>", style: .vinylPriceStyle)
 
     init() {
