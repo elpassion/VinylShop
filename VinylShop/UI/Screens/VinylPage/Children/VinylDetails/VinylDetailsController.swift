@@ -2,9 +2,9 @@ import UIKit
 
 class VinylDetailsController: UIViewController, UIScrollViewDelegate, VinylDetailsControllerProtocol {
 
-    init(vinyl: VinylDetails,
-         trackListFactory: @escaping (VinylDetails) -> UIViewController = { VinylTrackListController(vinyl: $0) },
-         recommendedFactory: @escaping (VinylDetails) -> UIViewController = recommendedControllerFactory(),
+    init(vinyl: Vinyl,
+         trackListFactory: @escaping (Vinyl) -> UIViewController = { VinylTrackListController(vinyl: $0) },
+         recommendedFactory: @escaping (Vinyl) -> UIViewController = vinylRecommendedControllerFactory(),
          calculator: VinylDetailsHeaderAnimationProgressCalculator = VinylDetailsHeaderAnimationProgressCalculator(),
          presenter: VinylDetailsHeaderAnimationPresenter = VinylDetailsHeaderAnimationPresenter()) {
         self.vinyl = vinyl
@@ -51,9 +51,9 @@ class VinylDetailsController: UIViewController, UIScrollViewDelegate, VinylDetai
 
     // MARK: - Private
 
-    private let vinyl: VinylDetails
-    private let trackListFactory: (VinylDetails) -> UIViewController
-    private let recommendedFactory: (VinylDetails) -> UIViewController
+    private let vinyl: Vinyl
+    private let trackListFactory: (Vinyl) -> UIViewController
+    private let recommendedFactory: (Vinyl) -> UIViewController
     private let calculator: VinylDetailsHeaderAnimationProgressCalculator
     private let presenter: VinylDetailsHeaderAnimationPresenter
     private lazy var trackListController: UIViewController = trackListFactory(vinyl)

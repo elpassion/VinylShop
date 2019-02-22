@@ -1,9 +1,12 @@
 import UIKit
 
-func newAlbumsControllerFactory() -> (VinylDetails) -> VinylCollectionControlling {
+func newAlbumsControllerFactory() -> (ShopDetails) -> VinylCollectionControlling {
     return vinylCollectionControllerFactory(viewModelFactory: newAlbumsViewModelFactory)
 }
 
-func newAlbumsViewModelFactory(_ details: VinylDetails) -> VinylCollectionViewModel {
-    return VinylCollectionViewModel(title: "New albums", vinyls: details.new)
+func newAlbumsViewModelFactory(_ details: ShopDetails) -> VinylCollectionViewModel {
+    let ids = Set(details.newIDs)
+    let vinyls = details.vinyls.filter { ids.contains($0.id )}
+
+    return VinylCollectionViewModel(title: "New albums", vinyls: vinyls)
 }

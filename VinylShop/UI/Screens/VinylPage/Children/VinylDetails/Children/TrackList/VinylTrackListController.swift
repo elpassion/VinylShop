@@ -3,7 +3,7 @@ import UIKit
 class VinylTrackListController: UIViewController, UICollectionViewDataSource,
         UICollectionViewDelegateFlowLayout {
 
-    init(vinyl: VinylDetails, presenter: VinylDetailsPresenter = VinylDetailsPresenter()) {
+    init(vinyl: Vinyl, presenter: VinylDetailsPresenter = VinylDetailsPresenter()) {
         self.vinyl = vinyl
         self.presenter = presenter
 
@@ -58,7 +58,7 @@ class VinylTrackListController: UIViewController, UICollectionViewDataSource,
 
     // MARK: - Private
 
-    private let vinyl: VinylDetails
+    private let vinyl: Vinyl
     private let presenter: VinylDetailsPresenter
 
     private func configureCollectionView() {
@@ -89,7 +89,7 @@ class VinylTrackListController: UIViewController, UICollectionViewDataSource,
 
 }
 
-private extension VinylDetails {
+private extension Vinyl {
 
     func side(at indexPath: IndexPath) -> Side {
         return sides[indexPath.section]
@@ -101,8 +101,8 @@ private extension VinylDetails {
 
     var longestSideIndex: Int {
         let index = sides
-                .enumerated()
-                .max { $0.element.tracks.count > $1.element.tracks.count }
+            .enumerated()
+            .max { $0.element.tracks.count > $1.element.tracks.count }
 
         guard let longestSideIndex = index?.offset else {
             fatalError("Sides should never be empty")

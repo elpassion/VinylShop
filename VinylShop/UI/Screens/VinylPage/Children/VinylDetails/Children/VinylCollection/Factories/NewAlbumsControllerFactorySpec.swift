@@ -22,7 +22,15 @@ class NewAlbumsControllerFactorySpec: QuickSpec {
                 }
 
                 it("should have new vinyls") {
-                    expect(viewModel.vinyls.map { $0.title }) == VinylDetails.shotDetails.new.map { $0.title }
+                    expect(viewModel.vinyls.map { $0.title }) == [
+                        "We the Generation",
+                        "Vicious",
+                        "All One Tonight - Live At The Royal Albert Hall",
+                        "One Kiss",
+                        "Appetite for Destruction",
+                        "Dummy",
+                        "Demon Days"
+                    ]
                 }
             }
         }

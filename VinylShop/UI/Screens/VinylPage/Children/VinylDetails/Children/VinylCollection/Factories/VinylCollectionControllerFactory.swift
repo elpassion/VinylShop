@@ -1,8 +1,8 @@
 import UIKit
 
-func vinylCollectionControllerFactory(
-        viewModelFactory: @escaping (VinylDetails) -> VinylCollectionViewModel)
-        -> (VinylDetails) -> VinylCollectionControlling {
+func vinylCollectionControllerFactory<Model>(
+        viewModelFactory: @escaping (Model) -> VinylCollectionViewModel)
+        -> (Model) -> VinylCollectionControlling {
     return { details in
         VinylCollectionController(viewModel: viewModelFactory(details))
     }

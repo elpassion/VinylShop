@@ -19,6 +19,7 @@ class VinylPageControllerSpec: QuickSpec {
                 var detailsControllerStub: VinylDetailsControllerStub!
                 var buyAnimatorSpy: BuyAnimatorSpy!
                 var environmentSpy: EnvironmentSpy!
+                var vinylSpy: Vinyl?
 
                 beforeEach {
                     barControllerStub = ShoppingBarControllerStub()
@@ -27,9 +28,21 @@ class VinylPageControllerSpec: QuickSpec {
                     environmentSpy = EnvironmentSpy()
                     environmentSpy.install()
 
+                    let vinylResolver: (Int) -> Vinyl = { vinylID in
+                        guard vinylID == 312 else { fatalError("Resolved vinyl ID does not match input vinyl ID") }
+                        return Vinyl.testVinyl
+                    }
+
+                    let detailsControllerFactory: (Vinyl) -> VinylDetailsControlling = { vinyl in
+                        vinylSpy = vinyl
+                        return detailsControllerStub
+                    }
+
                     sut = VinylPageController(
+                        vinylID: 312,
+                        vinylResolver: vinylResolver,
                         barControllerFactory: { barControllerStub },
-                        detailsControllerFactory: { detailsControllerStub },
+                        detailsControllerFactory: detailsControllerFactory,
                         buyAnimator: buyAnimatorSpy
                     )
                 }
@@ -45,6 +58,11 @@ class VinylPageControllerSpec: QuickSpec {
                 describe("view did load") {
                     beforeEach {
                         _ = sut.view
+                    }
+
+                    it("should create details controller with test vinyl") {
+                        expect(vinylSpy).toNot(beNil())
+                        expect(vinylSpy?.id) == Vinyl.testVinyl.id
                     }
 
                     it("should embed bar controller in a container view") {
@@ -135,7 +153,7 @@ class VinylPageControllerSpec: QuickSpec {
 
             context("with real child controllers") {
                 beforeEach {
-                    sut = VinylPageController()
+                    sut = VinylPageController(vinylID: Vinyl.testVinyl.id)
                 }
 
                 it("should match snapshot on iPhone SE") {

@@ -1,0 +1,659 @@
+{
+  "genres": [
+    {
+      "name": "Rock"
+    },
+    {
+      "name": "Metal"
+    },
+    {
+      "name": "Disco"
+    }
+  ],
+  "recommendedIDs": [
+    1,
+    2,
+    3
+  ],
+  "newIDs": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "vinyls": [
+    {
+      "id": 1,
+      "title": "Master of Puppets",
+      "band": "Metallica",
+      "image": "cover_metallica",
+      "sides": [
+        {
+          "name": "1",
+          "tracks": [
+            {
+              "name": "Overture",
+              "position": "1",
+              "duration": "3:34"
+            },
+            {
+              "name": "A Good Part",
+              "position": "2",
+              "duration": "3:47"
+            },
+            {
+              "name": "Weak",
+              "position": "3",
+              "duration": "3:21"
+            },
+            {
+              "name": "Sober Up",
+              "position": "4",
+              "duration": "3:38"
+            }
+          ]
+        },
+        {
+          "name": "2",
+          "tracks": [
+            {
+              "name": "Drama",
+              "position": "5",
+              "duration": "4:08"
+            },
+            {
+              "name": "Turning Out",
+              "position": "6",
+              "duration": "3:54"
+            },
+            {
+              "name": "No Grass Today",
+              "position": "7",
+              "duration": "3:39"
+            },
+            {
+              "name": "Call My Dad",
+              "position": "8",
+              "duration": "4:15"
+            }
+          ]
+        }
+      ],
+      "recommendedIDs": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Papaoutai",
+      "band": "Stromae",
+      "image": "cover_stromae",
+      "sides": [
+        {
+          "name": "1",
+          "tracks": [
+            {
+              "name": "Overture",
+              "position": "1",
+              "duration": "3:34"
+            },
+            {
+              "name": "A Good Part",
+              "position": "2",
+              "duration": "3:47"
+            },
+            {
+              "name": "Weak",
+              "position": "3",
+              "duration": "3:21"
+            },
+            {
+              "name": "Sober Up",
+              "position": "4",
+              "duration": "3:38"
+            }
+          ]
+        },
+        {
+          "name": "2",
+          "tracks": [
+            {
+              "name": "Drama",
+              "position": "5",
+              "duration": "4:08"
+            },
+            {
+              "name": "Turning Out",
+              "position": "6",
+              "duration": "3:54"
+            },
+            {
+              "name": "No Grass Today",
+              "position": "7",
+              "duration": "3:39"
+            },
+            {
+              "name": "Call My Dad",
+              "position": "8",
+              "duration": "4:15"
+            }
+          ]
+        }
+      ],
+      "recommendedIDs": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Ghost In The Machine",
+      "band": "The Police",
+      "image": "cover_the_police",
+      "sides": [
+        {
+          "name": "1",
+          "tracks": [
+            {
+              "name": "Overture",
+              "position": "1",
+              "duration": "3:34"
+            },
+            {
+              "name": "A Good Part",
+              "position": "2",
+              "duration": "3:47"
+            },
+            {
+              "name": "Weak",
+              "position": "3",
+              "duration": "3:21"
+            },
+            {
+              "name": "Sober Up",
+              "position": "4",
+              "duration": "3:38"
+            }
+          ]
+        },
+        {
+          "name": "2",
+          "tracks": [
+            {
+              "name": "Drama",
+              "position": "5",
+              "duration": "4:08"
+            },
+            {
+              "name": "Turning Out",
+              "position": "6",
+              "duration": "3:54"
+            },
+            {
+              "name": "No Grass Today",
+              "position": "7",
+              "duration": "3:39"
+            },
+            {
+              "name": "Call My Dad",
+              "position": "8",
+              "duration": "4:15"
+            }
+          ]
+        }
+      ],
+      "recommendedIDs": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": 4,
+      "title": "We the Generation",
+      "band": "Rudimental",
+      "image": "album_cover",
+      "sides": [
+        {
+          "name": "1",
+          "tracks": [
+            {
+              "name": "Overture",
+              "position": "1",
+              "duration": "3:34"
+            },
+            {
+              "name": "A Good Part",
+              "position": "2",
+              "duration": "3:47"
+            },
+            {
+              "name": "Weak",
+              "position": "3",
+              "duration": "3:21"
+            },
+            {
+              "name": "Sober Up",
+              "position": "4",
+              "duration": "3:38"
+            }
+          ]
+        },
+        {
+          "name": "2",
+          "tracks": [
+            {
+              "name": "Drama",
+              "position": "5",
+              "duration": "4:08"
+            },
+            {
+              "name": "Turning Out",
+              "position": "6",
+              "duration": "3:54"
+            },
+            {
+              "name": "No Grass Today",
+              "position": "7",
+              "duration": "3:39"
+            },
+            {
+              "name": "Call My Dad",
+              "position": "8",
+              "duration": "4:15"
+            }
+          ]
+        }
+      ],
+      "recommendedIDs": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Vicious",
+      "band": "Halestorm",
+      "image": "cover_halestorm",
+      "sides": [
+        {
+          "name": "1",
+          "tracks": [
+            {
+              "name": "Overture",
+              "position": "1",
+              "duration": "3:34"
+            },
+            {
+              "name": "A Good Part",
+              "position": "2",
+              "duration": "3:47"
+            },
+            {
+              "name": "Weak",
+              "position": "3",
+              "duration": "3:21"
+            },
+            {
+              "name": "Sober Up",
+              "position": "4",
+              "duration": "3:38"
+            }
+          ]
+        },
+        {
+          "name": "2",
+          "tracks": [
+            {
+              "name": "Drama",
+              "position": "5",
+              "duration": "4:08"
+            },
+            {
+              "name": "Turning Out",
+              "position": "6",
+              "duration": "3:54"
+            },
+            {
+              "name": "No Grass Today",
+              "position": "7",
+              "duration": "3:39"
+            },
+            {
+              "name": "Call My Dad",
+              "position": "8",
+              "duration": "4:15"
+            }
+          ]
+        }
+      ],
+      "recommendedIDs": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": 6,
+      "title": "All One Tonight - Live At The Royal Albert Hall",
+      "band": "Marillion",
+      "image": "cover_marillion",
+      "sides": [
+        {
+          "name": "1",
+          "tracks": [
+            {
+              "name": "Overture",
+              "position": "1",
+              "duration": "3:34"
+            },
+            {
+              "name": "A Good Part",
+              "position": "2",
+              "duration": "3:47"
+            },
+            {
+              "name": "Weak",
+              "position": "3",
+              "duration": "3:21"
+            },
+            {
+              "name": "Sober Up",
+              "position": "4",
+              "duration": "3:38"
+            }
+          ]
+        },
+        {
+          "name": "2",
+          "tracks": [
+            {
+              "name": "Drama",
+              "position": "5",
+              "duration": "4:08"
+            },
+            {
+              "name": "Turning Out",
+              "position": "6",
+              "duration": "3:54"
+            },
+            {
+              "name": "No Grass Today",
+              "position": "7",
+              "duration": "3:39"
+            },
+            {
+              "name": "Call My Dad",
+              "position": "8",
+              "duration": "4:15"
+            }
+          ]
+        }
+      ],
+      "recommendedIDs": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": 7,
+      "title": "One Kiss",
+      "band": "Harris Calvin, Lipa Dua",
+      "image": "cover_harris_calvin",
+      "sides": [
+        {
+          "name": "1",
+          "tracks": [
+            {
+              "name": "Overture",
+              "position": "1",
+              "duration": "3:34"
+            },
+            {
+              "name": "A Good Part",
+              "position": "2",
+              "duration": "3:47"
+            },
+            {
+              "name": "Weak",
+              "position": "3",
+              "duration": "3:21"
+            },
+            {
+              "name": "Sober Up",
+              "position": "4",
+              "duration": "3:38"
+            }
+          ]
+        },
+        {
+          "name": "2",
+          "tracks": [
+            {
+              "name": "Drama",
+              "position": "5",
+              "duration": "4:08"
+            },
+            {
+              "name": "Turning Out",
+              "position": "6",
+              "duration": "3:54"
+            },
+            {
+              "name": "No Grass Today",
+              "position": "7",
+              "duration": "3:39"
+            },
+            {
+              "name": "Call My Dad",
+              "position": "8",
+              "duration": "4:15"
+            }
+          ]
+        }
+      ],
+      "recommendedIDs": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Appetite for Destruction",
+      "band": "Guns N' Roses",
+      "image": "cover_guns_n_roses",
+      "sides": [
+        {
+          "name": "1",
+          "tracks": [
+            {
+              "name": "Overture",
+              "position": "1",
+              "duration": "3:34"
+            },
+            {
+              "name": "A Good Part",
+              "position": "2",
+              "duration": "3:47"
+            },
+            {
+              "name": "Weak",
+              "position": "3",
+              "duration": "3:21"
+            },
+            {
+              "name": "Sober Up",
+              "position": "4",
+              "duration": "3:38"
+            }
+          ]
+        },
+        {
+          "name": "2",
+          "tracks": [
+            {
+              "name": "Drama",
+              "position": "5",
+              "duration": "4:08"
+            },
+            {
+              "name": "Turning Out",
+              "position": "6",
+              "duration": "3:54"
+            },
+            {
+              "name": "No Grass Today",
+              "position": "7",
+              "duration": "3:39"
+            },
+            {
+              "name": "Call My Dad",
+              "position": "8",
+              "duration": "4:15"
+            }
+          ]
+        }
+      ],
+      "recommendedIDs": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Dummy",
+      "band": "Portishead",
+      "image": "cover_portishead",
+      "sides": [
+        {
+          "name": "1",
+          "tracks": [
+            {
+              "name": "Overture",
+              "position": "1",
+              "duration": "3:34"
+            },
+            {
+              "name": "A Good Part",
+              "position": "2",
+              "duration": "3:47"
+            },
+            {
+              "name": "Weak",
+              "position": "3",
+              "duration": "3:21"
+            },
+            {
+              "name": "Sober Up",
+              "position": "4",
+              "duration": "3:38"
+            }
+          ]
+        },
+        {
+          "name": "2",
+          "tracks": [
+            {
+              "name": "Drama",
+              "position": "5",
+              "duration": "4:08"
+            },
+            {
+              "name": "Turning Out",
+              "position": "6",
+              "duration": "3:54"
+            },
+            {
+              "name": "No Grass Today",
+              "position": "7",
+              "duration": "3:39"
+            },
+            {
+              "name": "Call My Dad",
+              "position": "8",
+              "duration": "4:15"
+            }
+          ]
+        }
+      ],
+      "recommendedIDs": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Demon Days",
+      "band": "Gorillaz",
+      "image": "cover_gorillaz",
+      "sides": [
+        {
+          "name": "1",
+          "tracks": [
+            {
+              "name": "Overture",
+              "position": "1",
+              "duration": "3:34"
+            },
+            {
+              "name": "A Good Part",
+              "position": "2",
+              "duration": "3:47"
+            },
+            {
+              "name": "Weak",
+              "position": "3",
+              "duration": "3:21"
+            },
+            {
+              "name": "Sober Up",
+              "position": "4",
+              "duration": "3:38"
+            }
+          ]
+        },
+        {
+          "name": "2",
+          "tracks": [
+            {
+              "name": "Drama",
+              "position": "5",
+              "duration": "4:08"
+            },
+            {
+              "name": "Turning Out",
+              "position": "6",
+              "duration": "3:54"
+            },
+            {
+              "name": "No Grass Today",
+              "position": "7",
+              "duration": "3:39"
+            },
+            {
+              "name": "Call My Dad",
+              "position": "8",
+              "duration": "4:15"
+            }
+          ]
+        }
+      ],
+      "recommendedIDs": [
+        4,
+        5,
+        6
+      ]
+    }
+  ]
+}

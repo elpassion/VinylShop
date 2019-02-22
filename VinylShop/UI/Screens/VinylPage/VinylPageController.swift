@@ -2,10 +2,16 @@ import UIKit
 
 class VinylPageController: UIViewController {
 
-    init(barControllerFactory: @escaping () -> ShoppingBarControlling = ShoppingBarController.init,
-         detailsControllerFactory: @escaping () -> VinylDetailsControlling = detailsFactory,
+    typealias DetailsFactory = (Vinyl) -> VinylDetailsControlling
+
+    init(vinylID: Int,
+         vinylResolver: @escaping (Int) -> Vinyl = resolveVinyl(),
+         barControllerFactory: @escaping () -> ShoppingBarControlling = ShoppingBarController.init,
+         detailsControllerFactory: @escaping DetailsFactory = { VinylDetailsController(vinyl: $0) },
          environment: Environment = .shared,
          buyAnimator: BuyAnimating = BuyAnimator()) {
+        self.vinylID = vinylID
+        self.vinylResolver = vinylResolver
         self.barControllerFactory = barControllerFactory
         self.detailsControllerFactory = detailsControllerFactory
         self.environment = environment
@@ -13,11 +19,13 @@ class VinylPageController: UIViewController {
 
         super.init(nibName: nil, bundle: nil)
     }
+
+    let vinylID: Int
     
     // MARK: - Children
 
     lazy var barController: ShoppingBarControlling = barControllerFactory()
-    lazy var detailsController: VinylDetailsControlling = detailsControllerFactory()
+    lazy var detailsController: VinylDetailsControlling = detailsControllerFactory(vinyl)
 
     var pageView: VinylPageView! {
         return view as? VinylPageView
@@ -45,11 +53,13 @@ class VinylPageController: UIViewController {
 
     // MARK: - Private
 
+    private let vinylResolver: (Int) -> Vinyl
     private let barControllerFactory: () -> ShoppingBarControlling
-    private let detailsControllerFactory: () -> VinylDetailsControlling
+    private let detailsControllerFactory: DetailsFactory
     private let environment: Environment
     private let buyAnimator: BuyAnimating
     private var isAnimating: Bool = false
+    private lazy var vinyl: Vinyl = vinylResolver(vinylID)
 
     private func embedDetailsController() {
         embed(childViewController: detailsController, inside: pageView.detailsContainerView)
@@ -90,8 +100,4 @@ class VinylPageController: UIViewController {
 
     required init?(coder _: NSCoder) { return nil }
 
-}
-
-private func detailsFactory() -> VinylDetailsControlling {
-    return VinylDetailsController(vinyl: .shotDetails)
 }

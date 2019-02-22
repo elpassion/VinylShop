@@ -5,4 +5,6 @@ struct Vinyl: Decodable {
     let title: String
     let band: String
     let image: String
+    let sides: [Side]
+    let recommendedIDs: [Int]
 }

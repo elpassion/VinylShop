@@ -2,10 +2,12 @@ import UIKit
 
 class ShopController: UIViewController {
 
-    init(vinyl: VinylDetails,
-         newFactory: @escaping (VinylDetails) -> VinylCollectionControlling = newAlbumsControllerFactory(),
-         genresFactory: @escaping (VinylDetails) -> UIViewController = { GenresController(vinyl: $0) },
-         recommendedFactory: @escaping (VinylDetails) -> VinylCollectionControlling = recommendedControllerFactory(),
+    typealias RecommendedFactory = (ShopDetails) -> VinylCollectionControlling
+
+    init(vinyl: ShopDetails,
+         newFactory: @escaping (ShopDetails) -> VinylCollectionControlling = newAlbumsControllerFactory(),
+         genresFactory: @escaping (ShopDetails) -> UIViewController = { GenresController(vinyl: $0) },
+         recommendedFactory: @escaping RecommendedFactory = shopRecommendedControllerFactory(),
          environment: Environment = .shared) {
         self.vinyl = vinyl
         self.newFactory = newFactory
@@ -45,10 +47,10 @@ class ShopController: UIViewController {
 
     // MARK: - Private
 
-    private let vinyl: VinylDetails
-    private let newFactory: (VinylDetails) -> VinylCollectionControlling
-    private let genresFactory: (VinylDetails) -> UIViewController
-    private let recommendedFactory: (VinylDetails) -> VinylCollectionControlling
+    private let vinyl: ShopDetails
+    private let newFactory: (ShopDetails) -> VinylCollectionControlling
+    private let genresFactory: (ShopDetails) -> UIViewController
+    private let recommendedFactory: RecommendedFactory
     private let environment: Environment
 
     private func embedChildControllers() {

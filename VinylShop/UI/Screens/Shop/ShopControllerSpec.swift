@@ -62,7 +62,7 @@ class ShopControllerSpec: QuickSpec {
 
                     describe("new album selection") {
                         beforeEach {
-                            newAlbumsControllerStub.vinylSelectedAction?(Vinyl(id: 26, title: "", band: "", image: ""))
+                            newAlbumsControllerStub.vinylSelectedAction?(Vinyl.vinyl(withID: 26))
                         }
 
                         it("should navigate to vinyl page") {
@@ -73,7 +73,7 @@ class ShopControllerSpec: QuickSpec {
 
                     describe("recommended album selection") {
                         beforeEach {
-                            recommendedControllerStub.vinylSelectedAction?(Vinyl(id: 3, title: "", band: "", image: ""))
+                            recommendedControllerStub.vinylSelectedAction?(Vinyl.vinyl(withID: 3))
                         }
 
                         it("should navigate to vinyl page") {
@@ -121,6 +121,14 @@ class ShopControllerSpec: QuickSpec {
                 }
             }
         }
+    }
+
+}
+
+private extension Vinyl {
+
+    static func vinyl(withID id: Int) -> Vinyl {
+        return Vinyl(id: id, title: "", band: "", image: "", sides: [], recommendedIDs: [])
     }
 
 }

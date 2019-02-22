@@ -2,7 +2,7 @@ import UIKit
 
 class GenresController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    init(vinyl: VinylDetails, presenter: GenrePresenter = GenrePresenter()) {
+    init(vinyl: ShopDetails, presenter: GenrePresenter = GenrePresenter()) {
         self.vinyl = vinyl
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
@@ -52,7 +52,7 @@ class GenresController: UIViewController, UICollectionViewDataSource, UICollecti
 
     // MARK: - Private
 
-    private let vinyl: VinylDetails
+    private let vinyl: ShopDetails
     private let presenter: GenrePresenter
 
     private func setUpCollectionView() {
@@ -66,7 +66,7 @@ class GenresController: UIViewController, UICollectionViewDataSource, UICollecti
 
 }
 
-extension VinylDetails {
+extension ShopDetails {
 
     func genre(at indexPath: IndexPath) -> Genre {
         return genres[indexPath.row]

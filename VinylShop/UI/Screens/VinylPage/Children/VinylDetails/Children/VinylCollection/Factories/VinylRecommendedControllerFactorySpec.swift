@@ -2,15 +2,15 @@
 import Nimble
 import Quick
 
-class RecommendedControllerFactorySpec: QuickSpec {
+class VinylRecommendedControllerFactorySpec: QuickSpec {
 
     override func spec() {
-        describe("RecommendedControllerFactory") {
+        describe("VinylRecommendedControllerFactory") {
             describe("view model factory") {
                 var viewModel: VinylCollectionViewModel!
 
                 beforeEach {
-                    viewModel = recommendedViewModelFactory(.shotDetails)
+                    viewModel = vinylRecommendedViewModelFactory(.testVinyl)
                 }
 
                 afterEach {
@@ -22,7 +22,7 @@ class RecommendedControllerFactorySpec: QuickSpec {
                 }
 
                 it("should have recommended vinyls") {
-                    expect(viewModel.vinyls.map { $0.title }) == VinylDetails.shotDetails.recommended.map { $0.title }
+                    expect(viewModel.vinyls.map { $0.id }) == [1, 2, 3]
                 }
             }
         }

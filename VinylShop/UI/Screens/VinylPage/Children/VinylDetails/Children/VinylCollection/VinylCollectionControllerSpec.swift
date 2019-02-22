@@ -11,7 +11,7 @@ class VinylCollectionControllerSpec: QuickSpec {
             var sut: VinylCollectionController!
 
             beforeEach {
-                let viewModel = recommendedViewModelFactory(.shotDetails)
+                let viewModel = vinylRecommendedViewModelFactory(.testVinyl)
                 sut = VinylCollectionController(viewModel: viewModel)
             }
 
