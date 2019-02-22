@@ -647,10 +647,10 @@
 			isa = PBXGroup;
 			children = (
 				32672F40EF44B252C966A0D5 /* Genre.swift */,
+				32672CDFC16B945116C75543 /* ShopDetails.swift */,
 				326724D2C83CE7E4D4D4F4A9 /* Side.swift */,
 				32672523BF574CA106947F0C /* Track.swift */,
 				32672799D56E7F81933CEC00 /* Vinyl.swift */,
-				32672CDFC16B945116C75543 /* ShopDetails.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -673,9 +673,9 @@
 			isa = PBXGroup;
 			children = (
 				326728FC702A7C4EC72AF885 /* ControllerFactory.swift */,
+				3267294EE4E338258170AF1E /* ControllerFactorySpec.swift */,
 				326721347B8A9850F12319C6 /* GoBackAnimationControllerFactory.swift */,
 				32672413C8E8DC03758D4A4F /* GoToAnimationControllerFactory.swift */,
-				3267294EE4E338258170AF1E /* ControllerFactorySpec.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -757,10 +757,10 @@
 				3267218983D941282352EE3E /* Children */,
 				32672F7B77B3B93905CF225D /* Doubles */,
 				326728B929B497EFE9B015FA /* Extensions */,
+				326727A4B240312F676538CE /* Repositories */,
 				32672F81DC7B34389232338F /* Views */,
 				32672D8F49E1E6DE7D4CC814 /* VinylPageController.swift */,
 				326727D2522F5F3CD262A55D /* VinylPageControllerSpec.swift */,
-				326727A4B240312F676538CE /* Repositories */,
 			);
 			path = VinylPage;
 			sourceTree = "<group>";
@@ -989,8 +989,8 @@
 				32672DF0729BD00A4D5C6B1A /* ShopRecommendedControllerFactory.swift */,
 				32672C6F2E763A1130C08F64 /* ShopRecommendedControllerFactorySpec.swift */,
 				32672BA448CB563C6A1A1FE1 /* VinylCollectionControllerFactory.swift */,
-				326729F01FD5BFF986E83922 /* VinylRecommendedControllerFactorySpec.swift */,
 				32672EAD4877251673F2406E /* VinylRecommendedControllerFactory.swift */,
+				326729F01FD5BFF986E83922 /* VinylRecommendedControllerFactorySpec.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -1067,13 +1067,13 @@
 		32672F1A8FECFF4038593254 /* VinylDetails */ = {
 			isa = PBXGroup;
 			children = (
-				8C7C3CBD22201AA40019F094 /* Repositories */,
 				32672196DA9F1A1E50859471 /* Aliases */,
 				326721F5BD4CA01BBB712F18 /* Children */,
 				32672593187F2DFFBF29E2D6 /* Data */,
 				32672646760D8AD2476B5CB3 /* Extensions */,
 				326725B9E7D9AE570FD1B289 /* Models */,
 				32672CFBB1A19DDC71F74265 /* Presentation */,
+				8C7C3CBD22201AA40019F094 /* Repositories */,
 				3267237DB0636F7245BF1AA9 /* Styles */,
 				326728AA196B39B518E5EF7E /* Views */,
 				3267285EEF649FEE02C01373 /* VinylDetailsController.swift */,
@@ -1187,8 +1187,8 @@
 		8C7C3CBD22201AA40019F094 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				32672B6246A6C00ABC8314AB /* RecommendedVinylsRepositorySpec.swift */,
 				3267218E831F96C3D7F08B45 /* RecommendedVinylsRepository.swift */,
+				32672B6246A6C00ABC8314AB /* RecommendedVinylsRepositorySpec.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
