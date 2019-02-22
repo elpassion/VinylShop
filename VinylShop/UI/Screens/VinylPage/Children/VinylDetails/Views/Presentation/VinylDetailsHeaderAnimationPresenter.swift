@@ -6,7 +6,7 @@ class VinylDetailsHeaderAnimationPresenter {
         updateHeight(ofHeaderIn: view, to: animation.headerHeight)
         positionElements(in: view.headerView, to: animation)
     }
-    
+
     // MARK: - Private
 
     private func updateHeight(ofHeaderIn view: VinylDetailsView, to height: CGFloat) {

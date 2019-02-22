@@ -17,8 +17,8 @@ class ShopController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
 
-    var shopView: ShopView! {
-        return view as? ShopView
+    var shopView: ShopView {
+        return forceCast(view)
     }
 
     // MARK: - Child controllers

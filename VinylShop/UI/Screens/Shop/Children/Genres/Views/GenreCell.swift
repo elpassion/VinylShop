@@ -2,7 +2,7 @@ import Anchorage
 import UIKit
 
 class GenreCell: UICollectionViewCell {
- 
+
     let nameLabel: UILabel = UILabel(frame: .zero)
         |> font(.nunito(.semibold), size: 14, color: .black000000)
 

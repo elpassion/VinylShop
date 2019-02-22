@@ -28,7 +28,7 @@ class VinylPageController: UIViewController {
     lazy var detailsController: VinylDetailsControlling = detailsControllerFactory(vinyl)
 
     var pageView: VinylPageView {
-        return cast(view: view)
+        return forceCast(view)
     }
 
     // MARK: - Lifecycle

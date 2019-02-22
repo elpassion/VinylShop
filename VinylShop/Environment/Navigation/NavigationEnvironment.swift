@@ -11,35 +11,31 @@ class NavigationEnvironment: NSObject, UINavigationControllerDelegate {
     // MARK: - Public API
 
     func go(to route: Route) {
-        _goToRoute(route)
+        goToRouteExecutor(route)
     }
 
     func goBack() {
-        _goBack()
+        goBackExecutor()
     }
 
     // MARK: - Testable properties
 
-    lazy var _goToRoute: (Route) -> Void = {
-        return { [weak self] route in
-            self?.navigationStack.append(route)
-            self?.currentAnimationController = makeGoToAnimationController(for: route)
+    lazy var goToRouteExecutor: (Route) -> Void = { [weak self] route in
+        self?.navigationStack.append(route)
+        self?.currentAnimationController = makeGoToAnimationController(for: route)
 
-            let controller = makeController(for: route)
-            let currentStack = self?.navigationController.viewControllers ?? []
-            self?.navigationController.setViewControllers(currentStack + [controller], animated: true)
-        }
-    }()
+        let controller = makeController(for: route)
+        let currentStack = self?.navigationController.viewControllers ?? []
+        self?.navigationController.setViewControllers(currentStack + [controller], animated: true)
+    }
 
-    lazy var _goBack: () -> Void = {
-        return { [weak self] in
-            let route = self?.navigationStack.popLast()
-            self?.currentAnimationController = route.flatMap { makeGoBackAnimationController(for: $0) }
+    lazy var goBackExecutor: () -> Void = { [weak self] in
+        let route = self?.navigationStack.popLast()
+        self?.currentAnimationController = route.flatMap { makeGoBackAnimationController(for: $0) }
 
-            let currentStack = self?.navigationController.viewControllers ?? []
-            self?.navigationController.setViewControllers(Array(currentStack.dropLast()), animated: true)
-        }
-    }()
+        let currentStack = self?.navigationController.viewControllers ?? []
+        self?.navigationController.setViewControllers(Array(currentStack.dropLast()), animated: true)
+    }
 
     // MARK: - UINavigationControllerDelegate
 

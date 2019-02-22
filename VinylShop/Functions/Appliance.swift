@@ -5,7 +5,7 @@ precedencegroup ForwardAppliance {
 
 infix operator |>: ForwardAppliance
 
-func |><A: AnyObject>(_ value: A, f: @escaping (A) -> Void) -> A {
-    f(value)
+func |><A: AnyObject>(_ value: A, first: @escaping (A) -> Void) -> A {
+    first(value)
     return value
 }

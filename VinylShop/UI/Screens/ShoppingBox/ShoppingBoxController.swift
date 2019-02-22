@@ -9,7 +9,7 @@ class ShoppingBoxController: UIViewController {
     }
 
     var boxView: ShoppingBoxView {
-        return cast(view: view)
+        return forceCast(view)
     }
 
     override func loadView() {

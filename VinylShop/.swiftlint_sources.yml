@@ -68,10 +68,8 @@ identifier_name:
   excluded:
     - ui
     - cg
-    - id
-    - or
-    - ok
-    - no
+    - x
+    - y
 modifier_order:
   preferred_modifier_order: ["acl"]
 explicit_type_interface:

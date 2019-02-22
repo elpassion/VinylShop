@@ -1,9 +1,11 @@
 import UIKit
+// swiftlint:disable file_length
 
 class BuyAnimator: BuyAnimating {
 
     // MARK: - BuyAnimating
 
+    // FIXME: Refactor this function
     func animateBuy(view: UIView,
                     detailsView: VinylDetailsView,
                     barView: ShoppingBarView,

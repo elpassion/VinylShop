@@ -5,9 +5,9 @@ precedencegroup SameTypeComposition {
 
 infix operator <>: SameTypeComposition
 
-func <><A: AnyObject>(_ f: @escaping (A) -> Void, _ g: @escaping (A) -> Void) -> (A) -> Void {
+func <><A: AnyObject>(_ first: @escaping (A) -> Void, _ second: @escaping (A) -> Void) -> (A) -> Void {
     return { object in
-        f(object)
-        g(object)
+        first(object)
+        second(object)
     }
 }

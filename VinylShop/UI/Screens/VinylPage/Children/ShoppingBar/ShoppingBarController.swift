@@ -3,7 +3,7 @@ import UIKit
 class ShoppingBarController: UIViewController, ShoppingBarControllerProtocol {
 
     var barView: ShoppingBarView {
-        return cast(view: view)
+        return forceCast(view)
     }
 
     override func loadView() {

@@ -42,7 +42,6 @@
 		32672532256CC5BB1289AED9 /* ShoppingBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672076101FBF6DCA4A2937 /* ShoppingBarController.swift */; };
 		32672536137E871ECBF3C09E /* ShoppingBarControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267237828F14E83A35A2770 /* ShoppingBarControllerSpec.swift */; };
 		32672540E2F30765EAE53F0B /* MainTabBarControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672FD46CE6296472190C12 /* MainTabBarControllerSpec.swift */; };
-		3267255DA6CB95D2D25F1451 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267270A4EB69958133B7A24 /* Styles.swift */; };
 		326725762C34E9A02FABB632 /* VinylDetailsGenreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672C72B45E877758FC5F64 /* VinylDetailsGenreView.swift */; };
 		326725783A445BD3E808C972 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672523BF574CA106947F0C /* Track.swift */; };
 		32672591A3FE5EED24460E20 /* VinylTrackListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326723B67195632844F331BE /* VinylTrackListController.swift */; };
@@ -167,6 +166,14 @@
 		8C2243D02202125600C3470B /* Nunito-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C2243C22202125600C3470B /* Nunito-SemiBoldItalic.ttf */; };
 		8C2243D2220213A700C3470B /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2243D1220213A700C3470B /* Font.swift */; };
 		8C40431722206D9200C9E916 /* ForceCast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C40431622206D9200C9E916 /* ForceCast.swift */; };
+		8C4043192220737000C9E916 /* UIView+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4043182220737000C9E916 /* UIView+Styles.swift */; };
+		8C40431D222073CF00C9E916 /* UILabel+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C40431C222073CF00C9E916 /* UILabel+Styles.swift */; };
+		8C404320222073FF00C9E916 /* UIButton+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C40431F222073FF00C9E916 /* UIButton+Styles.swift */; };
+		8C4043232220743100C9E916 /* UIStackView+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4043222220743100C9E916 /* UIStackView+Styles.swift */; };
+		8C4043262220745D00C9E916 /* UIImageView+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4043252220745D00C9E916 /* UIImageView+Styles.swift */; };
+		8C404329222074C300C9E916 /* UICollectionView+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C404328222074C300C9E916 /* UICollectionView+Styles.swift */; };
+		8C40432C222074E200C9E916 /* UIScrollView+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C40432B222074E200C9E916 /* UIScrollView+Styles.swift */; };
+		8C40432F222074FD00C9E916 /* CAGradientLayer+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C40432E222074FD00C9E916 /* CAGradientLayer+Styles.swift */; };
 		8C946635220487F8001F7E48 /* SpecTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C946634220487F8001F7E48 /* SpecTools.framework */; };
 		8C946636220487FD001F7E48 /* SpecTools.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8C946634220487F8001F7E48 /* SpecTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8CD3274222030922009711DA /* BonMot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CD3274122030922009711DA /* BonMot.framework */; };
@@ -268,7 +275,6 @@
 		326726980D25F18EE246DEE7 /* VinylDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VinylDetailsView.swift; sourceTree = "<group>"; };
 		326726C434771A503285806D /* VinylDetailsControlling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VinylDetailsControlling.swift; sourceTree = "<group>"; };
 		326726D9597284D35435DCDB /* UIBezierPath+LineInRectangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBezierPath+LineInRectangle.swift"; sourceTree = "<group>"; };
-		3267270A4EB69958133B7A24 /* Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		32672736279959EEE2EE7633 /* UIImage+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
 		32672756B07ADBBFA8DACFB9 /* NavigationControllerSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControllerSpy.swift; sourceTree = "<group>"; };
 		32672758F5AEE9FEC5CAF5F7 /* ShoppingBoxItemsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBoxItemsView.swift; sourceTree = "<group>"; };
@@ -368,6 +374,14 @@
 		8C2243C22202125600C3470B /* Nunito-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		8C2243D1220213A700C3470B /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		8C40431622206D9200C9E916 /* ForceCast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceCast.swift; sourceTree = "<group>"; };
+		8C4043182220737000C9E916 /* UIView+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Styles.swift"; sourceTree = "<group>"; };
+		8C40431C222073CF00C9E916 /* UILabel+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Styles.swift"; sourceTree = "<group>"; };
+		8C40431F222073FF00C9E916 /* UIButton+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Styles.swift"; sourceTree = "<group>"; };
+		8C4043222220743100C9E916 /* UIStackView+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Styles.swift"; sourceTree = "<group>"; };
+		8C4043252220745D00C9E916 /* UIImageView+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Styles.swift"; sourceTree = "<group>"; };
+		8C404328222074C300C9E916 /* UICollectionView+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Styles.swift"; sourceTree = "<group>"; };
+		8C40432B222074E200C9E916 /* UIScrollView+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Styles.swift"; sourceTree = "<group>"; };
+		8C40432E222074FD00C9E916 /* CAGradientLayer+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+Styles.swift"; sourceTree = "<group>"; };
 		8C7C3CB8222018CB0019F094 /* Vinyl+TestVinyl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vinyl+TestVinyl.swift"; sourceTree = "<group>"; };
 		8C946634220487F8001F7E48 /* SpecTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpecTools.framework; path = Carthage/Build/iOS/SpecTools.framework; sourceTree = "<group>"; };
 		8CD3274122030922009711DA /* BonMot.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BonMot.framework; path = Carthage/Build/iOS/BonMot.framework; sourceTree = "<group>"; };
@@ -829,10 +843,17 @@
 		326728F87C8E3A196A220865 /* Styles */ = {
 			isa = PBXGroup;
 			children = (
+				8C40432D222074EF00C9E916 /* CAGradientLayer */,
+				8C40432A222074D600C9E916 /* UIScrollView */,
+				8C404327222074B400C9E916 /* UICollectionView */,
+				8C4043242220745100C9E916 /* UIImageView */,
+				8C4043212220742500C9E916 /* UIStackView */,
+				8C40431E222073F400C9E916 /* UIButton */,
+				8C40431B222073C300C9E916 /* UILabel */,
+				8C40431A2220737B00C9E916 /* UIView */,
 				32672BED0705778B22001111 /* Color.swift */,
 				8C2243D1220213A700C3470B /* Font.swift */,
 				32672AE680239A70B031D0F0 /* RoundedCorner.swift */,
-				3267270A4EB69958133B7A24 /* Styles.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -1185,6 +1206,70 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		8C40431A2220737B00C9E916 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				8C4043182220737000C9E916 /* UIView+Styles.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		8C40431B222073C300C9E916 /* UILabel */ = {
+			isa = PBXGroup;
+			children = (
+				8C40431C222073CF00C9E916 /* UILabel+Styles.swift */,
+			);
+			path = UILabel;
+			sourceTree = "<group>";
+		};
+		8C40431E222073F400C9E916 /* UIButton */ = {
+			isa = PBXGroup;
+			children = (
+				8C40431F222073FF00C9E916 /* UIButton+Styles.swift */,
+			);
+			path = UIButton;
+			sourceTree = "<group>";
+		};
+		8C4043212220742500C9E916 /* UIStackView */ = {
+			isa = PBXGroup;
+			children = (
+				8C4043222220743100C9E916 /* UIStackView+Styles.swift */,
+			);
+			path = UIStackView;
+			sourceTree = "<group>";
+		};
+		8C4043242220745100C9E916 /* UIImageView */ = {
+			isa = PBXGroup;
+			children = (
+				8C4043252220745D00C9E916 /* UIImageView+Styles.swift */,
+			);
+			path = UIImageView;
+			sourceTree = "<group>";
+		};
+		8C404327222074B400C9E916 /* UICollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				8C404328222074C300C9E916 /* UICollectionView+Styles.swift */,
+			);
+			path = UICollectionView;
+			sourceTree = "<group>";
+		};
+		8C40432A222074D600C9E916 /* UIScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				8C40432B222074E200C9E916 /* UIScrollView+Styles.swift */,
+			);
+			path = UIScrollView;
+			sourceTree = "<group>";
+		};
+		8C40432D222074EF00C9E916 /* CAGradientLayer */ = {
+			isa = PBXGroup;
+			children = (
+				8C40432E222074FD00C9E916 /* CAGradientLayer+Styles.swift */,
+			);
+			path = CAGradientLayer;
+			sourceTree = "<group>";
+		};
 		8C7C3CBD22201AA40019F094 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
@@ -1439,7 +1524,6 @@
 				326728245FDC15C17E529A87 /* ShoppingBoxView.swift in Sources */,
 				8C40431722206D9200C9E916 /* ForceCast.swift in Sources */,
 				32672804EA13374BB7FCE6BA /* AppDelegate.swift in Sources */,
-				3267255DA6CB95D2D25F1451 /* Styles.swift in Sources */,
 				32672A3C1C9B55A91552BD42 /* RoundedCorner.swift in Sources */,
 				326727EB2D1BC47DB2CF63EF /* Composition.swift in Sources */,
 				32672F01BC5D2D648DEA8C11 /* Appliance.swift in Sources */,
@@ -1451,9 +1535,11 @@
 				3267285FED249CC505AC098E /* ShoppingBoxPresenter.swift in Sources */,
 				32672E225BB372FEACCDFDB1 /* Album.swift in Sources */,
 				326721462EE4DE7D11763D5E /* ShoppingBoxFooterView.swift in Sources */,
+				8C40432C222074E200C9E916 /* UIScrollView+Styles.swift in Sources */,
 				3267272E7AFC942CF7674E1E /* UIBezierPath+LineInRectangle.swift in Sources */,
 				326726D75CFC5FAAEF190469 /* UIStackView+ReplaceSubviews.swift in Sources */,
 				3267209665B67BFC9F92228C /* CGContext+DrawImage.swift in Sources */,
+				8C40431D222073CF00C9E916 /* UILabel+Styles.swift in Sources */,
 				326729975058D7976C62D978 /* CGContext+Globals.swift in Sources */,
 				3267248AF1A53F1BD2544336 /* UIImage+Color.swift in Sources */,
 				32672848E415A5994F8B13B5 /* ShoppingBoxStyles.swift in Sources */,
@@ -1469,6 +1555,7 @@
 				3267245AB0AE06D227A71085 /* PresentationContext.swift in Sources */,
 				32672B664CAFE0CAE9C1D5AC /* PresentationTransitioningDelegate.swift in Sources */,
 				32672DD096CE5026AD81A277 /* PresentationContextID.swift in Sources */,
+				8C4043192220737000C9E916 /* UIView+Styles.swift in Sources */,
 				326729129FDAA43E348F7C51 /* PresentationContext+ShoppingBox.swift in Sources */,
 				32672EE55BE23CD52D78FE4B /* ShoppingBarControlling.swift in Sources */,
 				32672C7C00F948BCC6E88E76 /* ShoppingBoxPresentationAnimator.swift in Sources */,
@@ -1492,6 +1579,7 @@
 				32672BE93EDEB429928B2E1E /* VinylSideCell.swift in Sources */,
 				32672BC5A988D7DA8C8F1FDD /* VinylTrackCell.swift in Sources */,
 				326726905577983B661264EB /* VinylCollectionController.swift in Sources */,
+				8C4043262220745D00C9E916 /* UIImageView+Styles.swift in Sources */,
 				3267274287531A8164978CC7 /* VinylCollectionView.swift in Sources */,
 				32672A883529D057C478B0C1 /* Vinyl.swift in Sources */,
 				326725E96A2A19300916CAB9 /* VinylCollectionCell.swift in Sources */,
@@ -1501,7 +1589,9 @@
 				3267269E31471F17EAC183D1 /* ShopDetails+ShotDetails.swift in Sources */,
 				32672C7A5F8D6A8D7923679B /* VinylDetailsHeaderLargeTitleView.swift in Sources */,
 				32672BD4F3EB2D1C09CEB50D /* VinylDetailsScrollPosition.swift in Sources */,
+				8C404320222073FF00C9E916 /* UIButton+Styles.swift in Sources */,
 				326728DFB7700882A130126D /* VinylDetailsHeaderSmallTitleView.swift in Sources */,
+				8C40432F222074FD00C9E916 /* CAGradientLayer+Styles.swift in Sources */,
 				32672D4393562F68D94FC42A /* VinylDetailsHeaderAnimationPresenter.swift in Sources */,
 				32672CE0FE93646CA822BA44 /* VinylDetailsHeaderAnimationProgressCalculator.swift in Sources */,
 				32672BE0F3569C59F7FF7CBE /* VinylDetailsHeaderAnimationProgress.swift in Sources */,
@@ -1510,6 +1600,7 @@
 				326727A6EDE690DFAB154979 /* MainTabBarController.swift in Sources */,
 				32672BC8958F337598F33C10 /* Tab.swift in Sources */,
 				326727F4DAB48F3F0A30ADFC /* MainTabsFactory.swift in Sources */,
+				8C404329222074C300C9E916 /* UICollectionView+Styles.swift in Sources */,
 				326727D8B7DEFD440B132C5E /* MainTabBarStyles.swift in Sources */,
 				32672D8176B5F2E2596CCF8B /* ShopController.swift in Sources */,
 				326726F0CD9408272ABCF601 /* ShopView.swift in Sources */,
@@ -1520,6 +1611,7 @@
 				326727F565364CD60794517B /* GenresController.swift in Sources */,
 				32672EA9327821C57E10BAB9 /* GenresView.swift in Sources */,
 				32672849CCAD82513D65EBC4 /* Genre.swift in Sources */,
+				8C4043232220743100C9E916 /* UIStackView+Styles.swift in Sources */,
 				32672DC45145340D2C7A3F4B /* GenreCell.swift in Sources */,
 				32672A8533147CC1F47FCEC7 /* GenrePresenter.swift in Sources */,
 				326727D93F493FAE693E21D7 /* ShopTitleView.swift in Sources */,
