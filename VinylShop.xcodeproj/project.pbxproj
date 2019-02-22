@@ -174,6 +174,7 @@
 		8C404329222074C300C9E916 /* UICollectionView+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C404328222074C300C9E916 /* UICollectionView+Styles.swift */; };
 		8C40432C222074E200C9E916 /* UIScrollView+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C40432B222074E200C9E916 /* UIScrollView+Styles.swift */; };
 		8C40432F222074FD00C9E916 /* CAGradientLayer+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C40432E222074FD00C9E916 /* CAGradientLayer+Styles.swift */; };
+		8C4043322220763000C9E916 /* UIView+KeyframeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4043312220763000C9E916 /* UIView+KeyframeAnimation.swift */; };
 		8C946635220487F8001F7E48 /* SpecTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C946634220487F8001F7E48 /* SpecTools.framework */; };
 		8C946636220487FD001F7E48 /* SpecTools.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8C946634220487F8001F7E48 /* SpecTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8CD3274222030922009711DA /* BonMot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CD3274122030922009711DA /* BonMot.framework */; };
@@ -382,6 +383,7 @@
 		8C404328222074C300C9E916 /* UICollectionView+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Styles.swift"; sourceTree = "<group>"; };
 		8C40432B222074E200C9E916 /* UIScrollView+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Styles.swift"; sourceTree = "<group>"; };
 		8C40432E222074FD00C9E916 /* CAGradientLayer+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+Styles.swift"; sourceTree = "<group>"; };
+		8C4043312220763000C9E916 /* UIView+KeyframeAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+KeyframeAnimation.swift"; sourceTree = "<group>"; };
 		8C7C3CB8222018CB0019F094 /* Vinyl+TestVinyl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vinyl+TestVinyl.swift"; sourceTree = "<group>"; };
 		8C946634220487F8001F7E48 /* SpecTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpecTools.framework; path = Carthage/Build/iOS/SpecTools.framework; sourceTree = "<group>"; };
 		8CD3274122030922009711DA /* BonMot.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BonMot.framework; path = Carthage/Build/iOS/BonMot.framework; sourceTree = "<group>"; };
@@ -627,6 +629,7 @@
 		3267258B44B2884691070141 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8C4043302220761D00C9E916 /* UIView */,
 				326720707CEA4ED2C55A3AE8 /* CGContext */,
 				32672AA1460599CA5F74F9E4 /* Priority */,
 				3267207C95B21E5CF77FC1C1 /* UIBezierPath */,
@@ -1270,6 +1273,14 @@
 			path = CAGradientLayer;
 			sourceTree = "<group>";
 		};
+		8C4043302220761D00C9E916 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				8C4043312220763000C9E916 /* UIView+KeyframeAnimation.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
 		8C7C3CBD22201AA40019F094 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
@@ -1542,6 +1553,7 @@
 				8C40431D222073CF00C9E916 /* UILabel+Styles.swift in Sources */,
 				326729975058D7976C62D978 /* CGContext+Globals.swift in Sources */,
 				3267248AF1A53F1BD2544336 /* UIImage+Color.swift in Sources */,
+				8C4043322220763000C9E916 /* UIView+KeyframeAnimation.swift in Sources */,
 				32672848E415A5994F8B13B5 /* ShoppingBoxStyles.swift in Sources */,
 				32672F749470BDAF17C3EEA4 /* UIViewController+Children.swift in Sources */,
 				3267267ACE9FF34308BD5EF2 /* UIFont+Convenience.swift in Sources */,

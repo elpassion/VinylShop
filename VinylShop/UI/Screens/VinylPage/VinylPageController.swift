@@ -88,11 +88,13 @@ class VinylPageController: UIViewController {
         if !isAnimating {
             isAnimating = true
 
+            let completion: () -> Void = { [weak self] in self?.isAnimating = false }
+
             buyAnimator.animateBuy(
                 view: view,
                 detailsView: detailsController.detailsView,
                 barView: barController.barView,
-                completion: { [weak self] in self?.isAnimating = false }
+                completion: completion
             )
         }
     }

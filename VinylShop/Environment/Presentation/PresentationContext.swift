@@ -6,7 +6,7 @@ struct PresentationContext {
     let animated: Bool
     let presentationStyle: UIModalPresentationStyle
     let transitionStyle: UIModalTransitionStyle
-    let transitioningDelegate: UIViewControllerTransitioningDelegate
+    let transitioner: UIViewControllerTransitioningDelegate
 
     init(id: PresentationContextID,
          factory: @escaping () -> UIViewController,
@@ -20,7 +20,7 @@ struct PresentationContext {
         self.animated = animated
         self.presentationStyle = presentationStyle
         self.transitionStyle = transitionStyle
-        self.transitioningDelegate = PresentationTransitioningDelegate(
+        self.transitioner = PresentationTransitioningDelegate(
             presentAnimator: presentAnimator,
             dismissAnimator: dismissAnimator
         )

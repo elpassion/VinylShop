@@ -115,7 +115,7 @@ class VinylPagePushAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         let duration = self.duration
 
         return UIViewPropertyAnimator(duration: duration, curve: .easeInOut) {
-            UIView.animateKeyframes(withDuration: duration, delay: 0, animations: {
+            UIView.keyframeAnimation(duration: duration) {
                 UIView.addKeyframe(withRelativeStartTime: 0.37 / duration, relativeDuration: 0.46 / duration) {
                     view.center.x = center.x
                 }
@@ -123,7 +123,7 @@ class VinylPagePushAnimator: NSObject, UIViewControllerAnimatedTransitioning {
                 UIView.addKeyframe(withRelativeStartTime: 0.4 / duration, relativeDuration: 0.08 / duration) {
                     view.alpha = 1.0
                 }
-            })
+            }
         }
     }
 
@@ -133,12 +133,12 @@ class VinylPagePushAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         view.alpha = 0.0
 
         return UIViewPropertyAnimator(duration: duration, curve: .easeInOut) {
-            UIView.animateKeyframes(withDuration: duration, delay: 0, animations: {
+            UIView.keyframeAnimation(duration: duration) {
                 UIView.addKeyframe(withRelativeStartTime: 0.3 / duration, relativeDuration: 0.3 / duration) {
                     view.center.x -= 20
                     view.alpha = 1.0
                 }
-            })
+            }
         }
     }
 

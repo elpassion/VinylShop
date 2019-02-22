@@ -114,12 +114,12 @@ class ShoppingBoxPresentationAnimator: NSObject, UIViewControllerAnimatedTransit
 
         return UIViewPropertyAnimator(duration: duration, curve: .easeInOut) { [unowned self] in
             let startTime = delay / self.duration
-            UIView.animateKeyframes(withDuration: self.duration, delay: 0.0, animations: {
+            UIView.keyframeAnimation(duration: self.duration) {
                 UIView.addKeyframe(withRelativeStartTime: startTime, relativeDuration: 0.3) {
                     view.center.y -= 20
                     view.alpha = 1.0
                 }
-            })
+            }
         }
     }
 

@@ -71,11 +71,11 @@ class VinylPagePopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         let duration = self.duration
 
         let animator = UIViewPropertyAnimator(duration: duration, curve: .easeInOut) {
-            UIView.animateKeyframes(withDuration: duration, delay: 0, animations: {
+            UIView.keyframeAnimation(duration: duration) {
                 UIView.addKeyframe(withRelativeStartTime: 0.73 / duration, relativeDuration: 0.1 / duration) {
                     view.alpha = 0.0
                 }
-            })
+            }
         }
 
         animator.addCompletion { _ in
@@ -94,12 +94,12 @@ class VinylPagePopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
 
         let animator = UIViewPropertyAnimator(duration: duration, timingParameters: timingParameters)
         animator.addAnimations {
-            UIView.animateKeyframes(withDuration: duration, delay: 0, animations: {
+            UIView.keyframeAnimation(duration: duration) {
                 UIView.addKeyframe(withRelativeStartTime: 0.53 / duration, relativeDuration: 0.3) {
                     view.alpha = 0.0
                     view.frame = CGRect(origin: frame.origin, size: CGSize(width: frame.width, height: 0))
                 }
-            })
+            }
         }
 
         return animator
@@ -109,11 +109,11 @@ class VinylPagePopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         let duration = self.duration
 
         return UIViewPropertyAnimator(duration: duration, curve: .easeInOut) {
-            UIView.animateKeyframes(withDuration: duration, delay: 0, animations: {
+            UIView.keyframeAnimation(duration: duration) {
                 UIView.addKeyframe(withRelativeStartTime: 0.53 / duration, relativeDuration: 0.3 / duration) {
                     view.frame = frame
                 }
-            })
+            }
         }
     }
 
@@ -121,7 +121,7 @@ class VinylPagePopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         let duration = self.duration
 
         return UIViewPropertyAnimator(duration: 0.46, curve: .easeInOut) {
-            UIView.animateKeyframes(withDuration: duration, delay: 0, animations: {
+            UIView.keyframeAnimation(duration: duration) {
                 UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.46 / duration) {
                     view.center.x = toCenter.x
                 }
@@ -129,7 +129,7 @@ class VinylPagePopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
                 UIView.addKeyframe(withRelativeStartTime: 0.43 / duration, relativeDuration: 0.08 / duration) {
                     view.alpha = 0.0
                 }
-            })
+            }
         }
     }
 
@@ -137,12 +137,12 @@ class VinylPagePopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         let duration = self.duration
 
         return UIViewPropertyAnimator(duration: duration, curve: .easeInOut) {
-            UIView.animateKeyframes(withDuration: duration, delay: 0, animations: {
+            UIView.keyframeAnimation(duration: duration) {
                 UIView.addKeyframe(withRelativeStartTime: 0.23 / duration, relativeDuration: 0.3 / duration) {
                     view.center.x += 20
                     view.alpha = 0.0
                 }
-            })
+            }
         }
     }
 
