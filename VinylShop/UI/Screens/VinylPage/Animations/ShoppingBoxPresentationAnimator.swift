@@ -85,7 +85,7 @@ class ShoppingBoxPresentationAnimator: NSObject, UIViewControllerAnimatedTransit
     private var backgroundAnimator: UIViewPropertyAnimator?
     private var shoppingBarAnimator: UIViewPropertyAnimator?
     private var shoppingBoxAnimator: UIViewPropertyAnimator?
-    private var fadeInAnimators = [UIViewPropertyAnimator]()
+    private var fadeInAnimators: [UIViewPropertyAnimator] = []
 
     private var allAnimators: [UIViewPropertyAnimator] {
         return fadeInAnimators + [backgroundAnimator, shoppingBarAnimator, shoppingBoxAnimator].compactMap { $0 }

@@ -8,23 +8,23 @@ class ShoppingBoxView: UIView {
         |> background(color: .blue2FC5D8)
         <> rounded(radius: 15, corners: .top)
 
-    let dismissIconView = UIImageView(frame: .zero)
+    let dismissIconView: UIImageView = UIImageView(frame: .zero)
         |> image(#imageLiteral(resourceName: "dismiss_box_arrow"))
 
-    let titleLabel = UILabel(frame: .zero)
+    let titleLabel: UILabel = UILabel(frame: .zero)
         |> text("Shopping Box")
         <> font(.nunito(.semibold), size: 26.0, color: .whiteFFFFFF)
 
-    let dimmedBackgroundView = UIView(frame: .zero)
+    let dimmedBackgroundView: UIView = UIView(frame: .zero)
         |> background(color: .black000000, alpha: 0.4)
 
-    let itemsView = ShoppingBoxItemsView()
-    let topSeparatorView = ShoppingBoxSeparatorView()
-    let bottomSeparatorView = ShoppingBoxSeparatorView()
-    let footerView = ShoppingBoxFooterView()
+    let itemsView: ShoppingBoxItemsView = ShoppingBoxItemsView()
+    let topSeparatorView: ShoppingBoxSeparatorView = ShoppingBoxSeparatorView()
+    let bottomSeparatorView: ShoppingBoxSeparatorView = ShoppingBoxSeparatorView()
+    let footerView: ShoppingBoxFooterView = ShoppingBoxFooterView()
 
-    let tapGestureRecognizer = UITapGestureRecognizer()
-    let swipeGestureRecognizer = UISwipeGestureRecognizer()
+    let tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer()
+    let swipeGestureRecognizer: UISwipeGestureRecognizer = UISwipeGestureRecognizer()
         |> { $0.direction = .down }
 
     init() {

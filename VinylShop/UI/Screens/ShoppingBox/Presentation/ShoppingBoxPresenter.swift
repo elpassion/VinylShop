@@ -1,7 +1,7 @@
 class ShoppingBoxPresenter {
 
     func present(albums: [Album], in view: ShoppingBoxView) {
-        let subviews: [ShoppingBoxItemView] = albums.enumerated().map { (index, album) in
+        let subviews: [ShoppingBoxItemView] = albums.enumerated().map { index, album in
             let view = ShoppingBoxItemView()
             view.titleLabel.text = album.title
             view.bandLabel.text = album.band

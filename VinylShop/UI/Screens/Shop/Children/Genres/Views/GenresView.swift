@@ -3,18 +3,18 @@ import UIKit
 
 class GenresView: UIView {
 
-    let titleLabel = UILabel(frame: .zero)
+    let titleLabel: UILabel = UILabel(frame: .zero)
         |> font(.nunito(.extraBold), size: 12, color: .black000000)
         <> text("GENRES")
 
-    private let allButton = UIButton(frame: .zero)
+    private let allButton: UIButton = UIButton(frame: .zero)
         |> title("ALL", font: .nunito(.extraBold), size: 12, color: .blue2FC5D8)
 
-    let collectionViewLayout = UICollectionViewFlowLayout()
+    let collectionViewLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         |> horizontal
         <> layoutSpacing(item: 0, line: 16)
         <> { $0.sectionInset = UIEdgeInsets(top: 0.0, left: 65.0, bottom: 0.0, right: 50.0) }
- 
+
     lazy var collectionView: UICollectionView =
         UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
             |> background(color: .whiteFFFFFF)

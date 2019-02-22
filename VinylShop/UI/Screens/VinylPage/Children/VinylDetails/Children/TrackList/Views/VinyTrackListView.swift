@@ -7,7 +7,7 @@ class VinylTrackListView: UIView {
         |> font(.nunito(.extraBold), size: 12, color: .black000000)
         <> text("TRACKLIST")
 
-    let collectionViewLayout = UICollectionViewFlowLayout()
+    let collectionViewLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         |> horizontal
         <> layoutSpacing(item: 0, line: 0)
         <> { $0.sectionInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 50.0) }

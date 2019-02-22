@@ -25,7 +25,7 @@ class ShopTitleView: UIView {
     private func setUpLayout() {
         titleLabel.setContentHuggingPriority(.required, for: .vertical)
         titleLabel.setContentCompressionResistancePriority(.required, for: .vertical)
- 
+
         titleLabel.topAnchor == topAnchor + 50
         titleLabel.leadingAnchor == leadingAnchor + 64
         titleLabel.trailingAnchor == trailingAnchor

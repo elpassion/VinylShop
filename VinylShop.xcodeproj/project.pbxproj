@@ -166,10 +166,10 @@
 		8C2243CF2202125600C3470B /* Nunito-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C2243C12202125600C3470B /* Nunito-ExtraBold.ttf */; };
 		8C2243D02202125600C3470B /* Nunito-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C2243C22202125600C3470B /* Nunito-SemiBoldItalic.ttf */; };
 		8C2243D2220213A700C3470B /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2243D1220213A700C3470B /* Font.swift */; };
+		8C40431722206D9200C9E916 /* ForceCast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C40431622206D9200C9E916 /* ForceCast.swift */; };
 		8C946635220487F8001F7E48 /* SpecTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C946634220487F8001F7E48 /* SpecTools.framework */; };
 		8C946636220487FD001F7E48 /* SpecTools.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8C946634220487F8001F7E48 /* SpecTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8CD3274222030922009711DA /* BonMot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CD3274122030922009711DA /* BonMot.framework */; };
-		8CFA76D52201DC8B00E4D81D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFA76D42201DC8B00E4D81D /* ViewController.swift */; };
 		8CFA76DA2201DC8C00E4D81D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CFA76D92201DC8C00E4D81D /* Assets.xcassets */; };
 		8CFA76DD2201DC8C00E4D81D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CFA76DB2201DC8C00E4D81D /* LaunchScreen.storyboard */; };
 		8CFA76F52201E65100E4D81D /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CFA76F32201E65100E4D81D /* Nimble.framework */; };
@@ -367,11 +367,11 @@
 		8C2243C12202125600C3470B /* Nunito-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBold.ttf"; sourceTree = "<group>"; };
 		8C2243C22202125600C3470B /* Nunito-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		8C2243D1220213A700C3470B /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		8C40431622206D9200C9E916 /* ForceCast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceCast.swift; sourceTree = "<group>"; };
 		8C7C3CB8222018CB0019F094 /* Vinyl+TestVinyl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vinyl+TestVinyl.swift"; sourceTree = "<group>"; };
 		8C946634220487F8001F7E48 /* SpecTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpecTools.framework; path = Carthage/Build/iOS/SpecTools.framework; sourceTree = "<group>"; };
 		8CD3274122030922009711DA /* BonMot.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BonMot.framework; path = Carthage/Build/iOS/BonMot.framework; sourceTree = "<group>"; };
 		8CFA76CF2201DC8B00E4D81D /* VinylShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VinylShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8CFA76D42201DC8B00E4D81D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8CFA76D92201DC8C00E4D81D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8CFA76DC2201DC8C00E4D81D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8CFA76DE2201DC8C00E4D81D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1010,6 +1010,7 @@
 				32672E479F609D652BA12E76 /* ApplianceSpec.swift */,
 				326724162483BD5825424EF9 /* Composition.swift */,
 				32672696104257987B079EC4 /* CompositionSpec.swift */,
+				8C40431622206D9200C9E916 /* ForceCast.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -1225,7 +1226,6 @@
 				326720660B5E8851516BDBB4 /* UI */,
 				8CFA76DE2201DC8C00E4D81D /* Info.plist */,
 				8CFA76DB2201DC8C00E4D81D /* LaunchScreen.storyboard */,
-				8CFA76D42201DC8B00E4D81D /* ViewController.swift */,
 			);
 			path = VinylShop;
 			sourceTree = "<group>";
@@ -1383,7 +1383,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    cd VinylShop\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, run 'brew bundle' command\"\nfi\n";
+			shellScript = "if which swiftlint >/dev/null; then\n    eval \"$(pyenv init -)\"\n    ./.swiftlint.py VinylShop.xcodeproj VinylShop VinylShop/.swiftlint_sources.yml\nelse\n    echo \"warning: SwiftLint not installed, run 'brew bundle' command\"\nfi\n";
 		};
 		8CFA77032201EE9F00E4D81D /* Carthage Copy Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1434,10 +1434,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CFA76D52201DC8B00E4D81D /* ViewController.swift in Sources */,
 				8C2243D2220213A700C3470B /* Font.swift in Sources */,
 				326725D5281E8E88A54608BA /* ShoppingBoxController.swift in Sources */,
 				326728245FDC15C17E529A87 /* ShoppingBoxView.swift in Sources */,
+				8C40431722206D9200C9E916 /* ForceCast.swift in Sources */,
 				32672804EA13374BB7FCE6BA /* AppDelegate.swift in Sources */,
 				3267255DA6CB95D2D25F1451 /* Styles.swift in Sources */,
 				32672A3C1C9B55A91552BD42 /* RoundedCorner.swift in Sources */,

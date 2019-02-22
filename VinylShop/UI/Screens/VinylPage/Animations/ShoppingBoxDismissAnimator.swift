@@ -75,13 +75,13 @@ class ShoppingBoxDismissAnimator: NSObject, UIViewControllerAnimatedTransitionin
 
         allAnimators.forEach { $0.startAnimation() }
     }
-    
+
     // MARK: - Private
 
     private var shoppingBoxAnimator: UIViewPropertyAnimator?
     private var backgroundAnimator: UIViewPropertyAnimator?
-    private var fadeOutAnimators = [UIViewPropertyAnimator]()
-    private var fadeInAnimators = [UIViewPropertyAnimator]()
+    private var fadeOutAnimators: [UIViewPropertyAnimator] = []
+    private var fadeInAnimators: [UIViewPropertyAnimator] = []
 
     private var allAnimators: [UIViewPropertyAnimator] {
         return fadeOutAnimators + fadeInAnimators + [shoppingBoxAnimator, backgroundAnimator].compactMap { $0 }

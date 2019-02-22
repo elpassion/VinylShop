@@ -7,23 +7,23 @@ class ShoppingBarView: UIView {
         |> background(color: .blue2FC5D8)
         <> rounded(radius: 15, corners: .top)
 
-    let titleLabel = UILabel(frame: .zero)
+    let titleLabel: UILabel = UILabel(frame: .zero)
         |> text("Shopping Box:")
         <> font(.nunito(.semibold), size: 16, color: .whiteFFFFFF)
 
-    let albumCountLabel = UILabel(frame: .zero)
+    let albumCountLabel: UILabel = UILabel(frame: .zero)
         |> text("<count>1</count> album", style: .albumCountStyle)
 
-    let checkoutBoxView = UIImageView(frame: .zero)
+    let checkoutBoxView: UIImageView = UIImageView(frame: .zero)
         |> image(#imageLiteral(resourceName: "checkout_box"))
 
-    let checkoutBoxBackView = UIImageView(frame: .zero)
+    let checkoutBoxBackView: UIImageView = UIImageView(frame: .zero)
         |> image(#imageLiteral(resourceName: "checkout_box_back"))
 
-    let albumCoverView = UIImageView(frame: .zero)
+    let albumCoverView: UIImageView = UIImageView(frame: .zero)
         |> image(#imageLiteral(resourceName: "album_cover"))
 
-    let totalLabel = UILabel(frame: .zero)
+    let totalLabel: UILabel = UILabel(frame: .zero)
         |> text("Total: <price>$15</price>", style: .totalPriceSmallStyle)
 
     init() {
@@ -35,7 +35,7 @@ class ShoppingBarView: UIView {
 
     // MARK: - Subviews
 
-    private let frameCenterLayoutGuide = UILayoutGuide()
+    private let frameCenterLayoutGuide: UILayoutGuide = UILayoutGuide()
 
     private func addSubviews() {
         [titleLabel, albumCountLabel, checkoutBoxBackView, albumCoverView, checkoutBoxView, totalLabel]

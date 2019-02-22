@@ -8,8 +8,8 @@ class GenresController: UIViewController, UICollectionViewDataSource, UICollecti
         super.init(nibName: nil, bundle: nil)
     }
 
-    var genresView: GenresView! {
-        return view as? GenresView
+    var genresView: GenresView {
+        return forceCast(view)
     }
 
     // MARK: - Lifecycle

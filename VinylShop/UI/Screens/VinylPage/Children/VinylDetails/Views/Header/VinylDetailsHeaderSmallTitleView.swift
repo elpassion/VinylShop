@@ -3,22 +3,22 @@ import UIKit
 
 class VinylDetailsHeaderSmallTitleView: UIView {
 
-    private let titleLabel = UILabel(frame: .zero)
+    private let titleLabel: UILabel = UILabel(frame: .zero)
         |> text("We the Generation")
         <> font(.nunito(.semibold), size: 18, color: .whiteFFFFFF)
         <> multiline()
 
-    private let bandLabel = UILabel(frame: .zero)
+    private let bandLabel: UILabel = UILabel(frame: .zero)
         |> text("Rudimental")
         <> font(.nunito(.semibold), size: 12, color: .whiteFFFFFF, alpha: 0.6)
 
-    private let priceView = ShoppingBoxPriceView()
+    private let priceView: ShoppingBoxPriceView = ShoppingBoxPriceView()
 
-    private let topLineStackView = UIStackView(frame: .zero)
+    private let topLineStackView: UIStackView = UIStackView(frame: .zero)
         |> fillHorizontal(spacing: 9)
         <> alignCenters
 
-    private let stackView = UIStackView(frame: .zero)
+    private let stackView: UIStackView = UIStackView(frame: .zero)
         |> fillVertical()
         <> alignLeadings
 

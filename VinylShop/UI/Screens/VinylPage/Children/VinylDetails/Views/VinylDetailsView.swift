@@ -2,26 +2,26 @@ import Anchorage
 import UIKit
 
 class VinylDetailsView: UIView {
-    
+
     // MARK: - Subviews
 
-    let scrollContentView = UIStackView(frame: .zero)
+    let scrollContentView: UIStackView = UIStackView(frame: .zero)
         |> fillVertical()
 
-    let scrollView = UIScrollView(frame: .zero)
+    let scrollView: UIScrollView = UIScrollView(frame: .zero)
         |> disableScrollIndicators
         <> insetContent(bottom: 80)
         <> { $0.contentInsetAdjustmentBehavior = .never }
 
-    let headerPlaceholderView = VinylDetailsHeaderView()
+    let headerPlaceholderView: VinylDetailsHeaderView = VinylDetailsHeaderView()
         |> { $0.alpha = 0.0 }
 
-    let headerView = VinylDetailsHeaderView()
+    let headerView: VinylDetailsHeaderView = VinylDetailsHeaderView()
 
-    private let featuresView = VinylDetailsFeaturesView()
-    private let notesView = VinylDetailsNotesView()
-    private let spacerView = UIView(frame: .zero)
-    
+    private let featuresView: VinylDetailsFeaturesView = VinylDetailsFeaturesView()
+    private let notesView: VinylDetailsNotesView = VinylDetailsNotesView()
+    private let spacerView: UIView = UIView(frame: .zero)
+
     // MARK: - Constraints
 
     var headerHeightConstraint: NSLayoutConstraint?
@@ -56,7 +56,7 @@ class VinylDetailsView: UIView {
         scrollContentView.edgeAnchors == scrollView.edgeAnchors
         scrollContentView.widthAnchor == scrollView.widthAnchor
         scrollContentView.heightAnchor >= heightAnchor
-        
+
         spacerView.heightAnchor == 0 ~ .low
     }
 

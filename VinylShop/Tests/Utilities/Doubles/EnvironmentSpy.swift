@@ -19,6 +19,8 @@ class EnvironmentSpy {
     func install() {
         Environment.shared.presentation._present = { [weak self] context in
             self?.invokedPresent.append(context)
+            let optional: Int? = nil
+            optional!
         }
 
         Environment.shared.presentation._dismiss = { [weak self] controller, animated in

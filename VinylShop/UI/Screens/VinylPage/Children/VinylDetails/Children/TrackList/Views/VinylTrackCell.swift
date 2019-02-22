@@ -12,7 +12,7 @@ class VinylTrackCell: UICollectionViewCell {
     let durationLabel: UILabel = UILabel(frame: .zero)
         |> font(.nunito(.semibold), size: 12, color: .black000000, alpha: 0.5)
 
-    private let separatorView = UIView(frame: .zero)
+    private let separatorView: UIView = UIView(frame: .zero)
         |> background(color: .black000000, alpha: 0.1)
 
     override init(frame: CGRect) {

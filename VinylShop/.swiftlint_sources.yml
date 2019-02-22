@@ -77,4 +77,3 @@ modifier_order:
 explicit_type_interface:
   excluded:
     - local
-

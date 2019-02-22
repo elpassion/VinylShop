@@ -6,7 +6,7 @@ func shopRecommendedControllerFactory() -> (ShopDetails) -> VinylCollectionContr
 
 func shopRecommendedViewModelFactory(_ details: ShopDetails) -> VinylCollectionViewModel {
     let ids = Set(details.recommendedIDs)
-    let vinyls = details.vinyls.filter { ids.contains($0.id )}
+    let vinyls = details.vinyls.filter { ids.contains($0.id) }
 
     return VinylCollectionViewModel(title: "Recommended for you", vinyls: vinyls)
 }

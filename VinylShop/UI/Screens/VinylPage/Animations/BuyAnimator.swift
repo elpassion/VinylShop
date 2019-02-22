@@ -1,7 +1,7 @@
 import UIKit
 
 class BuyAnimator: BuyAnimating {
-    
+
     // MARK: - BuyAnimating
 
     func animateBuy(view: UIView,

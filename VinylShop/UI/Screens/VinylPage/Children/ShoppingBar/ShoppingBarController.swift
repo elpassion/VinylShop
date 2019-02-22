@@ -2,8 +2,8 @@ import UIKit
 
 class ShoppingBarController: UIViewController, ShoppingBarControllerProtocol {
 
-    var barView: ShoppingBarView! {
-        return view as? ShoppingBarView
+    var barView: ShoppingBarView {
+        return cast(view: view)
     }
 
     override func loadView() {

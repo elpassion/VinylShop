@@ -3,24 +3,24 @@ import UIKit
 
 class ShoppingBoxItemView: UIView {
 
-    let coverImageView = UIImageView(frame: .zero)
+    let coverImageView: UIImageView = UIImageView(frame: .zero)
         |> image(#imageLiteral(resourceName: "album_cover"))
 
-    let titleLabel = UILabel(frame: .zero)
+    let titleLabel: UILabel = UILabel(frame: .zero)
         |> text("We the generation")
         <> font(.nunito(.semibold), size: 16.0, color: .whiteFFFFFF)
 
-    let bandLabel = UILabel(frame: .zero)
+    let bandLabel: UILabel = UILabel(frame: .zero)
         |> text("Rudimental")
         <> font(.nunito(.semibold), size: 12.0, color: .whiteFFFFFF, alpha: 0.6)
 
-    let removeButton = UIButton(frame: .zero)
+    let removeButton: UIButton = UIButton(frame: .zero)
         |> { $0.setImage(#imageLiteral(resourceName: "remove_button"), for: .normal) }
 
-    let separatorView = UIView(frame: .zero)
+    let separatorView: UIView = UIView(frame: .zero)
         |> background(color: .whiteFFFFFF, alpha: 0.3)
 
-    let priceView = ShoppingBoxPriceView()
+    let priceView: ShoppingBoxPriceView = ShoppingBoxPriceView()
 
     init() {
         super.init(frame: .zero)
@@ -31,7 +31,7 @@ class ShoppingBoxItemView: UIView {
 
     // MARK: - Subviews
 
-    private let coverCenterGuide = UILayoutGuide()
+    private let coverCenterGuide: UILayoutGuide = UILayoutGuide()
 
     private func addSubviews() {
         [coverImageView, titleLabel, bandLabel, removeButton, separatorView, priceView].forEach(addSubview)

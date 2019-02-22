@@ -2,15 +2,15 @@ import Anchorage
 import UIKit
 
 class ShopView: UIView {
-    
-    let scrollContentView = UIStackView(frame: .zero)
+
+    let scrollContentView: UIStackView = UIStackView(frame: .zero)
         |> fillVertical()
 
-    let scrollView = UIScrollView(frame: .zero)
+    let scrollView: UIScrollView = UIScrollView(frame: .zero)
         |> disableScrollIndicators
         <> { $0.contentInsetAdjustmentBehavior = .never }
-    
-    private let titleView = ShopTitleView()
+
+    private let titleView: ShopTitleView = ShopTitleView()
 
     init() {
         super.init(frame: .zero)
@@ -38,7 +38,7 @@ class ShopView: UIView {
 
     private func setUpLayout() {
         scrollView.edgeAnchors == safeAreaLayoutGuide.edgeAnchors
-        
+
         scrollContentView.edgeAnchors == scrollView.edgeAnchors
         scrollContentView.widthAnchor == scrollView.widthAnchor
     }

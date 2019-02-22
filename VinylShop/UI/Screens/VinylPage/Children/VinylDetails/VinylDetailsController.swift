@@ -18,13 +18,13 @@ class VinylDetailsController: UIViewController, UIScrollViewDelegate, VinylDetai
 
     // MARK: - VinylDetailsControllerProtocol
 
-    var detailsView: VinylDetailsView! {
-        return view as? VinylDetailsView
+    var detailsView: VinylDetailsView {
+        return forceCast(view)
     }
 
     var goBackAction: (() -> Void)?
     var buyAction: (() -> Void)?
-    
+
     // MARK: - Lifecycle
 
     override func loadView() {
@@ -89,11 +89,13 @@ class VinylDetailsController: UIViewController, UIScrollViewDelegate, VinylDetai
         )
     }
 
-    @objc private func onBackButtonTapped(_: UIButton) {
+    @objc
+    private func onBackButtonTapped(_: UIButton) {
         goBackAction?()
     }
 
-    @objc private func onBuyTapped(_: UIButton) {
+    @objc
+    private func onBuyTapped(_: UIButton) {
         buyAction?()
     }
 

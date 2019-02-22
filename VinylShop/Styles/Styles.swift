@@ -49,7 +49,7 @@ func multiline(lines numberOfLines: Int = 0) -> (UILabel) -> Void {
     }
 }
 
-func alignCenter(_ label: UILabel) -> Void {
+func alignCenter(_ label: UILabel) {
     label.textAlignment = .center
 }
 
@@ -78,15 +78,15 @@ func fillHorizontal(spacing: CGFloat = 0.0) -> (UIStackView) -> Void {
     }
 }
 
-func alignBottoms(_ stackView: UIStackView) -> Void {
+func alignBottoms(_ stackView: UIStackView) {
     stackView.alignment = .bottom
 }
 
-func alignLeadings(_ stackView: UIStackView) -> Void {
+func alignLeadings(_ stackView: UIStackView) {
     stackView.alignment = .leading
 }
 
-func alignCenters(_ stackView: UIStackView) -> Void {
+func alignCenters(_ stackView: UIStackView) {
     stackView.alignment = .center
 }
 
@@ -144,7 +144,7 @@ func register<Cell: UICollectionViewCell>(_ cell: Cell.Type) -> (UICollectionVie
     }
 }
 
-func horizontal(_ flowLayout: UICollectionViewFlowLayout) -> Void {
+func horizontal(_ flowLayout: UICollectionViewFlowLayout) {
     flowLayout.scrollDirection = .horizontal
 }
 
@@ -161,19 +161,19 @@ func gradient(colors: Color...) -> (CAGradientLayer) -> Void {
     }
 }
 
-func startPoint(x: CGFloat, y: CGFloat) -> (CAGradientLayer) -> Void {
+func startPoint(x: CGFloat, y: CGFloat) -> (CAGradientLayer) {
     return { gradientLayer in
         gradientLayer.startPoint = CGPoint(x: x, y: y)
     }
 }
 
-func endPoint(x: CGFloat, y: CGFloat) -> (CAGradientLayer) -> Void {
+func endPoint(x: CGFloat, y: CGFloat) -> (CAGradientLayer) {
     return { gradientLayer in
         gradientLayer.endPoint = CGPoint(x: x, y: y)
     }
 }
 
-func disableScrollIndicators(_ scrollView: UIScrollView) -> Void {
+func disableScrollIndicators(_ scrollView: UIScrollView) {
     scrollView.showsHorizontalScrollIndicator = false
     scrollView.showsVerticalScrollIndicator = false
 }

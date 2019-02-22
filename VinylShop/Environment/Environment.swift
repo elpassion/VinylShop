@@ -2,7 +2,7 @@ import UIKit
 
 class Environment {
 
-    static let shared = Environment()
+    static let shared: Environment = Environment()
 
     lazy var navigationController: UINavigationController = {
         let shopController = ShopController(vinyl: .shotDetails)
@@ -12,8 +12,8 @@ class Environment {
         return navigationController
     }()
 
-    lazy var presentation = PresentationEnvironment(navigationController: navigationController)
-    lazy var navigation = NavigationEnvironment(navigationController: navigationController)
+    lazy var presentation: PresentationEnvironment = PresentationEnvironment(navigationController: navigationController)
+    lazy var navigation: NavigationEnvironment = NavigationEnvironment(navigationController: navigationController)
 
     func update(barStyle: UIBarStyle) {
         navigationController.navigationBar.barStyle = barStyle

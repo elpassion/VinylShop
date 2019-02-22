@@ -3,14 +3,14 @@ import UIKit
 
 class VinylDetailsGenreView: UIView {
 
-    let iconView = UIImageView(frame: .zero)
+    let iconView: UIImageView = UIImageView(frame: .zero)
         |> image(#imageLiteral(resourceName: "genre_rock_small"))
 
-    let titleLabel = UILabel(frame: .zero)
+    let titleLabel: UILabel = UILabel(frame: .zero)
         |> font(.nunito(.semibold), size: 13, color: .black000000)
         <> text("ROCK")
 
-    let subtitleLabel = UILabel(frame: .zero)
+    let subtitleLabel: UILabel = UILabel(frame: .zero)
         |> font(.nunito(.semibold), size: 12, color: .black000000, alpha: 0.5)
         <> text("Genre")
 

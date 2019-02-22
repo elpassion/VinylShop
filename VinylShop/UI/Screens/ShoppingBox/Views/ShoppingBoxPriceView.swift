@@ -3,11 +3,11 @@ import UIKit
 
 class ShoppingBoxPriceView: UIView {
 
-    let frameView = UIView(frame: .zero)
+    let frameView: UIView = UIView(frame: .zero)
         |> bordered(width: 1, color: .whiteFFFFFF, alpha: 0.5)
         <> rounded(radius: 3.0)
 
-    let priceLabel = UILabel(frame: .zero)
+    let priceLabel: UILabel = UILabel(frame: .zero)
         |> text("<currency>$</currency> <price>15</price>", style: .itemPriceStyle)
 
     init() {

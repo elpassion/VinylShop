@@ -3,7 +3,7 @@ import UIKit
 
 class VinylDetailsNotesView: UIView {
 
-    private let titleLabel = UILabel(frame: .zero)
+    private let titleLabel: UILabel = UILabel(frame: .zero)
         |> font(.nunito(.extraBold), size: 12, color: .black000000)
         <> text("NOTES")
 

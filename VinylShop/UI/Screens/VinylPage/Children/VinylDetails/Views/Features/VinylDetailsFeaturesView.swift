@@ -3,23 +3,26 @@ import UIKit
 
 class VinylDetailsFeaturesView: UIView {
 
-    private let titleLabel = UILabel(frame: .zero)
+    private let titleLabel: UILabel = UILabel(frame: .zero)
         |> font(.nunito(.extraBold), size: 12, color: .black000000)
         <> text("ALBUM FEATURES")
 
-    private let firstLineContainer = UIStackView(frame: .zero)
+    private let firstLineContainer: UIStackView = UIStackView(frame: .zero)
         |> fillHorizontal(spacing: 32)
         <> alignBottoms
 
-    private let secondLineContainer = UIStackView(frame: .zero)
+    private let secondLineContainer: UIStackView = UIStackView(frame: .zero)
         |> fillHorizontal(spacing: 32)
         <> alignBottoms
 
-    private let recordsView = VinylDetailsLargeFeatureView(title: "1", subtitle: "Records")
-    private let tracksView = VinylDetailsLargeFeatureView(title: "8", subtitle: "Tracks")
-    private let genreView = VinylDetailsGenreView()
-    private let typeView = VinylDetailsSmallFeatureView(title: "12″ / 180g", subtitle: "Type")
-    private let releaseDateView = VinylDetailsSmallFeatureView(title: "15 JUN 2008", subtitle: "Release Date")
+    private let recordsView: VinylDetailsLargeFeatureView =
+        VinylDetailsLargeFeatureView(title: "1", subtitle: "Records")
+    private let tracksView: VinylDetailsLargeFeatureView = VinylDetailsLargeFeatureView(title: "8", subtitle: "Tracks")
+    private let genreView: VinylDetailsGenreView = VinylDetailsGenreView()
+    private let typeView: VinylDetailsSmallFeatureView =
+        VinylDetailsSmallFeatureView(title: "12″ / 180g", subtitle: "Type")
+    private let releaseDateView: VinylDetailsSmallFeatureView =
+        VinylDetailsSmallFeatureView(title: "15 JUN 2008", subtitle: "Release Date")
 
     init() {
         super.init(frame: .zero)

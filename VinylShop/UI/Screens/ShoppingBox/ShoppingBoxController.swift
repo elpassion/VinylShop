@@ -8,8 +8,8 @@ class ShoppingBoxController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
 
-    var boxView: ShoppingBoxView! {
-        return view as? ShoppingBoxView
+    var boxView: ShoppingBoxView {
+        return cast(view: view)
     }
 
     override func loadView() {
@@ -42,7 +42,8 @@ class ShoppingBoxController: UIViewController {
         boxView.swipeGestureRecognizer.addTarget(self, action: #selector(onDismissTriggered))
     }
 
-    @objc private func onDismissTriggered() {
+    @objc
+    private func onDismissTriggered() {
         environment.presentation.dismiss(self, animated: true)
     }
 

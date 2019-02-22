@@ -31,7 +31,7 @@ class ShoppingBoxSeparatorView: UIView {
 
     // MARK: - Subviews
 
-    private let shapeLayer = CAShapeLayer()
+    private let shapeLayer: CAShapeLayer = CAShapeLayer()
 
     private func addSubviews() {
         layer.addSublayer(shapeLayer)

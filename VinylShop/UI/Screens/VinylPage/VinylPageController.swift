@@ -21,16 +21,16 @@ class VinylPageController: UIViewController {
     }
 
     let vinylID: Int
-    
+
     // MARK: - Children
 
     lazy var barController: ShoppingBarControlling = barControllerFactory()
     lazy var detailsController: VinylDetailsControlling = detailsControllerFactory(vinyl)
 
-    var pageView: VinylPageView! {
-        return view as? VinylPageView
+    var pageView: VinylPageView {
+        return cast(view: view)
     }
-    
+
     // MARK: - Lifecycle
 
     override func loadView() {
@@ -79,7 +79,8 @@ class VinylPageController: UIViewController {
         detailsController.buyAction = { [weak self] in self?.onBuyTap() }
     }
 
-    @objc private func onBarControlTap(_: UIControl) {
+    @objc
+    private func onBarControlTap(_: UIControl) {
         environment.presentation.present(context: .shoppingBox)
     }
 

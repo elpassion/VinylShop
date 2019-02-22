@@ -7,7 +7,7 @@ class PresentationTransitioningDelegate: NSObject, UIViewControllerTransitioning
         self.presentAnimator = presentAnimator
         self.dismissAnimator = dismissAnimator
     }
-    
+
     // MARK: - UIViewControllerTransitioningDelegate
 
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {

@@ -3,10 +3,10 @@ import UIKit
 
 class VinylDetailsLargeFeatureView: UIView {
 
-    let valueLabel = UILabel(frame: .zero)
+    let valueLabel: UILabel = UILabel(frame: .zero)
         |> font(.nunito(.semibold), size: 30, color: .black000000)
 
-    let subtitleLabel = UILabel(frame: .zero)
+    let subtitleLabel: UILabel = UILabel(frame: .zero)
         |> font(.nunito(.semibold), size: 12, color: .black000000, alpha: 0.5)
 
     init(title: String, subtitle: String) {

@@ -10,7 +10,7 @@ class VinylCollectionCell: UICollectionViewCell {
     let bandLabel: UILabel = UILabel(frame: .zero)
         |> font(.nunito(.semibold), size: 10, color: .black000000, alpha: 0.6)
 
-    let coverImageView = UIImageView(frame: .zero)
+    let coverImageView: UIImageView = UIImageView(frame: .zero)
         |> image(#imageLiteral(resourceName: "cover_metallica"), mode: .scaleAspectFit)
 
     override init(frame: CGRect) {

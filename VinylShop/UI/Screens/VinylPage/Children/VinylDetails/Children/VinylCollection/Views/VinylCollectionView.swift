@@ -2,13 +2,13 @@ import Anchorage
 import UIKit
 
 class VinylCollectionView: UIView {
-    
+
     // MARK: - Subviews
 
-    let titleLabel = UILabel(frame: .zero)
+    let titleLabel: UILabel = UILabel(frame: .zero)
         |> font(.nunito(.extraBold), size: 12, color: .black000000)
 
-    private let allButton = UIButton(frame: .zero)
+    private let allButton: UIButton = UIButton(frame: .zero)
         |> title("ALL", font: .nunito(.extraBold), size: 12, color: .blue2FC5D8)
 
     let collectionViewLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()

@@ -3,8 +3,8 @@ import UIKit
 
 class VinylPageView: UIView {
 
-    let detailsContainerView = UIView(frame: .zero)
-    let barContainerView = UIView(frame: .zero)
+    let detailsContainerView: UIView = UIView(frame: .zero)
+    let barContainerView: UIView = UIView(frame: .zero)
 
     init() {
         super.init(frame: .zero)

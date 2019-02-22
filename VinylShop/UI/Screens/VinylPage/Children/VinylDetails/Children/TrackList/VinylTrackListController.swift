@@ -10,8 +10,8 @@ class VinylTrackListController: UIViewController, UICollectionViewDataSource,
         super.init(nibName: nil, bundle: nil)
     }
 
-    var trackListView: VinylTrackListView! {
-        return view as? VinylTrackListView
+    var trackListView: VinylTrackListView {
+        return forceCast(view)
     }
 
     // MARK: - Lifecycle

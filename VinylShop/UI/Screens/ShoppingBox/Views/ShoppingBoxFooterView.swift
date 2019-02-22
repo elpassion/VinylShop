@@ -3,14 +3,14 @@ import UIKit
 
 class ShoppingBoxFooterView: UIView {
 
-    let totalLabel = UILabel(frame: .zero)
+    let totalLabel: UILabel = UILabel(frame: .zero)
         |> text("Total:")
         <> font(.nunito(.semibold), size: 14, color: .whiteFFFFFF)
 
-    let priceLabel = UILabel(frame: .zero)
+    let priceLabel: UILabel = UILabel(frame: .zero)
         |> text("<currency>$</currency> <price>30</price>", style: .totalPriceBigStyle)
 
-    let checkoutButton = UIButton(frame: .zero)
+    let checkoutButton: UIButton = UIButton(frame: .zero)
         |> checkoutButtonStyle()
 
     init() {

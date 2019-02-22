@@ -2,30 +2,30 @@ import Anchorage
 import UIKit
 
 class VinylDetailsHeaderView: UIView {
-    
+
     // MARK: - Sizes
 
-    static let maxCoverSize = CGSize(width: 140, height: 140)
-    static let minCoverSize = CGSize(width: 63, height: 63)
+    static let maxCoverSize: CGSize = CGSize(width: 140, height: 140)
+    static let minCoverSize: CGSize = CGSize(width: 63, height: 63)
     static let maxVinylCenterOffset: CGFloat = 45
-    
+
     // MARK: - Subviews
 
-    let largeTitleView = VinylDetailsHeaderLargeTitleView()
-    let smallTitleView = VinylDetailsHeaderSmallTitleView()
+    let largeTitleView: VinylDetailsHeaderLargeTitleView = VinylDetailsHeaderLargeTitleView()
+    let smallTitleView: VinylDetailsHeaderSmallTitleView = VinylDetailsHeaderSmallTitleView()
         |> { $0.alpha = 0.0 }
 
-    let buyButton = UIButton(frame: .zero)
+    let buyButton: UIButton = UIButton(frame: .zero)
         |> image(#imageLiteral(resourceName: "buy_button"), states: [.normal, .disabled])
 
-    let backButton = UIButton(frame: .zero)
+    let backButton: UIButton = UIButton(frame: .zero)
         |> image(#imageLiteral(resourceName: "back_arrow"))
         <> insetContent(top: 10, left: 10, bottom: 10, right: 10)
 
-    let coverImageView = UIImageView(frame: .zero)
+    let coverImageView: UIImageView = UIImageView(frame: .zero)
         |> headerCoverStyle
 
-    let vinylView = UIImageView(frame: .zero)
+    let vinylView: UIImageView = UIImageView(frame: .zero)
         |> image(#imageLiteral(resourceName: "vinyl_record"))
 
     // MARK: - Constraints
@@ -57,8 +57,8 @@ class VinylDetailsHeaderView: UIView {
         return CAGradientLayer.self
     }
 
-    private var gradientLayer: CAGradientLayer! {
-        return layer as? CAGradientLayer
+    private var gradientLayer: CAGradientLayer {
+        return forceCast(layer)
     }
 
     // MARK: - Configuration

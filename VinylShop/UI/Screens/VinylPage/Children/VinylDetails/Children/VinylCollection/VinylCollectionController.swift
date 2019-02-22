@@ -10,10 +10,10 @@ class VinylCollectionController: UIViewController, UICollectionViewDataSource,
         super.init(nibName: nil, bundle: nil)
     }
 
-    var vinylsView: VinylCollectionView! {
-        return view as? VinylCollectionView
+    var vinylsView: VinylCollectionView {
+        return forceCast(view)
     }
-    
+
     // MARK: - VinylCollectionControllerProtocol
 
     var vinylSelectedAction: ((Vinyl) -> Void)?
@@ -26,7 +26,7 @@ class VinylCollectionController: UIViewController, UICollectionViewDataSource,
             collectionView.indexPath(for: cell).flatMap { viewModel.vinyl(at: $0).id == vinylID } ?? false
         }
     }
-    
+
     // MARK: - Lifecycle
 
     override func loadView() {

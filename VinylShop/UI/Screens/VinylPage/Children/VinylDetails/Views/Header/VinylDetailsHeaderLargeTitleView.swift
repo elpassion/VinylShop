@@ -8,11 +8,11 @@ class VinylDetailsHeaderLargeTitleView: UIView {
         <> font(.nunito(.semibold), size: 25, color: .whiteFFFFFF)
         <> multiline()
 
-    private let bandLabel = UILabel(frame: .zero)
+    private let bandLabel: UILabel = UILabel(frame: .zero)
         |> text("Rudimental")
         <> font(.nunito(.semibold), size: 14, color: .whiteFFFFFF, alpha: 0.6)
 
-    private let priceView = VinylDetailsHeaderPriceView()
+    private let priceView: VinylDetailsHeaderPriceView = VinylDetailsHeaderPriceView()
 
     init() {
         super.init(frame: .zero)

@@ -3,7 +3,7 @@ import UIKit
 
 class ShoppingBoxItemsView: UIView {
 
-    let stackView = UIStackView(frame: .zero)
+    let stackView: UIStackView = UIStackView(frame: .zero)
         |> fillVertical()
 
     init() {
@@ -13,7 +13,7 @@ class ShoppingBoxItemsView: UIView {
         setUpLayout()
     }
 
-    private let itemView = ShoppingBoxItemView()
+    private let itemView: ShoppingBoxItemView = ShoppingBoxItemView()
 
     // MARK: - Subviews
 
