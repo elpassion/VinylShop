@@ -152,6 +152,9 @@
 		32672FFF6543A21405F89EAA /* ShoppingBoxItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32672758F5AEE9FEC5CAF5F7 /* ShoppingBoxItemsView.swift */; };
 		8C07CD0B22255A7600036899 /* ShoppingBoxStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C07CD0A22255A7600036899 /* ShoppingBoxStyles.swift */; };
 		8C07CD0D22255AA500036899 /* StringStyle+VinylDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C07CD0C22255AA500036899 /* StringStyle+VinylDetails.swift */; };
+		8C07CD1022257F3000036899 /* UIViewControllerContextTransitioningSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C07CD0F22257F3000036899 /* UIViewControllerContextTransitioningSpy.swift */; };
+		8C07CD13222582D700036899 /* UIViewControllerContextTransitioning+Complete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C07CD12222582D700036899 /* UIViewControllerContextTransitioning+Complete.swift */; };
+		8C07CD16222583B700036899 /* ShoppingBoxPresentationAnimationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C07CD15222583B700036899 /* ShoppingBoxPresentationAnimationContext.swift */; };
 		8C2243C32202125600C3470B /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C2243B52202125600C3470B /* Nunito-Bold.ttf */; };
 		8C2243C42202125600C3470B /* Nunito-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C2243B62202125600C3470B /* Nunito-ExtraBoldItalic.ttf */; };
 		8C2243C52202125600C3470B /* Nunito-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C2243B72202125600C3470B /* Nunito-Black.ttf */; };
@@ -363,6 +366,9 @@
 		32672FFA0D644C14D2F38740 /* UIStackView+ReplaceSubviews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+ReplaceSubviews.swift"; sourceTree = "<group>"; };
 		8C07CD0A22255A7600036899 /* ShoppingBoxStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingBoxStyles.swift; sourceTree = "<group>"; };
 		8C07CD0C22255AA500036899 /* StringStyle+VinylDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StringStyle+VinylDetails.swift"; sourceTree = "<group>"; };
+		8C07CD0F22257F3000036899 /* UIViewControllerContextTransitioningSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerContextTransitioningSpy.swift; sourceTree = "<group>"; };
+		8C07CD12222582D700036899 /* UIViewControllerContextTransitioning+Complete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewControllerContextTransitioning+Complete.swift"; sourceTree = "<group>"; };
+		8C07CD15222583B700036899 /* ShoppingBoxPresentationAnimationContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingBoxPresentationAnimationContext.swift; sourceTree = "<group>"; };
 		8C2243B52202125600C3470B /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		8C2243B62202125600C3470B /* Nunito-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		8C2243B72202125600C3470B /* Nunito-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Black.ttf"; sourceTree = "<group>"; };
@@ -635,6 +641,7 @@
 		3267258B44B2884691070141 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8C07CD11222582C500036899 /* UIViewControllerContextTransitioning */,
 				326720707CEA4ED2C55A3AE8 /* CGContext */,
 				32672AA1460599CA5F74F9E4 /* Priority */,
 				3267207C95B21E5CF77FC1C1 /* UIBezierPath */,
@@ -737,6 +744,7 @@
 		326726D921A9EF506933D5A0 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				8C07CD14222583A200036899 /* Context */,
 				3267215F54193B2A2A11FF89 /* BuyAnimating.swift */,
 				32672FBA0E6E6D0118E72CEB /* BuyAnimator.swift */,
 				3267206F2A3C6759C499BC5A /* ShoppingBoxDismissAnimator.swift */,
@@ -1130,6 +1138,7 @@
 				32672E176130547D85AC4BF2 /* BuyAnimatorSpy.swift */,
 				3267211C332AF2FBCCDB9AE6 /* ShoppingBarControllerStub.swift */,
 				32672F426A80E74185E4FD5D /* VinylDetailsControllerStub.swift */,
+				8C07CD0F22257F3000036899 /* UIViewControllerContextTransitioningSpy.swift */,
 			);
 			path = Doubles;
 			sourceTree = "<group>";
@@ -1175,6 +1184,22 @@
 				32672B47C7ACBEB50AD89823 /* StringStyle+ShoppingBar.swift */,
 			);
 			path = Styles;
+			sourceTree = "<group>";
+		};
+		8C07CD11222582C500036899 /* UIViewControllerContextTransitioning */ = {
+			isa = PBXGroup;
+			children = (
+				8C07CD12222582D700036899 /* UIViewControllerContextTransitioning+Complete.swift */,
+			);
+			path = UIViewControllerContextTransitioning;
+			sourceTree = "<group>";
+		};
+		8C07CD14222583A200036899 /* Context */ = {
+			isa = PBXGroup;
+			children = (
+				8C07CD15222583B700036899 /* ShoppingBoxPresentationAnimationContext.swift */,
+			);
+			path = Context;
 			sourceTree = "<group>";
 		};
 		8C2243B2220211C800C3470B /* Assets */ = {
@@ -1627,6 +1652,7 @@
 				3267241C3F28C566831C0834 /* VinylDetailsHeaderPriceView.swift in Sources */,
 				3267269E31471F17EAC183D1 /* ShopDetails+ShotDetails.swift in Sources */,
 				32672C7A5F8D6A8D7923679B /* VinylDetailsHeaderLargeTitleView.swift in Sources */,
+				8C07CD16222583B700036899 /* ShoppingBoxPresentationAnimationContext.swift in Sources */,
 				32672BD4F3EB2D1C09CEB50D /* VinylDetailsScrollPosition.swift in Sources */,
 				8C404320222073FF00C9E916 /* UIButton+Styles.swift in Sources */,
 				326728DFB7700882A130126D /* VinylDetailsHeaderSmallTitleView.swift in Sources */,
@@ -1660,6 +1686,7 @@
 				32672DB4BAD345CA47BE4BBB /* VinylDetailsControlling.swift in Sources */,
 				32672076C0ACE7A26EB423A5 /* BuyAnimating.swift in Sources */,
 				3267251E892DBB6D40203AD3 /* VinylCollectionControlling.swift in Sources */,
+				8C07CD13222582D700036899 /* UIViewControllerContextTransitioning+Complete.swift in Sources */,
 				32672DC7360EAD4D1D12F32F /* GoToAnimationControllerFactory.swift in Sources */,
 				326723EE795187B6404F9F65 /* VinylPagePushAnimator.swift in Sources */,
 				32672A9A865DBA9C8D6748B5 /* VinylPagePopAnimator.swift in Sources */,
@@ -1708,6 +1735,7 @@
 				326721CB08A2958E423EF3F8 /* NavigationControllerSpy.swift in Sources */,
 				32672890143C6FB5A21681CB /* VinylDetailsControllerStub.swift in Sources */,
 				3267278504A48F966FB0541B /* BuyAnimatorSpy.swift in Sources */,
+				8C07CD1022257F3000036899 /* UIViewControllerContextTransitioningSpy.swift in Sources */,
 				32672F62F5B8A34B3A4B03C1 /* VinylCollectionControllerStub.swift in Sources */,
 				32672C8D08CD82F16A9EF700 /* VinylPagePushAnimatorSpec.swift in Sources */,
 				32672C1D63DF07C7B129CE32 /* VinylPagePopAnimatorSpec.swift in Sources */,

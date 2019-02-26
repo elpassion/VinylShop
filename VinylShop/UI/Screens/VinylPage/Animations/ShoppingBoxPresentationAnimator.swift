@@ -9,74 +9,49 @@ class ShoppingBoxPresentationAnimator: NSObject, UIViewControllerAnimatedTransit
     }
 
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        // FIXME: Spike solution
-        let pageController = transitionContext.viewController(forKey: .from)
-            .flatMap { $0 as? UINavigationController }
-            .flatMap { $0.viewControllers.last as? VinylPageController }
-
-        guard let current = pageController,
-              let presenting = transitionContext.viewController(forKey: .to) as? ShoppingBoxController,
-              let barSnapshot = current.barController.view.snapshotView(afterScreenUpdates: true) else {
+        guard var context = ShoppingBoxPresentationAnimationContext(transitionContext: transitionContext) else {
+            transitionContext.complete()
             return
         }
 
-        current.barController.view.isHidden = true
-        barSnapshot.frame = current.pageView.barContainerView.frame
+        context.pageController.barController.view.isHidden = true
+        context.shoppingBarSnapshotView.frame = context.pageController.pageView.barContainerView.frame
 
         let containerView = transitionContext.containerView
-        presenting.view.frame = current.view.bounds
-        containerView.addSubview(presenting.view)
-        containerView.addSubview(barSnapshot)
+        context.shoppingController.view.frame = context.pageController.view.bounds
+        containerView.addSubview(context.shoppingController.view)
+        containerView.addSubview(context.shoppingBarSnapshotView)
 
-        let boxView: ShoppingBoxView = presenting.boxView
+        let boxView: ShoppingBoxView = context.shoppingController.boxView
         boxView.setNeedsLayout()
         boxView.layoutIfNeeded()
 
-        let fadedInViews = [
-            boxView.dismissIconView,
-            boxView.titleLabel,
-            boxView.topSeparatorView,
-            boxView.itemsView,
-            boxView.bottomSeparatorView,
-            boxView.footerView
-        ]
-
         let fadeInDelays = [0.1, 0.25, 0.30, 0.35, 0.40, 0.45]
-        let snapshotViews: [UIView] = fadedInViews.compactMap { view in
-            let snapshotView = view.snapshotView(afterScreenUpdates: true)
-            snapshotView?.frame = view.frame
-            return snapshotView
+
+        zip(context.fadedInViews, context.fadedInSnapshotViews).forEach { view, snapshotView in
+            view.alpha = 0.0
+            snapshotView.alpha = 0.0
+            snapshotView.frame = boxView.convert(view.frame, from: boxView.boxView)
+            containerView.addSubview(snapshotView)
         }
 
-        guard snapshotViews.count == fadedInViews.count else {
-            return
-        }
+        let offset = context.pageController.pageView.barContainerView.frame.minY
+            - context.shoppingController.boxView.boxView.frame.minY
 
-        fadedInViews.forEach { $0.layer.opacity = 0.0 }
-        snapshotViews.forEach { view in
-            view.layer.opacity = 0.0
-            view.frame = boxView.convert(view.frame, from: boxView.boxView)
-            containerView.addSubview(view)
-        }
+        backgroundAnimator = makeBackgroundAnimator(view: context.shoppingController.boxView.dimmedBackgroundView)
+        shoppingBarAnimator = makeShoppingBarAnimator(view: context.shoppingBarSnapshotView)
+        shoppingBoxAnimator = makeShoppingBoxAnimator(view: context.shoppingController.boxView.boxView, offset: offset)
 
-        let offset = current.pageView.barContainerView.frame.minY - presenting.boxView.boxView.frame.minY
-
-        backgroundAnimator = makeBackgroundAnimator(view: presenting.boxView.dimmedBackgroundView)
-        shoppingBarAnimator = makeShoppingBarAnimator(view: barSnapshot)
-        shoppingBoxAnimator = makeShoppingBoxAnimator(view: presenting.boxView.boxView, offset: offset)
-
-        fadeInAnimators = (0..<fadedInViews.count).map { index in
-            makeFadeInAnimator(view: snapshotViews[index], delay: fadeInDelays[index])
-        }
+        fadeInAnimators = zip(context.fadedInSnapshotViews, fadeInDelays).map(makeFadeInAnimator(view:delay:))
 
         allAnimators.forEach { $0.startAnimation() }
 
         backgroundAnimator?.addCompletion { _ in
-            current.barController.view.isHidden = false
-            fadedInViews.forEach { $0.layer.opacity = 1.0 }
-            snapshotViews.forEach { $0.removeFromSuperview() }
-            barSnapshot.removeFromSuperview()
-            transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+            context.pageController.barController.view.isHidden = false
+            context.fadedInViews.forEach { $0.alpha = 1.0 }
+            context.fadedInSnapshotViews.forEach { $0.removeFromSuperview() }
+            context.shoppingBarSnapshotView.removeFromSuperview()
+            transitionContext.complete()
         }
     }
 
