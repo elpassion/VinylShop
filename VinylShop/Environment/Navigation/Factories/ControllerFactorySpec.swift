@@ -23,7 +23,7 @@ class ControllerFactorySpec: QuickSpec {
                 beforeEach {
                     controller = sut(.vinylPage(id: 9_999)) as? VinylPageController
                 }
-                
+
                 afterEach {
                     controller = nil
                 }

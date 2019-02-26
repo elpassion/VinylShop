@@ -1385,6 +1385,7 @@
 				8CFA76E02201DC8C00E4D81D /* Frameworks */,
 				8CFA76E12201DC8C00E4D81D /* Resources */,
 				8CFA76FA2201E76200E4D81D /* CopyFiles */,
+				8C07CD0E22255CAC00036899 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -1469,6 +1470,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		8C07CD0E22255CAC00036899 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    eval \"$(pyenv init -)\"\n    ./.swiftlint.py VinylShop.xcodeproj VinylShopTests VinylShop/.swiftlint_tests.yml\nelse\n    echo \"warning: SwiftLint not installed, run 'brew bundle' command\"\nfi\n";
+		};
 		8C7C3CBE222032590019F094 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

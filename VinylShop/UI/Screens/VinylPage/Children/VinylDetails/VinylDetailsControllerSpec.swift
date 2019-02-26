@@ -142,47 +142,47 @@ class VinylDetailsControllerSpec: QuickSpec {
                             it("should update vinyl offset to extended offset") {
                                 expect(sut.detailsView.headerView.vinylCenterOffsetConstraint?.constant) == 45.0 ± 0.1
                             }
-                            
+
                             it("should activate large title bottom constraint") {
                                 expect(sut.detailsView.headerView.largeBottomAnchorConstraint?.isActive) == true
                             }
-                            
+
                             it("should deactivate small title bottom constraint") {
                                 expect(sut.detailsView.headerView.smallBottomAnchorConstraint?.isActive) == false
                             }
                         }
                     }
                 }
-                
+
                 describe("back button tap") {
                     var goBackActionInvoked: Bool?
-                    
+
                     beforeEach {
                         sut.goBackAction = { goBackActionInvoked = true }
                         sut.detailsView.headerView.backButton.simulateTap()
                     }
-                    
+
                     afterEach {
                         goBackActionInvoked = nil
                     }
-                    
+
                     it("should invoke go back action") {
                         expect(goBackActionInvoked) == true
                     }
                 }
-                
+
                 describe("buy button tap") {
                     var buyActionInvoked: Bool?
-                    
+
                     beforeEach {
                         sut.buyAction = { buyActionInvoked = true }
                         sut.detailsView.headerView.buyButton.simulateTap()
                     }
-                    
+
                     afterEach {
                         buyActionInvoked = nil
                     }
-                    
+
                     it("should invoke buy action") {
                         expect(buyActionInvoked) == true
                     }
@@ -210,7 +210,7 @@ class VinylDetailsControllerSpec: QuickSpec {
             }
 
             it("should match full height snapshot on iPhone X") {
-                assertSnapshot(matching: sut, as: .image(on: .iPhoneX, size: CGSize(width: 375, height: 1234)))
+                assertSnapshot(matching: sut, as: .image(on: .iPhoneX, size: CGSize(width: 375, height: 1_234)))
             }
         }
     }

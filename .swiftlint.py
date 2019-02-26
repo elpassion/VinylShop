@@ -42,7 +42,7 @@ def main():
     sys.exit(-1)
 
 def list_files(project, target_name):
-    target = project.get_target_by_name('VinylShop')
+    target = project.get_target_by_name(target_name)
 
     if not target:
         return []

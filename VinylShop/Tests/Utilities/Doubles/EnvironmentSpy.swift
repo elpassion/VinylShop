@@ -3,10 +3,10 @@ import UIKit
 
 class EnvironmentSpy {
 
-    private(set) var invokedPresent = [PresentationContext]()
-    private(set) var invokedDismiss = [(controller: UIViewController, animated: Bool)]()
-    private(set) var invokedGoToRoute = [Route]()
-    private(set) var invokedGoBackCount = 0
+    private(set) var invokedPresent: [PresentationContext] = []
+    private(set) var invokedDismiss: [(controller: UIViewController, animated: Bool)] = []
+    private(set) var invokedGoToRoute: [Route] = []
+    private(set) var invokedGoBackCount: Int = 0
     private var presentExecutor: (PresentationContext) -> Void = Environment.shared.presentation.presentExecutor
     private var dismissExecutor: (UIViewController, Bool) -> Void = Environment.shared.presentation.dismissExecutor
     private var goToRouteExecutor: (Route) -> Void = Environment.shared.navigation.goToRouteExecutor
@@ -14,7 +14,7 @@ class EnvironmentSpy {
 
     // MARK: - Public API
 
-    static let shared = EnvironmentSpy()
+    static let shared: EnvironmentSpy = EnvironmentSpy()
 
     func install() {
         Environment.shared.presentation.presentExecutor = { [weak self] context in
