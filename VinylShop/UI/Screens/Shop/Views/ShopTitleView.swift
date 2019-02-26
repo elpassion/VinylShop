@@ -3,7 +3,7 @@ import UIKit
 
 class ShopTitleView: UIView {
 
-    private let titleLabel = UILabel(frame: .zero)
+    private let titleLabel: UILabel = UILabel(frame: .zero)
         |> font(.nunito(.bold), size: 26, color: .black000000)
         <> text("Explore The Shop")
 

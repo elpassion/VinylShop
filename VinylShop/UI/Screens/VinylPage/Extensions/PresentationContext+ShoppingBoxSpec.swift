@@ -38,7 +38,7 @@ class PresentationContext_ShoppingBoxSpec: QuickSpec {
             }
 
             it("should have present animator of ShoppingBoxPresentationAnimator type") {
-                let presentAnimator = sut.transitioningDelegate.animationController?(
+                let presentAnimator = sut.transitioner.animationController?(
                     forPresented: UIViewController(),
                     presenting: UIViewController(),
                     source: UIViewController()
@@ -48,7 +48,7 @@ class PresentationContext_ShoppingBoxSpec: QuickSpec {
             }
 
             it("should have dismiss animator of ShoppingBoxDismissAnimator type") {
-                let dismissAnimator = sut.transitioningDelegate.animationController?(forDismissed: UIViewController())
+                let dismissAnimator = sut.transitioner.animationController?(forDismissed: UIViewController())
 
                 expect(dismissAnimator).to(beAnInstanceOf(ShoppingBoxDismissAnimator.self))
             }

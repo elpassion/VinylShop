@@ -5,6 +5,6 @@ class ShoppingBarControllerStub: UIViewController, ShoppingBarControllerProtocol
 
     // MARK: - ShoppingBarControllerProtocol
 
-    let barView: ShoppingBarView! = ShoppingBarView()
+    let barView: ShoppingBarView = ShoppingBarView()
 
 }

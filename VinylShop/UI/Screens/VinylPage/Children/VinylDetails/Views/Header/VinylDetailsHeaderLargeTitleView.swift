@@ -3,7 +3,7 @@ import UIKit
 
 class VinylDetailsHeaderLargeTitleView: UIView {
 
-    private let titleLabel = UILabel(frame: .zero)
+    private let titleLabel: UILabel = UILabel(frame: .zero)
         |> text("We the Generation")
         <> font(.nunito(.semibold), size: 25, color: .whiteFFFFFF)
         <> multiline()
