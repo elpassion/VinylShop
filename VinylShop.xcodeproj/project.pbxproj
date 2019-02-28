@@ -155,6 +155,7 @@
 		8C07CD1022257F3000036899 /* UIViewControllerContextTransitioningSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C07CD0F22257F3000036899 /* UIViewControllerContextTransitioningSpy.swift */; };
 		8C07CD13222582D700036899 /* UIViewControllerContextTransitioning+Complete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C07CD12222582D700036899 /* UIViewControllerContextTransitioning+Complete.swift */; };
 		8C07CD16222583B700036899 /* ShoppingBoxPresentationAnimationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C07CD15222583B700036899 /* ShoppingBoxPresentationAnimationContext.swift */; };
+		8C07CD1822259CDD00036899 /* UIView+DelayedKeyframeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C07CD1722259CDD00036899 /* UIView+DelayedKeyframeAnimation.swift */; };
 		8C2243C32202125600C3470B /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C2243B52202125600C3470B /* Nunito-Bold.ttf */; };
 		8C2243C42202125600C3470B /* Nunito-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C2243B62202125600C3470B /* Nunito-ExtraBoldItalic.ttf */; };
 		8C2243C52202125600C3470B /* Nunito-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C2243B72202125600C3470B /* Nunito-Black.ttf */; };
@@ -170,6 +171,11 @@
 		8C2243CF2202125600C3470B /* Nunito-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C2243C12202125600C3470B /* Nunito-ExtraBold.ttf */; };
 		8C2243D02202125600C3470B /* Nunito-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C2243C22202125600C3470B /* Nunito-SemiBoldItalic.ttf */; };
 		8C2243D2220213A700C3470B /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2243D1220213A700C3470B /* Font.swift */; };
+		8C321DF62227ED54004F9B14 /* AnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C321DF52227ED54004F9B14 /* AnimatedTransitioning.swift */; };
+		8C321DF92227EF80004F9B14 /* UIWindow+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C321DF72227EF5D004F9B14 /* UIWindow+Snapshot.swift */; };
+		8C321DFC2227F4C5004F9B14 /* SetUpTransitioningTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C321DFB2227F4C5004F9B14 /* SetUpTransitioningTest.swift */; };
+		8C321DFF2227F4E5004F9B14 /* VerifyTransitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C321DFD2227F4DE004F9B14 /* VerifyTransitions.swift */; };
+		8C321E012227F518004F9B14 /* CleanUpVerifyTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C321E002227F518004F9B14 /* CleanUpVerifyTransition.swift */; };
 		8C40431722206D9200C9E916 /* ForceCast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C40431622206D9200C9E916 /* ForceCast.swift */; };
 		8C4043192220737000C9E916 /* UIView+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4043182220737000C9E916 /* UIView+Styles.swift */; };
 		8C40431D222073CF00C9E916 /* UILabel+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C40431C222073CF00C9E916 /* UILabel+Styles.swift */; };
@@ -369,6 +375,7 @@
 		8C07CD0F22257F3000036899 /* UIViewControllerContextTransitioningSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerContextTransitioningSpy.swift; sourceTree = "<group>"; };
 		8C07CD12222582D700036899 /* UIViewControllerContextTransitioning+Complete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewControllerContextTransitioning+Complete.swift"; sourceTree = "<group>"; };
 		8C07CD15222583B700036899 /* ShoppingBoxPresentationAnimationContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingBoxPresentationAnimationContext.swift; sourceTree = "<group>"; };
+		8C07CD1722259CDD00036899 /* UIView+DelayedKeyframeAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+DelayedKeyframeAnimation.swift"; sourceTree = "<group>"; };
 		8C2243B52202125600C3470B /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		8C2243B62202125600C3470B /* Nunito-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		8C2243B72202125600C3470B /* Nunito-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Black.ttf"; sourceTree = "<group>"; };
@@ -384,6 +391,11 @@
 		8C2243C12202125600C3470B /* Nunito-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBold.ttf"; sourceTree = "<group>"; };
 		8C2243C22202125600C3470B /* Nunito-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		8C2243D1220213A700C3470B /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		8C321DF52227ED54004F9B14 /* AnimatedTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTransitioning.swift; sourceTree = "<group>"; };
+		8C321DF72227EF5D004F9B14 /* UIWindow+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Snapshot.swift"; sourceTree = "<group>"; };
+		8C321DFB2227F4C5004F9B14 /* SetUpTransitioningTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpTransitioningTest.swift; sourceTree = "<group>"; };
+		8C321DFD2227F4DE004F9B14 /* VerifyTransitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyTransitions.swift; sourceTree = "<group>"; };
+		8C321E002227F518004F9B14 /* CleanUpVerifyTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanUpVerifyTransition.swift; sourceTree = "<group>"; };
 		8C40431622206D9200C9E916 /* ForceCast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceCast.swift; sourceTree = "<group>"; };
 		8C4043182220737000C9E916 /* UIView+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Styles.swift"; sourceTree = "<group>"; };
 		8C40431C222073CF00C9E916 /* UILabel+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Styles.swift"; sourceTree = "<group>"; };
@@ -641,6 +653,7 @@
 		3267258B44B2884691070141 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8C321DF42227ED41004F9B14 /* UIViewControllerAnimatedTransitioning */,
 				8C07CD11222582C500036899 /* UIViewControllerContextTransitioning */,
 				326720707CEA4ED2C55A3AE8 /* CGContext */,
 				32672AA1460599CA5F74F9E4 /* Priority */,
@@ -990,6 +1003,7 @@
 				32672D167E7E15AFAA016FF5 /* UICollectionView+SizeAccess.swift */,
 				32672D621DD1E0C3CD3B511C /* UIControl+SimulateTap.swift */,
 				8C7C3CB8222018CB0019F094 /* Vinyl+TestVinyl.swift */,
+				8C321DF72227EF5D004F9B14 /* UIWindow+Snapshot.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1170,6 +1184,7 @@
 		32672FE9056FD204EBE9A1C7 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				8C321DFA2227F4B6004F9B14 /* Functions */,
 				32672D51B1B16D89C4248069 /* Configurations */,
 				3267239FBDC673FCF5C7285F /* Doubles */,
 				32672CFAAE3B1ACA9DE1C614 /* Extensions */,
@@ -1240,6 +1255,24 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		8C321DF42227ED41004F9B14 /* UIViewControllerAnimatedTransitioning */ = {
+			isa = PBXGroup;
+			children = (
+				8C321DF52227ED54004F9B14 /* AnimatedTransitioning.swift */,
+			);
+			path = UIViewControllerAnimatedTransitioning;
+			sourceTree = "<group>";
+		};
+		8C321DFA2227F4B6004F9B14 /* Functions */ = {
+			isa = PBXGroup;
+			children = (
+				8C321DFB2227F4C5004F9B14 /* SetUpTransitioningTest.swift */,
+				8C321DFD2227F4DE004F9B14 /* VerifyTransitions.swift */,
+				8C321E002227F518004F9B14 /* CleanUpVerifyTransition.swift */,
+			);
+			path = Functions;
+			sourceTree = "<group>";
+		};
 		8C40431A2220737B00C9E916 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1308,6 +1341,7 @@
 			isa = PBXGroup;
 			children = (
 				8C4043312220763000C9E916 /* UIView+KeyframeAnimation.swift */,
+				8C07CD1722259CDD00036899 /* UIView+DelayedKeyframeAnimation.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -1602,9 +1636,11 @@
 				3267209665B67BFC9F92228C /* CGContext+DrawImage.swift in Sources */,
 				8C40431D222073CF00C9E916 /* UILabel+Styles.swift in Sources */,
 				326729975058D7976C62D978 /* CGContext+Globals.swift in Sources */,
+				8C321DF62227ED54004F9B14 /* AnimatedTransitioning.swift in Sources */,
 				3267248AF1A53F1BD2544336 /* UIImage+Color.swift in Sources */,
 				8C4043322220763000C9E916 /* UIView+KeyframeAnimation.swift in Sources */,
 				32672848E415A5994F8B13B5 /* StringStyle+ShoppingBox.swift in Sources */,
+				8C07CD1822259CDD00036899 /* UIView+DelayedKeyframeAnimation.swift in Sources */,
 				32672F749470BDAF17C3EEA4 /* UIViewController+Children.swift in Sources */,
 				3267267ACE9FF34308BD5EF2 /* UIFont+Convenience.swift in Sources */,
 				32672532256CC5BB1289AED9 /* ShoppingBarController.swift in Sources */,
@@ -1707,14 +1743,17 @@
 				326727B2B73CAB039371B057 /* ApplianceSpec.swift in Sources */,
 				32672968B43BF011B44A1CAD /* CGContext+DrawImageSpec.swift in Sources */,
 				32672248680F89E556E0C4C5 /* CGContext+ResetGlobals.swift in Sources */,
+				8C321DF92227EF80004F9B14 /* UIWindow+Snapshot.swift in Sources */,
 				32672F2B267BB5A747026B05 /* SnapshotDiffToolConfiguration.swift in Sources */,
 				3267293BC7D13AB8EA9B5C1B /* UIImagePredicate.swift in Sources */,
 				326729327168E46CFB2F65D4 /* UIViewController+ChildrenSpec.swift in Sources */,
 				32672536137E871ECBF3C09E /* ShoppingBarControllerSpec.swift in Sources */,
+				8C321DFC2227F4C5004F9B14 /* SetUpTransitioningTest.swift in Sources */,
 				32672B5CC1EB0A1A7BA9DC65 /* VinylPageControllerSpec.swift in Sources */,
 				32672627446C6FF3A837D48C /* UIViewControllerPredicate.swift in Sources */,
 				326727AFB16116E673290695 /* EnvironmentSpec.swift in Sources */,
 				3267233806CFA3D0C0187D33 /* PresentationContext+ShoppingBoxSpec.swift in Sources */,
+				8C321E012227F518004F9B14 /* CleanUpVerifyTransition.swift in Sources */,
 				3267219FF3D8B9B21891CCE2 /* UIControl+SimulateTap.swift in Sources */,
 				326726454DC267F6BA11447B /* ShoppingBarControllerStub.swift in Sources */,
 				326722A597A7EC2E2F3E4BCD /* EnvironmentSpy.swift in Sources */,
@@ -1736,6 +1775,7 @@
 				32672890143C6FB5A21681CB /* VinylDetailsControllerStub.swift in Sources */,
 				3267278504A48F966FB0541B /* BuyAnimatorSpy.swift in Sources */,
 				8C07CD1022257F3000036899 /* UIViewControllerContextTransitioningSpy.swift in Sources */,
+				8C321DFF2227F4E5004F9B14 /* VerifyTransitions.swift in Sources */,
 				32672F62F5B8A34B3A4B03C1 /* VinylCollectionControllerStub.swift in Sources */,
 				32672C8D08CD82F16A9EF700 /* VinylPagePushAnimatorSpec.swift in Sources */,
 				32672C1D63DF07C7B129CE32 /* VinylPagePopAnimatorSpec.swift in Sources */,

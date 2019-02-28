@@ -1,6 +1,7 @@
 @testable import VinylShop
 import Nimble
 import Quick
+import SnapshotTesting
 
 class ShoppingBoxPresentationAnimatorSpec: QuickSpec {
 
@@ -40,8 +41,82 @@ class ShoppingBoxPresentationAnimatorSpec: QuickSpec {
                         sut.animateTransition(using: contextSpy)
                     }
 
+                    afterEach {
+                        cleanUpVerifyTransition(sut: sut)
+                    }
+
                     it("should complete transition") {
                         expect(contextSpy.invokedCompleteWith) == true
+                    }
+                }
+
+                describe("with matching requirements") {
+                    var window: UIWindow!
+
+                    beforeEach {
+                        window = UIWindow(frame: .zero)
+
+                        let pageController = VinylPageController(vinylID: Vinyl.testVinyl.id)
+                        pageController.barController.barView.isHidden = false
+
+                        let navigationController = UINavigationController(rootViewController: pageController)
+                        navigationController.setNavigationBarHidden(true, animated: false)
+
+                        setUpTransitioningTest(
+                            from: navigationController,
+                            to: ShoppingBoxController(),
+                            using: contextSpy,
+                            in: window
+                        )
+                    }
+
+                    afterEach {
+                        cleanUpVerifyTransition(sut: sut)
+                        window = nil
+                    }
+
+                    it("should match snapshot at 0%") {
+                        verifyTransition(sut: sut, in: window, fractionComplete: 0, using: contextSpy, named: "shopping_bar_present_progress_0")
+                    }
+
+                    it("should match snapshot at 10%") {
+                        verifyTransition(sut: sut, in: window, fractionComplete: 0.1, using: contextSpy, named: "shopping_bar_present_progress_10")
+                    }
+
+                    it("should match snapshot at 20%") {
+                        verifyTransition(sut: sut, in: window, fractionComplete: 0.2, using: contextSpy, named: "shopping_bar_present_progress_20")
+                    }
+
+                    it("should match snapshot at 30%") {
+                        verifyTransition(sut: sut, in: window, fractionComplete: 0.3, using: contextSpy, named: "shopping_bar_present_progress_30")
+                    }
+
+                    it("should match snapshot at 40%") {
+                        verifyTransition(sut: sut, in: window, fractionComplete: 0.4, using: contextSpy, named: "shopping_bar_present_progress_40")
+                    }
+
+                    it("should match snapshot at 50%") {
+                        verifyTransition(sut: sut, in: window, fractionComplete: 0.5, using: contextSpy, named: "shopping_bar_present_progress_50")
+                    }
+
+                    it("should match snapshot at 60%") {
+                        verifyTransition(sut: sut, in: window, fractionComplete: 0.6, using: contextSpy, named: "shopping_bar_present_progress_60")
+                    }
+
+                    it("should match snapshot at 70%") {
+                        verifyTransition(sut: sut, in: window, fractionComplete: 0.7, using: contextSpy, named: "shopping_bar_present_progress_70")
+                    }
+
+                    it("should match snapshot at 80%") {
+                        verifyTransition(sut: sut, in: window, fractionComplete: 0.8, using: contextSpy, named: "shopping_bar_present_progress_80")
+                    }
+
+                    it("should match snapshot at 90%") {
+                        verifyTransition(sut: sut, in: window, fractionComplete: 0.9, using: contextSpy, named: "shopping_bar_present_progress_90")
+                    }
+
+                    it("should match snapshot at 100%") {
+                        verifyTransition(sut: sut, in: window, fractionComplete: 1.0, using: contextSpy, named: "shopping_bar_present_progress_100")
                     }
                 }
             }

@@ -1,8 +1,12 @@
 import UIKit
 
-class ShoppingBoxPresentationAnimator: NSObject, UIViewControllerAnimatedTransitioning {
+class ShoppingBoxPresentationAnimator: NSObject, AnimatedTransitioning {
 
-    // MARK: - UIViewControllerAnimatedTransitioning
+    // MARK: - AnimatedTransitioning
+
+    var allAnimators: [UIViewPropertyAnimator] {
+        return fadeInAnimators + [backgroundAnimator, shoppingBarAnimator, shoppingBoxAnimator].compactMap { $0 }
+    }
 
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.76
@@ -62,10 +66,6 @@ class ShoppingBoxPresentationAnimator: NSObject, UIViewControllerAnimatedTransit
     private var shoppingBoxAnimator: UIViewPropertyAnimator?
     private var fadeInAnimators: [UIViewPropertyAnimator] = []
 
-    private var allAnimators: [UIViewPropertyAnimator] {
-        return fadeInAnimators + [backgroundAnimator, shoppingBarAnimator, shoppingBoxAnimator].compactMap { $0 }
-    }
-
     private func makeBackgroundAnimator(view: UIView) -> UIViewPropertyAnimator {
         view.alpha = 0.0
 
@@ -88,12 +88,9 @@ class ShoppingBoxPresentationAnimator: NSObject, UIViewControllerAnimatedTransit
         view.center.y += 20
 
         return UIViewPropertyAnimator(duration: duration, curve: .easeInOut) { [unowned self] in
-            let startTime = delay / self.duration
-            UIView.keyframeAnimation(duration: self.duration) {
-                UIView.addKeyframe(withRelativeStartTime: startTime, relativeDuration: 0.3) {
-                    view.center.y -= 20
-                    view.alpha = 1.0
-                }
+            UIView.delayedKeyframeAnimation(relativeDuration: 0.3, totalDuration: self.duration, delay: delay) {
+                view.center.y -= 20
+                view.alpha = 1.0
             }
         }
     }
@@ -108,10 +105,6 @@ class ShoppingBoxPresentationAnimator: NSObject, UIViewControllerAnimatedTransit
         }
 
         return animator
-    }
-
-    private var duration: Double {
-        return transitionDuration(using: nil)
     }
 
 }
