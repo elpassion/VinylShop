@@ -653,8 +653,6 @@
 		3267258B44B2884691070141 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				8C321DF42227ED41004F9B14 /* UIViewControllerAnimatedTransitioning */,
-				8C07CD11222582C500036899 /* UIViewControllerContextTransitioning */,
 				326720707CEA4ED2C55A3AE8 /* CGContext */,
 				32672AA1460599CA5F74F9E4 /* Priority */,
 				3267207C95B21E5CF77FC1C1 /* UIBezierPath */,
@@ -665,6 +663,8 @@
 				3267201EAC7DCE15C25904CA /* UIStackView */,
 				8C4043302220761D00C9E916 /* UIView */,
 				326725A05B7FFD9EC6057D2F /* UIViewController */,
+				8C321DF42227ED41004F9B14 /* UIViewControllerAnimatedTransitioning */,
+				8C07CD11222582C500036899 /* UIViewControllerContextTransitioning */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1002,8 +1002,8 @@
 				3267235B843C33AEC3AB363A /* UICollectionView+CellAccess.swift */,
 				32672D167E7E15AFAA016FF5 /* UICollectionView+SizeAccess.swift */,
 				32672D621DD1E0C3CD3B511C /* UIControl+SimulateTap.swift */,
-				8C7C3CB8222018CB0019F094 /* Vinyl+TestVinyl.swift */,
 				8C321DF72227EF5D004F9B14 /* UIWindow+Snapshot.swift */,
+				8C7C3CB8222018CB0019F094 /* Vinyl+TestVinyl.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1151,8 +1151,8 @@
 			children = (
 				32672E176130547D85AC4BF2 /* BuyAnimatorSpy.swift */,
 				3267211C332AF2FBCCDB9AE6 /* ShoppingBarControllerStub.swift */,
-				32672F426A80E74185E4FD5D /* VinylDetailsControllerStub.swift */,
 				8C07CD0F22257F3000036899 /* UIViewControllerContextTransitioningSpy.swift */,
+				32672F426A80E74185E4FD5D /* VinylDetailsControllerStub.swift */,
 			);
 			path = Doubles;
 			sourceTree = "<group>";
@@ -1184,10 +1184,10 @@
 		32672FE9056FD204EBE9A1C7 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				8C321DFA2227F4B6004F9B14 /* Functions */,
 				32672D51B1B16D89C4248069 /* Configurations */,
 				3267239FBDC673FCF5C7285F /* Doubles */,
 				32672CFAAE3B1ACA9DE1C614 /* Extensions */,
+				8C321DFA2227F4B6004F9B14 /* Functions */,
 				3267232676CF985931F76135 /* Predicates */,
 			);
 			path = Utilities;
@@ -1266,9 +1266,9 @@
 		8C321DFA2227F4B6004F9B14 /* Functions */ = {
 			isa = PBXGroup;
 			children = (
+				8C321E002227F518004F9B14 /* CleanUpVerifyTransition.swift */,
 				8C321DFB2227F4C5004F9B14 /* SetUpTransitioningTest.swift */,
 				8C321DFD2227F4DE004F9B14 /* VerifyTransitions.swift */,
-				8C321E002227F518004F9B14 /* CleanUpVerifyTransition.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -1340,8 +1340,8 @@
 		8C4043302220761D00C9E916 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
-				8C4043312220763000C9E916 /* UIView+KeyframeAnimation.swift */,
 				8C07CD1722259CDD00036899 /* UIView+DelayedKeyframeAnimation.swift */,
+				8C4043312220763000C9E916 /* UIView+KeyframeAnimation.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
