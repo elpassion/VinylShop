@@ -76,47 +76,47 @@ class ShoppingBoxPresentationAnimatorSpec: QuickSpec {
                     }
 
                     it("should match snapshot at 0%") {
-                        verifyTransition(sut: sut, in: window, fractionComplete: 0, using: contextSpy, named: "shopping_bar_present_progress_0")
+                        verifyTransition(sut: sut, in: window, fractionComplete: 0, using: contextSpy, named: "shopping_bar_present")
                     }
 
                     it("should match snapshot at 10%") {
-                        verifyTransition(sut: sut, in: window, fractionComplete: 0.1, using: contextSpy, named: "shopping_bar_present_progress_10")
+                        verifyTransition(sut: sut, in: window, fractionComplete: 0.1, using: contextSpy, named: "shopping_bar_present")
                     }
 
                     it("should match snapshot at 20%") {
-                        verifyTransition(sut: sut, in: window, fractionComplete: 0.2, using: contextSpy, named: "shopping_bar_present_progress_20")
+                        verifyTransition(sut: sut, in: window, fractionComplete: 0.2, using: contextSpy, named: "shopping_bar_present")
                     }
 
                     it("should match snapshot at 30%") {
-                        verifyTransition(sut: sut, in: window, fractionComplete: 0.3, using: contextSpy, named: "shopping_bar_present_progress_30")
+                        verifyTransition(sut: sut, in: window, fractionComplete: 0.3, using: contextSpy, named: "shopping_bar_present")
                     }
 
                     it("should match snapshot at 40%") {
-                        verifyTransition(sut: sut, in: window, fractionComplete: 0.4, using: contextSpy, named: "shopping_bar_present_progress_40")
+                        verifyTransition(sut: sut, in: window, fractionComplete: 0.4, using: contextSpy, named: "shopping_bar_present")
                     }
 
                     it("should match snapshot at 50%") {
-                        verifyTransition(sut: sut, in: window, fractionComplete: 0.5, using: contextSpy, named: "shopping_bar_present_progress_50")
+                        verifyTransition(sut: sut, in: window, fractionComplete: 0.5, using: contextSpy, named: "shopping_bar_present")
                     }
 
                     it("should match snapshot at 60%") {
-                        verifyTransition(sut: sut, in: window, fractionComplete: 0.6, using: contextSpy, named: "shopping_bar_present_progress_60")
+                        verifyTransition(sut: sut, in: window, fractionComplete: 0.6, using: contextSpy, named: "shopping_bar_present")
                     }
 
                     it("should match snapshot at 70%") {
-                        verifyTransition(sut: sut, in: window, fractionComplete: 0.7, using: contextSpy, named: "shopping_bar_present_progress_70")
+                        verifyTransition(sut: sut, in: window, fractionComplete: 0.7, using: contextSpy, named: "shopping_bar_present")
                     }
 
                     it("should match snapshot at 80%") {
-                        verifyTransition(sut: sut, in: window, fractionComplete: 0.8, using: contextSpy, named: "shopping_bar_present_progress_80")
+                        verifyTransition(sut: sut, in: window, fractionComplete: 0.8, using: contextSpy, named: "shopping_bar_present")
                     }
 
                     it("should match snapshot at 90%") {
-                        verifyTransition(sut: sut, in: window, fractionComplete: 0.9, using: contextSpy, named: "shopping_bar_present_progress_90")
+                        verifyTransition(sut: sut, in: window, fractionComplete: 0.9, using: contextSpy, named: "shopping_bar_present")
                     }
 
                     it("should match snapshot at 100%") {
-                        verifyTransition(sut: sut, in: window, fractionComplete: 1.0, using: contextSpy, named: "shopping_bar_present_progress_100")
+                        verifyTransition(sut: sut, in: window, fractionComplete: 1.0, using: contextSpy, named: "shopping_bar_present")
                     }
                 }
             }

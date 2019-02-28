@@ -23,7 +23,7 @@ func verifyTransition(sut: AnimatedTransitioning,
     assertSnapshot(
         matching: window.snapshot,
         as: .image,
-        named: name,
+        named: "\(name)_progress_\(Int(fractionComplete * 100))",
         record: record,
         file: file,
         testName: testName,
