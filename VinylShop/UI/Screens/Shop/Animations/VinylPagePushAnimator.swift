@@ -18,51 +18,44 @@ class VinylPagePushAnimator: NSObject, AnimatedTransitioning {
     }
 
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        guard let shopController = transitionContext.viewController(forKey: .from) as? ShopController,
-              let pageController = transitionContext.viewController(forKey: .to) as? VinylPageController,
-              let newController = shopController.newController as? VinylCollectionController,
-              let recommendedController = shopController.recommendedController as? VinylCollectionController else {
+        guard let context = VinylPagePushAnimatorContext(vinylID: vinylID, transitionContext: transitionContext) else {
             transitionContext.complete()
             return
         }
 
-        let vinylCell = [newController, recommendedController].compactMap { $0.visibleCell(forVinylID: vinylID) }.first
-
-        guard let cell = vinylCell,
-              let cellCoverSnapshot = cell.coverImageView.snapshotView(afterScreenUpdates: true) else {
-            return
-        }
-
-        cellCoverSnapshot.frame = shopController.view.convert(cellCoverSnapshot.frame, from: cell.contentView)
+        context.coverSnapshotView.frame = context.shopController.view.convert(
+            context.coverSnapshotView.frame,
+            from: context.vinylCell.contentView
+        )
 
         let containerView = transitionContext.containerView
-        containerView.addSubview(pageController.view)
-        containerView.addSubview(shopController.view)
-        containerView.addSubview(cellCoverSnapshot)
+        containerView.addSubview(context.pageController.view)
+        containerView.addSubview(context.shopController.view)
+        containerView.addSubview(context.coverSnapshotView)
 
-        pageController.view.frame = shopController.view.frame
-        pageController.view.setNeedsLayout()
-        pageController.view.layoutIfNeeded()
+        context.pageController.view.frame = context.shopController.view.frame
+        context.pageController.view.setNeedsLayout()
+        context.pageController.view.layoutIfNeeded()
 
-        let headerView = pageController.detailsController.detailsView.headerView
+        let headerView = context.pageController.detailsController.detailsView.headerView
         headerView.coverImageView.alpha = 0.0
         headerView.vinylView.alpha = 0.0
 
-        let shopAnimator = makeShopAnimator(view: shopController.view)
+        let shopAnimator = makeShopAnimator(view: context.shopController.view)
 
         let headerAnimator = makeHeaderAnimator(view: headerView)
 
         let vinylAnimator = makeVinylAnimator(view: headerView.vinylView, fromCenter: headerView.coverImageView.center)
         vinylAnimator.addCompletion { _ in
             headerView.coverImageView.alpha = 1.0
-            cellCoverSnapshot.removeFromSuperview()
-            transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+            context.coverSnapshotView.removeFromSuperview()
+            transitionContext.complete()
         }
 
         let arrowAnimator = makeArrowAnimator(view: headerView.backButton)
 
-        let coverFrame = pageController.view.convert(headerView.coverImageView.frame, from: headerView)
-        let cellAnimator = makeCellAnimator(view: cellCoverSnapshot, to: coverFrame)
+        let coverFrame = context.pageController.view.convert(headerView.coverImageView.frame, from: headerView)
+        let cellAnimator = makeCellAnimator(view: context.coverSnapshotView, to: coverFrame)
 
         allAnimators = [shopAnimator, headerAnimator, vinylAnimator, arrowAnimator, cellAnimator]
         allAnimators.forEach { $0.startAnimation() }

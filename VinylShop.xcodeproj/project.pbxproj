@@ -156,6 +156,7 @@
 		8C07CD13222582D700036899 /* UIViewControllerContextTransitioning+Complete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C07CD12222582D700036899 /* UIViewControllerContextTransitioning+Complete.swift */; };
 		8C07CD16222583B700036899 /* ShoppingBoxPresentationAnimationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C07CD15222583B700036899 /* ShoppingBoxPresentationAnimationContext.swift */; };
 		8C07CD1822259CDD00036899 /* UIView+DelayedKeyframeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C07CD1722259CDD00036899 /* UIView+DelayedKeyframeAnimation.swift */; };
+		8C0ADCFF222D38BA005FCD84 /* VinylPagePushAnimatorContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0ADCFE222D38BA005FCD84 /* VinylPagePushAnimatorContext.swift */; };
 		8C2243C32202125600C3470B /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C2243B52202125600C3470B /* Nunito-Bold.ttf */; };
 		8C2243C42202125600C3470B /* Nunito-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C2243B62202125600C3470B /* Nunito-ExtraBoldItalic.ttf */; };
 		8C2243C52202125600C3470B /* Nunito-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C2243B72202125600C3470B /* Nunito-Black.ttf */; };
@@ -376,6 +377,7 @@
 		8C07CD12222582D700036899 /* UIViewControllerContextTransitioning+Complete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewControllerContextTransitioning+Complete.swift"; sourceTree = "<group>"; };
 		8C07CD15222583B700036899 /* ShoppingBoxPresentationAnimationContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingBoxPresentationAnimationContext.swift; sourceTree = "<group>"; };
 		8C07CD1722259CDD00036899 /* UIView+DelayedKeyframeAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+DelayedKeyframeAnimation.swift"; sourceTree = "<group>"; };
+		8C0ADCFE222D38BA005FCD84 /* VinylPagePushAnimatorContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinylPagePushAnimatorContext.swift; sourceTree = "<group>"; };
 		8C2243B52202125600C3470B /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		8C2243B62202125600C3470B /* Nunito-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		8C2243B72202125600C3470B /* Nunito-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Black.ttf"; sourceTree = "<group>"; };
@@ -964,6 +966,7 @@
 		32672B767B4C0076BDB34054 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				8C0ADCFD222D38AE005FCD84 /* Context */,
 				326721548FB5FB37EB24E6CE /* VinylPagePopAnimator.swift */,
 				326724252B9F2EE9DFF895A7 /* VinylPagePopAnimatorSpec.swift */,
 				32672B359F95427D2BA4A0C0 /* VinylPagePushAnimator.swift */,
@@ -1213,6 +1216,14 @@
 			isa = PBXGroup;
 			children = (
 				8C07CD15222583B700036899 /* ShoppingBoxPresentationAnimationContext.swift */,
+			);
+			path = Context;
+			sourceTree = "<group>";
+		};
+		8C0ADCFD222D38AE005FCD84 /* Context */ = {
+			isa = PBXGroup;
+			children = (
+				8C0ADCFE222D38BA005FCD84 /* VinylPagePushAnimatorContext.swift */,
 			);
 			path = Context;
 			sourceTree = "<group>";
@@ -1644,6 +1655,7 @@
 				32672F749470BDAF17C3EEA4 /* UIViewController+Children.swift in Sources */,
 				3267267ACE9FF34308BD5EF2 /* UIFont+Convenience.swift in Sources */,
 				32672532256CC5BB1289AED9 /* ShoppingBarController.swift in Sources */,
+				8C0ADCFF222D38BA005FCD84 /* VinylPagePushAnimatorContext.swift in Sources */,
 				32672AA188204CAA73FA171B /* ShoppingBarView.swift in Sources */,
 				32672D86F99CE9F22AC53CAD /* StringStyle+ShoppingBar.swift in Sources */,
 				32672E02374D316A29D283EF /* VinylPageController.swift in Sources */,
