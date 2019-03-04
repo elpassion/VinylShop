@@ -1,8 +1,12 @@
 import UIKit
 
-class ShoppingBoxDismissAnimator: NSObject, UIViewControllerAnimatedTransitioning {
+class ShoppingBoxDismissAnimator: NSObject, AnimatedTransitioning {
 
-    // MARK: - UIViewControllerAnimatedTransitioning
+    // MARK: - AnimatedTransitioning
+
+    var allAnimators: [UIViewPropertyAnimator] {
+        return fadeOutAnimators + fadeInAnimators + [shoppingBoxAnimator, backgroundAnimator].compactMap { $0 }
+    }
 
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.3
@@ -16,6 +20,7 @@ class ShoppingBoxDismissAnimator: NSObject, UIViewControllerAnimatedTransitionin
         guard let presenting = pageController,
               let current = transitionContext.viewController(forKey: .from) as? ShoppingBoxController,
               let barView = presenting.barController.view as? ShoppingBarView else {
+            transitionContext.complete()
             return
         }
 
@@ -82,14 +87,6 @@ class ShoppingBoxDismissAnimator: NSObject, UIViewControllerAnimatedTransitionin
     private var backgroundAnimator: UIViewPropertyAnimator?
     private var fadeOutAnimators: [UIViewPropertyAnimator] = []
     private var fadeInAnimators: [UIViewPropertyAnimator] = []
-
-    private var allAnimators: [UIViewPropertyAnimator] {
-        return fadeOutAnimators + fadeInAnimators + [shoppingBoxAnimator, backgroundAnimator].compactMap { $0 }
-    }
-
-    private var duration: Double {
-        return transitionDuration(using: nil)
-    }
 
     private func makeShoppingBoxAnimator(view: UIView, offset: CGFloat) -> UIViewPropertyAnimator {
         let timingParameters = UISpringTimingParameters(mass: 1, stiffness: 381, damping: 30, initialVelocity: .zero)

@@ -351,16 +351,6 @@ class EnvironmentSpec: QuickSpec {
 
 }
 
-class AnimatorStub: NSObject, UIViewControllerAnimatedTransitioning {
-
-    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 0
-    }
-
-    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {}
-
-}
-
 class PresentedControllerStub: UIViewController {
 
     override func dismiss(animated flag: Bool, completion: (() -> Void)?) {

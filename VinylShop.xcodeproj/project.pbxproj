@@ -161,6 +161,9 @@
 		8C0ADD04222D3E0A005FCD84 /* CGRect+Enlarged.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0ADD03222D3E0A005FCD84 /* CGRect+Enlarged.swift */; };
 		8C0ADD06222D42C3005FCD84 /* VinylPagePopAnimatorContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0ADD05222D42C3005FCD84 /* VinylPagePopAnimatorContext.swift */; };
 		8C0ADD08222D42F2005FCD84 /* FindVinylCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0ADD07222D42F2005FCD84 /* FindVinylCell.swift */; };
+		8C0ADD0A222D60C8005FCD84 /* VerifyTransitionsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0ADD09222D60C8005FCD84 /* VerifyTransitionsSpec.swift */; };
+		8C0ADD0C222D6717005FCD84 /* AnimatedTransitioningSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0ADD0B222D6717005FCD84 /* AnimatedTransitioningSpec.swift */; };
+		8C0ADD0E222D678F005FCD84 /* AnimatorStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0ADD0D222D678F005FCD84 /* AnimatorStub.swift */; };
 		8C2243C32202125600C3470B /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C2243B52202125600C3470B /* Nunito-Bold.ttf */; };
 		8C2243C42202125600C3470B /* Nunito-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C2243B62202125600C3470B /* Nunito-ExtraBoldItalic.ttf */; };
 		8C2243C52202125600C3470B /* Nunito-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C2243B72202125600C3470B /* Nunito-Black.ttf */; };
@@ -386,6 +389,9 @@
 		8C0ADD03222D3E0A005FCD84 /* CGRect+Enlarged.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Enlarged.swift"; sourceTree = "<group>"; };
 		8C0ADD05222D42C3005FCD84 /* VinylPagePopAnimatorContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinylPagePopAnimatorContext.swift; sourceTree = "<group>"; };
 		8C0ADD07222D42F2005FCD84 /* FindVinylCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindVinylCell.swift; sourceTree = "<group>"; };
+		8C0ADD09222D60C8005FCD84 /* VerifyTransitionsSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyTransitionsSpec.swift; sourceTree = "<group>"; };
+		8C0ADD0B222D6717005FCD84 /* AnimatedTransitioningSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTransitioningSpec.swift; sourceTree = "<group>"; };
+		8C0ADD0D222D678F005FCD84 /* AnimatorStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatorStub.swift; sourceTree = "<group>"; };
 		8C2243B52202125600C3470B /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		8C2243B62202125600C3470B /* Nunito-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		8C2243B72202125600C3470B /* Nunito-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Black.ttf"; sourceTree = "<group>"; };
@@ -1109,6 +1115,7 @@
 			isa = PBXGroup;
 			children = (
 				32672756B07ADBBFA8DACFB9 /* NavigationControllerSpy.swift */,
+				8C0ADD0D222D678F005FCD84 /* AnimatorStub.swift */,
 			);
 			path = Doubles;
 			sourceTree = "<group>";
@@ -1290,6 +1297,7 @@
 			isa = PBXGroup;
 			children = (
 				8C321DF52227ED54004F9B14 /* AnimatedTransitioning.swift */,
+				8C0ADD0B222D6717005FCD84 /* AnimatedTransitioningSpec.swift */,
 			);
 			path = UIViewControllerAnimatedTransitioning;
 			sourceTree = "<group>";
@@ -1300,6 +1308,7 @@
 				8C321E002227F518004F9B14 /* CleanUpVerifyTransition.swift */,
 				8C321DFB2227F4C5004F9B14 /* SetUpTransitioningTest.swift */,
 				8C321DFD2227F4DE004F9B14 /* VerifyTransitions.swift */,
+				8C0ADD09222D60C8005FCD84 /* VerifyTransitionsSpec.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -1781,8 +1790,10 @@
 				32672248680F89E556E0C4C5 /* CGContext+ResetGlobals.swift in Sources */,
 				8C321DF92227EF80004F9B14 /* UIWindow+Snapshot.swift in Sources */,
 				32672F2B267BB5A747026B05 /* SnapshotDiffToolConfiguration.swift in Sources */,
+				8C0ADD0E222D678F005FCD84 /* AnimatorStub.swift in Sources */,
 				3267293BC7D13AB8EA9B5C1B /* UIImagePredicate.swift in Sources */,
 				326729327168E46CFB2F65D4 /* UIViewController+ChildrenSpec.swift in Sources */,
+				8C0ADD0A222D60C8005FCD84 /* VerifyTransitionsSpec.swift in Sources */,
 				32672536137E871ECBF3C09E /* ShoppingBarControllerSpec.swift in Sources */,
 				8C321DFC2227F4C5004F9B14 /* SetUpTransitioningTest.swift in Sources */,
 				32672B5CC1EB0A1A7BA9DC65 /* VinylPageControllerSpec.swift in Sources */,
@@ -1811,6 +1822,7 @@
 				32672890143C6FB5A21681CB /* VinylDetailsControllerStub.swift in Sources */,
 				3267278504A48F966FB0541B /* BuyAnimatorSpy.swift in Sources */,
 				8C07CD1022257F3000036899 /* UIViewControllerContextTransitioningSpy.swift in Sources */,
+				8C0ADD0C222D6717005FCD84 /* AnimatedTransitioningSpec.swift in Sources */,
 				8C321DFF2227F4E5004F9B14 /* VerifyTransitions.swift in Sources */,
 				32672F62F5B8A34B3A4B03C1 /* VinylCollectionControllerStub.swift in Sources */,
 				32672C8D08CD82F16A9EF700 /* VinylPagePushAnimatorSpec.swift in Sources */,

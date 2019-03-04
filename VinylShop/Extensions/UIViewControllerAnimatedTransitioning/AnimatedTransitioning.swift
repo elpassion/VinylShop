@@ -7,7 +7,7 @@ protocol AnimatedTransitioning: UIViewControllerAnimatedTransitioning {
 extension AnimatedTransitioning {
 
     var duration: TimeInterval {
-        return transitionDuration(using: nil)
+        return allAnimators.map { $0.duration }.max() ?? transitionDuration(using: nil)
     }
 
 }

@@ -11,13 +11,13 @@ func verifyTransition(sut: AnimatedTransitioning,
                       file: StaticString = #file,
                       testName: String = #function,
                       line: UInt = #line) {
-    let progressTotal = Double(fractionComplete) * sut.duration
-
     sut.animateTransition(using: context)
+
+    let duration = Double(fractionComplete) * sut.duration
 
     sut.allAnimators.forEach { animator in
         animator.pauseAnimation()
-        animator.fractionComplete = progressToPlay(in: animator, withProgressTotal: progressTotal)
+        animator.fractionComplete = fractionCompleted(animationDuration: animator.duration, totalDuration: duration)
     }
 
     assertSnapshot(
@@ -31,7 +31,7 @@ func verifyTransition(sut: AnimatedTransitioning,
     )
 }
 
-private func progressToPlay(in animator: UIViewPropertyAnimator, withProgressTotal progress: Double) -> CGFloat {
-    let progressToPlay = animator.duration - progress / animator.duration
-    return CGFloat(max(0, min(1 - progressToPlay, 1)))
+func fractionCompleted(animationDuration: Double, totalDuration: Double) -> CGFloat {
+    let leftToPlay = (animationDuration - totalDuration) / animationDuration
+    return min(1, CGFloat(1 - leftToPlay))
 }
