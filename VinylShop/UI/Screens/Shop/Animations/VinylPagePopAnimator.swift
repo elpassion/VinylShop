@@ -24,6 +24,7 @@ class VinylPagePopAnimator: NSObject, AnimatedTransitioning {
         }
 
         let headerView = context.pageController.detailsController.detailsView.headerView
+
         context.coverSnapshotView.frame = context.pageController.view.convert(
             headerView.coverImageView.frame,
             from: headerView
@@ -33,6 +34,8 @@ class VinylPagePopAnimator: NSObject, AnimatedTransitioning {
         containerView.addSubview(context.shopController.view)
         containerView.addSubview(context.pageController.view)
         containerView.addSubview(context.coverSnapshotView)
+
+        headerView.coverImageView.alpha = 0.0
 
         let vinylPageAnimator = makeVinylPageAnimator(view: context.pageController.view)
         let headerAnimator = makeHeaderAnimator(view: headerView)
@@ -107,7 +110,7 @@ class VinylPagePopAnimator: NSObject, AnimatedTransitioning {
     private func makeVinylAnimator(view: UIView, toCenter: CGPoint) -> UIViewPropertyAnimator {
         let duration = self.duration
 
-        return UIViewPropertyAnimator(duration: 0.46, curve: .easeInOut) {
+        return UIViewPropertyAnimator(duration: duration, curve: .easeInOut) {
             UIView.keyframeAnimation(duration: duration) {
                 UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.46 / duration) {
                     view.center.x = toCenter.x
