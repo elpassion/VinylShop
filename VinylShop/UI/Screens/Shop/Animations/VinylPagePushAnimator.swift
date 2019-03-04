@@ -77,16 +77,13 @@ class VinylPagePushAnimator: NSObject, AnimatedTransitioning {
     }
 
     private func makeHeaderAnimator(view: VinylDetailsHeaderView) -> UIViewPropertyAnimator {
-        let velocity = CGVector(dx: 0, dy: 20)
-        let timingParameters = UISpringTimingParameters(mass: 1, stiffness: 100, damping: 20, initialVelocity: velocity)
-        let frame = view.frame
-        view.frame = CGRect(origin: frame.origin, size: CGSize(width: frame.width, height: frame.height + 30))
+        view.frame = view.frame.enlarged(height: 30)
         view.alpha = 0.0
 
-        let animator = UIViewPropertyAnimator(duration: 0.3, timingParameters: timingParameters)
+        let animator = UIViewPropertyAnimator(duration: 0.3, timingParameters: UISpringTimingParameters.headerTiming)
         animator.addAnimations {
             view.alpha = 1.0
-            view.frame = frame
+            view.frame = view.frame.enlarged(height: -30)
         }
 
         return animator
@@ -121,12 +118,11 @@ class VinylPagePushAnimator: NSObject, AnimatedTransitioning {
         let duration = self.duration
         view.center.x += 20
         view.alpha = 0.0
+
         return UIViewPropertyAnimator(duration: duration, curve: .easeInOut) {
-            UIView.keyframeAnimation(duration: duration) {
-                UIView.addKeyframe(withRelativeStartTime: 0.3 / duration, relativeDuration: 0.3 / duration) {
-                    view.center.x -= 20
-                    view.alpha = 1.0
-                }
+            UIView.delayedKeyframeAnimation(relativeDuration: 0.3 / duration, totalDuration: duration, delay: 0.3) {
+                view.center.x -= 20
+                view.alpha = 1.0
             }
         }
     }
