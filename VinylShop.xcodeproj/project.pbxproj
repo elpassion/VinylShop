@@ -159,6 +159,8 @@
 		8C0ADCFF222D38BA005FCD84 /* VinylPagePushAnimatorContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0ADCFE222D38BA005FCD84 /* VinylPagePushAnimatorContext.swift */; };
 		8C0ADD02222D3CCC005FCD84 /* UISpringTimingParameters+HeaderTiming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0ADD01222D3CCC005FCD84 /* UISpringTimingParameters+HeaderTiming.swift */; };
 		8C0ADD04222D3E0A005FCD84 /* CGRect+Enlarged.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0ADD03222D3E0A005FCD84 /* CGRect+Enlarged.swift */; };
+		8C0ADD06222D42C3005FCD84 /* VinylPagePopAnimatorContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0ADD05222D42C3005FCD84 /* VinylPagePopAnimatorContext.swift */; };
+		8C0ADD08222D42F2005FCD84 /* FindVinylCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0ADD07222D42F2005FCD84 /* FindVinylCell.swift */; };
 		8C2243C32202125600C3470B /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C2243B52202125600C3470B /* Nunito-Bold.ttf */; };
 		8C2243C42202125600C3470B /* Nunito-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C2243B62202125600C3470B /* Nunito-ExtraBoldItalic.ttf */; };
 		8C2243C52202125600C3470B /* Nunito-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C2243B72202125600C3470B /* Nunito-Black.ttf */; };
@@ -382,6 +384,8 @@
 		8C0ADCFE222D38BA005FCD84 /* VinylPagePushAnimatorContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinylPagePushAnimatorContext.swift; sourceTree = "<group>"; };
 		8C0ADD01222D3CCC005FCD84 /* UISpringTimingParameters+HeaderTiming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISpringTimingParameters+HeaderTiming.swift"; sourceTree = "<group>"; };
 		8C0ADD03222D3E0A005FCD84 /* CGRect+Enlarged.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Enlarged.swift"; sourceTree = "<group>"; };
+		8C0ADD05222D42C3005FCD84 /* VinylPagePopAnimatorContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinylPagePopAnimatorContext.swift; sourceTree = "<group>"; };
+		8C0ADD07222D42F2005FCD84 /* FindVinylCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindVinylCell.swift; sourceTree = "<group>"; };
 		8C2243B52202125600C3470B /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		8C2243B62202125600C3470B /* Nunito-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		8C2243B72202125600C3470B /* Nunito-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Black.ttf"; sourceTree = "<group>"; };
@@ -1229,6 +1233,8 @@
 			isa = PBXGroup;
 			children = (
 				8C0ADCFE222D38BA005FCD84 /* VinylPagePushAnimatorContext.swift */,
+				8C0ADD05222D42C3005FCD84 /* VinylPagePopAnimatorContext.swift */,
+				8C0ADD07222D42F2005FCD84 /* FindVinylCell.swift */,
 			);
 			path = Context;
 			sourceTree = "<group>";
@@ -1693,6 +1699,7 @@
 				326725762C34E9A02FABB632 /* VinylDetailsGenreView.swift in Sources */,
 				32672EB5DCEEDB6EA2A60657 /* VinylDetailsLargeFeatureView.swift in Sources */,
 				32672DAAAFABAE6711F17AA2 /* VinylDetailsSmallFeatureView.swift in Sources */,
+				8C0ADD06222D42C3005FCD84 /* VinylPagePopAnimatorContext.swift in Sources */,
 				326720D78C53B7FBEC6EB6DE /* VinylDetailsStyles.swift in Sources */,
 				32672A0D51F7968FAA01C187 /* Side.swift in Sources */,
 				32672D0ED6B44330858C4E0A /* UICollectionView+Dequeue.swift in Sources */,
@@ -1754,6 +1761,7 @@
 				32672DC7360EAD4D1D12F32F /* GoToAnimationControllerFactory.swift in Sources */,
 				326723EE795187B6404F9F65 /* VinylPagePushAnimator.swift in Sources */,
 				32672A9A865DBA9C8D6748B5 /* VinylPagePopAnimator.swift in Sources */,
+				8C0ADD08222D42F2005FCD84 /* FindVinylCell.swift in Sources */,
 				3267247F1165A2B33FE64AE0 /* GoBackAnimationControllerFactory.swift in Sources */,
 				326724431490722AC400C529 /* RecommendedVinylsRepository.swift in Sources */,
 				32672D4002EB54227F5A9C1C /* VinylRepository.swift in Sources */,

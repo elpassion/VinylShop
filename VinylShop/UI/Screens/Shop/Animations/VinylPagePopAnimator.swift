@@ -1,7 +1,7 @@
 import Anchorage
 import UIKit
 
-class VinylPagePopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
+class VinylPagePopAnimator: NSObject, AnimatedTransitioning {
 
     let vinylID: Int
 
@@ -9,72 +9,61 @@ class VinylPagePopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         self.vinylID = vinylID
     }
 
-    // MARK: - UIViewControllerAnimatedTransitioning
+    // MARK: - AnimatedTransitioning
+
+    var allAnimators: [UIViewPropertyAnimator] = []
 
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.83
     }
 
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        guard let shopController = transitionContext.viewController(forKey: .to) as? ShopController,
-              let pageController = transitionContext.viewController(forKey: .from) as? VinylPageController,
-              let newController = shopController.newController as? VinylCollectionController,
-              let recommendedController = shopController.recommendedController as? VinylCollectionController else {
+        guard let context = VinylPagePopAnimatorContext(vinylID: vinylID, transitionContext: transitionContext) else {
+            transitionContext.complete()
             return
         }
 
-        let vinylCell = [newController, recommendedController].compactMap { $0.visibleCell(forVinylID: vinylID) }.first
-        let headerView = pageController.detailsController.detailsView.headerView
-
-        guard let cell = vinylCell,
-              let coverSnapshot = headerView.coverImageView.snapshotView(afterScreenUpdates: true) else {
-            return
-        }
-
-        coverSnapshot.frame = pageController.view.convert(headerView.coverImageView.frame, from: headerView)
+        let headerView = context.pageController.detailsController.detailsView.headerView
+        context.coverSnapshotView.frame = context.pageController.view.convert(
+            headerView.coverImageView.frame,
+            from: headerView
+        )
 
         let containerView = transitionContext.containerView
-        containerView.addSubview(shopController.view)
-        containerView.addSubview(pageController.view)
-        containerView.addSubview(coverSnapshot)
+        containerView.addSubview(context.shopController.view)
+        containerView.addSubview(context.pageController.view)
+        containerView.addSubview(context.coverSnapshotView)
 
-        let vinylPageAnimator = makeVinylPageAnimator(view: pageController.view)
-        vinylPageAnimator.startAnimation()
-
+        let vinylPageAnimator = makeVinylPageAnimator(view: context.pageController.view)
         let headerAnimator = makeHeaderAnimator(view: headerView)
-        headerAnimator.startAnimation()
-
         let vinylAnimator = makeVinylAnimator(view: headerView.vinylView, toCenter: headerView.coverImageView.center)
-        vinylAnimator.startAnimation()
-
         let arrowAnimator = makeArrowAnimator(view: headerView.backButton)
-        arrowAnimator.startAnimation()
 
-        let coverFrame = shopController.view.convert(cell.coverImageView.frame, from: cell.contentView)
-        let coverAnimator = makeCoverAnimator(view: coverSnapshot, to: coverFrame)
+        let coverFrame = context.shopController.view.convert(
+            context.vinylCell.coverImageView.frame,
+            from: context.vinylCell.contentView
+        )
+
+        let coverAnimator = makeCoverAnimator(view: context.coverSnapshotView, to: coverFrame)
         coverAnimator.addCompletion { _ in
-            coverSnapshot.removeFromSuperview()
-            transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+            context.coverSnapshotView.removeFromSuperview()
+            transitionContext.complete()
         }
-        coverAnimator.startAnimation()
 
         headerView.coverImageView.frame = .zero
+
+        allAnimators = [vinylPageAnimator, headerAnimator, vinylAnimator, arrowAnimator, coverAnimator]
+        allAnimators.forEach { $0.startAnimation() }
     }
 
     // MARK: - Private
-
-    private var duration: Double {
-        return transitionDuration(using: nil)
-    }
 
     private func makeVinylPageAnimator(view: UIView) -> UIViewPropertyAnimator {
         let duration = self.duration
 
         let animator = UIViewPropertyAnimator(duration: duration, curve: .easeInOut) {
-            UIView.keyframeAnimation(duration: duration) {
-                UIView.addKeyframe(withRelativeStartTime: 0.73 / duration, relativeDuration: 0.1 / duration) {
-                    view.alpha = 0.0
-                }
+            UIView.delayedKeyframeAnimation(relativeDuration: 0.1 / duration, totalDuration: duration, delay: 0.73) {
+                view.alpha = 0.0
             }
         }
 
@@ -88,17 +77,17 @@ class VinylPagePopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
 
     private func makeHeaderAnimator(view: VinylDetailsHeaderView) -> UIViewPropertyAnimator {
         let duration = self.duration
-        let velocity = CGVector(dx: 0, dy: 20)
-        let timingParameters = UISpringTimingParameters(mass: 1, stiffness: 100, damping: 20, initialVelocity: velocity)
         let frame = view.frame
 
-        let animator = UIViewPropertyAnimator(duration: duration, timingParameters: timingParameters)
+        let animator = UIViewPropertyAnimator(
+            duration: duration,
+            timingParameters: UISpringTimingParameters.headerTiming
+        )
+
         animator.addAnimations {
-            UIView.keyframeAnimation(duration: duration) {
-                UIView.addKeyframe(withRelativeStartTime: 0.53 / duration, relativeDuration: 0.3) {
-                    view.alpha = 0.0
-                    view.frame = CGRect(origin: frame.origin, size: CGSize(width: frame.width, height: 0))
-                }
+            UIView.delayedKeyframeAnimation(relativeDuration: 0.3, totalDuration: duration, delay: 0.53) {
+                view.alpha = 0.0
+                view.frame = CGRect(origin: frame.origin, size: CGSize(width: frame.width, height: 0))
             }
         }
 
@@ -109,10 +98,8 @@ class VinylPagePopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         let duration = self.duration
 
         return UIViewPropertyAnimator(duration: duration, curve: .easeInOut) {
-            UIView.keyframeAnimation(duration: duration) {
-                UIView.addKeyframe(withRelativeStartTime: 0.53 / duration, relativeDuration: 0.3 / duration) {
-                    view.frame = frame
-                }
+            UIView.delayedKeyframeAnimation(relativeDuration: 0.3 / duration, totalDuration: duration, delay: 0.53) {
+                view.frame = frame
             }
         }
     }
@@ -137,11 +124,9 @@ class VinylPagePopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         let duration = self.duration
 
         return UIViewPropertyAnimator(duration: duration, curve: .easeInOut) {
-            UIView.keyframeAnimation(duration: duration) {
-                UIView.addKeyframe(withRelativeStartTime: 0.23 / duration, relativeDuration: 0.3 / duration) {
-                    view.center.x += 20
-                    view.alpha = 0.0
-                }
+            UIView.delayedKeyframeAnimation(relativeDuration: 0.3 / duration, totalDuration: duration, delay: 0.23) {
+                view.center.x += 20
+                view.alpha = 0.0
             }
         }
     }
