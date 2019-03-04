@@ -1114,8 +1114,8 @@
 		32672EF6F3A2AD29CA181E14 /* Doubles */ = {
 			isa = PBXGroup;
 			children = (
-				32672756B07ADBBFA8DACFB9 /* NavigationControllerSpy.swift */,
 				8C0ADD0D222D678F005FCD84 /* AnimatorStub.swift */,
+				32672756B07ADBBFA8DACFB9 /* NavigationControllerSpy.swift */,
 			);
 			path = Doubles;
 			sourceTree = "<group>";
@@ -1239,9 +1239,9 @@
 		8C0ADCFD222D38AE005FCD84 /* Context */ = {
 			isa = PBXGroup;
 			children = (
-				8C0ADCFE222D38BA005FCD84 /* VinylPagePushAnimatorContext.swift */,
-				8C0ADD05222D42C3005FCD84 /* VinylPagePopAnimatorContext.swift */,
 				8C0ADD07222D42F2005FCD84 /* FindVinylCell.swift */,
+				8C0ADD05222D42C3005FCD84 /* VinylPagePopAnimatorContext.swift */,
+				8C0ADCFE222D38BA005FCD84 /* VinylPagePushAnimatorContext.swift */,
 			);
 			path = Context;
 			sourceTree = "<group>";
