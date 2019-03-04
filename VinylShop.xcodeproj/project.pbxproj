@@ -970,8 +970,8 @@
 		32672B767B4C0076BDB34054 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
-				8C0ADD00222D3CB9005FCD84 /* Extensions */,
 				8C0ADCFD222D38AE005FCD84 /* Context */,
+				8C0ADD00222D3CB9005FCD84 /* Extensions */,
 				326721548FB5FB37EB24E6CE /* VinylPagePopAnimator.swift */,
 				326724252B9F2EE9DFF895A7 /* VinylPagePopAnimatorSpec.swift */,
 				32672B359F95427D2BA4A0C0 /* VinylPagePushAnimator.swift */,
@@ -1236,8 +1236,8 @@
 		8C0ADD00222D3CB9005FCD84 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				8C0ADD01222D3CCC005FCD84 /* UISpringTimingParameters+HeaderTiming.swift */,
 				8C0ADD03222D3E0A005FCD84 /* CGRect+Enlarged.swift */,
+				8C0ADD01222D3CCC005FCD84 /* UISpringTimingParameters+HeaderTiming.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
