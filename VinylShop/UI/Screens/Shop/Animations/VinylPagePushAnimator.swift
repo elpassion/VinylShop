@@ -96,15 +96,14 @@ class VinylPagePushAnimator: NSObject, AnimatedTransitioning {
     }
 
     private func makeVinylAnimator(view: UIView, fromCenter: CGPoint) -> UIViewPropertyAnimator {
-        let center = view.center
-        view.alpha = 0.0
-        view.center.x = fromCenter.x
         let duration = self.duration
+        view.alpha = 0.0
+        view.transform = CGAffineTransform(translationX: fromCenter.x - view.center.x, y: 0)
 
         return UIViewPropertyAnimator(duration: duration, curve: .easeInOut) {
             UIView.keyframeAnimation(duration: duration) {
                 UIView.addKeyframe(withRelativeStartTime: 0.37 / duration, relativeDuration: 0.46 / duration) {
-                    view.center.x = center.x
+                    view.transform = CGAffineTransform.identity
                 }
 
                 UIView.addKeyframe(withRelativeStartTime: 0.4 / duration, relativeDuration: 0.08 / duration) {
@@ -116,12 +115,12 @@ class VinylPagePushAnimator: NSObject, AnimatedTransitioning {
 
     private func makeArrowAnimator(view: UIView) -> UIViewPropertyAnimator {
         let duration = self.duration
-        view.center.x += 20
+        view.transform = CGAffineTransform(translationX: 20, y: 0)
         view.alpha = 0.0
 
         return UIViewPropertyAnimator(duration: duration, curve: .easeInOut) {
             UIView.delayedKeyframeAnimation(relativeDuration: 0.3 / duration, totalDuration: duration, delay: 0.3) {
-                view.center.x -= 20
+                view.transform = CGAffineTransform.identity
                 view.alpha = 1.0
             }
         }
