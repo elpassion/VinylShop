@@ -1,7 +1,7 @@
 import Anchorage
 import UIKit
 
-class VinylPagePushAnimator: NSObject, UIViewControllerAnimatedTransitioning {
+class VinylPagePushAnimator: NSObject, AnimatedTransitioning {
 
     let vinylID: Int
 
@@ -9,7 +9,9 @@ class VinylPagePushAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         self.vinylID = vinylID
     }
 
-    // MARK: - UIViewControllerAnimatedTransitioning
+    // MARK: - AnimatedTransitioning
+
+    var allAnimators: [UIViewPropertyAnimator] = []
 
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.83
@@ -20,6 +22,7 @@ class VinylPagePushAnimator: NSObject, UIViewControllerAnimatedTransitioning {
               let pageController = transitionContext.viewController(forKey: .to) as? VinylPageController,
               let newController = shopController.newController as? VinylCollectionController,
               let recommendedController = shopController.recommendedController as? VinylCollectionController else {
+            transitionContext.complete()
             return
         }
 
@@ -46,10 +49,8 @@ class VinylPagePushAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         headerView.vinylView.alpha = 0.0
 
         let shopAnimator = makeShopAnimator(view: shopController.view)
-        shopAnimator.startAnimation()
 
         let headerAnimator = makeHeaderAnimator(view: headerView)
-        headerAnimator.startAnimation()
 
         let vinylAnimator = makeVinylAnimator(view: headerView.vinylView, fromCenter: headerView.coverImageView.center)
         vinylAnimator.addCompletion { _ in
@@ -57,21 +58,17 @@ class VinylPagePushAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             cellCoverSnapshot.removeFromSuperview()
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         }
-        vinylAnimator.startAnimation()
 
         let arrowAnimator = makeArrowAnimator(view: headerView.backButton)
-        arrowAnimator.startAnimation()
 
         let coverFrame = pageController.view.convert(headerView.coverImageView.frame, from: headerView)
         let cellAnimator = makeCellAnimator(view: cellCoverSnapshot, to: coverFrame)
-        cellAnimator.startAnimation()
+
+        allAnimators = [shopAnimator, headerAnimator, vinylAnimator, arrowAnimator, cellAnimator]
+        allAnimators.forEach { $0.startAnimation() }
     }
 
     // MARK: - Private
-
-    private var duration: Double {
-        return transitionDuration(using: nil)
-    }
 
     private func makeShopAnimator(view: UIView) -> UIViewPropertyAnimator {
         let animator = UIViewPropertyAnimator(duration: 0.1, curve: .easeInOut) {
@@ -131,7 +128,6 @@ class VinylPagePushAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         let duration = self.duration
         view.center.x += 20
         view.alpha = 0.0
-
         return UIViewPropertyAnimator(duration: duration, curve: .easeInOut) {
             UIView.keyframeAnimation(duration: duration) {
                 UIView.addKeyframe(withRelativeStartTime: 0.3 / duration, relativeDuration: 0.3 / duration) {

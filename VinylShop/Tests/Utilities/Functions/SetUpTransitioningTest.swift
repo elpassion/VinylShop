@@ -1,4 +1,6 @@
+@testable import VinylShop
 import SnapshotTesting
+import SpecTools
 import UIKit
 
 func setUpTransitioningTest(from: UIViewController,
@@ -6,6 +8,7 @@ func setUpTransitioningTest(from: UIViewController,
                             using context: UIViewControllerContextTransitioningSpy,
                             in window: UIWindow) {
     let bounds = CGRect(origin: .zero, size: ViewImageConfig.iPhoneX.size ?? .zero)
+    from.spec.prepare.set(viewSize: bounds.size)
 
     context.containerView.frame = bounds
     context.stubbedViewControllerFrom = from
