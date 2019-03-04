@@ -49,11 +49,10 @@ class VinylPagePopAnimator: NSObject, AnimatedTransitioning {
 
         let coverAnimator = makeCoverAnimator(view: context.coverSnapshotView, to: coverFrame)
         coverAnimator.addCompletion { _ in
+            headerView.coverImageView.alpha = 1.0
             context.coverSnapshotView.removeFromSuperview()
             transitionContext.complete()
         }
-
-        headerView.coverImageView.frame = .zero
 
         allAnimators = [vinylPageAnimator, headerAnimator, vinylAnimator, arrowAnimator, coverAnimator]
         allAnimators.forEach { $0.startAnimation() }

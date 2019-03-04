@@ -9,15 +9,14 @@ struct VinylPagePopAnimatorContext {
     init?(vinylID: Int, transitionContext: UIViewControllerContextTransitioning) {
         guard let pageController = transitionContext.viewController(forKey: .from) as? VinylPageController,
               let shopController = transitionContext.viewController(forKey: .to) as? ShopController,
-              let vinylCell = findVinylCell(forVinylID: vinylID, in: shopController),
-              let coverSnapshotView = pageController.coverImageView.snapshotView(afterScreenUpdates: true) else {
+              let vinylCell = findVinylCell(forVinylID: vinylID, in: shopController) else {
             return nil
         }
 
         self.pageController = pageController
         self.shopController = shopController
         self.vinylCell = vinylCell
-        self.coverSnapshotView = coverSnapshotView
+        self.coverSnapshotView = UIImageView(image: pageController.coverImageView.image)
     }
 
 }
