@@ -5,7 +5,7 @@ class Environment {
     static let shared: Environment = Environment()
 
     lazy var navigationController: UINavigationController = {
-        let shopController = ShopController(vinyl: .shotDetails)
+        let shopController = ShopController(details: .shotDetails)
         let navigationController = UINavigationController(rootViewController: shopController)
         navigationController.navigationBar.isHidden = true
 

@@ -20,21 +20,21 @@ class NavigationEnvironment: NSObject, UINavigationControllerDelegate {
 
     // MARK: - Testable properties
 
-    lazy var goToRouteExecutor: (Route) -> Void = { [weak self] route in
-        self?.navigationStack.append(route)
-        self?.currentAnimationController = makeGoToAnimationController(for: route)
+    lazy var goToRouteExecutor: (Route) -> Void = { [unowned self] route in
+        self.navigationStack.append(route)
+        self.currentAnimationController = makeGoToAnimationController(for: route)
 
         let controller = makeController(for: route)
-        let currentStack = self?.navigationController.viewControllers ?? []
-        self?.navigationController.setViewControllers(currentStack + [controller], animated: true)
+        let currentStack = self.navigationController.viewControllers
+        self.navigationController.setViewControllers(currentStack + [controller], animated: true)
     }
 
-    lazy var goBackExecutor: () -> Void = { [weak self] in
-        let route = self?.navigationStack.popLast()
-        self?.currentAnimationController = route.flatMap { makeGoBackAnimationController(for: $0) }
+    lazy var goBackExecutor: () -> Void = { [unowned self] in
+        let route = self.navigationStack.popLast()
+        self.currentAnimationController = route.flatMap { makeGoBackAnimationController(for: $0) }
 
-        let currentStack = self?.navigationController.viewControllers ?? []
-        self?.navigationController.setViewControllers(Array(currentStack.dropLast()), animated: true)
+        let currentStack = self.navigationController.viewControllers
+        self.navigationController.setViewControllers(Array(currentStack.dropLast()), animated: true)
     }
 
     // MARK: - UINavigationControllerDelegate

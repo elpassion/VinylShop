@@ -4,12 +4,12 @@ class ShopController: UIViewController {
 
     typealias RecommendedFactory = (ShopDetails) -> VinylCollectionControlling
 
-    init(vinyl: ShopDetails,
+    init(details: ShopDetails,
          newFactory: @escaping (ShopDetails) -> VinylCollectionControlling = newAlbumsControllerFactory(),
          genresFactory: @escaping (ShopDetails) -> UIViewController = { GenresController(vinyl: $0) },
          recommendedFactory: @escaping RecommendedFactory = shopRecommendedControllerFactory(),
          environment: Environment = .shared) {
-        self.vinyl = vinyl
+        self.details = details
         self.newFactory = newFactory
         self.genresFactory = genresFactory
         self.recommendedFactory = recommendedFactory
@@ -23,9 +23,9 @@ class ShopController: UIViewController {
 
     // MARK: - Child controllers
 
-    lazy var newController: VinylCollectionControlling = newFactory(vinyl)
-    lazy var genresController: UIViewController = genresFactory(vinyl)
-    lazy var recommendedController: VinylCollectionControlling = recommendedFactory(vinyl)
+    lazy var newController: VinylCollectionControlling = newFactory(details)
+    lazy var genresController: UIViewController = genresFactory(details)
+    lazy var recommendedController: VinylCollectionControlling = recommendedFactory(details)
 
     // MARK: - Lifecycle
 
@@ -47,7 +47,7 @@ class ShopController: UIViewController {
 
     // MARK: - Private
 
-    private let vinyl: ShopDetails
+    private let details: ShopDetails
     private let newFactory: (ShopDetails) -> VinylCollectionControlling
     private let genresFactory: (ShopDetails) -> UIViewController
     private let recommendedFactory: RecommendedFactory

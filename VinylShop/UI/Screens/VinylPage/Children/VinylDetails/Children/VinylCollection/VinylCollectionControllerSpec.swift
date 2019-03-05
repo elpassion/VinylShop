@@ -19,6 +19,12 @@ class VinylCollectionControllerSpec: QuickSpec {
                 sut = nil
             }
 
+            describe("required initializer") {
+                it("should return nil") {
+                    expect(VinylCollectionController(coder: NSCoder())).to(beNil())
+                }
+            }
+
             describe("view did load") {
                 beforeEach {
                     _ = sut.view
@@ -113,20 +119,35 @@ class VinylCollectionControllerSpec: QuickSpec {
 
                     beforeEach {
                         sut.spec.prepare.set(viewSize: .iPhone5)
-                        cell = sut.visibleCell(forVinylID: 2)
                     }
 
                     afterEach {
                         cell = nil
                     }
 
-                    it("should return a cell") {
-                        expect(cell).toNot(beNil())
+                    describe("with existing and visible vinyl ID") {
+                        beforeEach {
+                            cell = sut.visibleCell(forVinylID: 2)
+                        }
+
+                        it("should return a cell") {
+                            expect(cell).toNot(beNil())
+                        }
+
+                        it("should return cell for Stromae - Papaoutai") {
+                            expect(cell?.titleLabel.text) == "Papaoutai"
+                            expect(cell?.bandLabel.text) == "Stromae"
+                        }
                     }
 
-                    it("should return cell for Stromae - Papaoutai") {
-                        expect(cell?.titleLabel.text) == "Papaoutai"
-                        expect(cell?.bandLabel.text) == "Stromae"
+                    describe("with non-existing vinyl ID") {
+                        beforeEach {
+                            cell = sut.visibleCell(forVinylID: 6_666)
+                        }
+
+                        it("should NOT return a cell") {
+                            expect(cell).to(beNil())
+                        }
                     }
                 }
             }

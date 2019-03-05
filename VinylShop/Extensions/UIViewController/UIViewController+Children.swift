@@ -20,12 +20,4 @@ extension UIViewController {
         childViewController.didMove(toParent: self)
     }
 
-    // MARK: - Unembedding
-
-    public func unembed(childViewController: UIViewController) {
-        childViewController.willMove(toParent: nil)
-        childViewController.view.removeFromSuperview()
-        childViewController.removeFromParent()
-    }
-
 }

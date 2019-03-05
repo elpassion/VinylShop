@@ -62,7 +62,7 @@ class VinylPagePushAnimatorSpec: QuickSpec {
                         window = UIWindow(frame: .zero)
 
                         setUpTransitioningTest(
-                            from: ShopController(vinyl: .shotDetails),
+                            from: ShopController(details: .shotDetails),
                             to: VinylPageController(vinylID: Vinyl.testVinyl.id),
                             using: contextSpy,
                             in: window

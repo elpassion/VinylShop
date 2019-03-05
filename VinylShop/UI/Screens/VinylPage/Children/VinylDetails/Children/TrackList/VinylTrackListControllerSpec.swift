@@ -18,6 +18,12 @@ class VinylTrackListControllerSpec: QuickSpec {
                 sut = nil
             }
 
+            describe("required initializer") {
+                it("should return nil") {
+                    expect(VinylTrackListController(coder: NSCoder())).to(beNil())
+                }
+            }
+
             describe("view did load") {
                 beforeEach {
                     _ = sut.view

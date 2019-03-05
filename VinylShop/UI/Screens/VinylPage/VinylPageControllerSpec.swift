@@ -14,6 +14,12 @@ class VinylPageControllerSpec: QuickSpec {
                 sut = nil
             }
 
+            describe("required initializer") {
+                it("should return nil") {
+                    expect(VinylPageController(coder: NSCoder())).to(beNil())
+                }
+            }
+
             context("with children controllers' stubs") {
                 var barControllerStub: ShoppingBarControllerStub!
                 var detailsControllerStub: VinylDetailsControllerStub!

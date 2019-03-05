@@ -14,6 +14,12 @@ class ShopControllerSpec: QuickSpec {
                 sut = nil
             }
 
+            describe("required initializer") {
+                it("should return nil") {
+                    expect(ShopController(coder: NSCoder())).to(beNil())
+                }
+            }
+
             context("with fake child controllers") {
                 var newAlbumsControllerStub: VinylCollectionControllerStub!
                 var genresControllerStub: UIViewController!
@@ -28,7 +34,7 @@ class ShopControllerSpec: QuickSpec {
                     environmentSpy.install()
 
                     sut = ShopController(
-                        vinyl: .shotDetails,
+                        details: .shotDetails,
                         newFactory: { _ in newAlbumsControllerStub },
                         genresFactory: { _ in genresControllerStub },
                         recommendedFactory: { _ in recommendedControllerStub }
@@ -97,7 +103,7 @@ class ShopControllerSpec: QuickSpec {
 
             context("with real child controllers") {
                 beforeEach {
-                    sut = ShopController(vinyl: .shotDetails)
+                    sut = ShopController(details: .shotDetails)
                 }
 
                 it("should match snapshot on iPhone SE") {

@@ -20,6 +20,12 @@ class ShoppingBoxControllerSpec: QuickSpec {
                 sut = nil
             }
 
+            describe("required initializer") {
+                it("should return nil") {
+                    expect(ShoppingBoxController(coder: NSCoder())).to(beNil())
+                }
+            }
+
             describe("view did load") {
                 var environmentSpy: EnvironmentSpy!
 

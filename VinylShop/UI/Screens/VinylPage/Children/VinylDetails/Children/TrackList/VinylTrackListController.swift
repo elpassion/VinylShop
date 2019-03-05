@@ -37,9 +37,10 @@ class VinylTrackListController: UIViewController, UICollectionViewDataSource,
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.row == 0 {
+        switch indexPath.row == 0 {
+        case true:
             return collectionView.cell(for: indexPath, modeling: vinyl.side(at:), with: presenter.present(side:in:))
-        } else {
+        case false:
             return collectionView.cell(for: indexPath, modeling: vinyl.track(at:), with: presenter.present(track:in:))
         }
     }
@@ -49,9 +50,10 @@ class VinylTrackListController: UIViewController, UICollectionViewDataSource,
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if indexPath.row == 0 {
+        switch indexPath.row == 0 {
+        case true:
             return CGSize(width: 222, height: 28)
-        } else {
+        case false:
             return CGSize(width: 222, height: 50)
         }
     }

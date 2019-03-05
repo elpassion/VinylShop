@@ -16,6 +16,12 @@ class GenresControllerSpec: QuickSpec {
                 sut = nil
             }
 
+            describe("required initializer") {
+                it("should return nil") {
+                    expect(GenresController(coder: NSCoder())).to(beNil())
+                }
+            }
+
             describe("view did load") {
                 beforeEach {
                     _ = sut.view

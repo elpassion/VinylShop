@@ -63,7 +63,7 @@ class VinylPagePopAnimatorSpec: QuickSpec {
 
                         setUpTransitioningTest(
                             from: VinylPageController(vinylID: Vinyl.testVinyl.id),
-                            to: ShopController(vinyl: .shotDetails),
+                            to: ShopController(details: .shotDetails),
                             using: contextSpy,
                             in: window,
                             direction: .backwards
