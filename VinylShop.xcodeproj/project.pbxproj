@@ -811,10 +811,10 @@
 		326726D921A9EF506933D5A0 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
-				8C1508A0222EBB7900A18590 /* Keyframes */,
-				8C150885222EB08C00A18590 /* Functions */,
 				8C15087B222EA20B00A18590 /* Calculations */,
 				8C07CD14222583A200036899 /* Context */,
+				8C150885222EB08C00A18590 /* Functions */,
+				8C1508A0222EBB7900A18590 /* Keyframes */,
 				3267215F54193B2A2A11FF89 /* BuyAnimating.swift */,
 				32672FBA0E6E6D0118E72CEB /* BuyAnimator.swift */,
 				3267206F2A3C6759C499BC5A /* ShoppingBoxDismissAnimator.swift */,
@@ -1062,8 +1062,8 @@
 				32672D167E7E15AFAA016FF5 /* UICollectionView+SizeAccess.swift */,
 				32672D621DD1E0C3CD3B511C /* UIControl+SimulateTap.swift */,
 				8C321DF72227EF5D004F9B14 /* UIView+Snapshot.swift */,
-				8C7C3CB8222018CB0019F094 /* Vinyl+TestVinyl.swift */,
 				8C0ADD0F222D6DDD005FCD84 /* UIViewPropertyAnimator+Stop.swift */,
+				8C7C3CB8222018CB0019F094 /* Vinyl+TestVinyl.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1273,8 +1273,8 @@
 		8C07CD14222583A200036899 /* Context */ = {
 			isa = PBXGroup;
 			children = (
-				8C07CD15222583B700036899 /* ShoppingBoxPresentationAnimationContext.swift */,
 				8C150881222EA44900A18590 /* BuyAnimationContext.swift */,
+				8C07CD15222583B700036899 /* ShoppingBoxPresentationAnimationContext.swift */,
 			);
 			path = Context;
 			sourceTree = "<group>";
@@ -1301,8 +1301,8 @@
 		8C15087B222EA20B00A18590 /* Calculations */ = {
 			isa = PBXGroup;
 			children = (
-				8C15087C222EA22200A18590 /* BuyInitialFramesCalculator.swift */,
 				8C15087E222EA25200A18590 /* BuyInitialFrames.swift */,
+				8C15087C222EA22200A18590 /* BuyInitialFramesCalculator.swift */,
 			);
 			path = Calculations;
 			sourceTree = "<group>";
@@ -1311,14 +1311,14 @@
 			isa = PBXGroup;
 			children = (
 				8C150886222EB0A000A18590 /* AnimateInitialStatePositions.swift */,
-				8C150889222EB0FB00A18590 /* HideBarViewDetails.swift */,
 				8C15088B222EB1D100A18590 /* AnimateInitialStateVisibility.swift */,
-				8C15088D222EB27000A18590 /* PresentShoppingBar.swift */,
-				8C15088F222EB37800A18590 /* HideVinylView.swift */,
 				8C150891222EB39E00A18590 /* CenterCoverView.swift */,
-				8C150893222EB41D00A18590 /* DropCoverView.swift */,
-				8C150895222EB54000A18590 /* MinimizeBasketToShoppingBar.swift */,
 				8C150897222EB59000A18590 /* CleanupBuyAnimation.swift */,
+				8C150893222EB41D00A18590 /* DropCoverView.swift */,
+				8C150889222EB0FB00A18590 /* HideBarViewDetails.swift */,
+				8C15088F222EB37800A18590 /* HideVinylView.swift */,
+				8C150895222EB54000A18590 /* MinimizeBasketToShoppingBar.swift */,
+				8C15088D222EB27000A18590 /* PresentShoppingBar.swift */,
 				8C150899222EB76A00A18590 /* ResetVinylPosition.swift */,
 				8C15089B222EB7DE00A18590 /* ShowOriginalBasket.swift */,
 				8C15089D222EB86900A18590 /* ShowVinylWithDetails.swift */,
@@ -1468,9 +1468,9 @@
 		8C4043302220761D00C9E916 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				8C150883222EA4AC00A18590 /* UIView+Converted.swift */,
 				8C07CD1722259CDD00036899 /* UIView+DelayedKeyframeAnimation.swift */,
 				8C4043312220763000C9E916 /* UIView+KeyframeAnimation.swift */,
-				8C150883222EA4AC00A18590 /* UIView+Converted.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
