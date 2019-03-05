@@ -176,7 +176,7 @@ class VinylPageControllerSpec: QuickSpec {
                     assertSnapshot(matching: sut, as: .image(on: .iPhoneXsMax))
                 }
 
-                fdescribe("buy animation") {
+                describe("buy animation") {
                     var window: FakeWindow!
 
                     beforeEach {
@@ -191,8 +191,6 @@ class VinylPageControllerSpec: QuickSpec {
                         sut.buyAnimator.allAnimators.forEach { animator in
                             animator.pauseAnimation()
                         }
-
-                        record = true
                     }
 
                     afterEach {
