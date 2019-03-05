@@ -127,6 +127,12 @@ class ShopDetails_ShotDetailsSpec: QuickSpec {
                 }
             }
         }
+
+        describe("with invalid file name") {
+            it("should crash") {
+                expect { _ = ShopDetails.readShotDetails(file: "invalid_filename") }.to(throwAssertion())
+            }
+        }
     }
 
 }

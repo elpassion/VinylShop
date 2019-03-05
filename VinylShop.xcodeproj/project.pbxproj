@@ -212,6 +212,8 @@
 		8C1508E0222ED93C00A18590 /* GenreCellSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1508DF222ED93C00A18590 /* GenreCellSpec.swift */; };
 		8C1508E2222ED94F00A18590 /* GenresViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1508E1222ED94F00A18590 /* GenresViewSpec.swift */; };
 		8C1508E4222ED97900A18590 /* ShoppingBarViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1508E3222ED97900A18590 /* ShoppingBarViewSpec.swift */; };
+		8C1508E6222EDAEE00A18590 /* ForceCastSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1508E5222EDAEE00A18590 /* ForceCastSpec.swift */; };
+		8C1508E8222EDC2200A18590 /* UIFont+ConvenienceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1508E7222EDC2200A18590 /* UIFont+ConvenienceSpec.swift */; };
 		8C2243C32202125600C3470B /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C2243B52202125600C3470B /* Nunito-Bold.ttf */; };
 		8C2243C42202125600C3470B /* Nunito-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C2243B62202125600C3470B /* Nunito-ExtraBoldItalic.ttf */; };
 		8C2243C52202125600C3470B /* Nunito-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C2243B72202125600C3470B /* Nunito-Black.ttf */; };
@@ -488,6 +490,8 @@
 		8C1508DF222ED93C00A18590 /* GenreCellSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreCellSpec.swift; sourceTree = "<group>"; };
 		8C1508E1222ED94F00A18590 /* GenresViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresViewSpec.swift; sourceTree = "<group>"; };
 		8C1508E3222ED97900A18590 /* ShoppingBarViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingBarViewSpec.swift; sourceTree = "<group>"; };
+		8C1508E5222EDAEE00A18590 /* ForceCastSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceCastSpec.swift; sourceTree = "<group>"; };
+		8C1508E7222EDC2200A18590 /* UIFont+ConvenienceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+ConvenienceSpec.swift"; sourceTree = "<group>"; };
 		8C2243B52202125600C3470B /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		8C2243B62202125600C3470B /* Nunito-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		8C2243B72202125600C3470B /* Nunito-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Black.ttf"; sourceTree = "<group>"; };
@@ -1092,6 +1096,7 @@
 			isa = PBXGroup;
 			children = (
 				3267296229946757EEAEABDE /* UIFont+Convenience.swift */,
+				8C1508E7222EDC2200A18590 /* UIFont+ConvenienceSpec.swift */,
 			);
 			path = UIFont;
 			sourceTree = "<group>";
@@ -1205,6 +1210,7 @@
 				326724162483BD5825424EF9 /* Composition.swift */,
 				32672696104257987B079EC4 /* CompositionSpec.swift */,
 				8C40431622206D9200C9E916 /* ForceCast.swift */,
+				8C1508E5222EDAEE00A18590 /* ForceCastSpec.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -2007,12 +2013,14 @@
 				3267219FF3D8B9B21891CCE2 /* UIControl+SimulateTap.swift in Sources */,
 				8C1508E4222ED97900A18590 /* ShoppingBarViewSpec.swift in Sources */,
 				326726454DC267F6BA11447B /* ShoppingBarControllerStub.swift in Sources */,
+				8C1508E8222EDC2200A18590 /* UIFont+ConvenienceSpec.swift in Sources */,
 				8C1508DA222ED8A900A18590 /* VinylPageViewSpec.swift in Sources */,
 				8C1508E2222ED94F00A18590 /* GenresViewSpec.swift in Sources */,
 				326722A597A7EC2E2F3E4BCD /* EnvironmentSpy.swift in Sources */,
 				32672B0E48BCE07AE11F27BB /* ShoppingBoxPresentationAnimatorSpec.swift in Sources */,
 				326728DF31B09B0BB2DB464C /* VinylDetailsControllerSpec.swift in Sources */,
 				32672B4D122B7AE1A5507CCD /* UICollectionView+CellAccess.swift in Sources */,
+				8C1508E6222EDAEE00A18590 /* ForceCastSpec.swift in Sources */,
 				326726E51532A8BDED6BB1D0 /* UICollectionView+SizeAccess.swift in Sources */,
 				8C1508C4222ED6F000A18590 /* VinylDetailsHeaderSmallTitleViewSpec.swift in Sources */,
 				3267265586086E28D3418644 /* VinylTrackListControllerSpec.swift in Sources */,
