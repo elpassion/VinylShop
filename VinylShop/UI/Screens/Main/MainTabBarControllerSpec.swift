@@ -17,6 +17,12 @@ class MainTabBarControllerSpec: QuickSpec {
                 sut = nil
             }
 
+            describe("required initializer") {
+                it("should return nil") {
+                    expect(MainTabBarController(coder: NSCoder())).to(beNil())
+                }
+            }
+
             describe("view did load") {
                 describe("view controllers") {
                     it("should have 5 controllers") {

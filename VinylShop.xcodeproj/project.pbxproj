@@ -209,6 +209,9 @@
 		8C1508DA222ED8A900A18590 /* VinylPageViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1508D9222ED8A900A18590 /* VinylPageViewSpec.swift */; };
 		8C1508DC222ED8D100A18590 /* ShopViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1508DB222ED8D100A18590 /* ShopViewSpec.swift */; };
 		8C1508DE222ED8E700A18590 /* ShopTitleViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1508DD222ED8E700A18590 /* ShopTitleViewSpec.swift */; };
+		8C1508E0222ED93C00A18590 /* GenreCellSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1508DF222ED93C00A18590 /* GenreCellSpec.swift */; };
+		8C1508E2222ED94F00A18590 /* GenresViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1508E1222ED94F00A18590 /* GenresViewSpec.swift */; };
+		8C1508E4222ED97900A18590 /* ShoppingBarViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1508E3222ED97900A18590 /* ShoppingBarViewSpec.swift */; };
 		8C2243C32202125600C3470B /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C2243B52202125600C3470B /* Nunito-Bold.ttf */; };
 		8C2243C42202125600C3470B /* Nunito-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C2243B62202125600C3470B /* Nunito-ExtraBoldItalic.ttf */; };
 		8C2243C52202125600C3470B /* Nunito-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C2243B72202125600C3470B /* Nunito-Black.ttf */; };
@@ -482,6 +485,9 @@
 		8C1508D9222ED8A900A18590 /* VinylPageViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinylPageViewSpec.swift; sourceTree = "<group>"; };
 		8C1508DB222ED8D100A18590 /* ShopViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewSpec.swift; sourceTree = "<group>"; };
 		8C1508DD222ED8E700A18590 /* ShopTitleViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopTitleViewSpec.swift; sourceTree = "<group>"; };
+		8C1508DF222ED93C00A18590 /* GenreCellSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreCellSpec.swift; sourceTree = "<group>"; };
+		8C1508E1222ED94F00A18590 /* GenresViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresViewSpec.swift; sourceTree = "<group>"; };
+		8C1508E3222ED97900A18590 /* ShoppingBarViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingBarViewSpec.swift; sourceTree = "<group>"; };
 		8C2243B52202125600C3470B /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		8C2243B62202125600C3470B /* Nunito-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		8C2243B72202125600C3470B /* Nunito-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Black.ttf"; sourceTree = "<group>"; };
@@ -619,6 +625,7 @@
 			isa = PBXGroup;
 			children = (
 				326721011DF0C538E0989DE3 /* ShoppingBarView.swift */,
+				8C1508E3222ED97900A18590 /* ShoppingBarViewSpec.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -989,6 +996,8 @@
 			children = (
 				32672D395C44721A2834B4B9 /* GenreCell.swift */,
 				3267210BB2FDF96929BBEC20 /* GenresView.swift */,
+				8C1508DF222ED93C00A18590 /* GenreCellSpec.swift */,
+				8C1508E1222ED94F00A18590 /* GenresViewSpec.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1973,6 +1982,7 @@
 				326725B60D2A34323456CEC7 /* AppDelegateSpec.swift in Sources */,
 				32672801CD78691A92F6EB6B /* CompositionSpec.swift in Sources */,
 				326727B2B73CAB039371B057 /* ApplianceSpec.swift in Sources */,
+				8C1508E0222ED93C00A18590 /* GenreCellSpec.swift in Sources */,
 				32672968B43BF011B44A1CAD /* CGContext+DrawImageSpec.swift in Sources */,
 				32672248680F89E556E0C4C5 /* CGContext+ResetGlobals.swift in Sources */,
 				8C1508B1222ECEA700A18590 /* ShoppingBoxItemViewSpec.swift in Sources */,
@@ -1995,8 +2005,10 @@
 				8C321E012227F518004F9B14 /* CleanUpVerifyTransition.swift in Sources */,
 				8C1508DC222ED8D100A18590 /* ShopViewSpec.swift in Sources */,
 				3267219FF3D8B9B21891CCE2 /* UIControl+SimulateTap.swift in Sources */,
+				8C1508E4222ED97900A18590 /* ShoppingBarViewSpec.swift in Sources */,
 				326726454DC267F6BA11447B /* ShoppingBarControllerStub.swift in Sources */,
 				8C1508DA222ED8A900A18590 /* VinylPageViewSpec.swift in Sources */,
+				8C1508E2222ED94F00A18590 /* GenresViewSpec.swift in Sources */,
 				326722A597A7EC2E2F3E4BCD /* EnvironmentSpy.swift in Sources */,
 				32672B0E48BCE07AE11F27BB /* ShoppingBoxPresentationAnimatorSpec.swift in Sources */,
 				326728DF31B09B0BB2DB464C /* VinylDetailsControllerSpec.swift in Sources */,

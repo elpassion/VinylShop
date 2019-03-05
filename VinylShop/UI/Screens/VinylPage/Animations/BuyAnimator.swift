@@ -43,11 +43,8 @@ class BuyAnimator: BuyAnimating {
         ]
 
         let animator = UIViewPropertyAnimator(duration: duration, curve: .linear, keyframes: keyframes, with: context)
-        animator.addCompletion { state in
-            if state == .end {
-                cleanUpBuyAnimation(context)
-            }
-
+        animator.addCompletion { _ in
+            cleanUpBuyAnimation(context)
             completion()
         }
 
