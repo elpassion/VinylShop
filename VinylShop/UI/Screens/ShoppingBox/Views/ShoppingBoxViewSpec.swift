@@ -17,6 +17,12 @@ class ShoppingBoxViewSpec: QuickSpec {
                 sut = nil
             }
 
+            describe("required initializer") {
+                it("should return nil") {
+                    expect(ShoppingBoxView(coder: NSCoder())).to(beNil())
+                }
+            }
+
             describe("swipe gesture recognizer") {
                 it("should detect swipe down") {
                     expect(sut.swipeGestureRecognizer.direction) == .down

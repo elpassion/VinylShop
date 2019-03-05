@@ -184,6 +184,31 @@
 		8C1508A2222EBB8800A18590 /* Keyframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1508A1222EBB8800A18590 /* Keyframe.swift */; };
 		8C1508A7222EBD1C00A18590 /* UIViewPropertyAnimator+Keyframes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1508A6222EBD1C00A18590 /* UIViewPropertyAnimator+Keyframes.swift */; };
 		8C1508A9222EC1FA00A18590 /* ShoppingBoxDismissAnimationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1508A8222EC1FA00A18590 /* ShoppingBoxDismissAnimationContext.swift */; };
+		8C1508AB222ECE3400A18590 /* ShoppingBoxSeparatorViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1508AA222ECE3400A18590 /* ShoppingBoxSeparatorViewSpec.swift */; };
+		8C1508AD222ECE6F00A18590 /* ShoppingBoxPriceViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1508AC222ECE6F00A18590 /* ShoppingBoxPriceViewSpec.swift */; };
+		8C1508AF222ECE8E00A18590 /* ShoppingBoxItemsViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1508AE222ECE8E00A18590 /* ShoppingBoxItemsViewSpec.swift */; };
+		8C1508B1222ECEA700A18590 /* ShoppingBoxItemViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1508B0222ECEA700A18590 /* ShoppingBoxItemViewSpec.swift */; };
+		8C1508B3222ECEBF00A18590 /* ShoppingBoxFooterViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1508B2222ECEBF00A18590 /* ShoppingBoxFooterViewSpec.swift */; };
+		8C1508B7222ED15700A18590 /* UICollectionView+VisibleCellsPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1508B6222ED15700A18590 /* UICollectionView+VisibleCellsPaths.swift */; };
+		8C1508B9222ED2F200A18590 /* UIView+ConvertedSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1508B8222ED2F200A18590 /* UIView+ConvertedSpec.swift */; };
+		8C1508BC222ED41200A18590 /* VinylSideCellSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1508BA222ED3DE00A18590 /* VinylSideCellSpec.swift */; };
+		8C1508BE222ED42300A18590 /* VinylTrackCellSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1508BD222ED42300A18590 /* VinylTrackCellSpec.swift */; };
+		8C1508C0222ED44400A18590 /* VinylTrackListViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1508BF222ED44400A18590 /* VinylTrackListViewSpec.swift */; };
+		8C1508C2222ED46300A18590 /* UICollectionView+DequeueSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1508C1222ED46300A18590 /* UICollectionView+DequeueSpec.swift */; };
+		8C1508C4222ED6F000A18590 /* VinylDetailsHeaderSmallTitleViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1508C3222ED6F000A18590 /* VinylDetailsHeaderSmallTitleViewSpec.swift */; };
+		8C1508C6222ED70B00A18590 /* VinylDetailsHeaderPriceViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1508C5222ED70B00A18590 /* VinylDetailsHeaderPriceViewSpec.swift */; };
+		8C1508C8222ED72900A18590 /* VinylDetailsHeaderLargeTitleViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1508C7222ED72900A18590 /* VinylDetailsHeaderLargeTitleViewSpec.swift */; };
+		8C1508CA222ED79000A18590 /* VinylDetailsFeaturesViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1508C9222ED79000A18590 /* VinylDetailsFeaturesViewSpec.swift */; };
+		8C1508CC222ED7BE00A18590 /* VinylDetailsGenreViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1508CB222ED7BE00A18590 /* VinylDetailsGenreViewSpec.swift */; };
+		8C1508CE222ED7D600A18590 /* VinylDetailsLargeFeatureViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1508CD222ED7D600A18590 /* VinylDetailsLargeFeatureViewSpec.swift */; };
+		8C1508D0222ED7F300A18590 /* VinylDetailsSmallFeatureViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1508CF222ED7F300A18590 /* VinylDetailsSmallFeatureViewSpec.swift */; };
+		8C1508D2222ED80E00A18590 /* VinylDetailsNotesViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1508D1222ED80E00A18590 /* VinylDetailsNotesViewSpec.swift */; };
+		8C1508D4222ED82B00A18590 /* VinylDetailsViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1508D3222ED82B00A18590 /* VinylDetailsViewSpec.swift */; };
+		8C1508D6222ED85500A18590 /* VinylCollectionCellSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1508D5222ED85500A18590 /* VinylCollectionCellSpec.swift */; };
+		8C1508D8222ED87500A18590 /* VinylCollectionViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1508D7222ED87500A18590 /* VinylCollectionViewSpec.swift */; };
+		8C1508DA222ED8A900A18590 /* VinylPageViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1508D9222ED8A900A18590 /* VinylPageViewSpec.swift */; };
+		8C1508DC222ED8D100A18590 /* ShopViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1508DB222ED8D100A18590 /* ShopViewSpec.swift */; };
+		8C1508DE222ED8E700A18590 /* ShopTitleViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1508DD222ED8E700A18590 /* ShopTitleViewSpec.swift */; };
 		8C2243C32202125600C3470B /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C2243B52202125600C3470B /* Nunito-Bold.ttf */; };
 		8C2243C42202125600C3470B /* Nunito-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C2243B62202125600C3470B /* Nunito-ExtraBoldItalic.ttf */; };
 		8C2243C52202125600C3470B /* Nunito-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C2243B72202125600C3470B /* Nunito-Black.ttf */; };
@@ -432,6 +457,31 @@
 		8C1508A1222EBB8800A18590 /* Keyframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyframe.swift; sourceTree = "<group>"; };
 		8C1508A6222EBD1C00A18590 /* UIViewPropertyAnimator+Keyframes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewPropertyAnimator+Keyframes.swift"; sourceTree = "<group>"; };
 		8C1508A8222EC1FA00A18590 /* ShoppingBoxDismissAnimationContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingBoxDismissAnimationContext.swift; sourceTree = "<group>"; };
+		8C1508AA222ECE3400A18590 /* ShoppingBoxSeparatorViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingBoxSeparatorViewSpec.swift; sourceTree = "<group>"; };
+		8C1508AC222ECE6F00A18590 /* ShoppingBoxPriceViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingBoxPriceViewSpec.swift; sourceTree = "<group>"; };
+		8C1508AE222ECE8E00A18590 /* ShoppingBoxItemsViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingBoxItemsViewSpec.swift; sourceTree = "<group>"; };
+		8C1508B0222ECEA700A18590 /* ShoppingBoxItemViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingBoxItemViewSpec.swift; sourceTree = "<group>"; };
+		8C1508B2222ECEBF00A18590 /* ShoppingBoxFooterViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingBoxFooterViewSpec.swift; sourceTree = "<group>"; };
+		8C1508B6222ED15700A18590 /* UICollectionView+VisibleCellsPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+VisibleCellsPaths.swift"; sourceTree = "<group>"; };
+		8C1508B8222ED2F200A18590 /* UIView+ConvertedSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ConvertedSpec.swift"; sourceTree = "<group>"; };
+		8C1508BA222ED3DE00A18590 /* VinylSideCellSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinylSideCellSpec.swift; sourceTree = "<group>"; };
+		8C1508BD222ED42300A18590 /* VinylTrackCellSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinylTrackCellSpec.swift; sourceTree = "<group>"; };
+		8C1508BF222ED44400A18590 /* VinylTrackListViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinylTrackListViewSpec.swift; sourceTree = "<group>"; };
+		8C1508C1222ED46300A18590 /* UICollectionView+DequeueSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+DequeueSpec.swift"; sourceTree = "<group>"; };
+		8C1508C3222ED6F000A18590 /* VinylDetailsHeaderSmallTitleViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinylDetailsHeaderSmallTitleViewSpec.swift; sourceTree = "<group>"; };
+		8C1508C5222ED70B00A18590 /* VinylDetailsHeaderPriceViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinylDetailsHeaderPriceViewSpec.swift; sourceTree = "<group>"; };
+		8C1508C7222ED72900A18590 /* VinylDetailsHeaderLargeTitleViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinylDetailsHeaderLargeTitleViewSpec.swift; sourceTree = "<group>"; };
+		8C1508C9222ED79000A18590 /* VinylDetailsFeaturesViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinylDetailsFeaturesViewSpec.swift; sourceTree = "<group>"; };
+		8C1508CB222ED7BE00A18590 /* VinylDetailsGenreViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinylDetailsGenreViewSpec.swift; sourceTree = "<group>"; };
+		8C1508CD222ED7D600A18590 /* VinylDetailsLargeFeatureViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinylDetailsLargeFeatureViewSpec.swift; sourceTree = "<group>"; };
+		8C1508CF222ED7F300A18590 /* VinylDetailsSmallFeatureViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinylDetailsSmallFeatureViewSpec.swift; sourceTree = "<group>"; };
+		8C1508D1222ED80E00A18590 /* VinylDetailsNotesViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinylDetailsNotesViewSpec.swift; sourceTree = "<group>"; };
+		8C1508D3222ED82B00A18590 /* VinylDetailsViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinylDetailsViewSpec.swift; sourceTree = "<group>"; };
+		8C1508D5222ED85500A18590 /* VinylCollectionCellSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinylCollectionCellSpec.swift; sourceTree = "<group>"; };
+		8C1508D7222ED87500A18590 /* VinylCollectionViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinylCollectionViewSpec.swift; sourceTree = "<group>"; };
+		8C1508D9222ED8A900A18590 /* VinylPageViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinylPageViewSpec.swift; sourceTree = "<group>"; };
+		8C1508DB222ED8D100A18590 /* ShopViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewSpec.swift; sourceTree = "<group>"; };
+		8C1508DD222ED8E700A18590 /* ShopTitleViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopTitleViewSpec.swift; sourceTree = "<group>"; };
 		8C2243B52202125600C3470B /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		8C2243B62202125600C3470B /* Nunito-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		8C2243B72202125600C3470B /* Nunito-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Black.ttf"; sourceTree = "<group>"; };
@@ -559,6 +609,8 @@
 			children = (
 				32672B26E1D219CBA2606945 /* VinylCollectionCell.swift */,
 				32672B3D483A74660DE3FF9A /* VinylCollectionView.swift */,
+				8C1508D5222ED85500A18590 /* VinylCollectionCellSpec.swift */,
+				8C1508D7222ED87500A18590 /* VinylCollectionViewSpec.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -764,6 +816,11 @@
 				326723B77BCBF76B8B861426 /* ShoppingBoxSeparatorView.swift */,
 				32672B3020CF2515472B6E5B /* ShoppingBoxView.swift */,
 				32672669E5AFE169C75AD5FA /* ShoppingBoxViewSpec.swift */,
+				8C1508AA222ECE3400A18590 /* ShoppingBoxSeparatorViewSpec.swift */,
+				8C1508AC222ECE6F00A18590 /* ShoppingBoxPriceViewSpec.swift */,
+				8C1508AE222ECE8E00A18590 /* ShoppingBoxItemsViewSpec.swift */,
+				8C1508B0222ECEA700A18590 /* ShoppingBoxItemViewSpec.swift */,
+				8C1508B2222ECEBF00A18590 /* ShoppingBoxFooterViewSpec.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -840,6 +897,8 @@
 			children = (
 				32672B723BD0E41979F4696A /* ShopTitleView.swift */,
 				32672D2E6FE64B61504C639B /* ShopView.swift */,
+				8C1508DB222ED8D100A18590 /* ShopViewSpec.swift */,
+				8C1508DD222ED8E700A18590 /* ShopTitleViewSpec.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -886,6 +945,9 @@
 				32672C934E2806ADCA3444AA /* VinylSideCell.swift */,
 				3267247AA481797B29942D9A /* VinylTrackCell.swift */,
 				326725DAB35E0A0DB8141CD4 /* VinylTrackListView.swift */,
+				8C1508BA222ED3DE00A18590 /* VinylSideCellSpec.swift */,
+				8C1508BD222ED42300A18590 /* VinylTrackCellSpec.swift */,
+				8C1508BF222ED44400A18590 /* VinylTrackListViewSpec.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -899,6 +961,8 @@
 				32672D4D9345A589AFC434C2 /* Presentation */,
 				32672F78F586D136CE238373 /* VinylDetailsNotesView.swift */,
 				326726980D25F18EE246DEE7 /* VinylDetailsView.swift */,
+				8C1508D1222ED80E00A18590 /* VinylDetailsNotesViewSpec.swift */,
+				8C1508D3222ED82B00A18590 /* VinylDetailsViewSpec.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -989,6 +1053,9 @@
 				32672656895B5F3FD031CC29 /* VinylDetailsHeaderSmallTitleView.swift */,
 				32672DF781DA3CCB02A9439C /* VinylDetailsHeaderView.swift */,
 				32672873E27EF142D19087BF /* VinylDetailsHeaderViewSpec.swift */,
+				8C1508C3222ED6F000A18590 /* VinylDetailsHeaderSmallTitleViewSpec.swift */,
+				8C1508C5222ED70B00A18590 /* VinylDetailsHeaderPriceViewSpec.swift */,
+				8C1508C7222ED72900A18590 /* VinylDetailsHeaderLargeTitleViewSpec.swift */,
 			);
 			path = Header;
 			sourceTree = "<group>";
@@ -1052,6 +1119,10 @@
 				32672C72B45E877758FC5F64 /* VinylDetailsGenreView.swift */,
 				32672D1A5D8151485A85BBA1 /* VinylDetailsLargeFeatureView.swift */,
 				326722E09528F17137C69441 /* VinylDetailsSmallFeatureView.swift */,
+				8C1508C9222ED79000A18590 /* VinylDetailsFeaturesViewSpec.swift */,
+				8C1508CB222ED7BE00A18590 /* VinylDetailsGenreViewSpec.swift */,
+				8C1508CD222ED7D600A18590 /* VinylDetailsLargeFeatureViewSpec.swift */,
+				8C1508CF222ED7F300A18590 /* VinylDetailsSmallFeatureViewSpec.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -1176,6 +1247,8 @@
 			isa = PBXGroup;
 			children = (
 				326722E673F35B2CADC135D0 /* UICollectionView+Dequeue.swift */,
+				8C1508B6222ED15700A18590 /* UICollectionView+VisibleCellsPaths.swift */,
+				8C1508C1222ED46300A18590 /* UICollectionView+DequeueSpec.swift */,
 			);
 			path = UICollectionView;
 			sourceTree = "<group>";
@@ -1232,6 +1305,7 @@
 			isa = PBXGroup;
 			children = (
 				326727DB52EDAC1916033872 /* VinylPageView.swift */,
+				8C1508D9222ED8A900A18590 /* VinylPageViewSpec.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1474,6 +1548,7 @@
 				8C150883222EA4AC00A18590 /* UIView+Converted.swift */,
 				8C07CD1722259CDD00036899 /* UIView+DelayedKeyframeAnimation.swift */,
 				8C4043312220763000C9E916 /* UIView+KeyframeAnimation.swift */,
+				8C1508B8222ED2F200A18590 /* UIView+ConvertedSpec.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -1754,6 +1829,7 @@
 				32672804EA13374BB7FCE6BA /* AppDelegate.swift in Sources */,
 				32672A3C1C9B55A91552BD42 /* RoundedCorner.swift in Sources */,
 				326727EB2D1BC47DB2CF63EF /* Composition.swift in Sources */,
+				8C1508B7222ED15700A18590 /* UICollectionView+VisibleCellsPaths.swift in Sources */,
 				32672F01BC5D2D648DEA8C11 /* Appliance.swift in Sources */,
 				3267250311180D7BDCD41DAD /* ShoppingBoxItemView.swift in Sources */,
 				32672E6AF0F897929D648415 /* Color.swift in Sources */,
@@ -1899,52 +1975,76 @@
 				326727B2B73CAB039371B057 /* ApplianceSpec.swift in Sources */,
 				32672968B43BF011B44A1CAD /* CGContext+DrawImageSpec.swift in Sources */,
 				32672248680F89E556E0C4C5 /* CGContext+ResetGlobals.swift in Sources */,
+				8C1508B1222ECEA700A18590 /* ShoppingBoxItemViewSpec.swift in Sources */,
 				8C321DF92227EF80004F9B14 /* UIView+Snapshot.swift in Sources */,
 				32672F2B267BB5A747026B05 /* SnapshotDiffToolConfiguration.swift in Sources */,
 				8C0ADD0E222D678F005FCD84 /* AnimatorStub.swift in Sources */,
+				8C1508CA222ED79000A18590 /* VinylDetailsFeaturesViewSpec.swift in Sources */,
 				3267293BC7D13AB8EA9B5C1B /* UIImagePredicate.swift in Sources */,
 				326729327168E46CFB2F65D4 /* UIViewController+ChildrenSpec.swift in Sources */,
+				8C1508AD222ECE6F00A18590 /* ShoppingBoxPriceViewSpec.swift in Sources */,
 				8C0ADD0A222D60C8005FCD84 /* VerifyTransitionsSpec.swift in Sources */,
 				32672536137E871ECBF3C09E /* ShoppingBarControllerSpec.swift in Sources */,
 				8C321DFC2227F4C5004F9B14 /* SetUpTransitioningTest.swift in Sources */,
 				32672B5CC1EB0A1A7BA9DC65 /* VinylPageControllerSpec.swift in Sources */,
 				32672627446C6FF3A837D48C /* UIViewControllerPredicate.swift in Sources */,
 				326727AFB16116E673290695 /* EnvironmentSpec.swift in Sources */,
+				8C1508DE222ED8E700A18590 /* ShopTitleViewSpec.swift in Sources */,
 				3267233806CFA3D0C0187D33 /* PresentationContext+ShoppingBoxSpec.swift in Sources */,
 				8C0ADD10222D6DDD005FCD84 /* UIViewPropertyAnimator+Stop.swift in Sources */,
 				8C321E012227F518004F9B14 /* CleanUpVerifyTransition.swift in Sources */,
+				8C1508DC222ED8D100A18590 /* ShopViewSpec.swift in Sources */,
 				3267219FF3D8B9B21891CCE2 /* UIControl+SimulateTap.swift in Sources */,
 				326726454DC267F6BA11447B /* ShoppingBarControllerStub.swift in Sources */,
+				8C1508DA222ED8A900A18590 /* VinylPageViewSpec.swift in Sources */,
 				326722A597A7EC2E2F3E4BCD /* EnvironmentSpy.swift in Sources */,
 				32672B0E48BCE07AE11F27BB /* ShoppingBoxPresentationAnimatorSpec.swift in Sources */,
 				326728DF31B09B0BB2DB464C /* VinylDetailsControllerSpec.swift in Sources */,
 				32672B4D122B7AE1A5507CCD /* UICollectionView+CellAccess.swift in Sources */,
 				326726E51532A8BDED6BB1D0 /* UICollectionView+SizeAccess.swift in Sources */,
+				8C1508C4222ED6F000A18590 /* VinylDetailsHeaderSmallTitleViewSpec.swift in Sources */,
 				3267265586086E28D3418644 /* VinylTrackListControllerSpec.swift in Sources */,
 				3267281CBBE7B1CAAAA21FBC /* VinylCollectionControllerSpec.swift in Sources */,
+				8C1508D6222ED85500A18590 /* VinylCollectionCellSpec.swift in Sources */,
+				8C1508CC222ED7BE00A18590 /* VinylDetailsGenreViewSpec.swift in Sources */,
 				326729C9449779A59E3D7766 /* VinylDetailsHeaderViewSpec.swift in Sources */,
+				8C1508C8222ED72900A18590 /* VinylDetailsHeaderLargeTitleViewSpec.swift in Sources */,
+				8C1508D8222ED87500A18590 /* VinylCollectionViewSpec.swift in Sources */,
 				326729DC79D9B4B6D8D1B6BB /* ShoppingBoxDismissAnimatorSpec.swift in Sources */,
+				8C1508C0222ED44400A18590 /* VinylTrackListViewSpec.swift in Sources */,
+				8C1508C2222ED46300A18590 /* UICollectionView+DequeueSpec.swift in Sources */,
 				32672CEBB3ABB2C1C8F29D6A /* ShoppingBoxViewSpec.swift in Sources */,
 				32672540E2F30765EAE53F0B /* MainTabBarControllerSpec.swift in Sources */,
 				3267202D5CD0F640B73CADEA /* ShopControllerSpec.swift in Sources */,
+				8C1508CE222ED7D600A18590 /* VinylDetailsLargeFeatureViewSpec.swift in Sources */,
 				32672D657487BDD4F8881508 /* NewAlbumsControllerFactorySpec.swift in Sources */,
 				32672C6678FA69EE0E1C47C4 /* ShopRecommendedControllerFactorySpec.swift in Sources */,
 				326724E095EA420AB667E60F /* GenresControllerSpec.swift in Sources */,
 				326721CB08A2958E423EF3F8 /* NavigationControllerSpy.swift in Sources */,
 				32672890143C6FB5A21681CB /* VinylDetailsControllerStub.swift in Sources */,
+				8C1508B3222ECEBF00A18590 /* ShoppingBoxFooterViewSpec.swift in Sources */,
 				3267278504A48F966FB0541B /* BuyAnimatorSpy.swift in Sources */,
 				8C07CD1022257F3000036899 /* UIViewControllerContextTransitioningSpy.swift in Sources */,
 				8C0ADD0C222D6717005FCD84 /* AnimatedTransitioningSpec.swift in Sources */,
+				8C1508BE222ED42300A18590 /* VinylTrackCellSpec.swift in Sources */,
+				8C1508D0222ED7F300A18590 /* VinylDetailsSmallFeatureViewSpec.swift in Sources */,
 				8C321DFF2227F4E5004F9B14 /* VerifyTransitions.swift in Sources */,
 				32672F62F5B8A34B3A4B03C1 /* VinylCollectionControllerStub.swift in Sources */,
+				8C1508BC222ED41200A18590 /* VinylSideCellSpec.swift in Sources */,
 				32672C8D08CD82F16A9EF700 /* VinylPagePushAnimatorSpec.swift in Sources */,
 				32672C1D63DF07C7B129CE32 /* VinylPagePopAnimatorSpec.swift in Sources */,
 				32672E1C6B21EE03E0EFA3AA /* RecommendedVinylsRepositorySpec.swift in Sources */,
 				32672C8AFFE074079CD87D0A /* VinylRecommendedControllerFactorySpec.swift in Sources */,
+				8C1508D4222ED82B00A18590 /* VinylDetailsViewSpec.swift in Sources */,
 				32672BE9DCDB50515D274D4A /* ControllerFactorySpec.swift in Sources */,
+				8C1508B9222ED2F200A18590 /* UIView+ConvertedSpec.swift in Sources */,
+				8C1508D2222ED80E00A18590 /* VinylDetailsNotesViewSpec.swift in Sources */,
+				8C1508C6222ED70B00A18590 /* VinylDetailsHeaderPriceViewSpec.swift in Sources */,
+				8C1508AF222ECE8E00A18590 /* ShoppingBoxItemsViewSpec.swift in Sources */,
 				32672D869C393360931CEE8F /* Vinyl+TestVinyl.swift in Sources */,
 				32672D7ACE60247F18B32C35 /* VinylRepositorySpec.swift in Sources */,
 				3267243A6AF62CFD269ABB2F /* ShopDetails+ShotDetailsSpec.swift in Sources */,
+				8C1508AB222ECE3400A18590 /* ShoppingBoxSeparatorViewSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

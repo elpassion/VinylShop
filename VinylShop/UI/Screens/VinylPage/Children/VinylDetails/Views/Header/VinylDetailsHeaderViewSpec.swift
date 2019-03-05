@@ -21,6 +21,12 @@ class VinylDetailsHeaderViewSpec: QuickSpec {
                 sut = nil
             }
 
+            describe("required initializer") {
+                it("should return nil") {
+                    expect(VinylDetailsHeaderView(coder: NSCoder())).to(beNil())
+                }
+            }
+
             describe("buy button") {
                 it("should have non-zero frame") {
                     expect(sut.buyButton.frame) != CGRect.zero
