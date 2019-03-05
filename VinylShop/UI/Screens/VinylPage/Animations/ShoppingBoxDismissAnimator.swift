@@ -13,69 +13,45 @@ class ShoppingBoxDismissAnimator: NSObject, AnimatedTransitioning {
     }
 
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        let pageController = transitionContext.viewController(forKey: .to)
-            .flatMap { $0 as? UINavigationController }
-            .flatMap { $0.viewControllers.last as? VinylPageController }
-
-        guard let presenting = pageController,
-              let current = transitionContext.viewController(forKey: .from) as? ShoppingBoxController,
-              let barView = presenting.barController.view as? ShoppingBarView else {
+        guard var context = ShoppingBoxDismissAnimationContext(transitionContext: transitionContext) else {
             transitionContext.complete()
             return
         }
 
         let containerView = transitionContext.containerView
-        let offset = presenting.pageView.barContainerView.frame.minY - current.boxView.boxView.frame.minY
-        presenting.barController.view.isHidden = true
+        let offset = context.pageController.pageView.barContainerView.frame.minY
+            - context.shoppingController.boxView.boxView.frame.minY
+        context.pageController.barController.view.isHidden = true
 
-        let fadedOutViews = [
-            current.boxView.dismissIconView,
-            current.boxView.titleLabel,
-            current.boxView.topSeparatorView,
-            current.boxView.itemsView,
-            current.boxView.bottomSeparatorView,
-            current.boxView.footerView
-        ]
+        zip(context.fadedOutViews, context.fadedOutSnapshotViews).forEach { view, snapshotView in
+            view.alpha = 0.0
+            snapshotView.frame = context.shoppingController.boxView.converted(view)
+            containerView.addSubview(snapshotView)
+        }
 
-        let fadedOutSnapshotViews: [UIView] = fadedOutViews.compactMap { view in
+        backgroundAnimator = makeBackgroundAnimator(view: context.shoppingController.boxView.dimmedBackgroundView)
+        fadeOutAnimators = context.fadedOutSnapshotViews.map(makeFadeOutAnimator)
+
+        let fadedInSnapshotViews: [UIView] = context.shoppingBarView.frameControl.subviews.compactMap { view in
             let snapshotView = view.snapshotView(afterScreenUpdates: true)
-            snapshotView?.frame = view.frame
+            snapshotView?.frame = context.pageController.view.convert(view.frame, from: context.shoppingBarView.frameControl)
             return snapshotView
         }
 
-        guard fadedOutSnapshotViews.count == fadedOutViews.count else {
-            return
-        }
-
-        fadedOutViews.forEach { $0.layer.opacity = 0.0 }
-        fadedOutSnapshotViews.forEach { view in
-            view.frame = current.boxView.convert(view.frame, from: current.boxView.boxView)
-            containerView.addSubview(view)
-        }
-
-        backgroundAnimator = makeBackgroundAnimator(view: current.boxView.dimmedBackgroundView)
-        fadeOutAnimators = fadedOutSnapshotViews.map { makeFadeOutAnimator(view: $0) }
-
-        let fadedInSnapshotViews: [UIView] = barView.frameControl.subviews.compactMap { view in
-            let snapshotView = view.snapshotView(afterScreenUpdates: true)
-            snapshotView?.frame = presenting.view.convert(view.frame, from: barView.frameControl)
-            return snapshotView
-        }
-
-        guard fadedInSnapshotViews.count == barView.frameControl.subviews.count else {
+        guard fadedInSnapshotViews.count == context.shoppingBarView.frameControl.subviews.count else {
             return
         }
 
         fadedInSnapshotViews.forEach(containerView.addSubview)
         fadeInAnimators = fadedInSnapshotViews.map { makeFadeInAnimator(view: $0) }
 
-        shoppingBoxAnimator = makeShoppingBoxAnimator(view: current.boxView.boxView, offset: offset)
+        shoppingBoxAnimator = makeShoppingBoxAnimator(view: context.shoppingController.boxView.boxView, offset: offset)
         shoppingBoxAnimator?.addCompletion { _ in
-            presenting.barController.view.isHidden = false
-            current.view.removeFromSuperview()
-            fadedOutSnapshotViews.forEach { $0.removeFromSuperview() }
+            context.pageController.barController.view.isHidden = false
+            context.shoppingController.view.removeFromSuperview()
+            context.fadedOutSnapshotViews.forEach { $0.removeFromSuperview() }
             fadedInSnapshotViews.forEach { $0.removeFromSuperview() }
-            transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+            transitionContext.complete()
         }
 
         allAnimators.forEach { $0.startAnimation() }

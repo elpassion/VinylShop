@@ -183,6 +183,7 @@
 		8C15089E222EB86900A18590 /* ShowVinylWithDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C15089D222EB86900A18590 /* ShowVinylWithDetails.swift */; };
 		8C1508A2222EBB8800A18590 /* Keyframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1508A1222EBB8800A18590 /* Keyframe.swift */; };
 		8C1508A7222EBD1C00A18590 /* UIViewPropertyAnimator+Keyframes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1508A6222EBD1C00A18590 /* UIViewPropertyAnimator+Keyframes.swift */; };
+		8C1508A9222EC1FA00A18590 /* ShoppingBoxDismissAnimationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1508A8222EC1FA00A18590 /* ShoppingBoxDismissAnimationContext.swift */; };
 		8C2243C32202125600C3470B /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C2243B52202125600C3470B /* Nunito-Bold.ttf */; };
 		8C2243C42202125600C3470B /* Nunito-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C2243B62202125600C3470B /* Nunito-ExtraBoldItalic.ttf */; };
 		8C2243C52202125600C3470B /* Nunito-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C2243B72202125600C3470B /* Nunito-Black.ttf */; };
@@ -430,6 +431,7 @@
 		8C15089D222EB86900A18590 /* ShowVinylWithDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowVinylWithDetails.swift; sourceTree = "<group>"; };
 		8C1508A1222EBB8800A18590 /* Keyframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyframe.swift; sourceTree = "<group>"; };
 		8C1508A6222EBD1C00A18590 /* UIViewPropertyAnimator+Keyframes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewPropertyAnimator+Keyframes.swift"; sourceTree = "<group>"; };
+		8C1508A8222EC1FA00A18590 /* ShoppingBoxDismissAnimationContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingBoxDismissAnimationContext.swift; sourceTree = "<group>"; };
 		8C2243B52202125600C3470B /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		8C2243B62202125600C3470B /* Nunito-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		8C2243B72202125600C3470B /* Nunito-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Black.ttf"; sourceTree = "<group>"; };
@@ -1275,6 +1277,7 @@
 			children = (
 				8C150881222EA44900A18590 /* BuyAnimationContext.swift */,
 				8C07CD15222583B700036899 /* ShoppingBoxPresentationAnimationContext.swift */,
+				8C1508A8222EC1FA00A18590 /* ShoppingBoxDismissAnimationContext.swift */,
 			);
 			path = Context;
 			sourceTree = "<group>";
@@ -1760,6 +1763,7 @@
 				32672FFF6543A21405F89EAA /* ShoppingBoxItemsView.swift in Sources */,
 				3267285FED249CC505AC098E /* ShoppingBoxPresenter.swift in Sources */,
 				32672E225BB372FEACCDFDB1 /* Album.swift in Sources */,
+				8C1508A9222EC1FA00A18590 /* ShoppingBoxDismissAnimationContext.swift in Sources */,
 				326721462EE4DE7D11763D5E /* ShoppingBoxFooterView.swift in Sources */,
 				8C40432C222074E200C9E916 /* UIScrollView+Styles.swift in Sources */,
 				8C15087D222EA22200A18590 /* BuyInitialFramesCalculator.swift in Sources */,
