@@ -618,8 +618,8 @@
 			isa = PBXGroup;
 			children = (
 				32672B26E1D219CBA2606945 /* VinylCollectionCell.swift */,
-				32672B3D483A74660DE3FF9A /* VinylCollectionView.swift */,
 				8C1508D5222ED85500A18590 /* VinylCollectionCellSpec.swift */,
+				32672B3D483A74660DE3FF9A /* VinylCollectionView.swift */,
 				8C1508D7222ED87500A18590 /* VinylCollectionViewSpec.swift */,
 			);
 			path = Views;
@@ -821,17 +821,17 @@
 			isa = PBXGroup;
 			children = (
 				32672B81873DCC9CF450CB27 /* ShoppingBoxFooterView.swift */,
+				8C1508B2222ECEBF00A18590 /* ShoppingBoxFooterViewSpec.swift */,
 				32672E2FFFCC144250301C26 /* ShoppingBoxItemView.swift */,
+				8C1508B0222ECEA700A18590 /* ShoppingBoxItemViewSpec.swift */,
 				32672758F5AEE9FEC5CAF5F7 /* ShoppingBoxItemsView.swift */,
+				8C1508AE222ECE8E00A18590 /* ShoppingBoxItemsViewSpec.swift */,
 				32672549DA59C2630442ED22 /* ShoppingBoxPriceView.swift */,
+				8C1508AC222ECE6F00A18590 /* ShoppingBoxPriceViewSpec.swift */,
 				326723B77BCBF76B8B861426 /* ShoppingBoxSeparatorView.swift */,
+				8C1508AA222ECE3400A18590 /* ShoppingBoxSeparatorViewSpec.swift */,
 				32672B3020CF2515472B6E5B /* ShoppingBoxView.swift */,
 				32672669E5AFE169C75AD5FA /* ShoppingBoxViewSpec.swift */,
-				8C1508AA222ECE3400A18590 /* ShoppingBoxSeparatorViewSpec.swift */,
-				8C1508AC222ECE6F00A18590 /* ShoppingBoxPriceViewSpec.swift */,
-				8C1508AE222ECE8E00A18590 /* ShoppingBoxItemsViewSpec.swift */,
-				8C1508B0222ECEA700A18590 /* ShoppingBoxItemViewSpec.swift */,
-				8C1508B2222ECEBF00A18590 /* ShoppingBoxFooterViewSpec.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -907,9 +907,9 @@
 			isa = PBXGroup;
 			children = (
 				32672B723BD0E41979F4696A /* ShopTitleView.swift */,
+				8C1508DD222ED8E700A18590 /* ShopTitleViewSpec.swift */,
 				32672D2E6FE64B61504C639B /* ShopView.swift */,
 				8C1508DB222ED8D100A18590 /* ShopViewSpec.swift */,
-				8C1508DD222ED8E700A18590 /* ShopTitleViewSpec.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -954,10 +954,10 @@
 			isa = PBXGroup;
 			children = (
 				32672C934E2806ADCA3444AA /* VinylSideCell.swift */,
-				3267247AA481797B29942D9A /* VinylTrackCell.swift */,
-				326725DAB35E0A0DB8141CD4 /* VinylTrackListView.swift */,
 				8C1508BA222ED3DE00A18590 /* VinylSideCellSpec.swift */,
+				3267247AA481797B29942D9A /* VinylTrackCell.swift */,
 				8C1508BD222ED42300A18590 /* VinylTrackCellSpec.swift */,
+				326725DAB35E0A0DB8141CD4 /* VinylTrackListView.swift */,
 				8C1508BF222ED44400A18590 /* VinylTrackListViewSpec.swift */,
 			);
 			path = Views;
@@ -971,8 +971,8 @@
 				32672AE595B43BAF8690C7DC /* Model */,
 				32672D4D9345A589AFC434C2 /* Presentation */,
 				32672F78F586D136CE238373 /* VinylDetailsNotesView.swift */,
-				326726980D25F18EE246DEE7 /* VinylDetailsView.swift */,
 				8C1508D1222ED80E00A18590 /* VinylDetailsNotesViewSpec.swift */,
+				326726980D25F18EE246DEE7 /* VinylDetailsView.swift */,
 				8C1508D3222ED82B00A18590 /* VinylDetailsViewSpec.swift */,
 			);
 			path = Views;
@@ -999,8 +999,8 @@
 			isa = PBXGroup;
 			children = (
 				32672D395C44721A2834B4B9 /* GenreCell.swift */,
-				3267210BB2FDF96929BBEC20 /* GenresView.swift */,
 				8C1508DF222ED93C00A18590 /* GenreCellSpec.swift */,
+				3267210BB2FDF96929BBEC20 /* GenresView.swift */,
 				8C1508E1222ED94F00A18590 /* GenresViewSpec.swift */,
 			);
 			path = Views;
@@ -1062,13 +1062,13 @@
 			isa = PBXGroup;
 			children = (
 				32672D3C5F07D9C8019043D6 /* VinylDetailsHeaderLargeTitleView.swift */,
+				8C1508C7222ED72900A18590 /* VinylDetailsHeaderLargeTitleViewSpec.swift */,
 				326729E81F748B78A933FBA8 /* VinylDetailsHeaderPriceView.swift */,
+				8C1508C5222ED70B00A18590 /* VinylDetailsHeaderPriceViewSpec.swift */,
 				32672656895B5F3FD031CC29 /* VinylDetailsHeaderSmallTitleView.swift */,
+				8C1508C3222ED6F000A18590 /* VinylDetailsHeaderSmallTitleViewSpec.swift */,
 				32672DF781DA3CCB02A9439C /* VinylDetailsHeaderView.swift */,
 				32672873E27EF142D19087BF /* VinylDetailsHeaderViewSpec.swift */,
-				8C1508C3222ED6F000A18590 /* VinylDetailsHeaderSmallTitleViewSpec.swift */,
-				8C1508C5222ED70B00A18590 /* VinylDetailsHeaderPriceViewSpec.swift */,
-				8C1508C7222ED72900A18590 /* VinylDetailsHeaderLargeTitleViewSpec.swift */,
 			);
 			path = Header;
 			sourceTree = "<group>";
@@ -1130,12 +1130,12 @@
 			isa = PBXGroup;
 			children = (
 				32672536268FF96987A9C6A1 /* VinylDetailsFeaturesView.swift */,
-				32672C72B45E877758FC5F64 /* VinylDetailsGenreView.swift */,
-				32672D1A5D8151485A85BBA1 /* VinylDetailsLargeFeatureView.swift */,
-				326722E09528F17137C69441 /* VinylDetailsSmallFeatureView.swift */,
 				8C1508C9222ED79000A18590 /* VinylDetailsFeaturesViewSpec.swift */,
+				32672C72B45E877758FC5F64 /* VinylDetailsGenreView.swift */,
 				8C1508CB222ED7BE00A18590 /* VinylDetailsGenreViewSpec.swift */,
+				32672D1A5D8151485A85BBA1 /* VinylDetailsLargeFeatureView.swift */,
 				8C1508CD222ED7D600A18590 /* VinylDetailsLargeFeatureViewSpec.swift */,
+				326722E09528F17137C69441 /* VinylDetailsSmallFeatureView.swift */,
 				8C1508CF222ED7F300A18590 /* VinylDetailsSmallFeatureViewSpec.swift */,
 			);
 			path = Features;
@@ -1262,8 +1262,8 @@
 			isa = PBXGroup;
 			children = (
 				326722E673F35B2CADC135D0 /* UICollectionView+Dequeue.swift */,
-				8C1508B6222ED15700A18590 /* UICollectionView+VisibleCellsPaths.swift */,
 				8C1508C1222ED46300A18590 /* UICollectionView+DequeueSpec.swift */,
+				8C1508B6222ED15700A18590 /* UICollectionView+VisibleCellsPaths.swift */,
 			);
 			path = UICollectionView;
 			sourceTree = "<group>";
@@ -1561,9 +1561,9 @@
 			isa = PBXGroup;
 			children = (
 				8C150883222EA4AC00A18590 /* UIView+Converted.swift */,
+				8C1508B8222ED2F200A18590 /* UIView+ConvertedSpec.swift */,
 				8C07CD1722259CDD00036899 /* UIView+DelayedKeyframeAnimation.swift */,
 				8C4043312220763000C9E916 /* UIView+KeyframeAnimation.swift */,
-				8C1508B8222ED2F200A18590 /* UIView+ConvertedSpec.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
