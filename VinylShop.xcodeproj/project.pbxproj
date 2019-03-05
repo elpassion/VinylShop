@@ -1276,8 +1276,8 @@
 			isa = PBXGroup;
 			children = (
 				8C150881222EA44900A18590 /* BuyAnimationContext.swift */,
-				8C07CD15222583B700036899 /* ShoppingBoxPresentationAnimationContext.swift */,
 				8C1508A8222EC1FA00A18590 /* ShoppingBoxDismissAnimationContext.swift */,
+				8C07CD15222583B700036899 /* ShoppingBoxPresentationAnimationContext.swift */,
 			);
 			path = Context;
 			sourceTree = "<group>";
