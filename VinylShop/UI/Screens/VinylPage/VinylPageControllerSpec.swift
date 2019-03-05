@@ -74,7 +74,7 @@ class VinylPageControllerSpec: QuickSpec {
                     }
 
                     it("should hide bar controller view") {
-                        expect(barControllerStub.view.isHidden) == true
+                        expect(barControllerStub.view.alpha) == 0.0
                     }
 
                     describe("shopping bar tap") {
