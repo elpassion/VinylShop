@@ -21,6 +21,7 @@ class VinylPageController: UIViewController {
     }
 
     let vinylID: Int
+    let buyAnimator: BuyAnimating
 
     // MARK: - Children
 
@@ -57,7 +58,6 @@ class VinylPageController: UIViewController {
     private let barControllerFactory: () -> ShoppingBarControlling
     private let detailsControllerFactory: DetailsFactory
     private let environment: Environment
-    private let buyAnimator: BuyAnimating
     private var isAnimating: Bool = false
     private lazy var vinyl: Vinyl = vinylResolver(vinylID)
 
@@ -66,7 +66,7 @@ class VinylPageController: UIViewController {
     }
 
     private func embedBarController() {
-        barController.view.isHidden = true
+        barController.view.alpha = 0.0
         embed(childViewController: barController, inside: pageView.barContainerView)
     }
 

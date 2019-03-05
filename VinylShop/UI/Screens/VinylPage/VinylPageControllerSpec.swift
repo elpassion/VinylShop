@@ -175,8 +175,132 @@ class VinylPageControllerSpec: QuickSpec {
                 it("should match snapshot on iPhone Xs Max") {
                     assertSnapshot(matching: sut, as: .image(on: .iPhoneXsMax))
                 }
+
+                fdescribe("buy animation") {
+                    var window: FakeWindow!
+
+                    beforeEach {
+                        let bounds = CGRect(origin: .zero, size: ViewImageConfig.iPhoneX.size ?? .zero)
+                        window = FakeWindow(frame: bounds)
+                        window.isHidden = false
+                        window.rootViewController = sut
+                        window.setNeedsLayout()
+                        window.layoutIfNeeded()
+
+                        sut.detailsController.buyAction?()
+                        sut.buyAnimator.allAnimators.forEach { animator in
+                            animator.pauseAnimation()
+                        }
+
+                        record = true
+                    }
+
+                    afterEach {
+                        sut.buyAnimator.allAnimators.forEach { animator in
+                            animator.stop()
+                        }
+
+                        window = nil
+                    }
+
+                    it("should match snapshot at 0%") {
+                        sut.buyAnimator.allAnimators.forEach { animator in
+                            animator.fractionComplete = 0.0
+                        }
+
+                        assertSnapshot(matching: window.snapshot, as: .image, named: "buy_animation_progress_0")
+                    }
+
+                    it("should match snapshot at 10%") {
+                        sut.buyAnimator.allAnimators.forEach { animator in
+                            animator.fractionComplete = 0.1
+                        }
+
+                        assertSnapshot(matching: window.snapshot, as: .image, named: "buy_animation_progress_10")
+                    }
+
+                    it("should match snapshot at 20%") {
+                        sut.buyAnimator.allAnimators.forEach { animator in
+                            animator.fractionComplete = 0.2
+                        }
+
+                        assertSnapshot(matching: window.snapshot, as: .image, named: "buy_animation_progress_20")
+                    }
+
+                    it("should match snapshot at 30%") {
+                        sut.buyAnimator.allAnimators.forEach { animator in
+                            animator.fractionComplete = 0.3
+                        }
+
+                        assertSnapshot(matching: window.snapshot, as: .image, named: "buy_animation_progress_30")
+                    }
+
+                    it("should match snapshot at 40%") {
+                        sut.buyAnimator.allAnimators.forEach { animator in
+                            animator.fractionComplete = 0.4
+                        }
+
+                        assertSnapshot(matching: window.snapshot, as: .image, named: "buy_animation_progress_40")
+                    }
+
+                    it("should match snapshot at 50%") {
+                        sut.buyAnimator.allAnimators.forEach { animator in
+                            animator.fractionComplete = 0.5
+                        }
+
+                        assertSnapshot(matching: window.snapshot, as: .image, named: "buy_animation_progress_50")
+                    }
+
+                    it("should match snapshot at 60%") {
+                        sut.buyAnimator.allAnimators.forEach { animator in
+                            animator.fractionComplete = 0.6
+                        }
+
+                        assertSnapshot(matching: window.snapshot, as: .image, named: "buy_animation_progress_60")
+                    }
+
+                    it("should match snapshot at 70%") {
+                        sut.buyAnimator.allAnimators.forEach { animator in
+                            animator.fractionComplete = 0.7
+                        }
+
+                        assertSnapshot(matching: window.snapshot, as: .image, named: "buy_animation_progress_70")
+                    }
+
+                    it("should match snapshot at 80%") {
+                        sut.buyAnimator.allAnimators.forEach { animator in
+                            animator.fractionComplete = 0.8
+                        }
+
+                        assertSnapshot(matching: window.snapshot, as: .image, named: "buy_animation_progress_80")
+                    }
+
+                    it("should match snapshot at 90%") {
+                        sut.buyAnimator.allAnimators.forEach { animator in
+                            animator.fractionComplete = 0.9
+                        }
+
+                        assertSnapshot(matching: window.snapshot, as: .image, named: "buy_animation_progress_90")
+                    }
+
+                    it("should match snapshot at 100%") {
+                        sut.buyAnimator.allAnimators.forEach { animator in
+                            animator.fractionComplete = 1.0
+                        }
+
+                        assertSnapshot(matching: window.snapshot, as: .image, named: "buy_animation_progress_100")
+                    }
+                }
             }
         }
+    }
+
+}
+
+class FakeWindow: UIWindow {
+
+    override var safeAreaInsets: UIEdgeInsets {
+        return ViewImageConfig.iPhoneX.safeArea
     }
 
 }

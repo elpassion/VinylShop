@@ -3,9 +3,27 @@ import UIKit
 
 class BuyAnimatorSpy: BuyAnimating {
 
+    var stubbedDuration: Double = 0.0
+    var stubbedAnimators: [UIViewPropertyAnimator] = []
     private(set) var invokedAnimateBuy: BuyAnimatorInvocation?
 
+    struct BuyAnimatorInvocation {
+        let view: UIView
+        let detailsView: VinylDetailsView
+        let barView: ShoppingBarView
+        let completion: () -> Void
+        let count: Int
+    }
+
     // MARK: - BuyAnimating
+
+    var duration: Double {
+        return stubbedDuration
+    }
+
+    var allAnimators: [UIViewPropertyAnimator] {
+        return stubbedAnimators
+    }
 
     func animateBuy(view: UIView,
                     detailsView: VinylDetailsView,
@@ -20,12 +38,4 @@ class BuyAnimatorSpy: BuyAnimating {
         )
     }
 
-}
-
-struct BuyAnimatorInvocation {
-    let view: UIView
-    let detailsView: VinylDetailsView
-    let barView: ShoppingBarView
-    let completion: () -> Void
-    let count: Int
 }

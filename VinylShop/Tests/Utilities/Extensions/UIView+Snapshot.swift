@@ -1,6 +1,6 @@
 import UIKit
 
-extension UIWindow {
+extension UIView {
 
     var snapshot: UIImage {
         return UIGraphicsImageRenderer(bounds: bounds).image { _ in
