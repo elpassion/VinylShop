@@ -4,8 +4,10 @@ struct ShoppingBoxDismissAnimationContext {
     let shoppingController: ShoppingBoxController
     let pageController: VinylPageController
     let shoppingBarView: ShoppingBarView
+    let fadedInViews: [UIView]
     let fadedOutViews: [UIView]
     lazy var fadedOutSnapshotViews: [UIView] = fadedOutViews.compactMap { $0.snapshotView(afterScreenUpdates: true) }
+    lazy var fadedInSnapshotViews: [UIView] = fadedInViews.compactMap { $0.snapshotView(afterScreenUpdates: true) }
 
     init?(transitionContext: UIViewControllerContextTransitioning) {
         let pageController = transitionContext.viewController(forKey: .to)
@@ -13,7 +15,6 @@ struct ShoppingBoxDismissAnimationContext {
             .flatMap { $0.viewControllers.last as? VinylPageController }
 
         let shoppingBoxController = transitionContext.viewController(forKey: .from) as? ShoppingBoxController
-        let shoppingBarSnapshotView = pageController?.barController.view.snapshotView(afterScreenUpdates: true)
         let fadedOutViews = shoppingBoxController.map { viewsToFade(in: $0.boxView) }
 
         guard let unwrappedShoppingBoxController = shoppingBoxController,
@@ -26,6 +27,7 @@ struct ShoppingBoxDismissAnimationContext {
         self.pageController = unwrappedPageController
         self.shoppingController = unwrappedShoppingBoxController
         self.shoppingBarView = unwrappedShoppingBarView
+        self.fadedInViews = unwrappedShoppingBarView.frameControl.subviews
         self.fadedOutViews = unwrappedFadedOutViews
     }
 

@@ -4,9 +4,7 @@ class ShoppingBoxDismissAnimator: NSObject, AnimatedTransitioning {
 
     // MARK: - AnimatedTransitioning
 
-    var allAnimators: [UIViewPropertyAnimator] {
-        return fadeOutAnimators + fadeInAnimators + [shoppingBoxAnimator, backgroundAnimator].compactMap { $0 }
-    }
+    var allAnimators: [UIViewPropertyAnimator] = []
 
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.3
@@ -29,40 +27,32 @@ class ShoppingBoxDismissAnimator: NSObject, AnimatedTransitioning {
             containerView.addSubview(snapshotView)
         }
 
-        backgroundAnimator = makeBackgroundAnimator(view: context.shoppingController.boxView.dimmedBackgroundView)
-        fadeOutAnimators = context.fadedOutSnapshotViews.map(makeFadeOutAnimator)
-
-        let fadedInSnapshotViews: [UIView] = context.shoppingBarView.frameControl.subviews.compactMap { view in
-            let snapshotView = view.snapshotView(afterScreenUpdates: true)
-            snapshotView?.frame = context.pageController.view.convert(view.frame, from: context.shoppingBarView.frameControl)
-            return snapshotView
+        zip(context.fadedInViews, context.fadedInSnapshotViews).forEach { view, snapshotView in
+            snapshotView.frame = context.pageController.view.converted(view)
+            containerView.addSubview(snapshotView)
         }
 
-        guard fadedInSnapshotViews.count == context.shoppingBarView.frameControl.subviews.count else {
-            return
-        }
+        let backgroundAnimator = makeBackgroundAnimator(view: context.shoppingController.boxView.dimmedBackgroundView)
+        let fadeOutAnimators = context.fadedOutSnapshotViews.map(makeFadeOutAnimator)
+        let fadeInAnimators = context.fadedInSnapshotViews.map(makeFadeInAnimator)
+        let shoppingBoxAnimator = makeShoppingBoxAnimator(
+            view: context.shoppingController.boxView.boxView,
+            offset: offset
+        )
 
-        fadedInSnapshotViews.forEach(containerView.addSubview)
-        fadeInAnimators = fadedInSnapshotViews.map { makeFadeInAnimator(view: $0) }
-
-        shoppingBoxAnimator = makeShoppingBoxAnimator(view: context.shoppingController.boxView.boxView, offset: offset)
-        shoppingBoxAnimator?.addCompletion { _ in
+        shoppingBoxAnimator.addCompletion { _ in
             context.pageController.barController.view.isHidden = false
             context.shoppingController.view.removeFromSuperview()
             context.fadedOutSnapshotViews.forEach { $0.removeFromSuperview() }
-            fadedInSnapshotViews.forEach { $0.removeFromSuperview() }
+            context.fadedInSnapshotViews.forEach { $0.removeFromSuperview() }
             transitionContext.complete()
         }
 
+        allAnimators = [backgroundAnimator, shoppingBoxAnimator] + fadeOutAnimators + fadeInAnimators
         allAnimators.forEach { $0.startAnimation() }
     }
 
     // MARK: - Private
-
-    private var shoppingBoxAnimator: UIViewPropertyAnimator?
-    private var backgroundAnimator: UIViewPropertyAnimator?
-    private var fadeOutAnimators: [UIViewPropertyAnimator] = []
-    private var fadeInAnimators: [UIViewPropertyAnimator] = []
 
     private func makeShoppingBoxAnimator(view: UIView, offset: CGFloat) -> UIViewPropertyAnimator {
         let timingParameters = UISpringTimingParameters(mass: 1, stiffness: 381, damping: 30, initialVelocity: .zero)

@@ -4,9 +4,7 @@ class ShoppingBoxPresentationAnimator: NSObject, AnimatedTransitioning {
 
     // MARK: - AnimatedTransitioning
 
-    var allAnimators: [UIViewPropertyAnimator] {
-        return fadeInAnimators + [backgroundAnimator, shoppingBarAnimator, shoppingBoxAnimator].compactMap { $0 }
-    }
+    var allAnimators: [UIViewPropertyAnimator] = []
 
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.76
@@ -42,15 +40,18 @@ class ShoppingBoxPresentationAnimator: NSObject, AnimatedTransitioning {
         let offset = context.pageController.pageView.barContainerView.frame.minY
             - context.shoppingController.boxView.boxView.frame.minY
 
-        backgroundAnimator = makeBackgroundAnimator(view: context.shoppingController.boxView.dimmedBackgroundView)
-        shoppingBarAnimator = makeShoppingBarAnimator(view: context.shoppingBarSnapshotView)
-        shoppingBoxAnimator = makeShoppingBoxAnimator(view: context.shoppingController.boxView.boxView, offset: offset)
+        let backgroundAnimator = makeBackgroundAnimator(view: context.shoppingController.boxView.dimmedBackgroundView)
+        let shoppingBarAnimator = makeShoppingBarAnimator(view: context.shoppingBarSnapshotView)
+        let shoppingBoxAnimator = makeShoppingBoxAnimator(
+            view: context.shoppingController.boxView.boxView,
+            offset: offset
+        )
+        let fadeInAnimators = zip(context.fadedInSnapshotViews, fadeInDelays).map(makeFadeInAnimator(view:delay:))
 
-        fadeInAnimators = zip(context.fadedInSnapshotViews, fadeInDelays).map(makeFadeInAnimator(view:delay:))
-
+        allAnimators = fadeInAnimators + [backgroundAnimator, shoppingBarAnimator, shoppingBoxAnimator]
         allAnimators.forEach { $0.startAnimation() }
 
-        backgroundAnimator?.addCompletion { _ in
+        backgroundAnimator.addCompletion { _ in
             context.pageController.barController.view.isHidden = false
             context.fadedInViews.forEach { $0.alpha = 1.0 }
             context.fadedInSnapshotViews.forEach { $0.removeFromSuperview() }
@@ -60,11 +61,6 @@ class ShoppingBoxPresentationAnimator: NSObject, AnimatedTransitioning {
     }
 
     // MARK: - Private
-
-    private var backgroundAnimator: UIViewPropertyAnimator?
-    private var shoppingBarAnimator: UIViewPropertyAnimator?
-    private var shoppingBoxAnimator: UIViewPropertyAnimator?
-    private var fadeInAnimators: [UIViewPropertyAnimator] = []
 
     private func makeBackgroundAnimator(view: UIView) -> UIViewPropertyAnimator {
         view.alpha = 0.0

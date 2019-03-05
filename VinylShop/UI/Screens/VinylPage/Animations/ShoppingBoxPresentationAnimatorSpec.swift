@@ -1,7 +1,6 @@
 @testable import VinylShop
 import Nimble
 import Quick
-import SnapshotTesting
 
 class ShoppingBoxPresentationAnimatorSpec: QuickSpec {
 
