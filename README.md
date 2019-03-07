@@ -10,6 +10,14 @@ Implementation of the [VinylShop mobile app](https://dribbble.com/shots/4996346-
 |:-:|:-:|
 |[![Shot](Files/shot.gif)](https://dribbble.com/shots/4996346-Vinyl-Shop-mobile-app)|[![Preview](Files/preview.gif)](https://github.com/elpassion/VinylShop)|
 
+# Requirements
+
+* Xcode 10.1
+* Homebrew
+* Python 3.7 (with [https://github.com/pypa/pipenv](pipenv) installed)
+
+Run `./setup.sh` to initialize the environment.
+
 ## License
 
 Copyright © 2019 [EL Passion](https://www.elpassion.com)

@@ -1767,7 +1767,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    eval \"$(pyenv init -)\"\n    ./.swiftlint.py VinylShop.xcodeproj VinylShopTests VinylShop/.swiftlint_tests.yml\nelse\n    echo \"warning: SwiftLint not installed, run 'brew bundle' command\"\nfi\n";
+			shellScript = "if which swiftlint >/dev/null; then\n    pipenv install\n    pipenv run ./.swiftlint.py VinylShop.xcodeproj VinylShop VinylShop/.swiftlint_sources.yml\nelse\n    echo \"warning: SwiftLint not installed, run 'brew bundle' command\"\nfi\n";
 		};
 		8C7C3CBE222032590019F094 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1785,7 +1785,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    eval \"$(pyenv init -)\"\n    ./.swiftlint.py VinylShop.xcodeproj VinylShop VinylShop/.swiftlint_sources.yml\nelse\n    echo \"warning: SwiftLint not installed, run 'brew bundle' command\"\nfi\n";
+			shellScript = "if which swiftlint >/dev/null; then\n    pipenv install\n    pipenv run ./.swiftlint.py VinylShop.xcodeproj VinylShop VinylShop/.swiftlint_sources.yml\nelse\n    echo \"warning: SwiftLint not installed, run 'brew bundle' command\"\nfi\n";
 		};
 		8CFA77032201EE9F00E4D81D /* Carthage Copy Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
