@@ -10,7 +10,7 @@ Implementation of the [VinylShop mobile app](https://dribbble.com/shots/4996346-
 |:-:|:-:|
 |[![Shot](Files/shot.gif)](https://dribbble.com/shots/4996346-Vinyl-Shop-mobile-app)|[![Preview](Files/preview.gif)](https://github.com/elpassion/VinylShop)|
 
-# Requirements
+## Requirements
 
 * Xcode 10.1
 * Homebrew
