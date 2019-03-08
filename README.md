@@ -14,7 +14,7 @@ Implementation of the [VinylShop mobile app](https://dribbble.com/shots/4996346-
 
 * Xcode 10.1
 * Homebrew
-* Python 3.7 (with [https://github.com/pypa/pipenv](pipenv) installed)
+* Python 3.7 (with [pipenv](https://github.com/pypa/pipenv) installed)
 
 Run `./setup.sh` to initialize the environment.
 
